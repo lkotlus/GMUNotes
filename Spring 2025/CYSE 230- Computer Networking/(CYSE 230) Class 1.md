@@ -1,0 +1,168 @@
+### Syllabus and Introduction
+- Two kinds of assignments:
+	- Lecture related assignments (lil' quiz)
+	- Lab assignment (VA Cyber Range)
+		- :(
+- Office hours are right before class, but we can schedule other times by email. ***Use her preferred email format from the syllabus!!!***
+- Course attendance is 15% of the grade. There are some pop quizzes.
+- Exams are each 20% (one midterm, one final). They are in-person, but we do get one A4 size cheat-sheet with both sides of writing allowed. All memorization concepts should fit on this.
+- This woman is so gentle and wholesome. She must be protected.
+
+### Introduction to Networking
+- What is a network?
+	- A group of connect devices.
+	- We will frequently use the internet as an example of a network. The internet is a network of networks.
+	- "Collection of autonomous computers interconnected by a single technology."
+- The internet has become popular due to applications and appliances that use it.
+- What about the components and infrastructure of the internet?
+	- Devices:
+		- Hosts and apps
+	- Packet switches:
+		- Routers and switches
+	- Communication links:
+		- Fiber, copper, radio, satellite
+		- Transmission rate is called **bandwidth**
+	- Network:
+		- Collection of devices, routers, and links. Managed by an organization.
+- Overview of networks:
+	- The internet as a network of networks is connected by ISPs
+	- Protocols are everywhere:
+		- HTTP, TCP, IP, WiFi, Ethernet, etc.
+	- Internet standards
+		- RFC: Request For Comments
+		- IETF: Internet Engineering Task Force
+- We switching to IPv6 soon (never)!!!
+- What's a protocol?
+	- It's just a set of rules for communication. A standard that we adhere to.
+	- Define the format and order of messages sent and received among network entities, and actions taken on message transmission.
+	- A set of rules, conventions, and data structures that enable devices to communicate and exchange information over a network.
+		- Ensure reliable, efficient, and secure data transmission.
+		- Operate at various layers of the OSI Model or the TCP/IP Model, each serving a specific function.
+- A closer look at internet structure:
+	- Network edge:
+		- Hosts: clients and servers
+		- Servers are often in data centers
+		- We running processes on these bad boys
+	- Access networks, physical media:
+		- Wired and wireless communication links
+- Host: sends packets of data
+	- Takes application message
+	- Breaks into smaller chunks, known as packets, of length $L$ bits.
+	- Transmits packet into access network at transmission rate $R$
+	- Link transmission rate, aka link capacity, aka link bandwidth is $\frac{L}{R}$.
+- Links (physical media)
+	- Bit: propagates between transmitter/receiver pairs
+	- Physical link: what lies between transmitter and receiver
+	- Guided media: signals propagate in solid media: copper, fiber, coax
+	- Unguided media: signals propagate freely (like radio)
+	- Twisted pair (TP): 
+		- Category 5: 100 Mbps, 1 Gbps Ethernet
+		- Category 6: 10 Gbps Ethernet 
+		- Two insulated copper wires, twisted in a helix. OFten twisted pairs go by the bundle.
+		- Due  to their adequate performance and low cost, twisted pairs are widely used.
+		- UTP (Unshielded Twisted Pair)
+			- CAT3 8 cores, 16 MHz bandwidth, 10 Mbps
+			- ...
+	- Coaxial Cable:
+		- Single lil' guy
+	- Fiber optic:
+		- Speed of light! Glass fiber carrying light pulses.
+		- Low error rate, high speed.
+		- Expensive :(
+	- Radio:
+		- Wireless radio:
+			- Signal carried in electromagnetic spectrum
+			- No physical wire
+			- Broadcast and "half-duplex"
+			- Propagation environment effects:
+				- Reflection
+				- Obstruction by objects
+				- Interference
+		- Bandwidth (Hz):
+			- The range of frequencies transmitted without being strongly attenuated.
+			- Bandwidth is a physical property of the transmission medium, and usually depends on the construction, thickness, and length of the medium.
+			- A wide band signal will be distorted when transmitted through relatively narrower band channel with the certain harmonics cut off.
+			- Bandwidth is physical and related to physics.
+- Access networks:
+	- What is it?
+		- The part of a computer network that connects end-user devices to the broader network.
+			- Often through a service provider or enterprise network. 
+	- Example:
+		- Home networks!
+		- You have cables, WiFi, routers, switches, etc.
+		- The home network connects to the internet with an ISP.
+	- Cable-based access
+	- Digital Subscriber Line (DSL):
+		- Existing telephone line to central office
+			- Data over DSL phone line goes to the internet
+			- Voice over DSL telephone network
+	- Wireless access networks:
+		- Shared wireless access network connects end system to router (via base station, or "access point").
+		- Wireless Local Area Networks (WLANs)
+	- Enterprise networks:
+		- Companies, universities, etc.
+- Network core:
+	- Interconnected routers
+	- Network of networks
+	- Two key network-core functions:
+		- Forwarding:
+			- Local action
+		- Routing:
+			- Global action
+	- Packet switching:
+		- Store and forward:
+			- Transmission delay: takes $\frac{L}{R}$ seconds to transmit (push out) $L$-bit packet into link at $R$ BPS.
+			- Store and forward: entire packet must arrive at router before it can be transmitted on the next link
+			- End-end delay: $\frac{2L}{R}$ (above), assuming zero propagation delay
+		- Queuing delay and loss:
+			- If arrival rate (in bps) to link exceeds transmission rate (bps) of link for a period of time:
+				- Packet will queue, waiting to be transmitted on output link
+				- Packets can drop if memory in the router fills up.
+	- Circuit Switching: FDM and TDM:
+		- Frequency Division Multiplexing:
+			- Optical, electromagnetic frequencies divided into frequency bands.
+			- Each call allocated its own band, can transmit at max rate of that narrow band.
+			- Each user gets a small number of frequencies, which they can use at any time
+		- Time Division Multiplexing:
+			- Time divided into slots
+			- Each call allocated periodic slot(s), can transmit at maximum rate of (wider) frequency band, but only during its time slot(s).
+			- Each user gets a time to use any frequency (e.g., user 1 gets to send data every 5 ms).
+	- Is packet switching always better?
+		- Great for "bursty" data.
+			- Resource sharing
+			- Simpler, no call setup
+		- Excessive congestion possible: packet delay and loss due to buffer overflow
+			- Protocols needed for reliable data transfer and congestion control
+		- How to provide circuit-like behavior:
+			- Bandwidth guarantees traditionally used for audio/video applications
+		- Human analogies of reserved resources (circuit switching) versus on-demand resources (packet switching)
+	- Internet structure: a "network of networks"
+		- Given millions of access ISPs, how do we go about connecting them all together?
+		- Well, we don't want to connect each ISP to every other ISP, that would be horrible. 
+		- Options:
+			- Connect each access ISP to one global transit ISP? 
+				- Can't do this, we will end up with competitors and it would be a huge mess.
+			- Let's just add "internet exchange points" (IXPs) and "peering links" to join the global transit ISPs. 
+			- Furthermore, we'll do some regional ISPs.
+- Performance (loss, delay, throughput)
+	- Processing delay (router needs to extract data from packets, this takes time)
+	- Queuing delay (packets need to wait their turn because of the limited number of channels)
+	- Transmission delay (we are restrained by the bits per second and the size of the packet)
+	- Propagation delay (how long is the wire/distance to the recipient, and how fast is our data moving)
+	- How do packet loss and delay occur?
+		- Packets queue and wait for their turn
+		- Arrival rate to link (temporarily) exceeds output link capacity, and that leads to packet loss
+		- Packet delay is created by the nodal delay: $d_{nodal}=d_{processing}+d_{queue}+d_{transmission}+d_{propagation}$.
+			- $d_{processing}$ is $\frac{L}{R}$
+			- $d_{propagation}$ is $\frac{d}{s}$ (distance over speed).
+			- These two are very different. One is data size and processing rate, the other is physical distance and speed.
+	- Packet queuing delay (revisited):
+		- $R$: link bandwidth (bps)
+		- $L$: packet length (bits)
+		- $a$: average packet arrival rate
+	- Throughput:
+		- Rate (bits/time) at which bits are being sent from sender to receiver
+		- Throughput is subject to bottle necking. 
+- Security
+	- Network security is important for security, almost all attacks occur remotely over a network.
+- Go through the slides again, lectures for this class aren't great but you'll get through it. Shouldn't be terribly difficult.

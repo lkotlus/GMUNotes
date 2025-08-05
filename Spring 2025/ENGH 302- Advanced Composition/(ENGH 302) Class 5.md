@@ -1,0 +1,13 @@
+### New Major Project
+- So we need to do a synthesis matrix and essay...
+- I need to fill out another silly matrix, I don't understand why. People should be able to manage data in their heads without visual aids.
+- After that, I actually get to write something. I just need to analyze the problem and provide an argument for its resolution.
+- My audience is a multidisciplinary group of academics (my peers in the class)
+- Structure:
+	- Opening paragraph or two, introduce the problem and provide contextual background and technical details required from outside of my discipline.
+	- Series of "synthesis paragraphs" (bulk of the essay) that shows how sources are working together to reveal key aspects of the problem's causes, effects, and solutions
+	- Closing paragraph will have a comprehensive thesis on how the issue should be resolved and the next steps required to implement the solution.
+- It's a paper with a weird outline. I get it. Anyone in the room who can't figure out how to do this should probably not be in college. Or maybe it's the other way around, maybe I shouldn't be in college. Not sure. There's plenty for me to learn, but absolutely none of it is here.
+- Not all sources require coverage of every theme. If a theme needs more coverage, fill out some supplementary sources.
+- I need a source that actually states that there is a problem. I can do two supplementary sources and swap a third out with the stupid economics one.
+- Finish the synthesis matrix by Monday, do the little quiz thing on Wednesday.

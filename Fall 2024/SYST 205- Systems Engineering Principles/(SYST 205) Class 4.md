@@ -1,0 +1,216 @@
+### Some stuff
+- **Safety critical systems are on the final exam!**
+- Identify faults and failures!
+	- A fault is a static characteristic of a system that does not meet it's requirements. (noun)
+	- A failure is some unexpected behavior resulting from a fault. It is a state that the system is in, and it is not guaranteed from the presence of the fault. (verb)
+	- Example: a phone that can't work underwater doesn't have a fault or failure, it wasn't in the requirements.
+	- Example: if you're "water resistant" phone explodes after you use it post-hand washing, you have a fault and experienced a failure.
+	- Example: worn out break pads in a car are a fault, not stopping within the distance stated in requirements is a failure. The crash isn't the failure.
+- Reliability achievement
+	- Achieving system reliability is based on reducing failures via reduction of faults.
+	- Fault reduction techniques:
+		- Fault avoidance
+		- Fault detection (alert the user when something goes wrong; check engine light)
+	- Reliability can also be achieved by ensuring faults don't result in failures (fault tolerance).
+- Definitions (also on the final):
+	- Accident
+		- An unplanned event or sequence of events resulting in human death or injury.
+			- Car crash
+	- Incident
+		- A system failure which may potentially result in an accident.
+			- Breaks don't cause the car to stop within the required distance
+	- Hazard
+		- A condition with the potential for causing or contributing to an incident (could be external)
+			- You are a bit sleepy behind the wheel
+	- Examples:
+		- Drive over ice, car wobbles but is fine
+			- Hazard without incident
+		- Car skids, but nobody gets hurt
+			- Incident without accident
+		- Car crashes into a wall killing a family of 8 due to break failure
+			- Accident
+		- Door on Boeing plane doesn't have bolts properly applied (hazard), door comes off during flight (incident), everyone is fine and the plane lands (no accident).
+	- You cannot operate in a hazard free environment.
+	- We can't really prevent hazards, but we can prevent incidents from turning into accidents.
+- The swizz cheese model
+	- This is the cheese with the holes in it.
+	- However, we can align the holes of the cheese to make it so none of the holes go all the way through.
+
+### Systems thinking
+-  Systems thinking originated in the 1920s within several disciplines, notably biology and engineering, out of the observation that there were many aspects which scientific analysis could not explore.
+- Systems thinking explores the properties which exist once the parts have been combined into a whole.
+- The expectation of the systems thinkers of the 40s and 50s was that the scientific method would one day have two components: analytical thinking and systems thinking.
+- What is systems thinking?
+	- Seeing inter-relationships rather than linear cause-and-effect chains.
+	- A way of interpreting the universe as a series of interconnected and inter-related wholes.
+	- It can be applied within many different fields.
+- Problems with systems thinking:
+	- The early systems thinkers were over ambitious in their belief that the dynamics of a system could be completely analyzed.
+	- Systems thinking is still useful and hasn't been destroyed by complexity theory.
+	- Systems thinking is a crucial component of complexity theory.
+	- We are usually trying to consider how to intervene in a system rather than to define it with complete accuracy.
+- Insights afforded by systems thinking
+	- Wholes have properties that are the properties of the whole and not the parts.
+	- We cannot understand a wider system by looking in detail at its parts, because some properties only emerge when they are combined together.
+	- Components of a system interact with each other in a reciprocal flow of influence. These inter-relationships mean cause-and effect are difficult to understand due to complexity of the system.
+	- Any interventions we make will have many effects we did not predict or expect.
+	- Every human actor in a system brings to the system their understanding of its purpose and their view on the world.
+- Systems thinking isn't just about the good (I want the car to be safer), but the bad that goes with it (I want to sell more tires).
+- Example:
+	- I want the best grade, for the least amount of work, and ideally I learn a thing or two.
+	- The professor wants me to learn the most things for a normal amount of effort.
+	- The TA wants us to learn any amount so long as things don't take a long time to grade.
+- The most dynamic aspect of any system is the human actors.
+
+### Systems Knowledge Areas - Functional and State Models
+- "Some of the most important material in the class."
+- "This is the crux of practical application for the course."
+- We have reached content that we must know how to apply.
+- Non-functional requirements can't be modeled due to the fact that they are emergent behaviors.
+- An incorrect presentation is an incorrect model.
+- We are going to learn this as a cartoon rather than as a mathematical model. In the world of systems engineering, however, these cartoons represent mathematical models.
+- In the past, we were on paper with documents. It was always writing things down on paper/in a electronic document. Now we try to turn these into a set of models, because we don't want the words, we want what they represent.
+- In this class, we will cover:
+	- Functional model:
+		- What are the functions within the modeled system or subject area
+	- State machines
+		- What are the states that our system can be in and in what conditions can our system change states (absolutely a mathematical model)
+		- At its end, Monopoly is a state machine.
+			- Two dice, forty squares, n players, etc.
+			- Certain squares have certain outcomes.
+			- There are only so many ways that each player can move.
+			- We could draw a giant matrix and figure out the probability of board configurations. Then, if you multiply this matrix by itself an infinite number of times, you hit a steady state matrix. 
+			- Crazy stuff, very cool.
+	- Activity diagrams
+		- Graphical representations of workflows of stepwise activities and actions with support for choice, iteration, and concurrency.
+	- Use cases
+		- A use case is a list of steps, typically definition interactions between a role (an "actor") and a system, to achieve a goal.
+- Functional modeling
+	- The IDEF0 ("I def 0") Functional Modeling method is designed to model the decisions, actions, and activities of an organization or system.
+	- Show in an organized way how a system functions for particular functions at particular times for particular users.
+	- The basic diagram element is very simple, using just one box shape to define each activity or process, as illustrated. The four arrows around the box, whose initials give rise to the name ICOM.
+	- "Make furniture to order" function example: 
+		- Inputs
+			- Wood, design ideas, etc.
+			- Consumed and transformed into outputs.
+			- "Catalysts are not inputs."
+		- Controls
+			- Safety standards, customer requirements, etc.
+		- Outputs
+			- Inspected furniture
+		- Mechanisms
+			- Carpentry section
+	- ICOM goes clockwise starting from 9. Inputs on the left, controls on the top, outputs on the right, mechanisms on the bottom. ALWAYS.
+		- Arrows point into the box for everything but output, which points away.
+	- Controls and mechanisms:
+		- Controls can also be thought of as constraints. They restrict your actions and limit what you can do. They might be literal controls (dials, buttons, etc.), but they might also be laws you must conform to (regulations, laws, etc.)
+		- Mechanisms are the tools that we use. People we need, machines required, etc.
+	- Parenthesis around arrows are a tunnel. An arrow emerging from parenthesis came from the tunnel, an arrow head surrounded by them is going into one. Origin from a tunnel indicates that it does not appear on the parent box. Ending on a tunnel indicates that it won't be in the child diagram.
+	- Each function should decompose into 3-5 steps.
+
+### In-class activity:
+- So we're modelling a function on the board.
+- We have chosen "decelerate vehicle".
+- Top level:
+	- Controls:
+		- Weather
+		- Regulations
+		- Human physiology (can't go from 100 to 0 mph in 1 second without dying).
+	- Mechanisms:
+		- Some sort of control (something to provide input)
+	- Inputs:
+		- $v_{initial}$
+		- $\Delta v$
+		- $\Delta t$
+	- Outputs:
+		- $v_{final}$
+- Well that's all fine and good, but we should probably just have one box for accelerate vehicle...
+	- This takes the same inputs, but we allow for positive and negative $\Delta v$.
+- Let's find our 3-5 steps.
+	- Firstly, decide to accelerate
+		- Controls:
+			- Weather
+			- Regulations
+			- Human physiology
+			- Reaction time
+			- Obstacles
+		- Mechanisms:
+			- Some sort of control
+			- Senses
+		- Inputs:
+			- $v_{initial}$
+			- Desired $\Delta v$
+			- $\Delta t$
+		- Output
+			- Decision is made
+	- Next, send control signal
+		- Controls:
+		- Mechanisms:
+		- Inputs:
+			- Decision
+			- Actual analog/digital signal to the car
+		- Output:
+			- $\Delta v$ (not necessarily desired)
+	- Observe acceleration
+		- Controls:
+		- Mechanisms:
+		- Inputs:
+			- $\Delta v$ (not necessarily desired)
+		- Output:
+			- Loop back to decide
+			- Desired $\Delta v$
+
+### Another one
+- Eat cookie (cookie monster)
+	- Inputs:
+		- Cookies
+		- Milk
+	- Controls:
+		- Appetite
+		- Parents
+		- Number of cookies
+	- Outputs:
+		- Happiness
+		- Crumbs
+	- Mechanisms:
+		- Mouth
+		- Hand
+- Basic ICOM of a child eating cookies. Let's decompose.
+	- Get cookie
+		- Inputs:
+			- Cookies (available, not for eating)
+		- Controls:
+		- Outputs:
+			- Cookies (mine, for eating)
+		- Mechanisms:
+	- Get milk
+		- Inputs:
+			- Milk (available, not for dunking)
+		- Controls:
+		- Outputs:
+			- Milk (mine, for dunking)
+		- Mechanisms:
+	- Dunk cookie
+		- Inputs:
+			- Milk
+			- Cookie
+		- Controls:
+		- Outputs:
+			- Dunked cookie
+			- Cookie flavored milk
+		- Mechanisms:
+	- Put cookie in mouth
+		- Inputs:
+			- Dunked cookie
+		- Controls:
+		- Outputs:
+			- Happiness
+			- Crumbs
+		- Mechanisms:
+	- Drink cookie milk
+		- Inputs:
+			- Cookie milk
+		- Controls:
+		- Outputs:
+			- Happiness
+		- Mechanisms:

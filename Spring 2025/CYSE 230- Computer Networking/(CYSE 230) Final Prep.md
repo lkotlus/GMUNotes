@@ -1,0 +1,379 @@
+### Introduction
+- What are the components that comprise a network and what are their roles?
+	- The internet is a network of networks
+	- Comprised of nodes and edges
+	- Edges:
+		- End users, servers, etc.
+	- Access networks and physical media:
+		- Wired and wireless communication links
+	- Network core
+		- Routers and whatnot. Can either forward (local) or route (global)
+- Packet switching vs. circuit switching, pros and cons.
+	- Packet switching for lots of users (don't need to time slice)
+	- Circuit switching for few users (don't need to split data into packets)
+- The four types of delay (causes and calculations)
+	- Propagation
+		- Physical delay of light/radio waves travelling (distance/second)
+	- Transmission
+		- Caused by the speed at which the medium can transmit (bits/second)
+	- Processing
+		- Delay in a link processing the packet. So small that it is usually negligible.
+	- Queuing
+		- Delay from high traffic, waiting to get the packet at the front of the queue.
+- Concepts and benefits of layering. Layers in the OSI and TCP/IP model.
+	- We got layers like an onion
+		1. Application
+		2. Transport
+		3. Network
+		4. Data link
+		5. Physical
+
+### Application Layer
+- Function of the application layer and interaction with the transport layer
+	- The application layer is where applications are (duh)
+	- It's purpose is to act as the place where users interact and where programmers create their applications.
+	- Interacts with the transport layer through sockets for abstraction
+	- Processes
+		- Programs running on hosts
+		- Within the same host, two processes communicate using inter-process communication
+		- Processes in different hosts communicate by exchanging messages
+		- Client processes send messages and wait for responses
+		- Server processes wait for messages and send responses
+		- Processes send and receive messages through aforementioned sockets
+- Two types of network infrastructure
+	- Client-server (more reliable)
+	- P2P (scales better)
+- HTTP
+	- Hypertext Transfer Protocol
+	- Good ole' websites
+	- Cookies:
+		- HTTP is stateless, so we use cookies to store user state
+		- Essentially just have the state in a database with the cookie as the key for the user
+	- Persistent and non-persistent
+		- Persistent HTTP will establish a connection and keep it for the user. The user can then request as many objects on the same session as they would like.
+		- Non-persistent HTTP goes through the entire TCP handshake for each object you request (lame). You need to add the RTT for each object, gross.
+	- HTTP/1/1.1/2
+		- HTTP/1
+			- One object request at a time
+		- HTTP/1.1
+			- We add HTTP Pipeline with this! Allows multiple requests to be sent simultaneously.
+			- Responses are sent FCFS.
+		- HTTP/2
+			- Objects are sent back in frames to decrease the average wait for an object. Iterate through all objects and send one frame of the object at a time.
+- Email
+	- All protocols
+		- Delivery to server
+			- SMTP
+		- Retrieval from server
+			- POP3
+			- IMAP
+			- HTTP
+		- POP3 vs. IMAP
+			- POP3 downloads emails to the device and deletes them from the server
+			- IMAP keeps emails on the server, allowing for access from several devices
+- DNS
+	- Domain Name System
+	- Distributed hierarchical database
+		- Hierarchy of name servers all hold records
+	- All record types
+		- A
+			- Name: hostname
+			- Value: IP address
+		- CNAME
+			- Name: alias for canonical name
+			- Value: canonical name
+		- NS
+			- Name: domain
+			- Value: hostname
+		- MX
+			- Name: name
+			- Value: name of the mail server with the associated name
+	- Layers of servers
+		- Root server (responsible for when a server can't resolve a name)
+		- Top level (.com/.org/...) (responsible)
+		- Authoritative (amazon/pbs/...)
+	- Iterated and recursive queries
+		- Iterated
+			- Request a name from a local server
+			- It doesn't know, so it tells you a different server to ask
+			- Repeat until you find it. Most commonly used
+		- Recursive
+			- Request a name from a local server
+			- It doesn't know, so it contacts the server, which contacts the next, and the next, ...
+	- Reverse lookup does not count
+- P2P
+	- BitTorrent is cool and used for P2P file sharing
+	- Everyone has 256 kb chunks of a particular file that we want to share
+	- When you want a particular file, you go to people around you with bits of the file and request them in order of rarity
+	- Every 30 seconds you re-evaluate who you get data from based on how good they are. You also seed in random people to give them a chance.
+- Video storage and transmission
+	- Having one server is slow. You can do better with a bunch of servers working together (CDN, Content Delivery Network)
+	- Video can be streamed better by having multiple copies on several geographically diverse servers.
+
+### Transport Layer
+- Multiplexing and demultiplexing. Purposes and how they are implemented for TCP and UDP.
+	- How is it that my packets know which application they go to? How can I send out packets that know their destination all in one message? Demultiplexing and multiplexing!
+	- TCP:
+		- Just uses port number (we have a session, so we don't need to check IP)
+	- UDP:
+		- Uses port number and IP
+- UDP (characteristics, benefits/drawbacks, and applications)
+	- UDP is connectionless, which makes it fast. It's a "best-effort" protocol.
+	- Pretty much just used for streaming
+- Reliable data transfer (FSM, all variants, how transmission error/packet loss are handled)
+	- All versions:
+		- 1.0: perfectly reliable
+		- 2.0: potential errors, require ACK/NAK
+		- 2.1: handle garbled ACK/NAK by requiring 0 or 1 and checksum
+		- 2.2: only use ACK (send wrong sequence number for NAK)
+		- 3.0: use a timeout
+- Pipelining (Go-Back-N and Selective Repeat)
+	- GBN:
+		- Send any number of packets, but require a window of size N unacknowledged packets
+		- Re-send all packets including and after first NAK
+	- SR:
+		- Re-send only NAK packets
+	- ***PRACTICE THESE!!!!!***
+- TCP (packet structure, sequence and ACK number, how it handles transmission error/packet loss, and flow control)
+	- Packet structure:
+		- Header length tells us how long the header is in 32 bit words. This changes in length because of the options field.
+		- Options field is variable length and is used when we negotiate the maximum segment size (MSS) or window scaling factor
+		- CWR N/A
+		- ECE N/A
+		- URG indicates urgent data
+		- ACK tells us if the value in our ACK field is valid
+		- PSH indicates that we should pass data to upper layer immediately
+		- RST is used for a connection reset
+		- SYN tells us when we're doing connection startup
+		- FIN tells us when we're doing connection teardown
+	- Sequence and ACK number
+		- Piggyback!
+		- Sequence number is the byte-stream number of the first byte in the current segment
+		- ACK number is the byte-stream number of the first byte in the next segment (next sequence number)
+		- Re-send the sequence number in ACK if you want to NAK
+	- Transmission error/packet loss handling
+		- Depends on implementation, based on rdt 3.0
+	- Flow control
+		- Clients get overwhelmed
+		- To prevent this, the client advertises the amount of buffer space available
+		- Window size is synced with the client rwnd size.
+- Congestion control (harm, we we need control, how TCP handles it, and different variations of TCP handles)
+	- Harm of congestion control and why we need congestion control:
+		- Congestion is caused by the server being overwhelmed. Throughput can't exceed capacity, and so delay increases as capacity is approached.
+	- TCP congestion handling (different variations and working details)
+		- AIMD
+			- Additive Increase Multiplicative Decrease
+			- Increment window by 1 until loss, then cut window in half
+		- Sow start
+			- Begin with exponential grow to speed up AIMD
+			- Exponential growth is done at any point under ssthresh
+- Calculating internet checksums:
+	- Cut everything into 16-bit segments
+	- Add up all the segments and then complement each bit
+	- Carry bit gets added to the LSB
+
+### Network Layer Data Plane
+- Two key functions of the network layer and how they work
+	- Forwarding:
+		- Send a packet from an input port to an output port
+		- Local action, the data plane
+	- Routing:
+		- Select an entire route for the packet from link to link
+		- Global action, the control plane
+- Forwarding (how it works, components involved, considerations, and policies)
+	- We start with the input port:
+		- This has three steps:
+			1. Line termination (physical layer, bit reception)
+			2. Link layer receive protocol (such as Ethernet)
+			3. Lookup, forwarding, and queuing (network layer, decentralized switching using header field values)
+				- Goal is complete  input port processing at "line speed"
+				- Input port queuing: if datagrams arrive faster than forwarding rate into switch fabric. We will drop packets if the surpass the queue size.
+		- After these steps we move on to the switch fabric
+	- Destination based forwarding
+		- Destination address range determines the link interface
+		- Longest prefix matching means that we pick the case that matches the longest prefix (how many bits match before we reach wildcards). So for something like "oh, I match 1100100000001011100011000\*\*\*\*\*\*\* and 110010000001011100011\*\*\*\*\*\*\*\*\*\*", you just take the former because it's a longer prefix.
+	- Switching fabrics:
+		- N input ports and N output ports, we connect them with high-speed switching fabric. The fabric just transfers packets from input links to output links.
+		- The switching rate is the rate at which we can perform this transfer.
+		- Types of fabric:
+			- Memory:
+				- Everything goes into memory, and then from memory to output
+			- Bus:
+				- Direct input to output, no intermediate step
+			- Interconnection network
+				- We have a grid made up of "crossbars". It's super fast because our datagrams can take multiple routes to get sent to output simultaneously.
+				- Essentially making a switch fabric out of a bunch of smaller switch fabrics.
+	- Input port queuing:
+		- If switch fabric is slower than input ports combined, queuing may occur at input queues. Queueing delay and loss is due to input buffer overflows.
+		- Head-of-the-Line (HOL) blocking: queued datagram at front of queue prevents others in queue from moving forward.
+	- Output port queuing:
+		- Buffering is required when datagrams arrive from fabric faster than link transmission rate.
+		- Drop policy states which datagrams we drop. The ISP determines the priority of a packet, lower priority packets are dropped.
+	- Buffering:
+		- Calculations determine buffer size, bigger is not always better. Too much buffering creates delays.
+	- Packet scheduling:
+		- Priority
+			- Arriving traffic classified and queued by class, send packets from highest priority queue that has buffered packets, FCFS
+		- FCFS
+			- Duh
+		- Round Robin (RR)
+			- Arriving traffic classified and queued by class, iterate through each class and send the FCFS packet from that class before moving to the next class.
+		- Weighted Fair Queuing (WFQ) 
+			- Generalized RR algorithm
+- Everything about IP
+	- IPv4 is 32 bits, IPv6 is 128 bits
+	- Internet Control Messaging Protocol (ICMP) is responsible for error reporting and router signaling.
+	- Addressing can be either classful or classless (CIDR). No matter what, you have an $n$ bit net id and a $32-n$ bit hots id.
+	- Classful:
+		- Class A: first byte is 0-127, subnet mask 255.0.0.0
+		- Class B: first byte is 128-191, subnet mask 255.255.0.0
+		- Class C: first byte is 192-223, subnet mask 255.255.255.0
+		- Class D: First byte is 224-239, not normal
+		- Class E: first byte is 240-255, not normal
+	- Classless:
+		- You get to choose your subnets and netids!
+		- Take any address and put a slash with the prefix length in bits afterwards to show the subnet.
+		- 192.168.0.0/8 has an 8-bit prefix, which means we have 24 bits for the netids. That's a subnet mask of 255.0.0.0, which is huge!
+- DHCP
+	- Dynamic Host Configuration Protocol
+	- Essentially the service that lets us assign our IP address when we join a network.
+	- Arriving client sends out a DHCP discover (`yiaddr: 0.0.0.0`), server sends a DHCP offer (`yiaddr: offered_ip`), client sends a DHCP request (`yiaddr: requested_ip`), server sends a DHCP ACK (`yiaddr: granted_ip`).
+- NAT
+	- All devices in a local network share just one IPv4 address as far as the outside world is concerned. We don't want outsiders to know our internals, and we don't want tons of IPs.
+	- A NAT translation table essentially just converts a WAN side address to a LAN side address. WAN address is identical to IP between all of them, but it's a different port number.
+		- Example: we might map 138.76.25:5001 to 10.0.0.1:3345
+- IPv6
+	- 128 bits, uses hex to stay small.
+	- Format is eight groups of hex digits separated by colons. For example: $00:22:44:66:88:aa:cc:ee$
+
+### Network Layer Control Plane
+- Two types of routing protocols (what they are, how they differ, how they work, and using them)
+	- Global:
+		- All routers have complete topology and link cost info
+		- Dijkstra's Link State Routing Algorithm
+	- Decentralized:
+		- Routers initially only know link cost to attached neighbors
+		- Bellman-Ford Distance Vector Algorithm
+	- ***PRACTICE THESE***
+- AS, OSPF, and BGP
+	- AS:
+		- Autonomous Systems, also known as domains
+	- OSPF:
+		- Open Shortest Path First, a link state routing protocol for intra-AS routing protocols.
+		- Each router floods OSPF link-state advertisements to all other routers in the AS
+		- Multiple link cost metrics possible (bandwidth and delay)
+		- Each router has full topology and uses Dijkstra's algorithm
+		- All OSPF messages are authenticated to prevent malicious intrusion
+		- Two-level hierarchy
+			- Local area and backbone
+			- Link state advertisements are flooded only in area or backbone
+			- Each node has detailed area topology; only knows direction to reach other destinations
+	- BGP
+		- Border Gateway Protocol
+		- The de facto inter-domain (inter-AS) routing protocol. The glue that holds the internet together.
+		- Each AS has a means to eBGP (obtain subnet reachability information from neighboring ASs), iBGP (propagate reachability information to all AS-internal routers), and determine "good" routes to other networks based on reachability information and policy.
+		- Two BGP routers ("peers") exchange BGP messages, advertising paths to different destination networks.
+		- Policy based routing allows gateways receiving route advertisement to use particular rules to accept/decline a path. AS policy also determines whether to advertise a path to other neighboring ASs.
+	- BGP and OSPF are different because inter and intra-AS routing require different policies, scale, performance, etc.
+- Basic idea of SDNs and their benefits of traditional networks
+	- SDN lets us use a remote controller that computes and installs forwarding tables in routers. The controller uses a southbound API to communicate.
+	- We have a logically centralized control plane with this. This makes things easier to manage and avoid misconfiguration, table-based forwarding allows for us to program routers, and open implementation is better and allows for help from open source.
+	- The SDN controller is like the network OS. This maintains network state information, interacts with network control applications "above" via a northbound API, and is implemented as a distributed system for performance, scalability, fault tolerance, and robustness.
+	- Network control applications (routing, access control, load balancing, etc.) are all using a northbound API to communicate with the SDN controller.
+	- The SDN controller and control applications are all in the control plane
+	- Essentially, we just have better control. 
+
+### Link Layer
+- Service provided by the link layer
+	- It's the physical connection between devices, and we have services that allow two directly connected devices to communicate. Physically adjacent devices don't have a router or switch between them (Ethernet switches don't count).
+	- We offer:
+		- Framing and link access (encapsulate a datagram into a frame, channel access if in a shared medium, and MAC addresses in frame headers to identify source and destination)
+		- Reliable delivery between adjacent nodes (internet checksums, but frequently not used in low-bit error links like wired connections)
+		- Flow control (pacing between adjacent sending and receiving nodes), error detection (errors caused by signal attenuation and noise), and error correction (receivers need to detect and correct bit errors)
+	- ***Practice single bit and 2D bit parity!***
+- Different ways to implement multiple access (how to let many hosts use the channel)
+	- Ideally, we have:
+		1. When one node wants to transmit, it can send at rate $R$
+		2. When $M$ nodes want to transmit, they sand at an average rate of $\frac{R}{M}$
+		3. Fully decentralized (no special node to coordinate transmissions, no synchronization of clocks or slots)
+		4. Simple and easy to implement
+	- ALOHA
+		- Works the same a slotted, but we aren't synchronized.
+		- Very bad for efficiency, but is simpler and has no synchronization.
+		- Collision probability increases due to not synchronizing!
+	- Slotted ALOHA
+		- Assume that all frames are the same size, time is divided into equal time slots, nodes start to transmit only at slot beginning, nodes are synchronized, and if 2 or more nodes transmit in a slot all nodes detect the collision.
+		- When a node obtains a fresh frame, it transmits in the next slot. If no collision, then we can send a new frame. If there is a collision, a probability is assigned to the next frame and if a random number generator allows it, then we re-send that frame in the next slot (regenerating to try again if RNG isn't on our side).
+		- Pros: single active node can continuously transmit at full rate of channel, highly decentralized (only slots in nodes need to be in sync), and simple
+		- Cons: collision and wasting slots, idle slots, clock synchronization
+	- CSMA
+		- Carrier Sense Multiple Access
+		- Simple CSMA:
+			- Listen before transmitting. If the channel is idle, send. If the channel is not idle, wait. 
+			- Collisions can still occur due to propagation delay. I can't see that another node started its transmission for a small bit of time because of the propagation delay, so we might both start at the same time.
+		- CSMA/CD (Collision Detection)
+			- Collisions detected within short time, colliding transmissions are aborted to reduce channel wastage. 
+			- CD is easy for wired mediums, but very difficult for wireless ones.
+			- Highly efficient, and better than ALOHA. Cheap, simple, and decentralized.
+		- Fits all of the ideal goals!
+- ARP
+	- What is it, why is it used, how does it work?
+		- MAC Addresses are 48 bits long, used to locally get a frame from one interface to another physically connected interface. The MAC is burned into the ROM of the NIC (thought of as unchangeable). 12 hex digits. MAC addresses are administered by IEEE, and manufacturers buy portions of space from them.
+		- ARP (Address Resolution Protocol) is how each node gets IP-MAC routings. These routings are put into an ARP table. Essentially, a device sounds out a broadcast ARP query (broadcast frames have a destination address of FF:FF:FF:FF:FF:FF), and it gets ARP responses from all of the other devices (response frames have a destination address equal to the source address of the broadcast query). 
+	- How ARP acts in practice and how it works with IP to get a datagram from source to destination
+		- Source and destination IP never change (these are in our IP datagram), but source and destination MAC (these are in our link layer frame) change with each step of the process.
+		- Link layer gets you from host to router to host to router to ... to the intended destination.
+	- Basic concepts of Ethernet
+		- Bus was popular in the mid 90s, with all nodes in the same collision domain and connected via a hub. Nowadays we use ethernet switches.
+		- Nodes don't collide in a switch, and the switch is essentially invisible to the hosts. You can just think of it as a very smart cable.
+		- Ethernet switches optimize themselves, which is insane. They're different from routers because, as stated, they are transparent. They don't need to be configured, and can handle simultaneous transmission when storing and forwarding ethernet frames.
+		- Ethernet is unreliable and connectionless. We don't have a handshake process between NICs (Network Interface Card) or anything like that. We don't ACK or NAK either. The MAC used for Ethernet is unslotted CSMA/CD with binary backoff
+			1. NIC receives datagram from network layer and creates a frame
+			2. NIC senses the channel (if idle start frame transmission, if busy then wait)
+			3. If NIC transmits without transmission, it's done with the frame
+			4. If NIC detects another transmission while sending, abort.
+			5. After aborting, NIC enters binary (exponential) backoff. After the $m$th collision, NIC chooses $K$ from random $\{0,1,2,...,2^{m-1}\}$. NIC waits $512\cdot K$ time before re-sending. More collisions leads to longer backoff.
+	- VLAN
+		- Virtual LAN. We can take a single LAN and separate it into two VLANs for better control, scalability, privacy, and security. 
+		- We typically use port-based VLANs, so particular ports in a switch belong to different VLANs.
+		- VLANs are connected by a VLAN enabled switch, LANs are connected by routers.
+- Day in the life of a web request
+	- Just know how link layer frames get passed along to deliver IP datagrams. Full journey from host to host.
+
+### Wireless and Mobile Networks
+- Hidden terminal problem and the cause
+	- When two nodes are both attempting to communicate with a third node, but are out of range from one another (due to either distance or a physical object) sort of like a Venn Diagram. This makes it so CDMA or any other MAC protocol cannot detect another sender, drastically increasing collisions.
+- CDMA and how it works
+	- Senders and receivers all have set codes. Send out a message using your encoding by multiplying your value (+1 or -1) with each digit in your code. After that, the message is decoded by taking the received message multiplying each digit with the corresponding digit in the code and summing the results. Getting a sum of 8 means you received a +1, getting a sum of -8 means you received a -1. ***PRACTICE THIS***
+- 802.11 and how it works
+	- This is the IEEE WiFi standard.
+	- Wireless networks are the same as other networks, but terminology changes a little bit. Hosts are still just wireless hosts, access networks are base stations, and network core is just wireless links.
+	- You can use either ad-hoc or base station versions of 802.11. Ad hoc means that nodes can only transmit to other nodes within link coverage, nodes organize themselves into a network and route among one another, it's single-hop P2P. We also use CSMA/CA.
+	- Signal Noise Ratio (SNR) and Bit Error Rate (BER) have an inverse relationship.
+	- Our LAN architecture is made up of wireless hosts and base stations. The Basic Service Set (BSS) contains wireless hosts and AP (Access Point) base stations (only hosts in ad hoc mode).
+	- A single frequency from the spectrum is chosen by the AP admin for the AP. Interference is possible, as the channel can be the same as that chosen by a neighboring AP.
+	- Arriving hosts must associate with an AP. This is done by scanning channels and listening for beacon frames containing AP's name (SSID) and MAC address. Scanning can be either passive (beacon frames sent from APs, association request frame is sent to APs, and association response frame sent from selected AP to host) or active (probe request sent from host, probe response sent from APs, association request sent from host to selected AP, association response frame sent from selected AP to host).
+	- CSMA/CA is easy. The 802.11 sender just checks if the channel is idle. If not, then transmit the entire frame (without CD). If the channel is busy, then start a random backoff time and transmit when the timer finishes (repeating if necessary). The 802.11 receiver sends an ACK if the frame is received (necessary due to hidden terminal problem).
+	- We can avoid collisions by sending a small Request To Send (RTS) packet to the BS using CSMA. The BS will then broadcast a Clear To Send (CTS) in response. Everyone will know when you're sending. A new RTS can be sent after the BS ACKs.
+	- Get a picture of an 802.11 frame!
+- 4G/5G networks and their basic concepts
+	- 4G LTE (Long Term Evolution) and 5G are the solution for wide-area mobile internet.
+	- UE are mobile devices. eNode-B are base stations. EPC is the network core. Within the EPC, we have a Mobility Management Entity (MME, does the device authentication, mobile device management, and path (tunneling) setup from mobile device to P-GW), a Home Subscriber Service (HSS, stores info about mobile devices for which the HSS's network is their "home network" and works with MME for device authentication), a PDN Gateway (P-GW, looks like any other internet gateway router and provides NAT services), and a Serving Gateway (S-GW). 
+	- LTE mobile devices have two sleep modes. Light sleep after 100 ms of inactivity (wake up periodically to check for downstream transmissions) and deep sleep after 5-10 seconds of inactivity (might change cells while deep sleeping, needs to re-establish association).
+	- SIM cards give global identifiers despite changing IP.
+
+### Security
+- Basic concepts of secret key and public key cryptography as well as hashing functions
+	- Properties, similarities, and differences between public key and secret key algorithms
+		- Both have a key that encrypts, secret key uses the same key for encryption and decryption. Public key uses one to encrypt and another to decrypt.
+		- DES (64-bit key block cipher with block chaining) and AES (128, 192, and 25-bit key block cipher with chaining) are both symmetric (secret) key. RSA is public key.
+		- Public Key Cryptography uses digital signatures that allow us to digitally sign our documents by encrypting them with the private key. 
+	- How to use public/secret key algorithms and hash functions for authentication and integrity
+		- We digitally sign our documents by encrypting them with the private key.
+			- $K_B^+()$ is the public key, $K_B^-()$ uses the private key.
+			- Asymmetric encryption is hilariously symmetric in the sense that $K_B^-(K_B^+(m))=m=K_B^+(K_b^-(m))$
+		- Public key decrypts it and proves that the source is reliable.
+- Firewalls and IDS/IPS, along with basic concepts and working principles
+	- Ports for clients should always be "> 1023". Responses from servers should always be ACK only. (Could be worth using a picture)
+	- Stateless packet filters just use ACLs. They're fast but dumb and less secure. We can only filter based on static criteria. Stateful packet filters can use actual context to help us with stuff.
+	- Intrusion Detection Systems (IDS) give us packet filtering and deep packet inspection (much more sophisticated than a firewall). 

@@ -1,0 +1,189 @@
+### TCP
+- Alright, so we were talking about FSMs last week. Lil' Finite State Machine action.
+- We ended on rdt 3.0, which gives us timeouts and pipelining.
+- Recall for TCP...
+	- Transport layer
+	- Connection-oriented
+	- rdt
+	- Congestion control
+	- Flow control
+- Now that we're done with rdt, we can fully cover TCP!
+- TCP Overview:
+	- Point-to-point
+		- One sender, one receiver
+	- Full duplex data:
+		- Bi-directional data flow in the same connection
+		- MSS (Maximum Segment Size): the largest amount of data that can be placed in a segment.
+		- MTU: Maximum Transmission Unit
+	- Connection-oriented:
+		- Handshaking initializes sender and receiver state before data exchange.
+	- Flow controlled:
+		- Sender will not overwhelm receiver
+- TCP Segment Structure:
+	- Header is 20 bytes.
+	- We use 32 bits for each line.
+	- Lines:
+		1. Source port and destination port
+		2. Sequence number (recall rdt sequence numbers, )
+		3. Acknowledgement number (sequence number of the next expected byte)
+		4. Header length (4-bits), unused 4 bits, 8 bits (C (congestion notification, E (congestion notification), U (unused), ACK, P (unused), RST (reset), SYN (synchronize), FIN (finish)), receiver window (RWND)
+		5. Checksum and urg pointer.
+		6. TCP options (variable length)
+		7. Application data (variable length)
+- TCP Sequence Numbers and ACKs
+	- So we have a window size, $N$.
+	- The window size is just how many segments we can send at a time.
+	- The sender sequence number space has three levels:
+		- Sent and ACKed
+		- Sent, not yet ACKed (in-flight) (in the window)
+		- Usable, but not sent (in the window if there is space)
+		- Not usable (window is full)
+	- For each of these, the sequence number is the index of the first byte in a segment data.
+	- Acknowledgments:
+		- Sequence number of the next byte expected from the other side
+		- Cumulative ACK
+	- Receiver can handle out-of-order segments with either go-back-N or selective repeat. This is up to the implementation, not the TCP spec.
+	- Piggyback:
+		- ACK is not send immediately by the receiver. It is included in the next data segment from the receiver to the sender.
+		- The ACK number for our ACK is the length of our data (in bytes) plus the sequence number. The sequence number for our ACK is the ACK number of the received segment. (this is what "Cumulative ACK" means!)
+- RTT and Timeout:
+	- So we want the timeout to be larger than the round trip time (RTT), but that varies.
+	- If the timeout is too large, then we will be very slow if we drop segments.
+	- If the timeout is too small, then we will re-send segments that aren't dropped (premature duplicate). 
+	- We can estimate our RTT by getting a sample RTT. The is the measured time from segment transmission until ACK receipt
+	- Sample RTT varies, so we want to estimate it to be "smoother". We will average several recent measurements. First thing to make sense today.
+	- $\text{EstimatedRTT}=(1-\alpha)\cdot\text{EstimatedRTT}+\alpha\cdot\text{SampleRTT}$
+		- Exponential weighted moving average (EWMA)
+		- Influence of past sample decreases exponentially fast.
+		- The typical value of $\alpha$ is $\alpha=0.125$.
+	- Our timeout interval is the estimated RTT plus a safety margin.
+		- Large variation in estimated RTT will give us the need for a larger safety margin.
+	- We don't have to know any of the equations. The point is that we calculate timeout to be larger than the weighted moving average of RTT.
+- Retransmission scenarios:
+	- Timeout:
+		- Host A sends a segment with 8 bytes of data, sequence number 92.
+		- Host B sends ACK 100, but the segment is dropped.
+		- After the timeout is reached, host A re-sends the aforementioned segment
+		- Host B sends ACK 100.
+	- Premature timeout (with pipelining):
+		- Host A sends sequence 92, 8 bytes of data
+		- Host A sends sequence 100, 20 bytes of data
+		- Timeout is reached
+		- Host A sends sequence 92 again
+		- Host B sends ACK 100
+		- Host B sends ACK 120
+		- Host B receives sequence 92 and sends ACK 120
+	- Cumulative ACK covers for earlier lost ACKs. This is super helpful!
+- TCP fast retransmit:
+	- So let's say we send five segments, but the second is dropped. If we have duplicate acknowledgements for the lost segment before timeout, we will retransmit before the timeout occurs. Smart.
+- Flow control
+	- So we have send and receive buffers.
+		- The process writes data, sends it through a socket, and it goes into the TCP send buffer.
+		- Segments are sent over the channel
+		- From the channel, they go into a TCP receive buffer. This buffer goes through the socket on the receiver, and the process on the receiver reads that data.
+		- Makes sense.
+	- So imagine if segments are being sent very fast, but the receiving process is very slow. What will happen?
+		- The receive buffer will overflow! Not okay!
+		- This is why we need flow control.
+	- We do this by sending the receiver window in our frame! It's just the number of bytes the receiver is willing to accept.
+	- The sender will limit the amount of unacknowledged ("in-flight") data to the receiver's RWND value.
+	- Guarantees that the receive buffer will not overflow. 
+	- The typical default size of this buffer is 4096 bytes, but many operating systems auto-adjust the RcvBuffer.
+	- Flow control is easy. Congestion control is not!
+- Connection management
+	- Before exchanging data, the sender and receiver "handshake"
+		- Agree to establish connection (mutual agreement)
+		- Agree on connection parameters (such as starting sequence numbers)
+	- So we used to do a 2-way handshake. It was just:
+		- Request connection
+		- Accept connection
+	- This works, but it's flawed. Let's look at a scenario:
+		- If the request connection packet is resent prematurely, then two connections can be established on accident. Essentially, we send a new connection request while a connection is half open.
+		- This results in duplicate data.
+	- To fix this, we use a 3-way handshake!
+		- SYN, SYN ACK, ACK
+		- Server states are: LISTEN -> SYNSENT -> ESTAB
+		- Client states are: LISTEN -> SYNRCVD -> ESTAB
+		- Example:
+			- Server sends segment, SYN bit is 1, sequence number is X.
+			- Client sends segment, SYN bit is 1, sequence number is Y, ACK bit is 1, ACK number is X+1
+			- Server sends segment, ACK bit is 1, ACK number is Y+1.
+	- To close a connection...
+		- We use the FIN bit.
+		- FIN, FIN ACK, ACK.
+			- Server sends FIN
+			- Client sends ACK
+			- Client sends FIN
+			- Server sends ACK
+		- Just another 3-way handshake.
+		- Simultaneous FIN exchanges can be handled.
+		- States:
+			- Server: ESTAB -> FIN_WAIT_1 -> FIN_WAIT_2 -> TIMED_WAIT (wait for twice the maximum segment lifetime) -> CLOSED
+			- Client: ESTAB -> CLOSE_WAIT -> LAST_ACK -> CLOSED
+- Congestion control
+	- This is very difficult. For a client, it's just one server to manage. But for the server, it's many clients! How can we handle this.
+	- So informally, too many sources sending too much data for the server or network to handle. 
+	- This is a top 10 problem for networks.
+	- Simplest scenario:
+		- One router
+		- Infinite buffers
+		- Host A talks to server A, host B talks to server B. This all goes through our one router.
+		- No retransmission is needed, but what happens as both clients start to take up $\frac R2$? We will fill up the link capacity and bottleneck the network.
+		- We put a cap on our maximum per-connection throughput to $\frac R2$, so as we approach this, delay increases by a ton.
+		- We will then start to retransmit data, and once this starts we never get anything done.
+	- Another scenario:
+		- One router
+		- Finite buffers
+		- Host A talks to server A, host B talks to server B.
+		- So buffers now must account for retransmit data. 
+		- To idealize this, we can say that we have some perfect knowledge of which packets are lost.
+		- The sender only resends packets if they are known to be lost.
+	- Another one:
+		- Multi-hop (four routers)
+		- Finite buffers
+		- Hell
+	- Essentially...
+		- Throughput can never exceed capacity
+		- Delay increases as wee approach capacity
+		- Loss/retransmission decreases effective throughput
+	- End-end congestion control:
+		- No explicit feedback from network
+		- Congestion is inferred from observed loss and delay
+		- Makes sense!
+		- Two ways to know there's congestion:
+			- Host sees three duplicate ACKs
+			- Network sees delay
+	- Network-assisted congestion control:
+		- Routers provide direct feedback to sending/receiving hosts with flows passing through congested router
+		- May indicate congestion level or explicitly set the sending rate.
+- TCP congestion control strategy:
+	- AIMD: Additive Increase Multiplicative Decrease
+	- Senders can increase sending rate until packet loss (congestion) occurs, then decrease sending rate on loss event. 
+		- This is called additive increase
+		- Increase sending rate by 1 max segment size every RTT until we detect loss.
+	- We cut sending rate in half for each loss:
+		- Multiplicative decrease
+	- Why use this?
+		- Distributed and asynchronous algorithm. It has been shown to:
+			- Optimize congested flow rates network wide
+			- Have desirable stability properties.
+	- Very smart algorithm.
+	- Details:
+		- So we have a congestion window. The difference between the last byte sent and last byte ACKed must be less than or equal to the congestion window length.
+	- Example (slow start):
+		- Additive increase is too slow to ramp up a new TCP connection at the beginning.
+		- When connection begins, increase rate exponentially until first loss event.
+		- Called slow start because we start at 1, go to 2, 4, 8, etc. But no matter what, we start slow with 1.
+		- We need a slow start threshold (ssthresh) to switch from exponential to linear.
+- TCP CUBIC:
+	- Is there a better way than AIMD to "probe" for usable bandwidth?
+	- CUBIC is default on Linux, works better.
+- Bottleneck link:
+	- TCP increases it's sending rate until packet loss occurs at some router's output: the bottleneck link.
+	- It's useful to focus on this bottleneck link to fully understand congestion.
+- Most important takeaway:
+	- How do we implement TCP with rdt?
+- Homework 3 will be available no later than tomorrow.
+- Midterm won't include lab stuff.
+	- Know how to calculate checksums
+	- Know how to calculate delays

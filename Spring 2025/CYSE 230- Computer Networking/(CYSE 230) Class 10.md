@@ -1,0 +1,245 @@
+### A Bit More Network Layer
+- SDNs mostly.
+	- Data plane switches are controlled by the SDN
+	- An SDN controller is using a southbound API to communicate. 
+	- Network control applications (routing, access control, load balancing, etc.) are all using a northbound API to communicate with the SDN controller. 
+	- The SDN controller and control applications are all in the control plane.
+
+### Link Layer
+- Hell yeah brother. So this is physical connection between devices. How do two directly connected devices communicate? 
+	- Physically adjacent devices are ones that do not have a router or switch in between them.
+- Roadmap:
+	- Introduction
+	- Error detection and correction
+	- Multiple access protocols
+	- LANs
+		- Addressing, ARP
+		- Ethernet
+		- Switches
+		- VLANs 
+	- A day in the life of a web request.
+- The link layer is responsible for transferring datagrams from one node to other physically adjacent nodes in a network.
+- Services:
+	- Framing and link access:
+		- Encapsulates a datagram into a frame, adding a header and trailer
+		- Channel access if in a shared medium
+		- MAC addresses in frame headers identify source and destination
+	- Reliable delivery between adjacent nodes
+		- We just use an internet checksum
+		- Rarely used in low bit-error links
+			- Wireless links have high error rates
+	- Provided:
+		- Flow control
+			- Pacing between adjacent sending and receiving nodes
+		- Error detection
+			- Errors caused by signal attenuation and noise
+		- Error correction
+			- Receiver identifies ***and corrects*** bit error(s)
+- MAC addresses are meant to be static
+- Where is the link layer implemented?
+	- In each and every host
+	- Link layer implemented in Network Interface Card (NIC) or on a chip
+	- Attaches into host's system
+	- Combination of hardware and software.
+- Interfaces communicating:
+	- The CPU sends a datagram to the NIC, which adds a link header.
+	- The receiving NIC receives the frame, removes the header, and sends to the CPU.
+- Error detection and correction:
+	- EDC: Error Detection and Correction (e.g. redundancy)
+	- D: Data (protected by error checking and may include header fields)
+	- Essentially, we send D and EDC. EDC is usually redundancy that allows error correction/detection algorithms to recover data in the event of any issues.
+	- Parity checking:
+		- Single bit parity:
+			- Detects single bit errors
+			- Really not great. Typically is a 1 if we have an odd number of 1's in the data.
+			- We can't correct errors like this.
+		- Two-dimensional bit parity:
+			- Detects and corrects single bit errors.
+			- Do single bit parity on each row and column of your data if you were to make a rectangle out of it.
+			- If there's an error on a point of intersection, that's the flipped bit.
+- Multiple access protocols:
+	- Channel partitioning
+		- Just like circuit switching
+	- Two types of links:
+		- Point to point
+			- Ethernet switches and hosts
+			- PPP for dial-up
+		- Broadcast
+			- Old-fashioned ethernet
+			- 802.11 wireless LAN, 4G/4G satellite
+	- Multiple access protocols:
+		- Single shared broadcast channel
+		- Two or more simultaneous transmission by nodes leads to interference
+			- Collision is if a node receives two transmissions at once
+	- Ideal multiple access protocol:
+		- Given: multiple access channel (MAC) of rate $R$ BPS
+		- Desirable characteristics:
+			1. When one node wants to transmit, it can send at rate $R$
+			2. When $M$ nodes want to transmit, they send at an average rate of $\frac{R}M$
+			3. Fully decentralized
+				- No special node to coordinate transmissions
+				- No synchronization of clocks or slots 
+			4. Simple and easy to implement
+	- MAC protocols: taxonomy
+		- Three broad classes
+		- Channel partitioning
+			- Like circuit switching, divide into time slots
+			- Allocate piece to node 
+		- Random access
+			- Channel is not divided and allows for collisions
+			- "Recovers" from collisions
+		- Taking turns
+			- Nodes take turns, nodes without a date to send can skip
+	- TDMA: Time Division Multiple Access (channel partitioning)
+		- Access to channel in rounds
+		- Each station gets a fixed length slot in each round
+		- Unused slots go idle
+	- FDMA: Frequency Division Multiple Access (channel partitioning)
+		- Channel divided into frequency bands
+		- Each station assigned a band
+		- Unused time in a band goes idle 
+	- Polling (taking turns)
+		- Master node invites other nodes to transmit in turn
+		- Typically used with "dumb" devices
+		- Concerns:
+			- Polling overhead
+			- Latency
+			- Single point of failure at the master
+		- Bluetooth works this way
+		- Fails need 3
+	- Token passing:
+		- Control token passed from one node to the next sequentially
+		- Token message
+		- Concerns:
+			- Token overhead
+			- Latency
+			- Single point of failure (machine currently with the token)
+		- Fails need 3
+	- Random access protocol:
+		- When node has a packet to send:
+			- Send at full transmission rate
+			- Nodes don't coordinate
+		- Collisions will occur
+		- Random access MAC protocol specifies:
+			- How to detect collisions
+			- How to recover from collisions
+		- Examples of random MAC protocols:
+			- ALOHA and slotted ALOHA
+			- CSMA, CSMA/CD, CSMA/CA
+	- Slotted ALOHA:
+		- Assumptions:
+			- All frames are the same size
+			- Time divided into equal time slots (time to transmit 1 frame)
+			- Nodes start to transmit only at slot beginning
+			- Nodes are synchronized
+			- If 2 or more nodes transmit in slot, all nodes detect collision
+		- Operation:
+			- When node obtains a fresh frame, it transmits in the next slot
+			- If no collision:
+				- We can send a new frame
+			- If collision:
+				- A probability ($p$) is assigned to the frame. If random number generator allows it ($p$ chance to get it), it is sent in the next slot. 
+		- Pros:
+			- Single active node can continuously transmit at full rate of channel
+			- Highly decentralized: only slots in nodes need to be in sync
+			- Simple
+		- Cons:
+			- Collision and wasting slots
+			- Idle slots
+			- Clock synchronization
+		- Efficiency:
+			- Long-run fraction of successful slots (many nodes and all with many frames to send)
+			- Suppose $N$ nodes with infinite frames to send and each transmits in slot with probability $p$
+			- Maximum efficiency is $\frac{1}{e}\approx0.37$
+	- Pure ALOHA (unslotted):
+		- Simpler and no synchronization
+			- When frame first arrives it is immediately transmitted
+		- Collision probability increases with no sync
+			- Frame sent at $t_o$ collides with other frames sent in $t_o-1$, $t_o+1$, etc.
+		- Really bad efficiency
+	- CSMA (Carrier Sense Multiple Access)
+		- Simple CSMA:
+			- Listen before transmit
+			- If channel is idle:
+				- Send
+			- Otherwise:
+				- Wait
+			- Collisions can still occur due to propagation delay. I can't see that another node started its transmission for a small bit of time because of the propagation delay, so we might both start at the same time.
+		- CSMA/CD (Collision Detection):
+			- Collisions detected within short time
+			- Colliding transmission aborted and reduces channel wastage
+			- Collision detection is easy in wired and difficult with wireless
+			- Efficiency:
+				- There's a formula that seems unimportant
+				- It's much better than ALOHA. It's also cheap, simple, and decentralized.
+- LANs
+	- Addressing and ARP:
+		- MAC Addresses:
+			- IP is 32 bit
+			- MAC is 48 bit
+			- Used locally to get frame from one interface to another physically connected interface
+			- MAC is burned into the ROM of the NIC (thought of as unchangeable)
+			- 12-digits of hex
+		- Each interface in a LAN:
+			- Has a globally unique 32-bit IP
+			- Has a globally unique 48-bit MAC
+		- MAC addresses are administered by IEEE
+		- Manufacturers buy a portion of space
+		- ARP (Address Resolution Protocol) table:
+			- Each IP node (host and router) on a LAN has a table
+				- IP/MAC address mappings for some LAN nodes:
+					- \<IP address; MAC address\>
+			- ARP fills in this table for us.
+				- It sends out a broadcast ARP query to get IPs and MACs
+		- Routing to another subnet:
+			- Focus on addressing at IP (datagram) and MAC (frame) levels
+				- Sender sends to MAC address of the router with the recipient IP
+				- Router knows the MAC address of the recipient
+				- Router sends to that MAC
+			- Datagram destination is the IP (final place). Frame destination is the MAC (next link).
+			- Routers have a MAC on each side.
+			- The moral of the story is that MAC addresses will change as a packet travels, but IP addresses will never change.
+	- Ethernet:
+		- Physical topology
+		- Bus: popular through the mid 90s
+			- All nodes in same collision domain and connected via a hub
+		- Switched:
+			- Prevails today
+			- Active link-layer 2 switch in center
+			- Each spoke runs a separate Ethernet protocol (nodes do not collide with each other)
+		- Bus is coaxial cable, switched is an ethernet switch
+		- Ethernet is unreliable and connectionless
+			- No handshaking between sending and receiving NICs
+			- Receiving NIC doesn't send ACKs or NAKs to sending NIC
+				- Data in dropped frames recovered only if initial sender uses higher layer rdt, otherwise it is dropped and data is lost.
+			- Ethernet MAC is unslotted CSMA/CD with binary backoff
+		- CSMA/CD Ethernet Algorithm:
+			1. NIC receives datagram from network layer and creates a frame
+			2. If NIC senses channel:
+				- If idle start frame transmission
+				- If busy wait until idle and then transmit
+			3. If NIC transmits entire frame without collision, NIC is done with frame
+			4. If NIC detects another transmission while sending, abort
+			5. After aborting, NIC enters binary (exponential) backoff:
+				- After $m$th collision, NIC chooses $K$ from random $\{0,1,2,...,2^m-1\}$. NIC waits $512\cdot K$ time before re sending.
+				- More collisions leads to longer backoff.
+	- Switches:
+		- Switches are link layer devices:
+			- Takes an active role
+			- Stores and forwards ethernet frames
+			- Examines the incoming frames MAC address, selectively forwards according to CSMA/CD
+		- Transparent:
+			- Hosts are unaware of presence of switches
+				- Switches don't have MAC or IP addresses
+		- Plug-and-play and self-learning
+			- Switches don't need to be configured
+		- Simultaneous transmission:
+			- Hosts have dedicated and direct connection to switches
+			- Ethernet protocol used on each incoming link to avoid collision
+			- There's a switch table that tells the switch which links connect what
+		- Self-learning:
+			- Fills out the switch table based on traffic
+			- Broadcasts if something isn't in the table
+		- Interconnecting switches:
+			- Self learning switches can be connected. 
+- We got out early :)

@@ -1,0 +1,33 @@
+### Flip-flops
+- Master-Slave D Flip-Flop:
+	- So we have two gated D latches
+		- The first, master, changes its state while clock is 1
+		- The second, slave, changes its state while clock is 0
+	- $Q$ becomes $D$ whenever $Clk$ is 1
+- Positive edge:
+	- $Q$ becomes $D$ when $Clk$ becomes 1
+- Negative edge:
+	- $Q$ becomes $D$ when $Clk$ becomes 0
+- Edge-Triggered Flip-Flop is similar in functionality, and we can implement it with 6 NAND gates.
+	- Negative edge triggered D flip-flop is the same, but we use NOR gates.
+- Clear and Preset inputs:
+	- Sometimes we want to set $Q=1$ and $Q=0$. 
+	- We use preset and clear (respectively) for this.
+	- These inputs are asynchronous to the clock.
+	- Active-low preset forces $Q$ to 1
+	- Active-low clear forces $Q$ to 0
+- We can program an enable input by using a 2-1 MUX. We essentially just send the MUX into $D$, and $D$ is the 1-output of the 2-1 MUX. Very neat.
+- T Flip-Flop:
+	- Just another FF type. We can derive it from a basic D FF.
+	- The name T is from the behavior of the circuit, which "toggles" its state when $T=1$. 
+		- This is useful for counter circuits
+	- Essentially, if $T=1$ on the target edge of the clock, $Q(t+1)=\overline{Q(t)}$.
+	- We have positive and negative edge triggers for this as well.
+- The main focus here seems to be figuring out what type of FF we have based on a time diagram.
+- JK Flip-Flop:
+	- This is derived from the basic D FF such that $D=J\overline{Q}+\overline{K}Q$. 
+	- Combines the $SR$ and the $T$ FF:
+		- Behaves like $SR$ for all values except $J=K=1$
+		- When $J=K=1$, we have a $T$ FF
+		- $J=1$ resets to $Q=1$
+		- $K=1$ resets to $Q=0$

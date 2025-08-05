@@ -1,0 +1,43 @@
+### Operations with matrices
+- Awwww yeah
+- With notation: $A$ and $B$ allow for $AB$, so $(AB)_{ij}=\text{row}_i(A)\cdot\text{col}_j(B)$
+
+### Inverse of a matrix
+- If we can multiply matrices, can we divide them? I mean, we kind of want to find $\overrightarrow{x}=\frac{\overrightarrow{b}}{A}$, that seems easy to do.
+- Well, dividing is the same as multiplying by the reciprocal...
+- Reciprocal of $a$ is $a^{-1}$. With a function, $f^{-1}(x)$ is the inverse of the function. Hmmm.
+- We really just want to find the matrix that, when multiplied, becomes the identity matrix.
+- **<u>Definition!</u>**
+	- An $n\text{x}n$ matrix $A$ is <u>invertible</u> if there is a matrix, $C$, such that $CA=I_n=AC$.
+	- If the matrix is invertible, then the matrix $C$ is called the inverse of $A$.
+	- If $B$ is another matrix with this property... $$BA=I_n=AB$$ Then $$BAC=I_nC$$ From above $$BI_n=I_nC$$ Based on the Identity matrix, then $$B=C$$ Therefore the inverse of a matrix (when it exists) is unique.
+	- $A^{-1}$ denotes the unique inverse of $A$ (assuming it exists).
+- Example!
+	- $$A=\begin{bmatrix}2 & 5\\-3&-7\end{bmatrix}$$ $$C=\begin{bmatrix}-7 & -5\\3&2\end{bmatrix}$$
+	- Let's check and see if this is the inverse!
+	- (Calculations...) $$AC=\begin{bmatrix}1&0\\0&1\end{bmatrix}$$ $$CA=\begin{bmatrix}1&0\\0&1\end{bmatrix}$$
+	- $AC=I_n=CA,\ \therefore \ C=A^{-1}$
+- **<u>Theorem!</u>**
+	- Let $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$
+	- If $ad-bc=0$, then $A$ is not invertible.
+	- If $ad-bc\ne0$, then $A$ is invertible and $A^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}$.
+	- Very cool.
+	- The number $ad-bc$ is called the <u>determinant</u> of $A$.
+- "**<u>The dream has been realized!</u>**"
+	- $A\overrightarrow{x}=\overrightarrow{b}$.
+	- Assume $A$ is $n\text{x}n$ and invertible.
+	- $\overrightarrow{x}=A^{-1}\overrightarrow{b}$.
+	- Very cool!
+- **<u>Theorem!</u>**
+	- Suppose $A$ is an $n\text{x}n$ invertible matrix. Then for each $\overrightarrow{b}$ in the equation $A\overrightarrow{x}=\overrightarrow{b}$ has a unique solution $\overrightarrow{x}=A^{-1}\overrightarrow{b}$.
+- **<u>Properties!</u>**
+	- $(A^{-1})^T=(A^T)^{-1}$
+	- $(AB)^{-1}=B^{-1}A^{-1}$
+- **<u>Algorithm to compute the inverse (if it exist)</u>**
+	- Suppose that $A$ is invertible, then $A^{-1}=\left[\overrightarrow{c}_1 \ \  \overrightarrow{c}_2 \ \ ... \ \ \overrightarrow{c}_n\right]$
+	- From this, $A\left[\overrightarrow{c}_1 \ \  \overrightarrow{c}_2 \ \ ... \ \ \overrightarrow{c}_n\right]=\left[\overrightarrow{e}_1 \ \  \overrightarrow{e}_2 \ \ ... \ \ \overrightarrow{e}_n\right]$, and it would follow that $\left[A\overrightarrow{c}_1 \ \  A\overrightarrow{c}_2 \ \ ... \ \ A\overrightarrow{c}_n\right]=\left[\overrightarrow{e}_1 \ \  \overrightarrow{e}_2 \ \ ... \ \ \overrightarrow{e}_n\right]$.
+	- This is just sets of systems of equations! $$A\overrightarrow{c}_1=\overrightarrow{e}_1$$ $$A\overrightarrow{c}_2=\overrightarrow{e}_2$$ ...$$A\overrightarrow{c}_n=\overrightarrow{e}_n$$
+	- So from this, solve $A\overrightarrow{x}=\overrightarrow{e}_1$, $A\overrightarrow{x}=\overrightarrow{e}_2$, ..., $A\overrightarrow{x}=\overrightarrow{e}_n$.
+	- This isn't really all that bad, because it's only the last column of our matrix that changes. We can really just row reduce $\left[A \ \ \ I_n\right]$. 
+	- If the $\text{RREF}$ looks like $\left[I_n \ \ C\right]$, then $C=A^{-1}$!
+	- If it isn't in that form, then we don't have an inverse.

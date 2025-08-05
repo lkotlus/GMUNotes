@@ -1,0 +1,73 @@
+### Public Choice Economics (continued)
+- So we're going to do two more of the "biggest hits" today.
+- Rational Ignorance
+	- We willingly don't learn things that we don't get utility from
+	- People don't research who they vote for because your vote doesn't matter very much. It usually isn't an informed choice.
+	- Conversely, people spend money researching houses when they buy a house because they don't want to buy a lemon.
+- The Bundling Effect
+	- This applies mostly to people voting for candidates.
+	- Single choice voters vote on a candidate for their stance on a singular issue. But if they vote for somebody they end up voting for the entire bundle of stances on many issues!
+	- Imagine if you had to choose exclusively pre-made shopping carts full of items from a supermarket. You would choose the cart based on how many things you want vs. don't want (along with the degree that you like/dislike things).
+	- If I observe someone pick a cart, I can't conclude that they want everything in the cart. Similarly, I can't say that someone who votes for a particular person wants everything that the person supports.
+	- This is an information problem! We can't really figure out why somebody wins an election. Was it because of their position on tariffs? On abortion? On free speech? Nobody knows. Not the candidates, not the voters, not anyone.
+	- If a very honest candidate does everything they said they would do, then they will almost certainly do something that a majority of their supporters don't like.
+	- The bundling problem is an information problem. We don't know which stances the voters want or don't want.
+- Rent-seeking
+	- Rent here is used to denote an unjust payment.
+	- A good example of a rent is a thief stealing your wallet. It's a transfer of wealth from me to the thief, but it's unjust.
+	- Rent-seeking is unjust payment through political process.
+	- Say you're a steel producer. I don't want other people producing steel, but I'm a nice guy. I could hire a gang to destroy the competitors, but that's not really okay.
+		- What if, instead, I just pay off politicians to give me a big ole' advantage (or at least give them a big ole' disadvantage)
+		- "I'll be very grateful during the election if you help me out here"
+	- People seek protection from competition with the government. They then give unfair profits to the politician who helped them.
+	- When firms seek to become protected firms this way, they are rent-seeking.
+	- Not all lobbying is rent-seeking, but much of rent-seeking is lobbying. Lobbying is protected by the constitution.
+- Gordon Tullock pondered on why stealing is illegal. If it were legal, people would lobby and perform rent-seeking to stop it from becoming illegal.
+
+### Taxation
+- Our final topic!
+- Coerced extraction from the citizens by government.
+- I hate taxes.
+- Three things to keep in mind:
+	1. Tax base
+		- Things or activities that government chooses to tax.
+	2. Tax rate
+		- The rate at which something in the base is taxed. Usually expressed as a percentage.
+		- 10% income tax is a 10% rate on the income tax.
+	3. Tax revenues
+		- Just the amount of revenue the government takes in from the taxes.
+- Governments can easily choose tax base and tax rate. They cannot easily choose the tax revenue.
+- Taxation is the governments main source of revenue, and a lot of taxes are for revenue. Other taxes can be used to discourage behavior.
+	- For example, income tax is not in place to discourage income.
+	- Conversely, taxes on tobacco products is in place to discourage use of tobacco.
+- We're mainly going to be looking at the revenue taxes. These are, by far, the most common taxes.
+- Some tax systems:
+	- Proportional ("flat")
+		- There's one tax rate per year. Everyone get's this rate.
+		- Every income earned pays an income tax rate of 10%, for example.
+		- The rich still pay more than the less wealthy under a flat rate system. They just don't pay a higher rate.
+	- Progressive
+		- The rate increases with your amount.
+		- Tax brackets! If you earn $100,000 per year, you will pay a higher rate than someone who earns $50,000 per year.
+		- The rate of taxation gets progressively higher.
+		- This is the most commonly used system.
+		- Bracket example:
+			- Let's say the first $10,000 of income are taxed at a 0% rate.
+			- The next $100,000 of income are taxed at a 10% rate.
+			- The next $100,000 of income after that is taxed at a 25% rate.
+			- Everything beyond that is at a 50% rate.
+	- Regressive
+		- Opposite. Those who pay less pay a higher rate.
+		- This doesn't work, people don't use it.
+		- There's technically a *respectable* economic argument for this, but it would never be voted for by anyone.
+- Governments can, and do, change bases and rates. We're going to assume that the base is set as income and focus on just that.
+	- Federal income tax was amended to the constitution, it is constitutional. It was added in 1914.
+	- It was progressive from the start, and it had a base rate of 0% and a highest rate of 7%.
+	- The highest rate we've ever had of 94%. Israel once had one of 98%! Woah.
+- Some people say Reagan increased taxes, other people said he lowered taxes. They are both correct.
+	- He lowered tax rates. There were fewer brackets and the highest one was a lot lower.
+	- He increased tax revenue. The government earned more from taxes.
+- Let's assume we have a flat tax system (it works with progressive, but this is easier)
+	- We'll make a graph. The horizontal axis is tax rate, the vertical axis is tax revenue.
+	- At 1% tax rate, we make more revenue. At 2%, we make more than 1%. At 100%, we make 0 in revenue! Nobody goes to work if taxes are so high. We have a rounded hump. It's the Laffer Curve. 
+	- Known for a really long time, discovered in the 14th century by Ibn Khaldun, but named after Arthur Laffer because he used it to explain taxes to Californian politicians using a napkin while at dinner with them.

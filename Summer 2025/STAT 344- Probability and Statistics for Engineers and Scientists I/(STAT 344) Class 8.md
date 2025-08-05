@@ -1,0 +1,33 @@
+### R Code
+- Using R for the chapter 3 concepts.
+- Using a TI-8X calculator, use `binompdf(x, p, n)` for probability mass, use `binomcdf(x, p, n)` for cumulative.
+- General notation:
+	- `d` stands for probability density/mass
+	- `p` stands for cumulative distribution function
+	- `q` stands for quantile function (inverse of CDF)
+	- `r` stands for random draws
+- Binomial distribution:
+	- `dbinom(x=x, size=n, prob=p)` is how we do $P(X=x)$.
+	- `pdinom(x=x, size=n, prob=p)` is how we do $P(X\le x)$
+		- Alternatively, you can do `sum(dbinom(start:finish, size=n, prob=p))`
+	- For plotting a binomial distribution: `plot(x=start:end, dbinom(x=start:end, size=n, prob=0.5), main="title")`
+- Geometric distribution
+	- `dgeom(x=x, prob=p)` is how we do $P(X=x)$
+	- `pgeom(x=x, prob=p)` is how we do $P(X\le x)$
+		- Alternatively, you can do `sum(dgeom(x=start:finish, size=n, prob=p))`
+- Negative binomial distribution:
+	- `dnbinom(x=x, size=n, prob=p)` is how we do $P(X=x)$
+	- `pnbinom(x=x, size=n, prob=p)` is how we do $P(X\le x)$
+		- Alternatively, you can do `sum(dnbinom(x=start:finish, size=n, prob=p))`
+- Hypergeometric:
+	- `dhyper(x=x, m=N, n=K, k=n)` is how we do $P(X=x)$
+	- `phyper(x=x, m=N, n=K, k=n)` is how we do $P(X\le x)$
+		- Alternatively, you can do `sum(dhyper(x=start:finish, m=N, n=K, k=n))`
+- Poisson
+	- `dpois(T, lambda)`
+	- `ppois(T, lambda)`
+		- `sum(ppois(start:finish, lambda))`
+
+### Because I'm not doing another one of these for just one new set of functions
+- Normal distribution
+	- `pnorm(q=q, mean=mean, sd=sd)`

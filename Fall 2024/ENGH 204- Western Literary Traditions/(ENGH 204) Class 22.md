@@ -1,0 +1,38 @@
+### Things are still falling apart.
+- Last class we left on the idea of bouncing around between all definitions of tragedy. Super crazy mega tragedy all the time.
+- "I would like to get your attention with the excitement of my teaching and the subject, but I'm smarter than that."
+- The categories help us think about things.
+- "Let me tell you a little zen story..."
+	- "You guys aren't chill at all, this dog is chill."
+	- "The point is teaching you what makes sense."
+	- I get what he's saying with the zen story, but I think it's odd.
+- "Toxic masculinity" talk:
+	- There was no notion of this when the book was written.
+	- Achebe gives strict statements of Okonkwo being fine. "Provoked to justifiable anger."
+		- The only objection is peace week.
+	- We have unjustifiable anger later with the fake killing of the banana tree. 
+	- Okonkwo is presented as an ebo exemplar, not an example of toxic masculinity.
+- Tragedy lasagna:
+	- I continue to be correct about everything all the time.
+	- Tragedy definitions:
+		- Tragedy comes from the term "goat dance"
+		- Dionysus festival, and we have some tragedy performing at our festival with the dancing goats.
+		- Aristotle based his definition of tragedy on one play by Sophocles: Oedipus Rex.
+		- A Canadian guy (Frye) came up with a definition in the 50s and 60s on Shakespeare: Hamlet.
+		- Finally, Hegel in the 19th century: Antigone.
+		- Let's go through them:
+			- Aristotle:
+				- Give the audience a catharsis. They get rid of the emotions of pity and terror.  
+				- Theodicy! Justify the ways of God to man.
+				- We have *hamartia*, the misfire.
+				- We have no pity for the person because of their flaws.
+				- **Based on personality**
+			- Frye:
+				- Someone has broken the order of nature.
+				- Inertia brings the universe back to order.
+				- **Based on nature**
+			- Hegel:
+				- The conflict of two irreconcilable but legitimate ethical systems.
+				- **Based on history**
+		- **<u>In all cases, tragedy is about justice of the universe/gods/God.</u>**
+	- Why are there so many different theories of definitions? Well, we want our labels to work. To do this, we give the labels many reasons such that we may do whatever we would like. Behold, the magic of literature.

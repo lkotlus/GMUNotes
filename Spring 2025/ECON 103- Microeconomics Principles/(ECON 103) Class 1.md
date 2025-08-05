@@ -1,0 +1,72 @@
+### Don't you just love syllabus week?
+- "I'm not gonna go over it, you can ***read***"
+- All material in tests is 95% lecture and 5% from free materials that are sent out. There's a great deal of overlap between the two, but a little tiny bit is only in the materials.
+- There's only lecture, note taking, reading sent materials, and taking exams. 
+- Class attendance is going to be required in order to do well.
+- "I want you to *get* the economic way of thinking."
+- Exams are all multiple choice.
+- "I encourage you to ask me questions."
+
+### Economics
+- What is it?
+- Allegedly, we all have a notion of what it is that is completely false. We are going to learn now, for the first time, in this class, what economics is.
+- There's one "equation", and no math. This is so sad.
+- Economics is *not* a business course.
+- We aren't going to learn how to invest, how to get rich, or anything like that. We are going to learn how our society works.
+- Everyone in this room is in the top 0.0000000001% in history for wealth. We are unbelievably rich.
+- Average available resources for people in history:
+	- Beginning of humanity (vast majority): $3.50/day
+	- Agricultural revolution (some richer, vast majority poor): 
+		- Rich people $10-$20/day
+		- Poor remain the same
+	- Rome: $10-$12/day
+	- Dark ages: $3.50/day
+	- In the modern day, the global average is $50/day. For the US, the conservative estimate is $100/day. Professor says closer to $300/day.
+- Every single one of us has ancestors who died due to cold, heat, sickness, hunger, etc.
+	- Average life expectancy used to be about 28 years for an infant. 
+	- If you reached the age of 1 (passing the infant mortality rate), it goes up to 45. 
+	- If you could potentially be expected to reach 50 if you made it to 5 years old.
+- The typical person, prior to the modern age, lived in a single person shack. 
+	- They were made of earthen materials with thatch roofs. Animals would live in the roof (squirrels, snakes, birds, etc.), and they would be subject to falling excrement.
+	- In the winter, an animal would be used for heat. Those animals would have a slot where they would do their business.
+	- The floor was dirt.
+	- A stool and bed for furniture, at most.
+	- A threshold is the strip of material under a door that keeps it fully closed. (Little wooden bump thingy). This goes back to these same huts. After people thresh the grain, the waste (thresh) would be spread on the floor (sort of like hay). This made things a little bit more sanitary. Foot traffic drags it out of the hut, so you add a barrier at the bottom of the door so the thresh is held in. *Threshold*.
+	- We have kept the name threshold, we all have one in our homes, but it has never performed that function for us.
+- For the first time in history (relatively), parents expect to die before their children.
+- People were shorter and had more brittle bones as a result of malnourishment. 
+- People could only bathe in months where the water wasn't cold enough.
+- Skin disease was uncontrollable.
+- No tooth brushing
+- So, in summary, people were:
+	- Short
+	- Diseased (pock marked)
+	- Unbathed
+	- Toothless
+	- Bent over
+	- Sad (buried their children)
+- Nobody listened to recorded music until about 100 years ago. You would need to go to where it's performed.
+- No antibiotics. 
+	- (side note: we are responsible for knowing the names of people who's names we are told to know)
+	- Alexander Fleming discovered antibiotics in 1928
+- Calvin Coolidge's son died of a blister he developed while playing tennis. The son of the President of the United States died of this.
+	- We can't even fathom of this anymore.
+- Polio was only cured in the 1950s. 
+- Queen Anne of England (300 years ago) died having buried all 17 of her children. One of the richest people in the world.
+	- This is especially unusual because she survived all of those births.
+	- In some areas of the world, women had a likelihood of nearly 1 in 6 to die due to complications in childbirth.
+- We. Are. So. Privileged.
+- If you were to resurrect the average person from any poor time in history, the first things they would notice in a mansion are things that we all have access to.
+- Economics is ultimately about explaining how we became so unbelievably rich.
+	- There is an economic theory that is a story about what caused this.
+- All economic theory is just an attempt at explaining this.
+- Name for us to know:
+	- Adam Smith, a Scotsman
+- (Side note: we never need to know the dates)
+- Adam Smith was one of the most famous scholar's alive. He published two famous books. His second book is commonly called "The Wealth of Nations", but the full name is "An Inquire into the Nature and Causes of the Wealth of Nations."
+	- This is regarded as the first book of economics.
+- No matter how you think about wealth, love it or hate it, you should want to know how it works.
+- Why is it that for 99.999999% of history we were unbelievably poor, but we are suddenly wealthy beyond compare?
+- Population went up with our wealth, by similar factors.
+- Surprisingly, increased wealth requires an increased population. We can't have the same wealth just with fewer people. Increase population, increase wealth. Increase wealth, increase population.
+- Class will be online next week. We will have recorded lectures as well, so that's nice.

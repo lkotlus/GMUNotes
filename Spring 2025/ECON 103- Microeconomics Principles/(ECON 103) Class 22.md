@@ -1,0 +1,45 @@
+### Exams back
+- I don't get to know my grade until the end of class. Agony.
+- He's going over the answers, and I think I did alright.
+- There is a three point curve on this exam, as expected due to the higher difficulty. 
+	- All I need for an A is 24/30. That's comfortable.
+
+### Collective ("public", "political") action
+- I don't need to get the approval of anyone else to do most things, those are individual actions.
+- There is a subset of actions that are considered collective. You need some sort of approval for it.
+- How do we decide on such actions if everyone has different preferences? We can't individualize the amount that we spend on defense this year to match what each person wants.
+- Public and private goods:
+	- Private goods:
+		- One for which the owner (producer) can exclude anyone from obtaining/consuming it.
+		- Most goods are private. If I sell something I can deny someone my product for any reason that I please.
+		- Exclusion on the basis of not being able to pay qualifies something as a private good!
+	- Public goods:
+		- A handful of goods (not many) are public.
+		- Once a public good is produced or supplied, the producer cannot exclude other people from using it.
+		- Two good examples:
+			- Pollution abatement (cleaning the air)
+				- If you clean the air, everyone gets cleaner air.
+			- National defense
+				- Once it's supplied, everyone gets the national defense.
+				- There's a forced incentive here from the government. If you don't pay your taxes, you go to jail.
+		- People will attempt to "free ride" off of other people with public goods. If someone offers to clean the air, people will not want to pay for it because if the air is clean they get it either way. There's a far smaller incentive to pay for or supply these goods. 
+		- If the government does it, that does not guarantee that something is a public good. However, if something is a public good then only government can feasibly do it. 
+		- Taxes aren't prices, they're coerced transfers.
+		- Genius in the American founding tax system:
+			- Giving some people power to coerce is dangerous!
+			- Democracy along with checks and balances was the solution to this.
+- Goods can be either rivalrous or non-rivalrous:
+	- Most goods are rivalrous, meaning that when it's being used by one person it cannot be used by someone else. 
+		- My cheeseburger is mine alone.
+		- My shoes can't be worn by someone else simultaneously
+	- Non-rivalrous goods are the opposite
+		- A sporting event
+		- A radio station
+		- A fireworks show
+	- Some goods are both non-rivalrous and excludable:
+		- Only private goods are.
+	- A good is public if it is non-excludable:
+		- Not all non-rivalrous goods are public! 
+		- Going to class is non-rivalrous, but you can't do it if you're not a student at GMU.
+		- A Weezer Concert is non-rivalrous, many people can use it at the same time, but it is excludable.
+		- That's why only the clean air or national defense are public.

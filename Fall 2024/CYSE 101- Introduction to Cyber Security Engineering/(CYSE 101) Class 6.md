@@ -1,0 +1,70 @@
+### Auditing and Accountability
+- Accountability
+	- Every individual who works with an IT system should have specific responsibilities for information assurance.
+	- Everyone is responsible for the security of information.
+- Auditing
+	- Review of what you did, test systems, collect information, etc.
+	- Consists of:
+		- Permissions
+		- Usage
+		- Log review, monitoring, assessments, inventory, etc.
+	- How well was accountability done?
+- Up to this point...
+	- Identification (who are you)
+	- Verification (verify who you are)
+	- Authentication (prove who you are)
+	- Authorization (what you can do)
+	- Access control (enforce what you can do)
+	- Accountability (what you did)
+		- Trace actions to users
+		- Logging
+		- Nonrepudiation (can't deny anything)
+		- Deterrent (someone/something is watching the system)
+	- Auditing (review what you did)
+- Vulnerability Assessment:
+	- Scan for vulnerabilities and weakness in systems and users
+	- Enumerate systems
+	- Report on vulnerabilities including CVEs, criticality score, and priority of patching
+- Pen test:
+	- Exploit the vulnerabilities found from the vulnerability assessment
+- Building accountability
+	- Patching, cred management, zero trust, and least priv
+	- Automate repetitive IT stuff
+	- NIST Roadmaps for structuring security and Center for Internet Security Best Practices type things.
+	- Identify security champions (who isn't an idiot) within the org!
+		- Reward good behavior
+- RACI
+	- Responsible
+		- Assigned to do work
+		- At least one person must be assigned
+		- "The doer"
+	- Accountable
+		- Authority to assign/delegate work to R's
+		- Answerable for completion of work
+		- Usually one person
+	- Consulted
+		- Consulted before the work is done
+		- Usually an expert
+	- Informed
+		- Told about the work results
+- What is a cyber security audit
+	- Comprehensive analysis and review of IT infrastructure
+	- Detects vulnerabilities and threats
+	- Displays weak links and high-risk practices
+	- Primary method for examining compliance
+	- Designed to evaluate something against a specific standard to validate that exact needs are met
+- Audit scope
+	- Data security (network access control, encryption, security at rest, transmission, etc.)
+	- Operational security (security policies, procedures, etc.)
+	- Network security (network and security controls, anti virus, SOC, etc.)
+	- System security (hardening process, patching, priv account management, role-based access, etc.)
+	- Physical security (disk encryption, role-based access, biometric data, MFA, social engineering, etc.)
+- Best practices
+	- Define the scope of your audit
+	- Share the Resource Auditors Need
+	- Audit relevant compliance standards
+	- Detail your network structure
+	- Detect and record risks and vulns
+	- Access existing cyber risk management performance
+	- Prioritize risk response
+	- Ensure regular audits

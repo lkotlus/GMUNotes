@@ -1,0 +1,174 @@
+### Finishing the Network Layer
+- So we use switch fabric for real. It's super fast because it's all hardware.
+- Recall subnets:
+	- Between two routers there's a subnet. Essentially, each edge of the directed graph (count edges between hosts and routers as one edge).
+	- We can use the class system (lame) or CIDR (based). CIDR has subnet masks, which show how many bits are the subnet portion of the IP address. Essentially /$n$ states that the first $n$ bits are static. So subnet mask 255.255.255.255 is /32, as all 32 bits are used. 
+	- Subnet mask 255.255.255.0 is /24, as the first 24 bits are used but the last 8 are free. So 255.255.255.255.0 can really range from 255.255.255.0-255.255.255.255 for usable IPs. The starting bits can also be different from that. So 192.168.12.0/24 ranges from 192.168.12.0-192.168.12.255 for a total of 256 IPs.
+	- Things get wacky and goofy with something like 255.255.128.0, as we are now /17. Our IP is (x means static, \* means anything) xxxxxxxx.xxxxxxxx.x\*\*\*\*\*\*\*.\*\*\*\*\*\*\*\*. So if we have 10.10.10.0/17, then we range from 10.10.128.0-10.10.256.256, for a total of $2^{15}=32,768$ addresses. 
+- Dynamic Host Configuration Protocol (DHCP):
+	- So we want hosts to by able to dynamically obtain IPs from the network server when it joins. 
+		- It should be able to renew its lease on an address in use
+		- It should allow for reuse of addresses (only hold while connected/on)
+		- And it should support mobile users that leave and come back.
+	- An arriving client sends out a DHCP discover (`yiaddr: 0.0.0.0`)
+		- Server sends a DHCP offer (`yiaddr: offered_ip`)
+			- Client sends a DHCP request (`yiaddr: requested_ip`)
+				- Server sends a DHCP ACK (`yiaddr: granted_ip`)
+	- Network Address Translation (NAT)
+		- All devices in local network share just one IPv4 address as far as outside world is concerned.
+		- We don't want people to know internals, and we don't want to update tons of IPs.
+		- A NAT translation table essentially just converts a (Wide Area Network) side address to a LAN (Local Area Network) side address.
+			- WAN address is an identical IP between all of them, but it's a different port number.
+			- So for example, we might map 138.76.25:5001 to 10.0.0.1:3345.
+
+### Control Plane
+- So recall that data plane is per-router and control plane is the whole network.
+- This isn't forward function, it's routing.
+- Control plane determines our algorithm and whatnot.
+- Goals:
+	- Understand the principles behind the control plane (routing algorithms)
+	- Instantiation and implementation on the internet
+		- OSPF and BGP 
+- Roadmap:
+	- Introduction
+	- Routing protocols
+		- Link state
+		- Distance vector
+	- Intra-ISP routing: OSPF
+	- Inter-ISP: BGP
+	- Software Defined Network (SDN) control plane
+- Routing protocols:
+	- So we want to determine "good" paths (equivalently, routes), from sending host to receiving host through routers.
+	- Path: sequence of routers 
+	- "Good": low (preferably least) cost
+	- Routing is a top 10 networking challenge.
+	- Graph theory! Routers are nodes, links are edges. 
+	- If there isn't a direct link between two nodes, the cost of the direct link between them is $\infty$.
+	- Classification:
+		- Global: all routers have complete topology and link cost info
+			- "Link state" algorithms
+		- Decentralized: iterative process of computation and exchange of information with neighbors
+			- Routers initially only know link cost to attached neighbors
+			- "Distance vector" algorithms
+	- Dijkstra's link-state routing algorithm:
+		- Centralized, so all nodes know everything.
+			- Accomplished via "link state broadcast"
+			- All nodes have same info
+		- Computes least cost paths from one node to all other nodes
+			- Gives a forwarding table for that node
+		- After $k$ iterations, we know the minimum cost to $k$ destinations.
+		- $c_{x,y}$: direct link cost between $x$ and $y$
+		- $D(v)$: current estimate of least-cost path to destination from source ($v$)
+		- $p(v)$: processor node from path to source ($v$)
+		- $N'$: set of nodes with least-cost paths definitely known
+		- She's explaining the algorithm in class. Learn to make it yourself, that will work better.
+	- Distance vector (Bellman-Ford):
+		- Just go with the minimum cost all the way
+		- With all the algorithms it's just easier to learn on your own.
+		- Nodes need to constantly recompute and notify neighbors.
+- Intra-ISP routing:
+	- Making routing scalable:
+		- We've idealized our networks so far
+		- We have billions of locations, route tables would be far too big.
+		- Administrative autonomy:
+			- Admins want to control their own network.
+	- Aggregate routers into Autonomous Systems (AS, aka "domains")
+	- Intra-AS (intra-domain)
+		- Just stuff inside the domain
+		- Has a gateway router that connects to other domains
+	- Inter-AS (inter-domain)
+		- Routing among ASs 
+		- Gateway routers do this
+	- Forwarding tables are made for both intra and inter-AS algorithms.
+	- If we receive a packet destined for another AS, we need to know which gateway router to send to. 
+		- We must learn which destinations are reachable through certain gateways.
+	- Most common intra-AS routing protocols:
+		- RIP: Routing Information Protocol
+			- Classic DV (Distance Vector): DVs exchanged every 30 seconds
+		- EIGRP: Enhanced Interior Gateway Routing Protocol
+			- DV based
+			- Formerly Cisco-proprietary (became open in 2013)
+		- OSPF: Open Shortest Path First
+			- Link state
+			- IS-IS protocol is essentially the same as OSPF.
+	- OSPF:
+		- Each router floods OSPF link-state advertisements to all other routers in the AS
+		- Multiple link cost metrics possible (bandwidth and delay)
+		- Each router has full topology and uses Dijkstra's algorithm
+		- All OSPF messages are authenticated to prevent malicious intrusion
+		- Two-level hierarchy:
+			- Local area and backbone
+			- Link state advertisements are flooded only in area or backbone
+			- Each node has detailed area topology; only knows direction to reach other destinations
+- Inter-ISP (inter-AS, inter-domain) routing:
+	- BGP (Border Gateway Protocol) is the de facto inter-domain routing protocol
+		- "glue that holds the internet together"
+	- Allows subnet to advertise its existence, and the destinations it can reach, to the rest of the Internet: "I am here, here is who I can reach, and how"
+	- BGP provides each AS a means to:
+		- eBGP: obtain subnet reachability information from neighboring ASs
+		- iBGP: propagate reachability information to all AS-internal routers
+		- Determine "good" routes to other networks based on reachability information and policy
+	- BGP basics:
+		- Sessions: two BGP routers ("peers") exchange BGP messages
+			- Advertising paths to different destination networks
+	- Policy based routing:
+		- Gateway receiving route advertisements uses import policy to accept/decline path
+		- AS policy also determines whether to advertise a path to other neighboring ASs
+- Why have different (intra vs. inter) AS routing?
+	- Policy:
+		- Inter-AS admin wants control over how its traffic is routed and who routes through the network
+		- Intra-AS is a single admin, so policy is less of an issue
+	- Scale:
+		- Hierarchical routing saves table size and reduces update traffic
+	- Performance:
+		- Intra-AS can focus on performance
+		- Inter-AS can focus on policy
+	- ISP only wants to route traffic to/from its customer networks
+	- Router may learn about more than one route to destination AS, it selects the route based on:
+		- Local performance
+		- Shortest AS-PATH
+		- closest NEXT-HOP router (hot potato routing)
+		- Additional criteria
+
+### Software Defined Networks (SDNs)
+- The network layer is historically implemented via distributed and per-router control approach:
+	- Monolithic router contains switching hardware, runs proprietary implementation of Internet standard protocols in proprietary router OS
+	- Different "middleboxes" for different network layer functions:
+		- Firewalls
+		- Load balancers
+		- NAT boxes
+		- etc.
+- In 2005 we had renewed interest in rethinking the network control plane
+- SDN lets us use a remote controller that computes and installs forwarding tables in routers
+- We have a logically centralized control plane:
+	- It's easier to manage and avoid misconfiguration
+	- Table-based forwarding allows for us to program routers
+	- Open implementation is better and allows open source to help
+- Data-plane switches:
+	- Fast and simple commodity switches implementing generalized data-plane forwarding in hardware
+	- Flow (forwarding) table computed and installed under controller supervision
+	- API for table-based switch controls
+		- Defines what is controllable and what is not
+	- Protocol for communicating with controller
+- SDN controller (network OS):
+	- Maintain networks state information
+	- Interacts with network control applications "above" via northbound API
+	- Implemented as distributed system for performance, scalability, fault-tolerance, and robustness.
+- Network-control apps:
+	- Brains of control: implement control functions using lower-level services and API provided by SDN controller
+	- Unbundled: can be provided by third party: distinct from routing vendor or SDN controller
+
+### Subnet exercise (on homework and exam):
+- Imagine an institution has gained the block of IP addresses: 10.20.16.0/20. Within the institution, there is a department having 1500 hosts. The department has 4 offices, one requires 1200 hosts and the rests have 100 hosts/each. Show how you are going to divide subnets.
+- So we have $2^{32-20}$ hosts, so $2^{12}=4096$. That's a lot.
+- Let's break it down into binary (**net**, host):
+	- **00001010.00010100.0001**0000.00000000
+- Let's split it into two equal parts, one for the large office and 3 for the smaller ones:
+	- 10.20.16.0/21 (large office, 2048 IPs)
+		- **00001010.00010100.00010**000.00000000
+	- 10.20.24.0/25 (small office 1, 128 IPs)
+		- **00001010.00010100.00011000.0**0000000
+	- 10.20.25.0/25 (small office 2, 128 IPs)
+		- **00001010.00010100.00011001.0**0000000
+	- 10.20.26.0/25 (small office 3, 128 IPs)
+		- **00001010.00010100.00011010.0**0000000

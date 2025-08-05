@@ -1,0 +1,67 @@
+### Administrative stuff
+- We're talking about tragically engineered systems today!
+	- Monetary value on life is tough, but it is important.
+	- We see tragically engineered systems in economic impact, loss of life/limbs, etc.
+- We need to identify a system that is tragic because it has been impacted by the Meltdown or Spectre vulnerabilities within their supply chain. Figure out what the specific system is and explain why the system is tragic due to the vulnerabilities.
+- The theme of tragically engineered systems is setting out to do good things and do them well, but we still things take a horrible turn for the worse.
+- We are not being asked to "find the bad engineer", we are being asked to figure out how a thing that works just fine today can become a tragically engineered system. 
+- Sometimes it costs too much money to prevent a low probability high impact event.
+- In a perfect world everyone gets a 3 on the group evaluation.
+
+### Safety Critical Systems and the Economic Value of SE
+- We need to introduce what a critical system is
+- Why pay attention to engineering systems?
+	- We've been over this, but paying little attention to SE leads to system cancellation or loss of human life and economic safety.
+- Famous failures:
+	- A poorly constructed balcony caused thirteen people to be killed and 57 to be seriously injured.
+	- Cost: in addition to civil suits, there were more inspections of similar structures nearby with 1,260 cases being actioned by city authorities (this happened in Chicago)
+- Failure costs:
+	- The challenger disaster cost $450 million, the cost of investigating the accident and making improvements was estimated at $245 million.
+	- There was also an emotional damage of every child at every school in the nation watching the shuttle explode.
+	- Furthermore, there were opportunities lost due to the fact that the entire space shuttle program was shut down because of this.
+- Critical systems:
+	- Critical systems are those systems whose "failure" could threaten human life. 
+	- "Failure" does not mean failure to conform to specification, but means any potentially threatening system behavior.
+- Examples of critical systems:
+	- Communication systems (you are able to dial 911)
+	- Embedded control systems (for process plants, medical devices, etc.)
+	- Command and control systems (air-traffic control)
+	- Financial systems (foreign exchange transaction systems)
+- Critical system usage:
+	- Most critical systems are now computer-based systems
+	- Critical systems are becoming more widespread as we automate more complex activities
+	- People and operational processes are very important elements of critical systems
+	- Computers create an unimaginable level of complexity that was unheard of
+- Critical systems failure:
+	- The cost of failure is likely to exceed the cost of the system itself
+	- Direct failure costs are not the only thing present. There are indirect costs from critical failures.
+	- Societal views of the system after a failure are not static. They are modified by all system failures.
+- Three mile island
+	- There was no single thing that went wrong
+	- Lots of little baby things went wrong in a specific way that caused all the safety mechanisms to not function properly
+	- A series of benign individual accidents all lead to shutting down the entirety of nuclear power in the US
+	- Some radioactive gas was released, but objective data shows that the scale of the issue was greatly over-hyped. 
+	- This was a small, contained incident that combined with social factors that caused a fundamental change to the entire planet.
+- Criticality non-functional requirements
+	- Non-functional requirements end in "ility", **except** for:
+		- Safety
+		- Security
+	- Availability
+		- Concerned with failure to deliver required services
+	- Maintainability
+		- Concerned with the ability of the system to evolve
+	- Reliability
+		- Concerned with failure to perform specification
+	- Safety
+		- Concerned with behavior directly or indirectly threatening to human life.
+	- Security
+		- Concerned with the ability of the system to protect itself
+- Terms
+	- A fault is a buffer overflow (characteristic)
+	- A failure is the actual exploitation (behavior)
+	- Accident
+		- Unplanned event or event sequence which results in human death or injury.
+	- Incident
+		- A system failure which may potentially result in an accident
+	- Hazard
+		- A condition with the potential for causing or contributing to an incident 

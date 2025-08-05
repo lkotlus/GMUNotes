@@ -1,0 +1,81 @@
+### Midterm Review
+- Psych! We're actually just going to go through the threat enumeration lab.
+- Silly, stupid, I'm personally not a fan, but whatever.
+
+### Pizzeria
+- Entities
+	- Customer
+		- S
+			- A customer that has stolen the session token of another customer could impersonate them, leading to fraudulent orders and negatively impacting customer trust. 
+		- T 
+			- None
+		- R
+			- A customer that has placed an order could deny having placed said order, leading to a refund being required and negatively impacting company financials
+		- I
+			- None
+		- D
+			- A threat actor could create thousands of sessions as different customers, leading to the servers being overloaded and negatively impacting customer experience, company sales, and system health.
+		- E
+			- None
+	- Kitchen
+		- S
+			- None
+		- T
+			- None
+		- R
+			- Kitchen staff could deny having received an order, which could lead to the customer not getting what they had paid for, negatively impacting customer trust and brand loyalty.
+		- I
+			- None
+		- D
+			- None
+		- E
+			- None
+- Processes
+	- Display Menu
+		- S
+			- A threat actor could create a fake menu site, leading to potential customers going to the wrong site and providing personal information to a fake business, leading to lack of customer trust and theft of PII.
+		- T
+			- A threat actor could potential exploit the display menu process via a change in the web request, leading to abnormal behavior and potentially negatively effecting confidentiality and availability.
+		- R
+			- None
+		- I
+			- A threat actor could send a malicious web request, leading to the display menu process revealing more information from the menu database than it should, negatively impacting confidentiality.
+		- D
+			- A threat actor could overload the display menu endpoint with web requests, leading to the site failing, negatively impacting business performance and customer experience.
+		- E
+			- If a threat actor were to exploit this page and the web service had elevated privileges, the attacker could use that to elevate their privileges within the system, leading to the entire server being taken over and negatively impacting the entire business security.
+	- Receive Order
+	- Send Order to Kitchen
+	- Generate Confirmation
+- Data Stores
+	- Menu Database
+	- Order Database
+- Flows
+	- Ask for menu items
+		- S
+			- None
+		- T
+			- If a threat actor were to change parameters in the web request, they could get the menu backend to behave abnormally, leading to potential exploitation of backend components and negatively impacting CIA.
+		- R
+			- None
+		- I
+			- If a threat actor were to change parameters in the web request, they could get the menu backend to retrieve information from the menu database that it shouldn't, potentially showing error messages and tables that it should not and negatively impacting confidentiality.
+		- D
+			- If a threat actor were to overload this endpoint with requests, they could potentially DDoS the site, leading to downtime and negatively impacting sales and customer experience.
+		- E
+			- If a threat actor were able to exploit a vulnerability in this web page and it were running on a privileged process, they could potentially get remote access to the server, leading to complete access of system internals and negatively impacting the entire business.
+	- Request info
+	- Send menu content (HTML)
+	- Send order (selected items + name + address)
+		- S
+		- T
+			- Customer with knowledge of how selected items, name, and address are sent could modify those parameters, leading to strange behavior in the backend and potentially negatively impacting the order database, kitchen display, and confirmation messages.
+		- R
+		- I
+		- D
+		- E
+	- Save order
+	- Forward order (to send order to kitchen)
+	- Forward order (to generate confirmation)
+	- Sends finalized order details
+	- Sends confirmation message

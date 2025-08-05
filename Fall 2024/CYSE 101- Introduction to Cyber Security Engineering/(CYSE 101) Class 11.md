@@ -1,0 +1,68 @@
+### Operating system security!
+- Horrible, horrible flashbacks to CYSE 211
+- Attack surface
+	- All points of entry
+- Why do we worry about OS security?
+	- Stupid question, the OS is basically everything.
+	- Wide attack surface
+	- In charge of memory allocation for all programs, security of users, etc.
+	- Tons of bugs, vulnerabilities, millions of parallel processes, etc.
+- How to secure:
+	- Remove unnecessary services, accounts, etc.
+	- Patch management
+	- Block viruses, malware, and attacks
+		- Antivirus
+			- Signature vs. Behavior vs. Reputation
+				- Signature: I see that this matches a malware in my database!
+				- Behavior: You are very clearly attempting to encrypt the root directory, stop it!
+				- Reputation: Have I seen you on other systems? No?! Suspicious!
+		- Antimalware
+		- HIDS/HIPS
+	- Scanners
+	- Secure configurations
+	- Application whitelisting/blacklisting
+- Antivirus:
+	- Can do the following actions:
+		- Block
+			- Get out of here
+		- Allow
+			- You're good
+		- Clean
+			- Delete the bad parts
+		- Delete
+			- Delete everything
+		- Quarantine
+			- Move to a sandbox
+- Penetration testing!
+	- My love, my precious!
+	- Process:
+		- Enumeration
+		- Scan for vulnerabilities
+		- Exploit
+		- Prepare and apply corrective measures (optional)
+		- Other vectors: social engineering, physical security, etc. (optional)
+	- Tools:
+		- Nmap
+		- Nessus
+		- Metasploit (`msfvenom`, `msfconsole`, etc.)
+		- BurpSuite
+		- etc.
+- Nessus
+	- Vulnerability scanner, used by many professionals.
+	- It can even have agent-based stuff by putting software on the machine.
+	- Very good, industry standard.
+- Nmap vs. Nessus
+	- Nmap is a port scanner!
+	- Nessus is a vulnerability scanner!
+- Metasploit:
+	- Open source framework tool, takes your CVEs and gives you known exploits.
+	- Script kiddy behavior.
+- Common OS attacks/tools:
+	- Zero-day (undiscovered vulnerability)
+	- Malware (software that is not nice to you)
+	- Ransomware (give me money or I delete your files)
+	- Trojan horse (look friendly, not friendly)
+	- Buffer overflow (your end base pointer is mine)
+	- Spyware (let me see all your secrets such that I may sell them)
+	- Adware (look at these ads and give me money)
+	- Worm (duplicate and spread throughout the network)

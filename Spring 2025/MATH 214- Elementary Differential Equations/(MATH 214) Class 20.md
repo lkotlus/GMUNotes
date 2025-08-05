@@ -1,0 +1,13 @@
+### Solving Things
+- Recall that straight line where solutions approach the origin.
+- Literally just solve for the slope of the line.
+- These lines give us the ability to solve particular initial conditions. For example, take our system: $$\frac{dx}{dt}=y$$ $$\frac{dy}{dt}=-2x-3y$$
+- If we have an initial condition that lies on the line $y=-2x$, then we can sub that in to see that: $$\frac{dx}{dt}=-2x$$ $$\frac{dy}{dt}=-2(\frac{y}{-2})-3y$$
+- This shows us that: $$-\frac{1}{2}\int\frac1x\ dx=\int\ dt$$ $$\frac{dy}{dt}=y-3y=-2y$$
+- In both cases we have: $$-\frac12\int\frac1v \ dv=t$$
+- So $$y=x=ke^{-2t}$$
+- Technically, if you're a ***NERD***, $x$ and $y$ have different values of $k$, so we should say: $$x=k_1e^{-2t}$$ $$y=k_2e^{-2t}$$
+- Solving for them with our initial condition of $(-2, 4)$, we can see that (written as a vector to be cool): $$\begin{bmatrix}x(t)\\y(t)\end{bmatrix}=\begin{bmatrix}-2e^{-2t}\\4e^{-2t}\end{bmatrix}$$
+- Note that our vector can really be shown as: $$\begin{bmatrix}x(t)\\y(t)\end{bmatrix}=\begin{bmatrix}-e^{-2t}\\2e^{-2t}\end{bmatrix}$$
+- Any constant multiple ends up being: $$\begin{bmatrix}x(t)\\y(t)\end{bmatrix}=\begin{bmatrix}-Ae^{-2t}\\2Ae^{-2t}\end{bmatrix}$$ $$\begin{bmatrix}x(t)\\y(t)\end{bmatrix}=Ae^{-2t}\begin{bmatrix}-1\\2\end{bmatrix}$$ 
+- Cool. Any initial condition along this line will work this way. 

@@ -1,0 +1,136 @@
+### On the IP stuff
+- We want to start with $1$ and end with $254$. 
+	- TA will allow both for this one, but in the future the first and last should be 1 and 254
+
+### Network Security
+- I think...
+	- I thought correctly
+- Roadmap:
+	- What is network security?
+	- Principles of cryptography
+	- Message integrity and authentication
+	- Securing TCP connections (TLS)
+	- Operational security (firewalls and IDS)
+- Alright, alright, alright
+- What is network security:
+	- CIA TRIAD CIA TRIAD CIA TRIAD
+		- Confidentiality (keep my secrets a secret)
+		- Integrity (don't modify/corrupt my data)
+		- Availability (don't DDoS me)
+	- Finally talking about security in the security course.
+	- Alice, Bob, and Eve
+		- Alice and Bob just want to talk, but Eve is always eavesdropping
+		- Eve wants to intercept, delete/add, and modify messages
+		- How do we stop her?
+	- Encrypt the data, idiot
+		- But Eve will still see the encryption keys
+			- Use public key encryption, idiot
+				- Too slow to encrypt/decrypt
+					- Use Diffie-Hellman to exchange symmetric key, idiot
+						- Okay :(
+	- That's the general idea. We're going to be doing public key most of the time, though. 
+- Principles of cryptography
+	- Gaming.
+	- Alice and Bob want to exchange keys!
+		- Public key:
+			- Public keys encrypt, private keys decrypt
+			- Four keys are made Alice's private and public and Bob's private and public
+			- Alice sends her public key to Bob, Bob sends his public key to Alice
+			- Eve can get those keys, but she's only able to encrypt data, not decrypt.
+		- Symmetric:
+			- Just one key for encrypting and decrypting
+			- Diffie-Hellman to exchange securely
+	- Substitution ciphers is dumb as hell.
+		- "I want to not be very secure"
+	- Symmetric key cryptography:
+		- DES (Data Encryption Standard)
+			- US encryption standard
+			- 64-bit key
+			- Block cipher with block chaining
+		- AES (Advanced Encryption Standard)
+			- Symmetric-key NIST standard, replaced DEC in 2001
+			- Processes data in 128-bit block
+			- 128, 192, or 256-bit keys
+			- Brute force decryption takes 1 second for DES, takes 149 trillion years for AES.
+	- Public key cryptography:
+		- We've got some strange mumbo jumbo going on with $K_B^-(K_B^+(m))=m=K_B^+(K_b^-(m))$. I believe this is about the signature?
+		- RSA (Rivest, Shamir, Adelson) algorithm.
+- Authentication and message integrity:
+	- Digital signatures
+		- We digitally sign our documents by encrypting them with the private key.
+			- $K_B^+()$ is the public key, $K_B^-()$ uses the private key.
+			- Asymmetric encryption is hilariously symmetric in the sense that $K_B^-(K_B^+(m))=m=K_B^+(K_b^-(m))$
+		- Public key decrypts it and proves that the source is reliable.
+		- Nonrepudiation!
+- Operational security:
+	- Firewalls:
+		- Isolate the organization's internal network from the internet, allowing some packets to pass and blocking others
+		- These help with:
+			- Denial of service
+			- Illegal modification/access of internal data
+			- Authorized access inside the network
+		- Two types of firewalls:
+			- Stateless packet filters
+				- Used in internal network, connected to the internet via router firewall
+				- Flow of data packets based on predefined rules, without keeping track of the state of network connections
+				- ACL (Access Control List)
+				- Key features:
+					- No memory of past traffic
+					- Faster, but less secure
+					- Filters based on criteria such as:
+						- Source IP
+						- Destination IP
+						- Port number
+						- Protocol type
+				- ACLs just show us actions (allow/deny) based on criteria
+				- |Action|Source Address|Destination Address|Protocol|Source Port|Destination Port|Flag Bit|
+				  |-|-|-|-|-|-|-|
+				  |Allow|Outside of 222.22/16|222.22/16|TCP|80|> 1023|ACK|
+			- Stateful packet filters
+				- Maintains connection state tables (such as TCP handshake process)
+				- Tracks ongoing sessions (IP, ports, sequence numbers)
+				- Allows return traffic only if it matches an existing connection
+				- Can prevent certain attacks such as spoofing or TCP hijacking.
+	- Intrusion Detection Systems (IDS)
+		- Packet filtering:
+			- Operates on TCP/IP headers only
+			- No correlation check among sessions
+		- IDS:
+			- Deep packet inspection
+				- Looks at packet contents (check character strings/file signatures against malicious code and viruses)
+			- Compared with firewall
+				- More sophisticated: look inside packets instead of the headers
+				- More actions: take actions (sound alarm) other than silently filtering.
+			- Multiple IDSs:
+				- Different types of checking at different locations
+				- We might have IDS set between each router in a network, specifically at a server, etc.
+	- Best practices for network security:
+		- Some things to do:
+			- Vendor security evaluation
+			- Frequent software updates
+			- Network division
+			- Firewall defense
+			- Replication and backup
+			- Data security
+			- Frequent inspections and assessments
+			- Employee education
+		- Firewall defense:
+			- Use firewalls, preferably stateful
+			- Regularly update the rules
+		- Network division:
+			- Network segmentation is great, don't put things together if they don't need to be
+			- Your sales team shouldn't be in the same subnet as your servers
+		- Frequent software updates:
+			- Don't be an idiot
+		- Vendor security evaluation:
+			- Stuff like FedRAMP, follow regulations every once in a while.
+		- Employee education:
+			- Don't be an idiot.
+		- Frequent inspections and assessments:
+			- Hire me to hack your network.
+		- Data security:
+			- Encrypt stuff, don't be an idiot
+			- Use SSL/TLS, don't be an idiot
+		- Replication and backup:
+			- Don't let ransomware destroy your company
+- 

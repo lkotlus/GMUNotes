@@ -1,0 +1,114 @@
+### System realization
+- Switching from building to user adoption testing and whatnot.
+- User adoption and transition to operations is the **most challenging aspect of systems engineering!**
+	- Training
+	- Installation
+	- Deployment
+	- Configuration
+	- Maintenance
+	- Help desk
+- We need to get users to overcome change, users are incredibly habitual.
+- System realization activities are conducted to test and create versions of system as specified by system definition
+- System deployment and use are critical SE activities that ensure that the developed system is <u>operationally acceptable</u> and that the responsibility for the effective, efficient, and safe operations of the system is <u>transferred to the owner</u>.
+- Considerations for deployment and use must be included throughout the system lifecycle. 
+- System deployment:
+	- Involves the transition of the capability to the ultimate end-user, as well as transition of support and maintenance responsibilities to the post-deployment support organization or organizations
+	- It may include a period of reliability demonstration tests and <u>phasing out of legacy systems</u> that the developed system replaces.
+	- Example: GMU phasing out Blackboard for Canvas
+- System use:
+	- Includes a continual assessment of the operational effectiveness of the deployed system or service, <u>identification of mission threat and operational risk</u>, and performance of the actions required to maintain operational effectiveness or evolve the capability to meet changing needs.
+	- Evolution of the operational system may occur with smaller maintenance actions or, if the changes cross an agreed-to threshold (complexity, risk, cost, etc.), may require a formal development project with deliberate planning and SE activities resulting in an enhanced system.
+- Product and Service Life Management
+	- Deals with SE activities required for <u>system evolution and end of system life</u> including service life extension (SLE), capability updates, upgrades, and modernization during system operation, and system disposal and retirement.
+	- In contrast System Deployment and Use specially deals with activities required to <u>ensure that system operation can continue as expected</u>.
+
+### Product Systems Engineering
+- Product systems engineering (PSE) is at the core of the new product development process (NPDP) that is needed to successfully develop and deploy products into different market segments.
+- A market can be consumer based (enterprise, general consumers, etc.) or it can be public (not-for-profit)
+- Public markets address the strategic needs of a country or region, such as military, healthcare, educational, transportation, and energy needs. NPDP has two significantly overlapping and integrated activities:
+	- <u>Systems engineering</u>: This includes concept generation, engineering design/development, and deployment.
+	- <u> Market development</u>:  This includes market research, market analysis, product acceptance and market growth (diffusion), and rate of adoption.
+- Manufacturability/Producibility:
+	- Manufacturing Readiness Level (MRL) is a measure developed by the DoD and is used by some US government agencies and many of the world's major companies (and agencies) to <u>assess the maturity of manufacturing readiness</u>.
+	- MRL serves the same purpose as Technology Readiness Levels (TRLs) serve for technology readiness.
+	- They can be used in general industry assessments, or for more specific application in assessing capabilities of possible suppliers.
+	- Example:
+		- Vaccine wasn't an issue in 2020 because it wasn't invented, we needed to manufacture it at scale (MRL was lagging behind TRL, although TRL was lacking initially).
+	- MRLs are <u>quantitative measures</u> used to assess the maturity of a given technology, component, or system from a manufacturing perspective.
+- Logistics and Distribution:
+	- Logistics is the management of the flow of goods between the point of origin and the point of consumption in order to meet some requirements, of customers or corporations.
+	- The minimization of the use of resources is a common motivation in logistics.
+	- Logistics is the art/science of getting what we want within a reasonable level of risk.
+	- Anyone can deliver the mail when there isn't a problem delivering the mail.
+- Military Logistics:
+	- "Leaders with through logistics." Vision, sure. Strategy, yes. 
+	- In military science, maintaining on'es supply lines while distributing those of the enemy is a crucial element of military strategy.
+	- Supply chain can't be corrupted.
+		- Gillette razor blades are the highest profiting black market in the world. People sell fake ones in fake packaging and leak them into the supply chain.
+		- Pagers exploding :)
+	- <u>Integrated Logistics Support</u> (ILS) is <u> a discipline used in military industries</u> to ensure an easily supportable system with a robust customer service (logistic) concept at the lowest cost and in line with (often high) reliability, availability, maintainability, and other requirements, as defined for the project.
+	- <u>Supply chain management</u> in military logistics often deals with a number of variables in predicting cost, deterioration, consumption, and future demand.
+- Business Logistics:
+	- "Today's leading real-world retailer, Wal-Mart, uses software to power its logistics and distribution capabilities, which it has used to crush its competition" 
+	- <u>Business Logistics</u> is "having the right item in the right quantity at the right time at the right place for the right price in the right condition to the right customer"
+	- <u>Inbound logistics</u> is the receiving, storing, and disseminating incoming goods or material for use.
+		- How we source goods, where we source them from, how they are produced, etc.
+		- We have ethical responsibility for this.
+	- <u>Outbound logistics</u> is the management of transport and storage for finished goods dispatched by a business.
+		- Inbound is solved, now how do we distribute?
+- **<u>ON THE FINAL: Product Systems Engineering Key Aspects:</u>**
+	- This is like push and pull
+	- Acquired product
+		- You define the needs (acquirer), you write the specification
+		- The person who does the work gives you the thing you asked for
+		- This is like a tailored suit. You say exactly what you want, and someone makes it for you.
+		- Like PDRI making a custom assessment test for a company.
+	- Offered products
+		- Like off the rack suits!
+		- It is made and offered for sale as-is.
+		- If it's on the menu, it's an offered product. If it's not on the menu and you ask the chef to make it, it is an acquired product.
+		- Like PDRI giving out a basic assessment test.
+	- If you get to specify every aspect of the thing, it is acquired. 
+- Supply Chains and Distribution Channels:
+	- <u>Supply Chains</u>
+		- Inbound logistics.
+		- Important to all is the concept that supplying parties contribute some form of <u>added value</u> to the life cycle of a system-of-interest.
+		- <u>The supply chain itself is an enterprise system that is composed of acquirers and suppliers as the system elements</u>. There is definitely a structure tied together by agreement relationships. 
+		- The supply chain system becomes a vital infrastructure asset in the system portfolios of enterprises and forms the basis for extended enterprises.
+		- This is the entire process by which we are distributing our thing. Oil supply chain:
+			- Exploration
+			- Production
+			- Crude pipelines
+			- Shipping
+			- Trading
+			- Refining
+			- Product pipelines
+			- Storage terminals
+			- Product distribution
+			- Retail markets and industrial markets
+		- **<u>We will be asked about the supply chain of our system on the final</u>**
+	- <u>Distribution Channels</u>
+		- Outbound logistics.
+		- A complex web of relationships between the product supplier and various distributors, for example, <u>package delivery companies</u>, warehouses, service depots, wholesale outlets, retail sales establishments, operator training and certification organizations, etc. on distribution channels.
+		- The nature of the distribution channels could have a significant impact on the architecture or design of a product system.
+	- On the final, when we are asked about inbound and outbound supply chains:
+		- Temu's model doesn't work on pet food: we can't wait that long!
+- Integrated Product Teams and Integrated Product Development 
+	- <u>Integrated Product and Process Development (IPPD)</u> is a management technique that simultaneously integrates all essential acquisition activities through the use of multidisciplinary teams to optimize the design, manufacturing, and supportability processes.
+	- One of the key IPPD tenets is <u>multidisciplinary teamwork through Integrated Product Teams (IPTs) who enable making the right decisions at the right time.</u>
+	- IPTs have specialists who are skilled and empowered to do their function in order to achieve a desired output. 
+	- We get an expert in each thing, put them all in a room, and that's the IPT.
+	- This is frequently not done well.
+
+### Individual assignments
+- You bare no moral culpability in giving honest information.
+- Put table in alphabetic order of last names.
+
+### Activity diagrams
+- It's the flow charts!
+- Start by picking a direction for the flow of time.
+- <u>Visual grammar matters.</u> We can use MagicDraw for these!
+- Squares are inputs/outputs, squircles are actions, diamonds are decisions that must cover the entire universe. 
+- Decisions only join back together if the two decisions will come to the same path.
+- Don't confuse splits with decisions!
+- 

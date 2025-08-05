@@ -1,0 +1,32 @@
+### Change of coordinates
+- What if we have to bases $\mathcal{B}$ and $\mathcal{C}$?
+- **<u>Example:</u>**
+	- Say $\mathcal{B}=\left\{\overrightarrow{b}_1,\overrightarrow{b}_2\right\}$ and $\mathcal{C}=\left\{\overrightarrow{c}_1,\overrightarrow{c}_2\right\}$ are bases of a vector space $V$. Suppose $\overrightarrow{b}_1=2\overrightarrow{c}_1+\overrightarrow{c}_2$ and $\overrightarrow{b}_2=3\overrightarrow{c}_1-\overrightarrow{c}_2$. Say $\left[\overrightarrow{x}\right]_{\mathcal{B}}=\begin{bmatrix}3\\-1\end{bmatrix}$. Find $\left[\overrightarrow{x}\right]_{\mathcal{C}}$.
+	- Well, we know that $\overrightarrow{x}=3\overrightarrow{b}_1-\overrightarrow{b}_2$ from the definition of our coordinate system. We want to convert this to the $\mathcal{C}$ coordinates, which just means we can plug and chug!
+	- $\left[\overrightarrow{x}\right]_{\mathcal{C}}=3(2\overrightarrow{c}_1+\overrightarrow{c}_2)-(3\overrightarrow{c}_1-\overrightarrow{c}_2)=6\overrightarrow{c}_1+3\overrightarrow{c}_2-3\overrightarrow{c}_1+\overrightarrow{c}_2=3\overrightarrow{c}_1+4\overrightarrow{c}_2$
+	- From this, $\left[\overrightarrow{x}\right]_{\mathcal{C}}=3\overrightarrow{c}_1+4\overrightarrow{c}_2$. Cool.
+	- Generalizes to solving with: $\left[\left[\overrightarrow{b}_1\right]_{\mathcal{C}},...,\left[\overrightarrow{b}_n\right]_{\mathcal{C}}\right]\left[\overrightarrow{x}\right]_{\mathcal{B}}$
+		- You will just multiply the matrix on the left with the vector on the right. Very easy.
+- **<u>Theorem:</u>**
+	- Let $\mathcal{B}=\left\{\overrightarrow{b}_1,...,\overrightarrow{b}_n\right\}$ and $\mathcal{C}=\left\{\overrightarrow{c}_1,...,\overrightarrow{c}_n\right\}$ be bases of a vector space $V$. Then there is a unique $n\text{x}n$ matrix $P_{\mathcal{C}\leftarrow\mathcal{B}}$ such that $\left[\overrightarrow{x}\right]_{\mathcal{C}}=P_{\mathcal{C}\leftarrow\mathcal{B}}\left[\overrightarrow{x}\right]_{\mathcal{B}}$ and $P_{\mathcal{C}\leftarrow\mathcal{B}}=\left[\left[\overrightarrow{b}_1\right]_{\mathcal{C}},...,\left[\overrightarrow{b}_n\right]_{\mathcal{C}}\right]$.
+	- This matrix is called the change of coordinates matrix from $\mathcal{B}$ to $\mathcal{C}$
+	- We know that this is invertible from the invertible matrix theorem (the never ending theorem).
+		- This tells us that $\left(P_{\mathcal{C}\leftarrow\mathcal{B}}\right)^{-1}=P_{\mathcal{B}\leftarrow\mathcal{C}}$
+	- Also, if $\mathcal{B},\mathcal{C},\mathcal{D}$ are three bases, then $\left(P_{\mathcal{B}\leftarrow\mathcal{C}}\right)(P_{\mathcal{C}\leftarrow\mathcal{D}})=P_{\mathcal{B}\leftarrow\mathcal{D}}$
+- **<u>Remark:</u>**
+	- This is a generalization of what we did before!
+	- What we did a few classes ago was the special case where $\mathcal{C}=\mathcal{E}$ (the standard basis of $\mathbb{R}^n$).
+	- What we called $P_\mathcal{B}$ before is the same thing as $P_{\mathcal{E}\leftarrow\mathcal{B}}$.
+	- Notice that: $$P_{\mathcal{C}\leftarrow\mathcal{B}}=\left(P_{\mathcal{C}\leftarrow\mathcal{E}}\right)\left(P_{\mathcal{E}\leftarrow\mathcal{B}}\right)=P_\mathcal{C}^{-1}P_\mathcal{B}$$
+- **<u>Example</u>**
+	- $\overrightarrow{b}_1=\begin{bmatrix}-1\\2\end{bmatrix}$, $\overrightarrow{b}_2=\begin{bmatrix}3\\1\end{bmatrix}$, $\overrightarrow{c}_1=\begin{bmatrix}2\\1\end{bmatrix}$, $\overrightarrow{c}_2=\begin{bmatrix}-1\\0\end{bmatrix}$, $\mathcal{B}=\left\{\overrightarrow{b}_1,\overrightarrow{b}_2\right\}$, $\mathcal{C}=\left\{\overrightarrow{c}_1,\overrightarrow{c}_2\right\}$
+	- Find the change of coordinate matrix $P_{\mathcal{C}\leftarrow\mathcal{B}}$.
+	- $P_{\mathcal{C}\leftarrow\mathcal{B}}=\left[\left[\overrightarrow{b}_1\right]_\mathcal{C},\left[\overrightarrow{b}_2\right]_\mathcal{C}\right]$. So we just need to solve $\left[\overrightarrow{b}_1\right]_\mathcal{C}=\begin{bmatrix}x_1\\x_2\end{bmatrix}$ and $\left[\overrightarrow{b}_2\right]_\mathcal{C}=\begin{bmatrix}y_1\\y_2\end{bmatrix}$.
+	- Since this is basically the same equation, we can solve them simultaneously (double solution row augmented-matrix): $$\left[\overrightarrow{c}_1\ \ \ \overrightarrow{c}_2\ \ \ \overrightarrow{b}_1\ \ \ \overrightarrow{b}_2\right]$$ $$\begin{bmatrix}2 & -1 & -1 & 3\\1 & 0 & 2 & 1\end{bmatrix}$$ $$\begin{bmatrix}1 & 0 & 2 & 1\\0 & 1 & 5 & -1\end{bmatrix}$$
+	- Very cool, so that tells us $\left[\overrightarrow{b}_1\right]_\mathcal{C}=\begin{bmatrix}2\\5\end{bmatrix}$ and $\left[\overrightarrow{b}_2\right]_\mathcal{C}=\begin{bmatrix}1\\-1\end{bmatrix}$.
+	- From that, $P_{\mathcal{C}\leftarrow\mathcal{B}}=\begin{bmatrix}2 & 1\\5 & -1\end{bmatrix}$.
+	- Pretty legit.
+- **<u>Generalization:</u>**
+	- With two bases, create the augmented matrix:  $$\left[\overrightarrow{c}_1 \ \ \ ... \ \ \ \overrightarrow{c}_n \ \ \ \overrightarrow{b}_1 \ \ \ ...\ \ \ \overrightarrow{b}_n \right]$$
+	- Row reduce to get: $$\left[I \ \ \ P_{\mathcal{C}\leftarrow\mathcal{B}}\right]$$
+	- And you're done. Pretty much the same process as finding an inverse, just different inputs.

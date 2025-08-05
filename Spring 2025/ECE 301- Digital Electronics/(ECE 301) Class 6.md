@@ -1,0 +1,12 @@
+### SoP and PoS
+- It's so easy, why are we still doing it?
+- The cost of a circuit is the sum of all our gates and the number of inputs to the gates. Inverters count as gates!
+- SoP expressions are implemented as AND-OR circuits. There's a line of AND gates that all go into an OR gate.
+- PoS expressions are implemented as OR-AND circuits. There's a line of OR gates that all go into an AND gate.
+- We can turn SoP expressions into NAND-NAND circuits.
+	- An OR gate with inversion on every input is the same as a NAND gate.
+	- We need to convert **everything** to NAND. Even inverters. 
+- We can turn PoS expressions into NOR-NOR circuits.
+	- An AND gate with inversion on every input is the same as a NOR gate.
+	- Same rules as NAND-NAND.
+- It's actually more effective to do everything in NAND and NOR.

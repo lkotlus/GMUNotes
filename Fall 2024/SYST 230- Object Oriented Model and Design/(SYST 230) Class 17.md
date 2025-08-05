@@ -1,0 +1,15 @@
+### Simulations in MagicDraw (I think)
+- This should be incredibly boring. I can't wait.
+- Items of definition:
+	- Blocks (not instances!)
+- Usages:
+	- Definitions with relationships
+- Parametric diagram:
+	- Captures relationships between blocks.
+	- Example: the weight of your ATM is the sum of the weight of each part.
+	- This is a specialized version of the Internal Block Diagram (IBD).
+- We can build parametric diagrams with constraint blocks. This is done automatically by mapping normal block parts, which is really cool.
+- Results from parametric diagrams are involved within simulations!
+- We can add requirements to our diagram! You did a requirements decomposition for 205.
+	- Satisfy relationships are used to show that a certain value, part, etc. satisfies a requirement.
+- We can put matlab code into our diagrams.

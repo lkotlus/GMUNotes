@@ -1,0 +1,28 @@
+### Theory of Price
+- Continued from last class.
+- Exam reminders:
+	- It will be Tuesday directly after spring break.
+	- You need a pencil and a scan-tron sheet. Blue or green is fine.
+	- We have the full class time to take the exam, it will probably take about a half an hour.
+	- Tested on everything through today's lecture, including readings.
+	- The exam is not (not intentionally, at least) tricky. If we come to class consistently, payed attention, and took good notes, we should be able to get a perfect score. This makes me happy.
+	- We will get 10 example questions, they give us a feel for the style of exam. We will get the answers a couple days later.
+- We talked about supply and demand last week, and started to talk about price.
+- Price is very important, and understanding prices is a valuable thing.
+- We were talking about the equilibrium price, and how the market is self-correcting.
+- We also talked about what happens when demand changes. An increase in demand causes an increase in equilibrium price. When demand decreases, equilibrium price decreases as well. Direct correlation.
+- When supply increases, equilibrium price decreases and vice versa. Inverse correlation.
+- Price will always go to equilibrium assuming there is no outside intervention. 
+- "Greed" does not cause prices to rise or fall. Consumers and producers do it to themselves all out of self interest. Consumers raise prices, producers lower them.
+- Example:
+	- Natural disaster
+	- Prices for common goods skyrocket during natural disasters, and then go right back down afterwards.
+	- The degree to which they rise is directly correlated with the severity of the disaster. Same with the time it takes for them to go back down.
+	- This is universal around the world, not just in the US. 
+- This universally observed phenomenon is properly explained by our model.
+	- We could also try to explain it with the "greed model".
+	- I mean... maybe it's true, but does it hold up?
+	- Why did we wait until the natural disaster to be greedy? Why did we suddenly become altruistic when the prices dropped again?
+	- It simply doesn't add up.
+- The typical successful entrepreneur gets 2.2%. Maybe 2.3%. Everything else goes to the general public in lower prices and higher wages.
+- No class on Thursday!

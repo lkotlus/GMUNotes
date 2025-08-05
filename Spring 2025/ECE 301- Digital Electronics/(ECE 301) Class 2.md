@@ -1,0 +1,45 @@
+### Chapter 1 information
+- FPGAs, cool stuff.
+- Missed 10 minutes because chain fell off the bike. Of course.
+- We will be going through the development process in this course for digital circuits.
+- Hierarchical design:
+	- Computer
+		- PSU, motherboard, printed circuit boards
+			- Integrated circuits, connectors, and components
+				- Subcircuits on a chip
+					- Logic gates (focus of the course)
+						- Transistors (less than a third of the course)
+							- Transistors on a chip
+
+### Chapter 2 information
+- Number systems!
+	- We love binary, we definitely aren't learning it for the thousandth time
+	- We're actually learning it a bit cooler this time.
+		- All number systems have a ***radix point***, which separates the fractional component from the integer component: $$[k_{n-1}k_{n-2}...k_{0}\cdot k_{-1}k_{-2}...k_{m-1}]_r$$
+		- That describes a base $r$ number with $n$ integer digits and $m$ fractional digits. The dot in the middle is our radix point.
+	- We use hex for more complex systems, as they more efficiently represent larger numbers.
+- Logic circuits!
+	- Logic circuits perform operations on digital signals.
+	- In binary logic circuits, there are only two values: 0 and 1.
+	- The general form of a logic circuit is a switching network:
+		- Essentially, we just map $\left\{x_1,x_2,x_3,...x_n\right\}$ to $\left\{y_1,y_2,y_3,...y_n\right\}$.
+	- Switching functions:
+		- Take an input, produce an output.
+		- We can describe one of these with:
+			- VHDL
+				- Virtual Hardware Description Language
+				- Used to describe combinational and sequential logic circuits.
+			- Truth Tables
+				- List each combination of inputs and show the resulting output.
+				- Pretty easy, but very tedious.
+			- Boolean Expressions
+				- Showing AND, OR, and NOT as algebraic expressions.
+					- "A and B": $A\cdot B$
+					- "A or B": $A+B$
+					- "not A": $\overline{A}$
+			- Circuit Diagrams
+				- Lil' picture you draw of the circuit.
+			- Timing Diagrams
+				- A graph that shows values over time.
+		- Each of those methods can be used to create the others.
+	- Next week we start on Boolean Algebra!

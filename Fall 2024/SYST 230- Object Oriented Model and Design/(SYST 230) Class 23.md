@@ -1,0 +1,14 @@
+### I might be able to get off early!
+- Just depends on if I can finish the project early. If that's the case I can skip quiz 3!!!
+- An `<<ImageSwitcher>>` can be used in order to show images based on state for your GUI.
+- What we're making today:
+	- Add a feature that allows the user to type an amount in dollars.
+	- The machine checks if it can be withdrawn. 
+		- If so, you get your money.
+		- If not, it requests a new number.
+	- Then loop. Easy enough.
+- Things to be careful about:
+	- Recall the `userDB` thing. We must add a `userBalDB` that tracks the balance the accounts for all users.
+	- We must create a new input in our GUI.
+	- We must update the `dispMsg` to show what's going on.
+- This is all very easy, just add a smaller loop within our main loop. I hope that I can get a python dictionary as a valid type within MagicDraw, because that would make checking balance much easier. I also hope that I can get MagicDraw to stop corrupting its own files.

@@ -1,0 +1,54 @@
+### Start of Lecture
+- Statistics can easily mislead us.
+	- If a baby enters the room, then the average height will decrease.
+	- Someone could claim that this means we should worry about us having a shrinking problem.
+- Ceteris Paribus:
+	- This means that we will hold everything else constant.
+	- We focus on a set of variables that will change, and simply assume that nothing else will take effect.
+	- "Holding everything else unchanged, if I let go of this dry erase marker it will fall to the ground."
+- Once again, we're talking about *An Inquiry into the Nature and Causes of the Wealth of Nations*.
+- Today we will be talking about the cause. What causes wealth?
+- Adam Smith opens his book by answering the question. The division of labor!
+	- We call this specialization.
+	- I don't grow my own food, make my own clothes, etc.
+	- My job will be an incredibly narrow task. Even software developers work on *specific types of software* rather than all kinds of software.
+- But why does specialization make us wealthier? Furthermore, what justifies the risk that others won't specialize to cover for your needs?
+- Fun fact about Adam Smith: he was kidnapped by gypsies when he was very young. They brought back and no harm came to him. They probably did it because he was going to be an economist.
+- He uses this analogy:
+	- In pin manufacturers 100 years before he wrote, each worker did all 18 steps in making a pin. They would make 10-20 pins a day (on average).
+	- When he wrote, each worker made 4,800 pins per day (on average).
+	- What enabled ordinary workers to produce such great quantities?
+	- The three reasons that Adam Smith gave that specialization helps so much:
+		- Minimizes time between tasks.
+		- Workers get really good at their single task.
+		- Encourages mechanization. We can replace some workers/tasks with machines. This one is big in the modern day. Machines almost do everything in factories now.
+- Only if individual output goes up can a society grow wealthier. If we have more workers, output technically increases, but it doesn't increase per worker. Everyone ends up with the same slice of pie.
+- 80 to 90 of every 100 people in the American workforce was in agriculture before the wealth of nations. To feed 100% of the population, at least 80% had to farm.
+	- Because of farming mechanization, at most 2% of the American workforce is in agriculture. For every 100 people, only 2 people need to feed us.
+- We became incredible tool makers! We made factories (which count as tools), computers, etc.
+- This economic system that had all these tools was later named capitalism.
+- Adam Smith said that the key to more economic growth was policies that encourage further specialization.
+- Example:
+	- Profs son was dying of not being able to digest food.
+	- There was a pediatric gastroenterologist. Woah.
+	- Not just a gastroenterologist, but one who specializes in that for children!
+	- This level of specialization saved a life.
+- As population grows, the size of the market increases. This itself allows for deeper specialization more possible. This is why increased population helps to increase wealth.
+- Smith reasoned that as workers become more specialized, people view individual tasks as simpler and find ways to mechanize them. 
+	- Possibly more likely, the driving force is that labor is expensive. We want less laborers, and mechanization helps with that.
+- David Ricardo is our next great economist! He died in 1823 as the second richest person in London. We was writing about economics, and he wrote a great economics book that we don't need to know the name of.
+	- He wasn't a great writer, but his ideas were so good that people read them anyways.
+- David Ricardo was the first person to identify **<u>the principle of comparable advantage</u>**. We will see that this is a fourth reason that output per worker goes up.
+- David fell in love with a devout Quaker despite being from a Jewish family. His family told him that he would never see any of the family fortune if he married her, but he did it anyways. He was very smart, and made a ton of money anyways. Hell yeah.
+- David purchased bonds that increased greatly in value since the British won the Battle of Waterloo. After that, the only richer person around was the king.
+- We are going to learn about what the principle of comparable advantage is, and that will make us far more educated on economics than anyone else. Most of econ is very straightforward, but the hard part is just staying consistent with that.
+- This is the one thing that is true but not obvious in economics. 
+- Example with a classmate. All assumptions made just make things easier to follow. Even without the assumptions, the conclusion will still follow.
+	- Assumption 1: There is a world with only two people. They are stranded on a desert island. They are on opposite ends of the island and don't know that they exist.
+	- Assumption 2: There's only two things that they care to consume. Bananas and fish.
+	- Person 1 gets 200 fish/month if they spend all their time fishing. As a result, they get 0 bananas. If they go for all bananas, they get 100/month and 0 fish/month.
+	- Person 2 has a similar set of constraints, but they only get 50 fish/month and 50 bananas/month. 
+	- Person 1 can produce more fish and bananas per month. It doesn't matter why.
+	- The Linearity Assumption: Now let's assume that they each spend half their time fishing and half their time gathering bananas. This gives us 25 fish and 25 bananas for person 2, and 100 fish and 50 bananas for person 1.
+	- One day, the two people meet one another. Person 1 proposes a bargain: if person 2 provides 25 bananas, person 1 will give 37 fish. This is a really good deal! Person 2 gets more fish than they can make with the same amount of bananas remaining, and person 1 gets more bananas than they would have. 
+	- Everyone comes out on top!

@@ -1,0 +1,29 @@
+### The Stranger
+- I actually liked this one!
+- The title is tough
+	- L'Etranger. This doesn't really mean stranger. Also a foreigner!
+	- Narrator is foreign to the average person!
+	- "The Outsider"
+- This book made him incredibly famous.
+- Existentialism! Ain't no reason for human existence.
+- I like this book because it's logically consistent. You are an atheist -> you are an existentialist, nihilist, or a hedonist to remain logically consistent.
+- Ecclesiastes mentioned!
+- Murder of the arab!
+	- This was strange, I really didn't get it.
+- "He's a psychopath" doesn't do us any good at all. It's a label to make us not need to think about it.
+- Things about Meursault:
+	- Lack of feeling of "this matters"
+	- Had a fling with Marie
+	- No remorse other than how it effects himself
+	- Physical guy
+	- Atheist
+	- Went to college and dropped out because of money
+	- Works in an office for some random shipping company
+	- Quit smoking
+	- Likes milk with his coffee
+		- They give black coffee to people who mourn
+	- Doesn't like to think about the past
+	- Grew up without a father
+	- Doesn't mind what company he keeps
+- What is the plot of this novel?
+- How are we supposed to feel about Meursault?

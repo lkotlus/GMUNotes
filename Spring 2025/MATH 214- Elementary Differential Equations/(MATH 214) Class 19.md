@@ -1,0 +1,17 @@
+### Actually Solving Equations (finally)
+- Recall the warm up from the beginning of last class:
+	- Use Newton's Law of Motion $\sum \overrightarrow{F}=m\overrightarrow{a}$, develop a rate of change equation to model the motion of an object on a spring. Assume that the only forces acting on the object are the spring force ($-kx$, $k$ is the spring constant and $x$ is displacement) and the friction force (assumed to be proportional to the velocity, namely $-b\frac{dx}{dt}$, where $b$ is the damping coefficient).
+	- $\frac{dF}{dt}=\text{change in spring force} + \text{change in friction force}$
+	- $\text{spring force}=-kx$
+	- $\text{friction force}=-b\frac{dx}{dt}$
+	- Well, we don't actually want $\frac{dF}{dt}$, we want $F$ as a differential equation. That's easy enough seeing as $\overrightarrow{F}=m\overrightarrow{a}$. 
+	- $$ma=-kx-b\frac{dx}{dt}$$ $$m\frac{d^2x}{dt^2}=-kx-b\frac{dx}{dt}$$ $$m\frac{d^2x}{dt^2}+b\frac{dx}{dt}+kx=0$$
+	- This almost looks like a polynomial.
+- Turning things into systems of DEs:
+	- Turn the example equation into a system:
+		- $y=\frac{dx}{dt}$, $\frac{dy}{dt}=\frac{d^2x}{dt^2}$
+		- $$y=\frac{dx}{dt}$$ $$\frac{dy}{dt}=-\frac{b}{m}y-kx$$
+	- Turn $x''-e^tx'+3x=\sin(2t)$ into a system:
+		- $y=\frac{dx}{dt}$, $\frac{dy}{dt}=\frac{d^2x}{dt^2}$
+		- $$y=\frac{dx}{dt}$$ $$\frac{dy}{dt}=e^ty+\sin(2t)-3x$$
+- You can find the slope of the line going through the origin by using $\frac{\frac{dy}{dt}}{\frac{dx}{dt}}$.

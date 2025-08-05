@@ -1,0 +1,48 @@
+### Exam on Tuesday!
+- Probably just review today.
+- Nevermind, we just hopping straight into the stuff on more linear transformations
+
+### Matrix of a Linear Transformation
+- Example!
+	- Suppose $\text{T}: \mathbb{R}^2\rightarrow\mathbb{R}^3$
+	- Also suppose that $$\text{T}\begin{bmatrix}1\\0\end{bmatrix}=\begin{bmatrix}-1\\2\\4\end{bmatrix},\ \ \text{T}\begin{bmatrix}0\\1\end{bmatrix}=\begin{bmatrix}0\\1\\1\end{bmatrix}$$
+	- Can we determine $\text{T}$?
+	- Well, we can start by saying that $$\text{T}\left(\begin{bmatrix}x_1\\x_2\end{bmatrix}\right)=\text{T}\left(x_1\begin{bmatrix}1\\0\end{bmatrix}+x_2\begin{bmatrix}0\\1\end{bmatrix}\right)$$
+	- With the rules for linear transformations... $$\text{T}\left(x_1\begin{bmatrix}1\\0\end{bmatrix}+x_2\begin{bmatrix}0\\1\end{bmatrix}\right)=x_1\text{T}\left(\begin{bmatrix}1\\0\end{bmatrix}\right)+x_2\text{T}\left(\begin{bmatrix}0\\1\end{bmatrix}\right)$$
+	- We know the values for these! $$x_1\text{T}\left(\begin{bmatrix}1\\0\end{bmatrix}\right)+x_2\text{T}\left(\begin{bmatrix}0\\1\end{bmatrix}\right)=x_1\begin{bmatrix}-1\\2\\4\end{bmatrix}+x_2\begin{bmatrix}0\\1\\1\end{bmatrix}$$
+	- Simplify to get $$x_1\begin{bmatrix}-1\\2\\4\end{bmatrix}+x_2\begin{bmatrix}0\\1\\1\end{bmatrix}=\begin{bmatrix}-x_1\\2x_1\\4x_1\end{bmatrix}+\begin{bmatrix}0\\x_2\\x_2\end{bmatrix}=\begin{bmatrix}-x_1\\2x_1+x_2\\4x_1+x_2\end{bmatrix}$$
+	- We can conclude from this that $$\text{T}(\overrightarrow{x})=A\overrightarrow{x},\ \ A=\begin{bmatrix}-1 & 0 \\2 & 1 \\ 4 & 1\end{bmatrix}$$
+	- Notice also that $$A=\begin{bmatrix}\text{T}\left(\begin{bmatrix}1\\0\end{bmatrix}\right) & \text{T}\left(\begin{bmatrix}0\\1\end{bmatrix}\right)\end{bmatrix}$$
+- Very cool! So a general approach tells us that...
+	- In $\mathbb{R}^n$, let $\overrightarrow{e}_1=\begin{bmatrix}1\\0\\0\\...\\0\end{bmatrix}$, $\overrightarrow{e}_2=\begin{bmatrix}0\\1\\0\\...\\0\end{bmatrix}$, ..., $\overrightarrow{e}_n=\begin{bmatrix}0\\0\\0\\...\\1\end{bmatrix}$
+- Theorem:
+	- Let $\text{T}: \mathbb{R}^n\rightarrow\mathbb{R}^m$ be a linear transformation. Then there is a unique $m\text{x}n$ matrix $A$ such that $\text{T}\left(\overrightarrow{x}\right)=A\overrightarrow{x}$ for all $\overrightarrow{x}\in\mathbb{R}^n$ in fact $A=\begin{bmatrix}\text{T}\left(\overrightarrow{e}_1\right) & \text{T}\left(\overrightarrow{e}_2\right) & ... & \text{T}\left(\overrightarrow{e}_n\right)\end{bmatrix}$
+- Example:
+	- $\text{T}: \mathbb{R}^4\rightarrow\mathbb{R}^4$, be the transformation that dilates/stretches vectors by a factor of 2. Find the matrix representing $\text{T}$.
+	- Well, we know that $\text{T}\left(\overrightarrow{x}\right)=2\overrightarrow{x}$. So we know that $$\text{T}\left(\overrightarrow{e}_1\right)=2\overrightarrow{e}_1$$
+	- Well that means that $$\text{T}\left(\begin{bmatrix}1\\0\\0\\0\end{bmatrix}\right)=\begin{bmatrix}2\\0\\0\\0\end{bmatrix}$$
+	- Expand this to all $e$ vectors, and we will see that we get $$A=\begin{bmatrix}2 & 0 & 0 & 0\\0 & 2 & 0 & 0\\0 & 0 & 2 & 0\\0 & 0 & 0 & 2\end{bmatrix}$$
+	- I am unimpressed.
+- Another example
+	- $\text{T}: \mathbb{R}^3\rightarrow\mathbb{R}^4$. Find $A$. $$\text{T}\left(\overrightarrow{x}\right)=\begin{bmatrix}x_1+x_2\\-x_3\\x_2-x_3\\x_1+x_2+2x_3\end{bmatrix}$$
+	- Well, we can just insert each $\overrightarrow{e}$ vector with the given equation and get our output.
+	- This is actually somewhat interesting, although we really just end up getting the coefficient matrix of the system of equations given. $$A=\begin{bmatrix}1 & 1 & 0\\0 & 0 & -1\\0 & 1 & -1\\1 & 1 & 2\end{bmatrix}$$
+- Another example:
+	- Let $\text{T}: \mathbb{R}^2\rightarrow\mathbb{R}^2$ be the linear transformation that rotates vectors by the angle $\theta$ counter-clockwise. 
+	- Well, according tho the theorem $A=\left[\text{T}\left(\overrightarrow{e}_1\right) \ \ \ \text{T}\left(\overrightarrow{e}_1\right)\right]$.
+	- If we think about it, we can translate $\overrightarrow{e}_1$ by $\theta$ by just doing $\begin{bmatrix}\cos(\theta)\\\sin(\theta)\end{bmatrix}$
+	- $\overrightarrow{e}_2$ is similar, we just end up getting $\begin{bmatrix}-\sin(\theta)\\\cos(\theta)\end{bmatrix}$
+	- Overall, we finish with $$A=\begin{bmatrix}\cos(\theta) & -\sin(\theta)\\\sin(\theta) & \cos(\theta)\end{bmatrix}$$
+	- This one is actually cool.
+- Definition!
+	- $\text{T}: \mathbb{R}^n\rightarrow\mathbb{R}^m$ is **onto** iff each $\overrightarrow{b}\in\mathbb{R}^m$ is the image of some vector $\overrightarrow{x}\in\mathbb{R}^n$.
+	- Essentially, $\text{range}(\text{T}) = \mathbb{R}^m$
+	- Essentially, $\forall\overrightarrow{b}\in\mathbb{R}^m \ \exists \ \text{T}\left(\overrightarrow{x}\right)=\overrightarrow{b}$
+	- Which means that if $\text{T}\left(\overrightarrow{x}\right)=A\overrightarrow{x}$, then $\forall\overrightarrow{b}\in\mathbb{R}^m \ \exists \ A\overrightarrow{x}=\overrightarrow{b}$
+- Theorem:
+	- If $\text{T}$ is onto iff columns of $A$ span $\mathbb{R}^m$.
+- Definition!
+	-  $\text{T}: \mathbb{R}^n\rightarrow\mathbb{R}^m$ is **one-one** iff there is only one solution for all given vectors.
+- Theorem:
+	- $\text{T}: \mathbb{R}^n\rightarrow\mathbb{R}^m$ is one-one $\iff\text{T}\left(\overrightarrow{x}\right)=\overrightarrow{0}$ has only the trivial solution.
+	- $\text{T}: \mathbb{R}^n\rightarrow\mathbb{R}^m$ is one-one $\iff$ the columns of $A$ are LI.

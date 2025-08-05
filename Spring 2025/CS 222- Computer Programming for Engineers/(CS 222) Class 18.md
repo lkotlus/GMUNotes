@@ -1,0 +1,3 @@
+- It's class sections like this that make me want to cry. 
+- I literally did an ECE lab report and filed my taxes while he chose to not teach anything of value to me.
+- Agony, but I get a coffee for showing up. That gets me out of bed.

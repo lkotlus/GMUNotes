@@ -1,0 +1,162 @@
+### Go to class!!!!
+- Not everything we need for the midterm are in lecture slides online.
+
+## Systems Fundamentals
+- Two questions that SE is designed to answer:
+	- Did we build the correct system?
+	- Did we build the system correctly?
+- SE involves a great deal of stuff, but each type of engineering uses SE.
+- SE provides a timely and logical order, connecting things to a holistic view
+	- Coordinates actions towards getting our goals achieved over time
+- We have a structure for logically thinking about systems
+	- Using the framework of SE thinking, we can use all mixtures of organizational systems relative to a coordinated whole
+- Questions to consider:
+	- What is meant by cycle?
+		- Repeating set of interactions
+	- What is meant by life cycle?
+		- A beginning, an end, and a new beginning with repeating pattern
+	- SE deals with the life cycle of human designed and made systems
+		- System development cycle (design finalized, critical design review)
+		- System life cycle
+- Challenges of SE
+	- Everything has SE
+	- Wide range of product/project development times and duration
+	- Cycle of product/system development
+		- Integrated vs. modular
+	- Duration of product/system life cycle
+	- Adapting the technical management discipline to SE
+- Key terms and relationships
+	- Capabilities
+		- Big things that a system should be able to do.
+		- Take the form of a verb noun phrase. "Transport personnel"
+		- Haven't made these, haven't made the system
+	- Requirements:
+		- Things the system needs to be able to do.
+		- Takes the form of a noun shall verb phrase. "The car shall stop within 100 feet at 50 mph"
+		- Haven't made these, haven't made the system correctly
+		- Requirements are high level even if they seem to be super specific. They probably need to be even more specific.
+			- "The car shall stop within 100 feet at 50 mph while weighing less than 3000 pounds" is still high level.
+			- The statement should have clear terms that everyone will agree to the test cases for for requirements. If there is ambiguity or people interperet differently, then you aren't done yet.
+	- Function
+		- Things that the system has to do.
+		- Takes the form of a verb noun, verb-ing, or verb statement. Stop car, stopping, stop.
+		- These are action statements.
+		- **Function is an activity, requirement is a description of an attribute.**
+	- Components
+		- Individual pieces.
+		- Just a noun. Cog, car, wheel, etc.
+- What is a system component?
+	- System components may be quite diverse
+		- Persons and organizations
+		- Software and data
+		- Equipment and hardware
+		- Facilities and Materials
+		- Services and techniques
+	- **People are a core part of the systems we talk about!**
+- Focus of SE (Refer to the slide)
+	- Need
+	- Operations Concept
+	- Functional Requirements
+	- System Architecture
+	- Requirements
+	- Design
+	- Implementation
+	- Test and verification
+- SE Contributions
+	- SE brings two elements to a project that are not usually present
+		- Focus on the end product
+		- Enabling its products
+		- Internal and external operational environment (a System View)
+	- A consistent vision of stakeholders' expectations
+		- Not all stakeholders are equal
+		- Some can't say no but can say yes
+		- Some always say yes
+		- Some have opinions and power that change over time
+		- Some manifest later in the process
+- "The car shall stop \[requirements]"
+	- A component for this is breaks
+	- A function for this is stopping
+- Something like safety is not a functional requirement!
+	- If you couldn't write a function in software that meets such a requirement, it is not a functional requirement.
+- Attributes like affordability can't be given a single component. It goes onto nearly every component and things like the manufacturing.
+- If it ends in "ility", it is probably a non-functional requirement.
+- Systems Communication
+	- Your goal in any language is communication to and among your stakeholders.
+	- The goal is to eliminate ambiguity.
+	- "It will be done in seven months."
+		- What is "it", what is "done"?
+	- Be specific, make sure everyone leaves with the same interpretation.
+- Ethics
+	- Systems Engineers are in a position to do a lot of harm.
+	- Race to be first means cutting corners. Cutting corners means damage.
+	- Can you live with the consequences of what you build?
+		- This is important for you, Mr. Malware.
+- **Sixth slide of systems foundations is hugely important for things, especially the semester project!!!**
+
+### Concept Definition
+- The capability is whatever it is that the stakeholders need done.
+- Figure out what the stakeholders want, as they do not make it easy
+- Space to explore is what makes the system ideation and realization process possible.
+- Mission analysis and definition of stakeholder needs/requirements are the two primary things discussed with concept definition
+- Operations research is about figuring out the optimal amount of stuff required to get stuff done.
+- Operations research turns into "how do I make new things", which is SE. 
+	- "How do I solve these problems in a systematic way?"
+- Mission analysis involves:
+	- Define problem space
+	- Identify Stakeholders
+	- Develop preliminary operational concepts
+	- Distinguish environmental conditions and constraints in the solution space
+- "What will be available when we start building?" is more important than "what is available when we start designing?". That is difficult.
+- We talk about requirements a lot. Requirements means functional and non-functional. Stakeholder needs and requirements are not that. We will be calling this stakeholder needs.
+- Drivers of solutions: push and pull
+	- Push is based on addressing a perceived opportunity. A solution seeking a problem. Like the iPhone.
+	- Pull is providing a solution to an identified problem or gap. A problem seeking a solution. 
+- Pull paradigm
+	- Need is identified by potential customers or market search.
+	- We can ask people what they want, and they will tell you.
+		- This is dangerous, because they just want a better, faster, cheaper solution to what they have already. That is not a solution to the problem.
+- Push paradigm
+	- We see a root cause that is not intuitively obvious, and we design a system that addresses that.
+	- We can't go out and ask people about it, because they don't know what it is yet.
+	- If you're lucky and good at it, then you will satisfy that underlying problem and solve it.
+
+### System definition
+- When we define a system (we've done our mission analysis and defined our stakeholders), we must... 
+	- Figure out what is in and out of scope
+	- Begin grouping things
+- In order to do that, form...
+	- System requirements
+	- Logical architecture
+	- Physical architecture
+	- System analysis
+- System definition starts from nothing, and it begins with writing things down (could be building models, documentation, etc.)
+	- Knowledge base that helps set what that system will be
+- Architecture description:
+	- Architecture is a description from different points of view that shows how the system works to different points of reference.
+- Architecture viewpoint
+	- What stakeholder am I explaining this to?
+	- What parts of the system are relevant to them?
+	- Explain how it works in a way that is useful, logically organized, and in a model that they recognize?
+- Architecture framework
+	- An orchestrated set of defined words with standards that are used to explain things over and over again to stakeholders.
+	- Arbitrary level of extraction.
+- Architecture Description Language (ADL)
+	- Boxes with arrows!
+	- IDEF Diagrams
+	- ICOM Model
+	- It has a structure and language to it.
+	- As architectures have advanced, so have the languages.
+	- They are complex, pseudoprogramming languages.
+	- SysML is the most advanced one. It was extended from SML, which was only for software. This makes it good for software, and allows us to translate physical components into software.
+	- We start with just boxes.
+		- One box! Our system. Everything outside is not our system.
+		- The weather, conditions, etc. is out.
+
+### Projects
+- Most people did fairly well on the first project. It is also the least weighted of all of them.
+- No matter how simple, we should show a group effort in the results of a group project.
+- The depth expected to be seen in group assignments is seen in things such as multiple corroborating sources.
+- Citations exist to prevent me from accidentally plagiarizing. Cite everything all the time.
+- "Nothing in this class is ever just what it is."
+- "From this frame of reference, is X correct?" Get the hell out of here with that subjective truth crap.
+- Requirements must stem from necessity.

@@ -1,0 +1,14 @@
+### Systems of Differential Equations
+- Recall the idea of the 3-dimensional plot.
+- Rabbits and foxes.
+- Some questions:
+	- What are our predictions for the initial conditions: $R(0)=3$ and $F(0)=0$?
+		- Rabbits will go to infinity
+	- Using all three different views of the graph, show how this supports our conclusions.
+		- Foxes-rabbits graph shows that rabbits are increasing as foxes stay at 0
+		- Foxes-time graph shows that foxes stay at 0
+		- Rabbit-time graph shows that rabbits are increasing to infinity
+	- With $R(0)=3$ and $F(0)=2$, what happens as time continues?
+		- We keep cycling in populations.
+	- I would rather carve open my abdomen with a shard of glass and hang myself by my own entrails than sit through this any longer. Ridiculously slow paced. 
+- 

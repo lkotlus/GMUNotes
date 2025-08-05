@@ -1,0 +1,17 @@
+### Next Project
+- I don't want to be here.
+- Issue, Audience, and Genre (IAG) Analysis. That's what we're doing. This is so stupid, I don't want to be here.
+- Steps
+	- Solidify issue resolution in more detail
+	- Matching the argument for resolution to an appropriate stakeholder audience (real world person/organization who can do something)
+	- Planning how to present, frame, and organize the argument within
+	- Planning how to present, frame, and organize the argument in the final project (advocacy letter) and it's genre **conventions**.
+- The most rational escape would be to take my life. The materials I have available are all school supplies, but I think if I were to take the 0.5 mm graphite in my pencil bag I might be able to force it up my nasal cavity fast enough to penetrate into my brain. Worst case scenario I just need to leave with a nosebleed. 
+- Stakeholders:
+	- Must have power to influence and alter the issue
+	- Need to be convinced in some way before implementing my solution
+	- They have a vested interest (monetary gain or otherwise) in the issue (optional)
+- "Levels" of society:
+	- Level 1: public sector
+	- Level 2: private sector
+	- Level 3: individuals with cultural leverage

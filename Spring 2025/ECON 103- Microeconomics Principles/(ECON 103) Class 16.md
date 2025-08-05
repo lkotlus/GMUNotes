@@ -1,0 +1,48 @@
+### More on Price Control
+- We talked about price ceilings (a price set below equilibrium) last class, this class we are going to have a price floor (a price set above equilibrium).
+- So merchants may charge as high as they want, but they cannot offer things below the government established minimum. There aren't nearly as many examples of this (who votes for that?)
+- This causes people to not sell all their inventory, as demand is lower due to the higher prices. 
+- The rationing system for this is for who gets to sell first rather than who gets to buy first. Instead of having a set system for this, it's typically just whoever gets to the market first sells first.
+- Consequences of price floor:
+	- Surplus
+	- Rationing of buyers
+	- Buyers get less of the good
+	- Decrease the marginal value/market value of the good
+	- Bribery of buyers to purchase the good (lower the cost by doing favors)
+	- Increases the quality of the good
+- The government made the Civil Aeronautics Board (CAB) in 1937, and one of its purposes was to make price floors in the passenger aviation industry.
+	- They could only regulate airline rates that cross state lines.
+	- This lead to an increase in quality. Large planes, leg room, great service (even in coach), free meal and drink (alcoholic), etc.
+	- Flying was very expensive, but when you do it it's an exquisite experience. You get dressed up, feel all fancy, etc.
+	- Nowadays it's very different.
+- Minimum wage
+	- This is a price floor! It's a price for an hour of labor.
+	- In the US the federal minimum wage was started under some fair labor act. It was in 1938.
+	- A lot of states set their minimum wage above the federal level.
+	- It's currently $7.25/hour.
+	- In a labor market I am the supplier, not the demander.
+	- If the price of labor is low, then people purchase a lot of laborers. Middle class people in Guatemala have a lot of workers just in their homes to do laundry, wash the dishes, etc. 
+	- We can't do that in the US, it's too expensive for the middle class with our price of labor.
+	- In the US, the majority of minimum wage workers are very young, frequently teenagers. 
+	- The number of people who make ***federal*** minimum wage is only about 2%.
+	- The percentage that gets ***a*** minimum wage is less than 5%. Over 95% of workers get paid more than this.
+	- It typically takes 9 months to go from a minimum wage to a higher wage. This is because of an increase in production.
+	- Wages are bid up to increase worker productivity.
+	- When we have a minimum wage, the obvious effect is a surplus, so we have people who are unemployed. It causes unemployment among minimum wage workers, but not among skilled workers who make more than that. I make an equilibrium wage due to being a skilled worker.
+	- If 1000 people want to work at minimum wage, but only 800 people are hired, those 800 people are better off. If we were at equilibrium price more people (say 910) would be hired at a lower price. If all 1000 were hired, even less would be made. 
+		- Minimum wage is not free, the higher the minimum wage the more unemployment.
+	- The real benefit of a minimum wage job is the work experience.
+- Sowell is an economist who studied minimum wage. He started in 1948 and most recently updated this study 10 years ago. He is 95 now.
+	- 1948:
+		- Unemployment rate for black teenagers had a lower rate (9.8) than white teenagers (10.4)
+	- Over time:
+		- White teenager rate has stayed the same, but unemployment for black teenagers has tripled.
+	- This has been explained as a consequence of the minimum wage. White teenagers are typically more qualified for minimum jobs due to means of transportation, good schooling, lack of familial responsibility, etc.
+- At the beginning of the minimum wage, it wasn't really binding. Not until 1948 did it have an economic effect (more detail on this later).
+- Many empirical studies have been done on this, but the most famous was employed by President Carter in the seventies. The results were published in 1981. 
+	- Some of the best bipartisan economists in the country were used.
+	- One of the key findings was that every 10% increase in minimum wage caused a 1% increase in the unemployment rate among low-wage workers.
+- This has been challenged by David Card and Allen Kruger (Card and Kruger). They published a study saying that the entire thing was wrong!
+	- They found that a rise in minimum wage did not cause a decrease in employment rate.
+- Some have sided with Card and Kruger, others say they are wrong. Professor thinks they are mistaken due to the fact that all studies done (US and global) come to about 70% siding with unemployment increasing with minimum wage and the remaining 30% siding with Card and Kruger.
+- Before Card and Kruger there was a huge consensus among economists.

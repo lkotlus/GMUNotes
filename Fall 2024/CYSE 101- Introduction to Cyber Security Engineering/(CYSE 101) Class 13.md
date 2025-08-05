@@ -1,0 +1,75 @@
+### Mobile device/IoT security
+- Frequently overlooked, very important.
+- Comparison
+	- Mobile devices:
+		- Roaming devices that include an operating system such as IOS or android.
+		- Smart phones, tablets, Raspberry Pi (grey area)
+	- Embedded devices:
+		- Computer in another device
+		- Cars, refrigerators
+	- IoT:
+		- Internet connected devices that do not run a full OS
+		- Cameras, medical devices, thermostats
+- IoT is frequently overlooked in terms of security.
+- Mobile security issues:
+	- Mobile operating systems
+	- Jailbreaing (rooting)
+	- Malicious apps
+	- Lack of updates
+	- Zero days/exploits (Pegasus!)
+- Embedded systems security issues:
+	- Update (if possible)
+		- Firmware
+		- Software?
+	- Adding layers of security such as a firewall
+- IoT Security Issues:
+	- Lack of transparency
+		- Do you know what specific actions your IoT device is doing?
+		- Isolate device in a VPN to see (complex)
+	- IoT transformed into IoE (Internet of Everything)
+		- Unsecured entry points
+		- Supply chain attacks possible; not just end devices
+	- Lack of regulations and governance
+		- What about privacy vs. security needs?
+- Mobile Device Management (MDM) Concepts and Practices:
+	- Application content management
+	- Remote wipe
+	- Goefencing
+	- Geolocation
+	- Screen locks
+	- Passwords/pins
+	- Biometrics
+	- Context-aware authentication
+	- OS Updates
+	- Full device encryption
+- IoT Security Best Practices:
+	- Track and manage devices
+	- Patching and remediation
+	- Update passwords from the default
+	- Enable encryption if possible
+	- Conduct pen tests
+	- Segment your network
+	- Use MFA
+- Two ways to view IoT security:
+	- Inward security:
+		- Forucus on potential harms to health, safety, and privacy of the device users and their property stemming from compromised IoT devices and systems
+		- IoT device is the final target
+	- Outward security:
+		- Focus on harm to other devices with IoT as a stepping stone (lateral movement).
+- Data privacy:
+	- Destruction and media sanitization
+		- Burning
+		- Shredding
+		- Pulping
+		- Pulverizing (crush and reduce materials like hard drives)
+		- Degaussing (use a strong magnetic field)
+		- Purging (software and hardware techniques to remove data from storage devices making it difficult to recover)
+		- Wiping (overwrites the existing data on a storage medium multiple times with random or predetermined patterns to make original data unable to recover)
+	- Sensitive labeling and handling
+		- Confidential
+		- Private
+		- Public
+		- Proprietary
+		- PII (personal identification information)
+		- PHI (personal health information)
+- EASY

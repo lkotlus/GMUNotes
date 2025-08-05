@@ -1,0 +1,14 @@
+### The Stranger
+- "Do you need to disagree with everything I say?"
+- "Fuck, I'm tired man! I'm still here!"
+- He had sunstroke at the time of the murder.
+- Camus goes out of his way to not provide us with evidence for the motivation of the shooting. We understand bullet 1, but we can only speculate for the latter bullets.
+	- Why doesn't Camus tell us!?
+- The prosecutor wants Meursault's head over this.
+- Why did Meursault do the stuff?
+	- He didn't want to see the women crying, so he goes on the walk.
+	- The prosecutor says he had plotted to murder the man.
+- Is the trial fair?
+- Meursault breaks with the customs of his tribe.
+- In jail, Meursault learns to love the world and not be so apathetic!
+- Camus wants you to stop thinking like the jury.

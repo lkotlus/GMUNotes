@@ -1,0 +1,24 @@
+### Continuing on Arithmetic Circuits
+- Recall that a full adder is comprised of two half adder circuits and an or gate to get the sum bit and carry bit.
+- Putting full adders in series results in a ripple-carry adder (RCA) circuit.
+- Signed numbers:
+	- Recall signed numbers. The MSB gets shifted to $b_{n-2}$ and $b_{n-1}$ represents the sign (0 for positive, 1 for negative).
+	- This is easy to understand, but it isn't well suited for sue in computers.
+	- 1's complement
+		- We can use the 1's complement scheme instead. An $n$-bit negative number, $K$, is obtained by subtracting its equivalent positive number, $P$, from $2^n-1$.
+		- For example, if $n=4$, then: $$K=(2^4-1)-P$$ $$-5=(15)_{10}-(5)_{10}=(1111)_2-(0101)_2=(1010)_2$$ $$-3=(15)_{10}-(3)_{10}=(1111)_2-(0011)_2=(1100)_2$$
+		- Note that we really just take the complement of each digit.
+	- 2's complement
+		- This can be used as well.
+		- The formula for this is similar, just $K=2^n-P$
+		- The easiest way to find this is to add 1 to the 1's complement.
+	- The point of all of this is that 2's complement is most efficient. With other systems for negative numbers, -0 is a distinct value from 0. 4-bit 2's complement ranges from -8 to 7, whereas with normal signed numbers and 1's complement, we go from -7 to 7.
+	- Sign-magnitude numbers have simple addition, but it gets complicated with different signs, especially with potential integer overflow/underflow.
+	- In 1's complement, we re-add the overflow bit. In 2's complement, we ignore it.
+	- 2's complement removes the need for a subtraction circuit!
+	- Just take the 2's complement of whatever you subtract.
+- Overflow:
+	- For $n$ bits, we can only go from $2^n-1$ to $-2^n$. If our result from arithmetic goes higher than this, we need to know.
+	- We can determine if we have overflow by looking at the carry bits. If $c_{n-1}\oplus c_n=1$.
+	- That's our lil' formula to determine if we have overflow.
+- Next class, we will put all of this into a new adder circuit that improves RCA.

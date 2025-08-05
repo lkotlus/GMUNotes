@@ -1,0 +1,120 @@
+### Midterm Prep
+- So we have a study guide on Blackboard.
+	- More detailed in lecture slides
+		- Most detailed in the textbook, which you will 300 pages of
+- We don't need to memorize formulas, but we can put them on our cheat sheet.
+	- Better to understand concepts behind them, of course. You will get this from the textbook.
+
+### Chapter 1 Review
+- The internet is a network of networks.
+- Network edges are hosts, and hosts have applications.
+- Network components:
+	- Network edges. Made of hosts, either clients or servers.
+	- Access networks. Access networks and physical media make up the connecting components of the internet. Access network physically connects an end system to the first router (edge router) on a path from the end system to any other distant end system.
+		- Link-layer switches are typically used in access networks.
+		- Wired and wireless are both options for this.
+	- Network core. Made up of interconnected routers. Routers have two functions: forwarding (local action) and routing (global action)
+		- ***There will be a question on these!***
+- Packet switching vs. Circuit switching.
+	- Packet switching is first come first serve
+		- All users use all channels, sending information in packets.
+		- More users can use the network!
+	- Circuit switching is like a reserved restaurant
+		- User gets a channel, they use the channel as much as they want.
+		- Users get uninterrupted service.
+		- Frequency Division Multiplexing (FDM) and Time Division Multiplexing (TDM) are used.
+	- ***There will be a question on the two types of switching and their pros/cons!***
+- Performance
+	- ***There will be a question on processing/queuing/transmission/propagation delay!***
+	- Know how to calculate!
+	- Processing: hardware running necessary computations
+	- Queuing delay: packets wait their turn because of limited number of channels
+	- Transmission: bits per second and packet size
+	- Propagation delay: wire/distance and data speed
+- Protocols:
+	- ***There will be a question on layering. What it is, what it's benefits are, and OSI.***
+	- 5 Layer OSI is the same as the TCP/IP model.
+		- Application (Application, Presentation, Session are different in the 7-layer OSI)
+		- Transport 
+		- Network
+		- Data link
+		- Physical
+	- Protocols define the format and order of messages that are sent and received among network entities, and actions taken on message transmission and reception.
+	- Know which protocols go on which layer.
+	- **Know what HTTP stands for.**
+
+### Chapter 2 Review
+- ***There will be a question on what the function of the Application Layer is and how it works with the Transport Layer. Know how it is used by the end-user and host.***
+- ***List protocols required to transfer information.***
+- Public and private protocols are a thing.
+- Interacts with transport layer through sockets!
+- ***Know the source vs. destination port and IPs.***
+- Client-server architecture:
+	- Servers:
+		- Servers are "always-on hosts"
+		- Static IP
+		- Often in data centers for scaling
+	- Clients:
+		- Contact and communicate with the server
+		- My be intermittently connected
+		- Dynamic IP
+		- Do not communicate directly with each other (in client-server)
+		- HTTP, IMAP, FTP, etc. are all client-server protocols. 
+- P2P:
+	- File sharing with BitTorrent can scale far better.
+	- Torrent means all peers share the same resource
+	- Faster after a certain number of people join.
+	- No always-on server. Arbitrary end systems directly communicate.
+	- Peers request service from other peers and provide service in return to other peers.
+	- Peers are intermittently connected and change IP addresses, makes for some complex management.
+	- ***Know basic BitTorrent stuff***
+	- ***Know which protocols are client-server and which protocols are P2P***
+- Email:
+	- ***Know email stuff, difference between POP3 and IMAP***
+- HTTP:
+	- Persistent (establish connection, request several objects) and non-persistent (request one object at a time) exist.
+	- ***HTTP is stateless, we manage state with cookies***
+- In summary:
+	- ***HTTP!***
+		- Persistent and non-persistent
+		- HTTP/1
+		- HTTP/1.1
+		- HTTP/2
+	- ***Email!***
+		- 3 components
+		- Email servers
+		- Sending servers
+	- ***DNS!***
+		- Distributed hierarchical database
+		- Record types
+		- Layers of servers
+		- Iterated and recursive queries. Most use iterated today.
+		- Reverse DNS lookup does not count!
+	- ***What is a P2P network, how does it work, what are the benefits and drawbacks?***
+	- ***What protocol uses BitTorrent, what is BitTorrent, and how does it work?***
+	- ***Video streaming transmission rates and CDNs.***
+
+### Chapter 3 Review
+- TCP vs. UDP:
+	- TCP:
+		- Reliable transport
+		- Flow control
+		- Congestion control
+		- Doesn't provide timing, minimum throughput guarantee, or security
+		- Connection oriented
+	- UDP:
+		- Unreliable data transfer,
+		- Doesn't provide reliability, flow control, congestion control, timing, throughput guarantee, security, or connection setup.
+	- We send data in frames.
+- ***Know all rdt versions (1.0, 2.0, 2.1, 2.2, and 3)***
+	- Also go-back-N and selective repeat
+- Flow and congestion control!
+	- Flow control is send/receive buffers. It's caused by the server sending too fast.
+	- Congestion control is insane, it's caused by server receiving bombardment of requests.
+- ***What is multiplexing/demultiplexing, how do they work? Differences between TCP and UDP demultiplexing.***
+	- TCP uses source and destination IP and port
+	- UDP only uses source IP and port
+- ***Know services that use UDP vs. TCP.***
+- ***Know inner workings of TCP!***
+	- And I mean everything about it
+- ***Calculate checksums!***

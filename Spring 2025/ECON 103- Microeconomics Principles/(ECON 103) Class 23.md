@@ -1,0 +1,50 @@
+### Public Choice
+- Public Choice economics is explaining how a lot of group decisions work
+- We're going to focus on democratic public choice
+- The Romantic View vs. Public Choice:
+	- The Romantic View is that when we enter the public sector we suddenly become angels and care only for the greater good of everyone.
+	- WRONG! We act out of self interest, see the foundation stones.
+- Greatest hits of public choice (or politics without romance (or how politics really works))
+	- James M. Buchanan
+		- Fist GMU econ guy to get a Nobel Prize! Studied Public Choice 
+		- We need to know this name
+		- Vernon Smith (don't need to know this name) also got a Nobel Prize in econ at GMU
+	- Gordon Tullock
+		- Also at GMU!
+		- The guy who said we should put a dagger on the center of a steering wheel to reduce traffic fatalities
+		- Worked with James Buchanan. They authored a book together called the Calculus of Consent.
+		- He came very close to getting a Nobel Prize
+	- Both Buchanan and Tullock appreciated the Constitutional Convention. They believed that the founders, particularly James Madison, had a great understanding of Public Choice
+	- Federalist #51:
+		- The government, men governing men, must be able to control the people. Furthermore, the government must be obliged to control itself.
+		- James Madison!
+	- Voting isn't sufficient!
+		- If it were, we wouldn't need a constitution.
+		- The American framers knew this, but they couldn't quite articulate it.
+		- Arrow's Impossibility Theorem:
+			- Named after Kenneth Arrow, another founder of Public Choice economics.
+			- Second American to win a Nobel Prize. He was the youngest person to ever win a Nobel Prize in econ (until about 2 years ago).
+			- He was much more of a mathematician than an economist.
+			- He wanted to figure out a system that produces an outcome that reflects the preferences of the people.
+			- He was surprised when he proved this!
+			- He showed that it is theoretically (and practically) impossible to come up with any system of collective decision making (including voting) that produces an outcome that shows only the preferences of the voters and is not polluted by arbitrary factors that should not play a role.
+			- Every system of voting requires a system to fix when we don't have a winner from the vote. 
+			- We sometimes use pairwise voting. People vote on a pair and the winner is compared to another. 
+				- The issue here is that the winner is determined by who goes first!
+				- An arbitrary factor changed the outcome! Furthermore, it doesn't truly reflect the preferences of the voters.
+			- Agenda Setters choose things like the order in which votes are taken.
+				- People like Prime Ministers and the Speaker of the House are Agenda Setters, and that makes them far more powerful.
+			- Arrow admitted that there are exceptions. We can get the correct results from elections no matter the order of voting. This is called a Condorcet Winner. Named after Marquis de Condorcet, who got close to discovering the concept.
+			- Arrow found that Condorcet winners can be destroyed by additional options. The Speaker of the House can create new options to get what they want.
+			- Democracy protects us from Condorcet Losers, the least popular options.
+			- General/runoff elections have a general election with everyone, and if you don't have a majority winner in that election the two top choices go head to head in the runoff election.
+			- Don't anthropomorphize people! Groups don't have wills or sets of preferences, it's just a group of people. They sometimes act collectively, but that doesn't change anything.
+	- Some similar things are:
+		- The Special-Interest-Group Effect
+			- Sugar farmers want high tariffs on sugar so that the US equilibrium price is well above the global equilibrium.
+			- The sugar program is in place, and sugar farmers will fight tooth and nail to protect it. But I won't do anything about it. I don't lose as much as the sugar farmers benefit. I lose 10-20 dollars a year. It would cost hundreds of dollars in time and money to change this.
+			- When the benefits of a program are a small group and the costs are on a very large group, we get the special-interest-group effect.
+		- The Rational Ignorance Effect
+			- I can't say how many light bulbs are in the ceiling of the lecture hall.
+			- I'm ignorant to the information, but I'm also rational to it. I would need to exert effort to acquire the information, but it's useless to me. 
+			- It is for this reason that voters are not informed on the outcomes of an election. My vote won't determine the outcome, so I'm not going to do a ton of research. It doesn't really matter who I vote for on an individual level. No single vote is ever the determinant.

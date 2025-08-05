@@ -1,0 +1,80 @@
+### Cryptography!
+- So this falls under Cryptology (study of creating and solving codes)
+- Breaking would by cryptanalysis.
+- Making would be cryptography. Under this, we have encryption and decryption.
+- A key is an
+	- Algorithm, device, or hint which has the ability to encrypt and decrypt data.
+- A cipher is a secret way of writing and delivering messages. Commonly used from Rome and Egypt all the way up to WWII.
+- A transposition cipher scrambles the position of characters into another word, which is defined by the key.
+- A Caesar Cipher is a substitution cipher which shifts letters by a certain amount.
+- The issue with this is that the key is still plain text.
+- Enigma! This was pretty epic.
+- Symmetric vs. Asymmetric Cryptography
+	- Symmetric:
+		- One key for encryption and decryption
+		- Key is secretly exchanged and agreed upon
+		- Once the private key is established, messages will be encrypted and decrypted with that key.
+		- Symmetric Cryptography algorithms to know: AES, DES, 3DES, RC4
+	- Asymmetric Cryptography:
+		- Uses two keys (public and private)
+		- Messages are encrypted with the public key
+		- Only decrypted using the private key.
+		- Stolen messages can't really be decrypted easily.
+		- Asymmetric algorithms to know: RSA, DSA, Diffie-Hellman, ECC
+	- Cool
+- Use cases:
+	- Symmetric:
+		- Faster, still secure, but relies on secure transmission of the key.
+		- Encrypt files at rest
+		- Encrypting large amounts of data
+		- Secure internal communications in a trusted network
+		- Wi-Fi Encryption
+	- Asymmetric:
+		- Slower, but more secure
+		- Secure communications over the internet
+		- Email encryption
+		- Digital signatures
+		- Key exchange
+		- Cryptocurrency/blockchain
+- Cryptography terms:
+	- Stream vs. Block Ciphers:
+		- Stream Cipher - Encryption technique which transforms plain text to code byte by byte
+		- Block Cipher - Encryption technique which transforms plain text to code in blocks of X number of bytes at a time
+	- Data-in-transit vs. Data-at-rest vs. Data-in-use
+		- Data-in-transit: data actively being sent back and forth between two hosts
+		- Data-at-rest: data sitting on my machine
+		- Data-in-use: data which is sitting on my machine but being used locally
+	- Security through obscurity:
+		- Concept in cybersecurity which states that a system can remain secure if the secrets are hidden. This is invalid, and why we use cryptography.
+- Hashes:
+	- Converting data into fixed-length strings of letters and numbers.
+	- One-way function, irreversible, completely random.
+	- Each input is unique to each to each output, changing one character in an input will drastically change the output.
+	- Let's us ensure that data isn't intercepted, detect changes in data, and keep data private.
+	- Popular algorithms:
+		- MD5
+		- SHA1
+		- SHA256
+		- MD5-Crypt
+	- We can try to break hashes with rainbow tables, but this frequently requires a salt.
+- Digital signatures:
+	- Algorithm used to validate the authenticity and integrity of a message.
+	- "Nobody messed with this."
+	- Sender hashes the message and encrypts the hash.
+	- Receiver decrypts the message and hash.
+	- Receiver hashes the decrypted message, if the message wasn't changed then the hashes will match.
+	- This ensures non-repudiation, sufficient evidence exists that nobody can deny any action
+- Cryptographic attacks:
+	- Side-channel attacks
+		- Use physical data to break a cryptosystem such as monitoring CPU cycles or power consumption used while data is being encrypted or decrypted
+	- Rainbow table attack
+		- Cracking a password based off the hash referenced to a table of already known hashes. This database is referred to as a rainbow table.
+- SSH!
+	- Secure Shell! (my love)
+	- Encrypts all data because it is secure.
+	- Much better than telnet. Telnet sucks balls.
+	- Client-server model to serve you shell access to a server. Operates on TCP port 22 (by default) and listens for incoming connections. Upon a connection, we can do our cool stuff remotely.
+- Steganography:
+	- Security through obscurity.
+	- Hide data within an ordinary file to avoid detection. Typically images.
+

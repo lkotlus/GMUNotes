@@ -1,0 +1,242 @@
+### Do not fall asleep.
+- I know it's late, I know you're tired, I know this is the fifth class of your Tuesday, and I know most of the things she says are gibberish.
+- <u>***Do not fall asleep!***</u>
+
+## Application Layer (part 1)
+- This is layer 1 of the OSI model.
+	- Five layers total.
+- Application layer is divided into two parts. Part 1 is practical implementation.
+- Goals:
+	- Understand the principles of network application design.
+		- Transport-layer service models
+		- Client-server paradigm
+		- Peer-to-peer paradigm
+	- Popular application-layer protocols through case studies
+		- HTTP (Hypertext Transfer Protocol)
+		- FTP (File Transfer Protocol)
+		- SMTP/POP3/IMAP (email stuff)
+			- Simple Mail Transfer protocol (send)
+			- Post Office Protocol (receive)
+			- Internet Message Access Protocol (receive)
+		- DNS (Domain Name System)
+
+### Application Layer Fundamentals
+- Some network apps:
+	- Text Email
+	- Remote login
+	- File transfer
+	- Web (mid 90s)
+		- Instant messaging
+		- P2P file sharing
+		- Streaming stored video
+	- Highly compelling applications (modern)
+		- VoIP (Voice Over IP)
+		- Etc.
+	- Next generation
+		- Cloud computing, the network is the computer.
+			- No more paying for hardware, just pay for access to hardware that you don't own.
+			- Computers will be minimal, they're just access points.
+		- SaaS, applications run over the network. That's just good sense, I don't want to install apps.
+- Creating a network app:
+	- First we need to think about what we program with and how to program it.
+	- Next, we need to think of the interface between the application and transport layer. 
+		- Two options (mainly): TCP (reliable), and UDP (fast, used for streaming)
+		- This is done with sockets. Sockets are great for client-server. Just make a client socket and a server socket.
+	- Write programs that:
+		- Run on different end systems and communicate over a network.
+	- Little software written for devices in network core
+		- Network core devices do not run user application code
+		- Applications on end systems allow for rapid app developemnt and propagation.
+- Application architectures:
+	- Client-server
+		- Server:
+			- Always on
+			- Permanent IP
+			- Often in data centers for scaling
+		- Client:
+			- Contact and communicate with the server
+			- Intermittently connected
+			- Dynamic IP
+			- Do not communicate with other clients
+		- Use cases:
+			- Websites! HTTP!
+			- Email
+			- File transfer
+	- P2P
+		- No always-on server
+		- Arbitrary end systems directly communicate
+		- Peers request service from other peers and provide service in return
+			- Self scalability
+		- Peers are intermittently connected and change IPs
+			- Complex management
+			- Shard encryption and whatnot
+		- Use cases:
+			- Illegal activity
+			- Torrents
+			- Skype
+			- Instant messaging
+	- Hybrid client-server and P2P
+- Process Communicating:
+	- Process: program running within a host
+		- Within the same host, two processes communicate using inter-process communication
+		- Processes in different hosts communicate by exchanging messages
+			- Client process:
+				- Initiates communication
+			- Server process
+				- Waits to be contacted
+- Sockets:
+	- Processes send and receive messages to/from its sockets.
+	- Sockets are analogous to doors:
+		- Sending process shoves a message out a door
+		- Sending process relies on transport infrastructure on the other side of the door, which brings messages to the receiving socket.
+	- API:
+		- Choice of transport protocol
+		- Ability to fix a few parameters
+	- Sockets bridge the gap between a process and TCP/UDP.
+- Addressing processes:
+	- How do we know which host is which?
+	- IP addresses are 32 bits long (in version 4).
+		- `ddd.ddd.ddd.ddd`
+		- `xx.xx.xx.xx`
+		- `bbbbbbbb.bbbbbbbb.bbbbbbbb.bbbbbbbb`
+	- Q: does the IP of a host suffice for identifying the process that is running?
+		- No! You need a port and an IP.
+	- IP is just an identifier, you need a port number to access a specific service on the machine.
+	- Domain names correspond to IPs through DNS. We can get IPs from domain names with commands like `nslookup`
+- Message format
+	- An application-layer protocol defines:
+		- Types of messages exchanged
+			- Request, response, etc.
+		- Message syntax
+			- What fields, how they are separated, etc.
+		- Message semantics
+			- Meaning of information in fields
+		- Rules
+			- For when and how processes send and respond to messages
+	- Open protocols:
+		- Defined in RFCs, everyone has access to protocol definition
+		- Allows for interoperability
+		- Like HTTP, SMTP, etc.
+	- Proprietary protocols
+		- Like Skype
+- Requirements for message transport
+	- Data integrity
+		- Some apps require reliable data transfer (TCP)
+		- Other apps can tolerate loss (UDP)
+	- Timing
+		- Some apps require low delay (voice chat)
+	- Throughput/bandwidth
+		- Some apps require a minimum throughput
+		- Some apps will use anything
+	- Security
+		- Encryption, data, integrity, etc.
+	- Bandwidth is different from timing, because delay is different from rate. Delay is like an offset, rate is like BPM (lighting terms). Timing is a constraint in speed, bandwidth is a constraint in size.
+- TLS is implemented in the application layer.
+- Transport protocol services:
+	- TCP:
+		- Reliable
+		- Flow control
+		- Congestion control
+		- Does not provide timing, minimum throughput guarantee, or security
+		- Connection-oriented (handshake)
+	- UDP:
+		- Unreliable
+		- Does not provide flow control, congestion control, timing, throughput guarantee, security, or connection setup.
+	- Why does UDP exist? Streaming! Loss of data is alright, we need to send as much data as possible without worrying about if the client or server received it.
+- Securing TCP:
+	- TLS! Transport Layer Security.
+		- Provides encrypted TCP connections, gives us data integrity and end-point authentication.
+
+### Web and HTTP
+- A web page consists of objects, each of which can be stored on different web servers (objects are just files).
+- Objects can be HTML files, JPEG, Java applets, etc.
+- We reference objects with URLs (Uniform Resource Locator)
+- Hypertext Transfer Protocol 
+- Web's application layer protocol
+- Client/server model:
+	- Client: requests, receives, and displays web objects
+	- Server: sends objects in response to requests
+- Uses TCP
+	- Client initiates TCP connection over port 80
+	- Server accepts TCP connection
+	- HTTP messages are exchanged
+- Stateless
+	- Server maintains no information about past client requests
+	- We maintain state through cookies.
+	- Protocols that maintain state are super complex, we don't want that.
+- Non-persistent HTTP:
+	- One object per TCP connection
+- Persistent HTTP:
+	- Leave connection open, get as many objects as you want, then close the connection.
+	- Without pipelining:
+		- One object request at a time
+	- With pipelining:
+		- Asynchronous
+- HTTP Request Message:
+	- Human readable (ASCII)
+	- You edit these all the time in BurpSuite!
+	- We have methods:
+		- GET, POST, HEAD (HTTP/1.0)
+		- GET, POST, HEAD, PUT, DELETE (HTTP/1.1)
+	- Format:
+		- Method: which request we are making
+		- Path: which object we want
+		- Host: which server we are requesting
+		- Headers: just a bunch of other information
+		- Body: information, may or may not be empty
+- HTTP Response Message:
+	- Also human readable (ASCII)
+	- Also done stuff with these in BurpSuite
+	- Instead of a message, we have a status code.
+	- Format:
+		- Status line: status code and message
+		- Headers: random information
+		- Body: the data inside the object you are getting
+	- Status codes:
+		- 200 OK (success!)
+		- 301 Moved Permanently (object is somewhere else)
+		- 400 Bad Request (bad boy did something wrong with their web exploit)
+		- Tons of these
+- Maintaining user/server state
+	- Cookies! 
+	- Example:
+		- Susan accesses the internet from the same PC
+		- She visits a site for the first time
+		- Her HTTP request arrives on the sites, it creates a unique ID (storing in a DB), and sends it to Susan.
+		- Susan has a cookie that will now be sent with her requests, and the server will know that it's her because of it! The cookie is stored in the browser.
+	- Four components:
+		- Cookie header line of HTTP response message
+		- Cookie header line in HTTP request message
+		- Cookie file kept on user's host, managed by user's browser
+		- Back-end database
+	- Permanent cookies never expire, temporary cookies are thrown away and regenerated when necessary.
+	- Third party cookies just steal your information.
+	- So HTTP doesn't have state, but HTTP messages can carry state!
+
+### Email, SMTP, POP3, IMAP
+- Three major components:
+	- User agents
+	- Mail servers
+	- SMTP
+- User agent
+	- The mail reader and composer
+	- Apps like Gmail, Outlook, etc.
+	- Outgoing and incoming messages are stored on the server
+- Mail servers
+	- Mailbox contains incoming messages for users
+	- Message queue of outgoing mail messages
+	- SMTP protocol between mail servers to send email messages
+		- Client: sending mail server
+		- "Server": receiving mail server
+	- When I send an email, I'm telling my server to act like a client for another server.
+- Example:
+	- User agent sends a request to a mail server.
+	- Mail server sends mail to another mail server.
+	- Receiving mail server stores email.
+	- Other user agent receives new mail.
+- Protocols:
+	- SMTP is for delivery/storage of emails with the receiver's server
+	- Retreival from server:
+		- POP
+		- IMAP
+		- HTTP (Gmail and other web-based)

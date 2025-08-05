@@ -1,0 +1,110 @@
+### Revisions
+- What is the primary goal of the SDL?
+	- To integrate security activities throughout the SDLC process.
+- At which phase of the SDL should threat modeling typically begin?
+	- During the requirements/design phase
+
+### Microsoft SDL
+- Microsoft has an SDL (it wouldn't seem to be very effective)
+- This is an industry-leading software security assurance process.
+- Core concepts:
+	- Ongoing education and training (certs)
+	- Continuous progress and improvement
+	- Accountability
+- SDL Optimization Model:
+	- Based on the maturity model
+	- Contains five capabilities areas:
+		- Training, policy, and organizational capabilities
+		- Requirements and design
+		- Implementation
+		- Verification
+		- Release and response
+	- We rate them on the scale:
+		- Basic
+		- Standardized
+		- Advanced
+		- Dynamic
+	- There's a checklist. We go into a tier based on what is checked off.
+- Roles, Responsibilities, and Qualifications
+	- Reviewer/Advisory Roles (SME - not part of the project):
+		- SME - not part of the project
+		- Provide project security and privacy oversight and have the authority to accept or reject security and privacy plans from a team.
+	- Team Champions
+		- SME - project team
+		- Responsible for negotiating, accepting, and tracking minimum security and privacy requirements and maintaining clear lines of communication with advisors and decision-makers during a software development project.
+- Overall process:
+	- Training (unique from SDLC)
+		- Core security training
+		- Establish training criteria
+		- Establish minimum training frequency
+		- Establish minimum acceptable group training thresholds
+	- Requirements
+		- Opportunity to consider security at the outset of a project
+		- Development team identifies lead security and privacy contacts - "Champions"
+		- Security Advisor assigned
+		- Security Advisor reviews product plan, makes recommendations, and may set additional requirements
+		- Mandate the use of bug tracking/job assignment system
+		- Define and document security and privacy bug bars
+			- A bug bar is a set of criteria that defines the minimum acceptable level of security quality for a project:
+				- Critical
+				- Important
+				- Moderate
+				- Low
+	- Design
+		- Define and document security architecture, identify security-critical components
+		- Document attack surface and limit through default settings
+		- Define supplemental security ship criteria due to unique product issues
+			- XXS tests
+			- Deprecation of weak crypto
+		- Threat modelling
+			- Systematic review of features and product architecture from a security point of view
+			- Identify threats and mitigations
+	- Implementation
+		- Full spectrum review - used to determine processes, documentation, and tools necessary to ensure secure deployment and operation
+		- Specification of approved build tools and options
+		- Static analysis
+		- Banned APIs
+		- Use of operating system "defense in depth" protections
+		- Online service-specific requirements
+		- Secure coding libraries
+		- Consider other recommendations
+	- Verification
+		- Started as early as possible - conducted after the "code complete" stage
+		- Start security response planning - including response plans for vulnerability reports
+		- Re-evaluate attack surface
+		- Fuzz testing - files, installable controls, and network-facing code
+	- Release
+		- Creation of a clearly defined support policy - consistent with MS corporate policies.
+		- Provide a comprehensive Software Security Incident Response Plan (SSIRP)
+			- Identify contacts for MSRC and resources to respond to events
+			- 24x7x365 contact information for 3-5 engineers who will always be available
+		- Verify that SDL requirements are met and that there are no known security vulnerabilities
+			- Provides an independent view into "security ship readiness"
+			- The FSR is NOT:
+				- A penetration test - no "penetrate and patch" allowed
+				- The first time security is reviewed
+				- A signoff process
+			- Key concept: the tasks for this phase are used as a determining factor on whether or not to ship.
+		- Archive:
+			- Customer documentation is up-to-date
+			- Archive RTM source code, symbols, and threat models to a central location
+			- Complete final signoff
+	- Response (unique from SDLC)
+		- Execution of response tasks previously outlined
+
+### SDL Lab
+- Scenario
+	- Secure Instant Message for healthcare
+	- Must:
+		- Support desktop and mobile
+		- Friendly UI
+		- Real-time text and image sharing
+		- Secure storage of chat logs and attachments for audit purposes
+		- Admin dashboard
+	- HIPAA considerations:
+		- Confidentiality of Protected Health Information (PHI)
+		- Access control and authentication mechanisms to restrict access to PHI
+		- Audit trail for all accesses and modifications
+		- Encryption for data at rest and in transit
+		- Incident response and breach notification procedures
+		- Risk assessments and threat modelling

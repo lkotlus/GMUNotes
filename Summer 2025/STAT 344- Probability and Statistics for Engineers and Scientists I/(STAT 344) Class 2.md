@@ -1,0 +1,102 @@
+## Lecture
+### What Do Engineers Do?
+- Engineers solve problems of interest in society with efficient applications of scientific principles by:
+	- Refining existing products or processes (new features, iPhone 1 -> iPhone 2)
+	- Designing new products or processes (new products, flip phone -> smart phone)
+- The engineering method:
+	- The way that we solve these problems. It is a linear process, with an iterative refining period:
+	- Identify the important factors
+	- Conduct experiments
+	- Propose or refine a model
+- Statistics support the engineering method:
+	- The field of stats deals with the collection, presentation, analysis, and use of data to:
+		- Make decisions
+		- Solve problems
+		- Design products and processes
+	- It's the science of data, this is inherently useful for engineering.
+- Variability
+	- Statistical methods are useful to describe and understand variability.
+	- Variability is the phenomenon that leads to successive observations of a system or phenomenon where the viewed results are not identical.
+	- Incorporating variability into decision making processes is called statistical thinking
+	- Statistics provides a framework for describing this variability and learning about potential sources of variability.
+	- ***Dot diagrams***
+- Basic methods of data collection
+	- Three basic methods:
+		- Retrospective study
+			- Data collected in the past for other purposes
+			- Pros: lots of data
+			- Cons: might be inaccurate or not be useful
+		- Observational study
+			- Data, presently collected, by a passive observer
+			- Pros: lots of data
+			- Cons: might not be able to passively get the required data
+		- Designed experiment
+			- Data collected in response to process input changes
+			- Pros: gets exactly the data you need
+			- Cons: you need to run the experiment
+- Hypothesis tests
+	- A statement about some aspect of the system, compared to a claim about another process value. Data is gathered to support or refute  the claim.
+	- You have a hypothesis, you test the hypothesis.
+- How change is detected
+	- A control chart is used.
+		- Time-oriented horizontal axis
+		- Variable-of-interest vertical axis
+	- Long-term average is plotted as the center line.
+	- Long-term usual variability is plotted as upper and lower control limits around the long-term average.
+		- Limits typically located at 3 standard deviations away from center line
+	- A sample size$n$ is taken and the averages are plotted over time. If the plotted points are between the control limits, then the process is normal; if not, it needs to be adjusted.
+- Use of control charts:
+	- Two purposes of control charts
+		1. Enumerative studies: control chart of past production lots, used for lot-by-lot acceptance sampling
+		2. Analytical studies: real-time control of a production process
+- Mechanistic and empirical models
+	- Mechanistic model
+		- Built from our underlying knowledge of the basic physical mechanism that relates several variables. 
+		- We know that Ohm's law is $I=\frac{V}{R}$
+		- Essentially, the form of the <u>function is known</u>.
+	- Empirical model
+		- Built from our engineering and scientific knowledge of the phenomenon, but not directly developed from our theoretical or first-principles understanding of the underlying mechanism.
+		- The form of the function is not known *a priori*
+		- Example:
+			- We know all the variables
+			- We have a bunch of data
+			- We can use a line fit to get the form of our function from the data and the variables
+			- Physics lab!
+		- Let's say we're trying to get pull strength from wire length and die height. This is what a regression model would look like: $$\text{pull strength}=\beta_0+\beta_1(\text{wire length})+\beta_2(\text{die height})+\epsilon$$
+		- This will yield results such as: $$\widehat{\text{Pull Strength}}=2.26+2.74(\text{wire length})+0.0125(\text{die height})$$
+	- Models can reflect uncertainty
+		- Probability models help quantify the risks involved in statistical inference, that is, risks involved in decisions made very day.
+		- Probability provides the framework for the study and application of statistics.
+		- Probability concepts will be introduced next lecture!
+
+### Important Terms and Concepts
+- Analytic study
+- Cause and effect
+- ***Designed experiment***
+- ***Empirical model***
+- ***Engineering method***
+- ***Enumerative study***
+- Factorial experiment
+- Fractional factorial experiment
+- ***Hypothesis***
+- ***Hypothesis testing***
+- Interaction
+- ***Mechanistic model***
+- ***Observational study***
+- Overcontrol
+- ***Population***
+- ***Probability model***
+- ***Random variable***
+- ***Randomization***
+- ***Retrospective study***
+- ***Sample***
+- ***Scientific method***
+- ***Statistical inference***
+- ***Statistical process control***
+- ***Statistical thinking***
+- Tampering
+- ***Time series***
+- ***Variability***
+
+## Extra Video
+- Video unavailable

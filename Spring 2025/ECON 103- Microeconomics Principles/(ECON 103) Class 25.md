@@ -1,0 +1,43 @@
+### Last Class Before Final
+- The final is the same format as the other exams.
+- It is cumulative, it covers everything including the new material.
+- We essentially just have a full week to study
+
+### Tax Policy
+- Taxation is the means that government uses to get resources
+- People respond to taxes. Taxed activities decrease in frequency! If income tax is 100%, then nobody will work.
+	- This is described by the Laffer curve
+	- The Laffer curve is completely uncontroversial among economists
+- The main effect of increasing taxes to a very high rate:
+	- The tax is so oppressive that people stop working (income tax is so great that people don't even want to work any more)
+- If the income tax rate were 100%, then we would all work in the "underground" economy. Not necessarily illegal activities, but "off the books" for sure.
+- People have a greater incentive to avoid and evade taxes:
+	- Tax avoidance is legal! You can do anything you'd like to avoid your taxes by giving money to charity and whatnot.
+	- Tax evasion is illegal! If I have a cash-only business or something I could just not file all my income. It would be easy to do that, but it's illegal.
+- The rate that brings in the most revenue is not necessarily the optimal rate.
+	- The maximum revenue is denoted by the tax rate $t_1$.
+	- Assume we want to get an amount of revenue less than this, $r_0$. The optimal tax rate isn't $t_1$ for this, it's $t_0$ (on the lower tax rate end) and $t_2$ (on the higher tax rate end)
+	- But we don't want $t_2$! So how can we get $t_0$?
+	- $t_1$ is only the optimal tax rate if we decide we want the highest tax revenue possible (or even more than that, despite it being impossible).
+- The Laffer curve ***cannot*** tell us the optimal tax rate. To do that, we need to know the optimal tax revenue. We do, however, know that the optimal rate is always somewhere from $t_1$ to 0 as the tax rate.
+- Income tax used to be unconstitutional, but there was an amendment made specifically for it. It is most-definitely constitutional now.
+- Prohibition was only possible after the income tax was put in place. This is because taxes on alcohol were the main source of revenue for the government. Income tax became 90% of the revenue, and now we can outlaw alcohol.
+- The claim made is that prohibition was a "noble experiment", but it simply failed because of criminal activity. 
+	- Prohibition didn't end because it wasn't working, it ended because of the great depression
+	- The government saw that people weren't employed as much, so income tax revenue went down. They wanted their alcohol tax revenue back!
+- Another public choice concept:
+	- Bruce Yandle wrote a very famous article called "Bootleggers and Baptists".
+	- Bootleggers are the illegal alcohol producers
+	- Baptists are me
+	- He said that the most powerful prohibition support you could get would be one with sincere people and monetary support.
+	- Bootleggers want prohibition so they can make money, Baptists want prohibition because they sincerely think it's right.
+	- Bootleggers paid for prohibition ads!
+- The Laffer Curve was made to describe taxes, but we can observe it in a different context
+	- Some economists noticed that mountain climbing became a lot safer than it used to be. Your chances of dying or being injured became significantly lower.
+	- Despite this, more and more people would be killed while climbing mountains.
+	- More people were climbing because it was safer! 
+	- Not despite it was becoming safer, but because it was becoming safer.
+- One of the greatest economists of all time, the French Fredrick Bastiat was an amazing writer. The year he died, he wrote an essay called "That Which is Seen and That Which is Not Seen". 
+	- Anybody can see that which is seen
+	- It takes effort to see the unintended consequences.
+	- Economics teaches us to see beyond into that which is not seen.

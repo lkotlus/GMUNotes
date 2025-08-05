@@ -1,0 +1,100 @@
+### I am bored.
+- If I need to write a peer review for one more presentation I am going to shove a railroad spike through my cranium.
+- Railroad spike time!
+
+### Human factors
+- We are the last line of defense, but also considered the weakest link.
+- Anthem attack:
+	- Anthem was an insurance company that was hacked.
+	- Our general cycle:
+		- Phishing attack
+		- Password stealing Trojan
+		- Lookalike websites
+		- Database access
+		- Data exfiltration
+- Equifax attack:
+	- Same thing, started with a phishing attack.
+- A bunch:
+	- Uber: credentials stored on private GitHub
+	- Anthem: phishing
+	- Target: phishing (HVAC contractor)
+	- Carbanak: phishing
+	- CFTC: phishing
+	- RSA: phishing
+- Verizon breach report:
+	- Phishing represents 98% of social incidents and 93% of breaches. Email continues to be the most common vector (96%).
+	- Nation states are like 70% of attacks.
+- Social engineering:
+	- "Any act that influences a person to take an action that may or may not be in their best interest."
+	- Goal:
+		- Get the person to provide information or access that you should not be given to.
+- Inspiration:
+	- Trojan horse
+	- Victor Lustig (guy sold the Eiffel Tower)
+	- Charles Ponzi - Ponzi Scheme
+	- Any other person or event in history which took advantage of people through their:
+		- Curiosity
+		- Fear
+		- Trust
+		- The desire to help
+		- The desire to comply
+	- Based.
+- Social engineering lifecycle:
+	- Investigation: preparing the ground for the attack (OSINT)
+	- Hook: deceiving the victim(s) to get a foothold
+	- Play: Obtaining information over a period of time
+	- Exit: closing the interaction, ideally without arousing suspicion
+- Social engineering techniques:
+	- Physical location
+	- Phone
+	- Trashing (dumpster dive)
+	- Mail theft
+	- Social networking
+	- Email
+	- Shoulder surfing
+	- Texting
+- Phishing:
+	- Email or other communication masquerading as legitimate content or sites.
+	- Types:
+		- Typical phishing: shotgun, mass targets
+		- Spear phishing: single target
+		- Clone phishing: copy of legitimate message
+		- Whaling: target top executives
+	- Link shorteners (bit.ly, tinyurl.com, tiny.cc)
+- Why is phishing so effective:
+	- People receive hundreds of emails every day
+	- People get curious
+	- What to do
+		- Constant monitoring of incoming phishing emails
+		- Email filtering
+		- Firewalls
+		- Security awareness training - the human element!
+- Insider threats:
+	- Malicious:
+		- Conscious decision to act inappropriately
+		- Motive to harm
+	 - Accidental:
+		 - No conscious decision to act inappropriately
+		 - No motive to harm
+		 - Just made a mistake
+		 - Still a threat from the security standpoint.
+	 - Negligent:
+		 - No motive to harm, but also no motive to protect.
+ - Dealing with insider threats:
+	 - A malicious insider is defined as a current or former employee, contractor, or business partner who meets the following criteria:
+		 - Has or had authorized access to an organization's network, system, or data
+		 - ...
+	- Insiders can be stopped, but it is a complex problem.
+- Insider threat responsibility:
+	- HR
+	- Legal
+	- Physical security
+	- Data owners
+	- IT
+	- Software engineering
+- Defense against social engineering:
+	- Functional level: security policy
+	- Paramater level: security awareness training for everyone
+	- Fortress level: resistance training for key employees
+	- Gotcha level: social engineering land mines
+	- Offensive level: incident response

@@ -1,0 +1,8 @@
+### Modelling With Autonomous DEs
+- Warm up:
+	- Students want to develop a DE to describe the cooling rate for hot coffee. They measured temperature $C$ (in Fahrenheit) every 2 minutes over a 14 minute period. Use this data to create a third column whose values approximate $\frac{dC}{dt}$, where $C$ is the temperature of the coffee. How did you make this column?
+	- We can just find average rate of change based on $C$ and $t$. Easy.
+- Do we expect $\frac{dC}{dt}$ to be dependent on just $C$, just $t$, or both? It can't be just $t$, it could be both. Referencing the title of the lesson, it's just $C$. I can see that we are approaching what appears to be an equilibrium solution around $C=70$, which implies that we might have either multiplication by some multiple of $t$ or no presence of $t$ at all. 
+	- If we look at our time, it's always just $t=2$ passing. The actual value of $t$ has no real bearing on the slope at that point, which implies that we have an autonomous differential equation. 
+- If we look at a graph of $\frac{dC}{dt}$ vs. $C$, we can see that it is linear, and intersects the horizontal axis at $C=60$. This makes sense. We can also see that an initially cold drink will increase in temperature. This makes sense as well.
+- We can make some conclusions about things by reasoning as well as by inspection of example graphs. Just pay attention to things like uniqueness and intervals of increase/decrease. Phase lines might actually be helpful, especially when overlaid with slope fields and potential solution graphs. 

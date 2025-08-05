@@ -1,0 +1,36 @@
+### We the best music
+- Another one
+- Exam stats:
+	- Me: 100
+	- Shakeeb: 100
+	- Van: 100
+	- Mean: 79
+	- Median: 85
+- Very cool.
+
+### Eigenvectors and Eigenvalues
+- Consider the matrix $A=\begin{bmatrix}3 & -2\\1 & 0\end{bmatrix}$ and vector $\overrightarrow{v}=\begin{bmatrix}2\\1\end{bmatrix}$. Let's look at the equation $A\overrightarrow{v}$: $$A\overrightarrow{v}=\begin{bmatrix}3 & -2\\1 & 0\end{bmatrix}\begin{bmatrix}2\\1\end{bmatrix}=\begin{bmatrix}4\\2\end{bmatrix}=2\begin{bmatrix}2\\1\end{bmatrix}$$
+- Notice that it was just scaled by a factor of 2!
+- Let's look at another example with $\overrightarrow{u}=\begin{bmatrix}1\\2\end{bmatrix}$ and the matrix from above: $$A\overrightarrow{u}=\begin{bmatrix}3 & -2\\1 & 0\end{bmatrix}\begin{bmatrix}1\\2\end{bmatrix}=\begin{bmatrix}-1\\1\end{bmatrix}$$
+- **<u>Definition:</u>**
+	- Let $A$ be an $n\text{x}n$ matrix. An <u>eigenvector</u> of $A$ is a nonzero vector $\overrightarrow{x}$ such that $A\overrightarrow{x}=\lambda\overrightarrow{x}$ for some number $\lambda$. A number $\lambda$ is called an <u>eigenvalue</u> if there is a nontrivial solution of $A\overrightarrow{x}=\lambda\overrightarrow{x}$.
+- **<u>Example:</u>**
+	- Let's check $A=\begin{bmatrix}1 & 6\\5 & 2\end{bmatrix}$, $\overrightarrow{u}=\begin{bmatrix}6\\-5\end{bmatrix}$, and $\overrightarrow{v}=\begin{bmatrix}3\\-2\end{bmatrix}$.
+	- Well, do the math and $A\overrightarrow{u}=-4\overrightarrow{u}$.
+	- Try again for $\overrightarrow{v}$, and see that $A\overrightarrow{v}\ne\lambda\overrightarrow{v}\ \ \forall\lambda\in\mathbb{R}$ .
+- **<u>Example:</u>**
+	- For $A=\begin{bmatrix}1 & 6\\5 & 2\end{bmatrix}$, check if $\lambda = 7$ is an eigenvalue.
+	- Well, we just need to solve $A\overrightarrow{x}=7\overrightarrow{x}$! Let's do some setup... $$A\overrightarrow{x}=7\overrightarrow{x}$$ $$A\overrightarrow{x}-7I\overrightarrow{x}=\overrightarrow{0}$$ $$(A-7I)\overrightarrow{x}=\overrightarrow{0}$$
+	- From this, we just need to calculate our new matrix: $$\begin{bmatrix}1 & 6\\5 & 2\end{bmatrix}-\begin{bmatrix}7&0\\0&7\end{bmatrix}=\begin{bmatrix}-6&6\\5&-5\end{bmatrix}$$
+	- Now we can just get our row reduction to find that we get: $$\begin{bmatrix}1&-1&0\\0&0&0\end{bmatrix}$$
+	- So we have a nontrivial solution of $x_1=1,x_2=1$! This means that $\begin{bmatrix}1\\1\end{bmatrix}$ is an eigenvector for $\lambda = 7$. We can verify this by seeing that: $$\begin{bmatrix}1 & 6\\5 & 2\end{bmatrix}\begin{bmatrix}1\\1\end{bmatrix}=\begin{bmatrix}7\\7\end{bmatrix}=7\begin{bmatrix}1\\1\end{bmatrix}$$
+- **<u>Lil' generalization:</u>**
+	- $\lambda$ is an eigenvalue if and only if $(A-\lambda I)\overrightarrow{x}=\overrightarrow{0}$ has a nontrivial solution.
+	- The set of solutions of $(A-\lambda I)\overrightarrow{x}=\overrightarrow{0}$ is $\text{Null } (A-\lambda I)$, which is called the $\lambda$-eigenspace of $A$. All of the nonzero vectors in this subspace are eigenvectors of $A$.
+- **<u>Example:</u>**
+	- $A=\begin{bmatrix}2&0&0\\-1&3&1\\2&-2&0\end{bmatrix}$, and $\lambda = 2$ is an eigenvalue. Find a basis for the $\lambda = 2$ eigenspace.
+	- We just want to find $\text{Null }(A-2I)$.
+	- This gives us: $$\text{Null }\begin{bmatrix}0&0&0\\-1&1&1\\2&-2&-2\end{bmatrix}$$
+	- Easy, just row reduce: $$\overrightarrow{x}=x_2\begin{bmatrix}1\\1\\0\end{bmatrix}+x_3\begin{bmatrix}1\\0\\1\end{bmatrix}$$
+	- From this, we know that the basis of the $\lambda = 2$ eigenspace of $A$ is $\left\{\begin{bmatrix}1\\1\\0\end{bmatrix},\begin{bmatrix}1\\0\\1\end{bmatrix}\right\}$, which is pretty neat. It also tells us that in $\mathbb{R}^3$, we have a plane filled with vectors that satisfy $A\overrightarrow{v}=2\overrightarrow{v}$.
+- Gaming.

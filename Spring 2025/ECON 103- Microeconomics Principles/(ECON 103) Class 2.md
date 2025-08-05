@@ -1,0 +1,82 @@
+### Business Fraternity
+- So you're telling me that I can pay for a friend group? Sign me up!
+
+### Class
+- Hockey stick! Recall that population and standard of living is pretty much flat for all of human history, and then both go vertical at essentially the same time.
+- At one level, economics is simply trying to answer the question "what causes wealth?"
+	- Wealth being this standard of living. We get to eat every day, have a warm place to sleep, etc.
+- It used to be that you made something yourself, or you knew the person who did.
+	- You grew your own food, you made your own pots, your wove your own fabric.
+- Post-industrial, we are completely reliant on strangers.
+	- I have no idea who got the cotton, who was operating the sewing machine, who supplied finances, all of the various people who go into just the clothes that I wear.
+	- I don't know who grew my food.
+	- Basically every product I own, I don't know who made it.
+- Here's a question: why do these strangers make these things?
+	- They don't care about us.
+	- They don't even know us.
+- Another difference between now and history:
+	- Nearly everything we consume is something that pretty much nobody knows how to make.
+	- No one person can know everything required to make the things we have nowadays.
+	- It used to be easy for one person to know everything about how to make something.
+	- There isn't a single person who knows how to make a computer, but even a pencil requires a lot.
+		- A wooden pencil is mundane as hell, but so much goes into it.
+		- We have half a dozen parts:
+			- The clay/graphite mixture
+			- Wooden shaft
+			- Paint
+			- Ferrele (metal that holds the eraser)
+			- Eraser (rubber and pummus)
+			- Glue (holds the graphite in the shaft)
+		- Imagine a person who knows how to make your average yellow wooden pencil. This person needs to know:
+			- Where to find a cedar tree, how to get to the tree, and then know how to chop the tree down. 
+			- To do that, pencil person needs to know how to mine and blacksmith iron.
+			- Now we just have a log, the pencil person most know how to create an octagonal shaft with a hollow center. The pencil person also needs to know how to make all of the tools to do this.
+			- We have a shaft now, and pencil person needs to know where to find graphite (Shri Lanka). Then, pencil person needs to know how to get there. Next, we need to mine the graphite and refine it.
+			- Now we need to know and find the correct clay. After than, pencil person must know how to mix the clay, make an oven, and bake it.
+			- Pencil person needs to know how to make glue
+			- Pencil person needs to know where to find petrolium, how to refine it, and how to make it into paint.
+			- It just. Keeps. Going.
+		- Pencils are insanely common, we almost never remember buying them. We even give them away freely. Yet, they are ridiculously difficult to produce. Such a device would be inconceivable in the past.
+		- Now think about a car, or a phone.
+- So how does a pencil exist?
+	- It exists because there are individuals who know all about one part of a pencil.
+	- All together we have created new composite materials, which are available to be turned into new products.
+	- A single pencil takes a conservative estimate of 100 million people.
+- It takes an ordinary American worker 1.4 seconds to generate the income to purchase a pencil. 1.4 seconds for something that hundreds of millions of strangers all work together to make.
+- For this same person, it takes about 59 minutes to make an ordinary coffee maker. That's a hell of a lot more complicated than a pencil, and it takes less than an hour.
+- How and why does this happen? That's what economics is all about.
+- There's billions of things that we can use to make other things, billions of resources. There's an unknowable number of combinations of them, but we still manage to put them together.
+- We have a pretty good general theoretical idea of what's at work here because of economic theory.
+- As we get richer, we can live longer.
+- Recall that we can't get richer by having a lower population. More people is an essential input to producing the desired output.
+- <u>**Julian Simon**</u>:
+	- This is a name we have to know!
+	- He lived from 1932-1998. He didn't get a Nobel Prize, but professor thinks he should have.
+	- He had this idea called "The Ultimate Resource".
+	- We talk a lot about natural resources, but no resources are natural. Something is a resource because of human creativity. Nothing is a resource unless someone figures out that it can be put to productive use in a way that makes it worthwhile to do it.
+	- In a society where people are free to innovate, the ultimate resource ***is the human mind***. More people gives more of this, so more people creates more wealth. This is a virtuous cycle, because that wealth creates more people as well.
+- Prior to the modern age, we were in the Malthusian Trap:
+	- Malthus was an economist.
+	- We weren't very innovative before the modern age. Tradition, customs, etc. were directly preventative of innovation.
+	- When innovation is slow, we can't escape the fate of other animals.
+	- The trap is that if you have a good harvest, good weather, good freedom from disease, population will increase. But as population increases, food production doesn't go up enough to support everyone and the population goes back down.
+	- The population remained low for so long because we didn't innovate enough to support ourselves.
+	- 200 years ago this all changes.
+	- Right after Malthus writes his book on this trap, we escaped it!
+- A good way to figure all of this out is to compare wealthy countries to poor ones.
+- Economics began with a book written by <u>**Adam Smith**</u>, who was a Scottish moral philosopher (NEED to know this name). "An Inquiry into the Nature and Causes of the Wealth of Nations". Also just "The Wealth of Nations".
+- Adam Smith noticed that ordinary people in England lived better than the ordinary people in France. He asked why this was the case, and that was the start of economics.
+- On page one, he gives the answer: the division of labor, or what we call specialization.
+	- What causes workers to specialize?
+	- How does specialization cause wealth?
+- Before we answer that, we can immediately see that we live in a world of specialized producers.
+	- I will grow up and do a specific thing in a specific industry under a specific study.
+	- A specialization within a specialization within a specialization.
+- Every theory requires a starting point. We will start with the ground for economic theory (our foundational assumptions, "the twelve foundation stones"):
+	1. "Our world is one of inescapably scarce resources." (this is the most important)
+		- Nearly everything that is of use to us is scarce.
+		- Scarce, meaning there isn't enough of it naturally occurring for all of it to go around to satisfy every human want for it at a zero cost.
+		- Food! This isn't "scarce" to us, but it isn't available to everyone at a zero cost. Breathable air is not scarce at all, it doesn't cost anything for someone to get it.
+	 2. The rest are coming later
+
+# No in-person class next week!!! A recording and zoom will be available.

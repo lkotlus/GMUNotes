@@ -1,0 +1,27 @@
+### Money
+- We don't want to focus on this too much, but it is a valid medium of exchange.
+- We have a good understanding of money, and we use it as our main price for things.
+- It gets rid of the bartering system, which is good for people like me. Nobody wants a red team penetration tester to work on their network in exchange for groceries. 
+- Without money, you need to offer something that other people actually want. You can't barter with economics lectures. Money allows for <u>specialization</u>.
+- When it comes down to it, we don't actually care about money. We care about the ability to exchange it for real goods and services. If nobody will take a US Dollar, then it suddenly becomes worthless.
+- The secondary function that money has, is serving as a unit of account. We have an objective understanding of the different market value of different things.
+	- This doesn't mean that everything is just money, or that econ is exclusively about money.
+	- It does say that we have an objective system of measurement, no different from height.
+- The only reason a salary is meaningful is because we know the prices of things that we want to buy.
+- Money also stores value over time. 
+- We are accustomed to the idea that money is supplied by the government. This is true for us, the Federal Reserve supplies us with USD. Most currencies are supplied by governments, but it wasn't always done this way.
+- Money, like language, wasn't really invented. It came about naturally.
+- When we started trading, money evolved as a system. You sell something and get something in return. Good system.
+	- Some particular items are widely demanded by lots of people. These things are good to trade with for anyone.
+	- Things like silver and gold were the first instances of money.
+	- There was a decent expectation that if I accept a precious metal, other people will take it for nearly anything. When that happens to something, it becomes money.
+- Money naturally leads to banks. Once we don't have money physically, we might want to write notes transferring the money still in the bank to another person with an account. Checks!
+- It used to be that a bank was just a place that stored precious metals, but now they serve as far more than that.
+- As this becomes more popular, more "banks" start to open, and they compete. To be better than another bank, you make it easier to transfer your money.
+- They can do this by prewriting your checks. Many of them would also just print "bank notes". If you deposit a pound of gold, you get a one pound note. Anyone with a one pound note can go in and get a pound of gold. That's easier than checks.
+- Basically all money now isn't on the gold standard, it's called fiat money. It is backed purely by the confidence that someone will accept it.
+- Eventually, "banks" started to pay people to store their money. The consequence is that the bank can lend your money and invest with it. That's when they go from warehouses to banks. It isn't a bank if it just stores money.
+- We want to live in a society where people have incentive to save. If we have savings, then we can take some more risks. Furthermore, if there's more money in savings we can give bigger loans.
+- We trust the banker to make good investments and give out good loans in exchange for the interest that we get.
+- Savings is encouraged by interest, and we need savings to build the fishing net!
+- Financial markets produce savings!

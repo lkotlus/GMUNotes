@@ -1,0 +1,8 @@
+- Lopakhin has something of a dream that people will eventually farm on the land he's bought.
+- Anna pretends she is ill to get away from her husband at Yalta (women's disease).
+- A new translation for Russian to French and then from French to English: **free indirect discourse speech narration**!
+	- Third person narration where we don't get directly told thoughts. We are steered towards the truth. We're told objective truth about the world and get information about what the character is thinking.
+- Narrators
+	- First person: I
+	- Second person: you
+	- Third person: omniscient

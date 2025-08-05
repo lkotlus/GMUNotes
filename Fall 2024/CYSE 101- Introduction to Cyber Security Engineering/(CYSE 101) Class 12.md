@@ -1,0 +1,74 @@
+### Application security
+- I don't know how much more I can take.
+- "Things will get a bit more technical"
+	- I highly doubt this, but he did mention last week that we get to go through buffer overflows, so that's good.
+- Application layer is the highest, most surface-level layer. It is imperative that we secure it.
+	- The application layer ensures that applications can effectively communicate with each other
+		- Web server to web server through HTTP
+		- Client to Client through FTP/SSH
+		- Note: this is not an application but rather the level at which communications between protocols and software.
+	- Think of the application layer as the facilitator
+	- Given that this is the outermost layer, there is a large attack vector and therefore, lots of vulnerabilities.
+	- "70% of the job of a cyber security professional"
+- Buffer overflow (I know this!)
+	- Memory stack!
+	- So we have our stack and our heap. Stack is function calls, heap is just storage. 
+	- Within the stack, we have each function call.
+	- Within each function, we have a name-parameter, a return address, and an end base pointer (ebp). 
+	- We have a buffer as well, which is were local variables go to.
+	- If we allocate 1024 bytes to the buffer and have a 16 byte array, we can over fill that array to 1024 bytes. We could even fill it to 2048 bytes!
+	- If we fill up to the return address, the return address will be executed as whatever we overwrite it with.
+	- That means that by successfully overflowing the buffer, we are capable of arbitrary code execution.
+	- Protections:
+		- Bounds checking (keep track of the buffer always)
+		- Address space layout randomization (ASLR)
+			- Randomize the memory layout so we don't know where the return address is.
+		- Data execution prevention
+			- Flags certain areas of the memory as executable or non-executable regions of memory.
+			- "No execution in the return address!"
+- SQL injection (I know this too!)
+	- Someone didn't sanitize their input fields...
+	- Code injection technique that affects websites and web databases
+	- Uses SQL code when normal user input is asked such as username or password
+	- When you normally enter a user input field, what happens in the background is that input is taken, referred to the backend database, and if it is an expected input, it will grant you access. 
+	- A SQL Injection places SQL code which bypasses this and goes straight to the backend database and pulls information or gets access without knowing the password
+	- An attack on the developer and end user
+	- Protections:
+		- Sanitize your damn inputs!!!
+		- Don't let people do this!
+- Finding SQL injection and buffer overflow vulns:
+	- "Fuzzing" (send a ton of different scripts/inputs/payloads)
+	- Abnormal program behavior may indicate a DoS vulnerability or possibly exploitable buffer overflow
+		- Other possibilities as well.
+	- QA testing!
+- XSS (I know **THIS ONE TOO**)
+	- Injecting my html/js like a serious sicko
+	- Persistent code execution for real for real
+	- Attack on the end user
+- XSFR (Cross-Site Request Forgery)
+	- Attack which forces an end user to execute unwanted actions
+	- "Sort of like a social engineering attack"
+	- An attacker could, for example, send an phishing email with a link to a website which seems trusted.
+	- If this link is a website to their "bank account" login, the user could now inadvertently divulge their bank login credentials, transfer funds, change their email, and so on
+	- Copy a website and steal information (QR code attack!)
+	- Attack on the end user
+- Privilege Escalation (I know this one too!)
+	- The process by which an attacker gets more privs on the box
+	- Lateral movement through
+		- Exploiting credentials
+		- Exploiting vulnerabilities
+		- Exploiting misconfigs
+		- Using malware
+		- Using social engineering
+	- Very cool stuff, hardest part of hack the box usually
+- Secure code practices
+	- Security by design
+	- Password management
+	- Access control
+	- Error handling and logging
+	- System configuration
+	- Threat modeling
+	- Cryptographic practices
+	- Input validation and output encoding
+	- In reality:
+		- We will end up using tools that tell us how to fix things

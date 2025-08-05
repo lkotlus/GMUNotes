@@ -1,0 +1,34 @@
+## CIA (Confidentiality, Integrity, Availability)
+- Confidentiality
+	- Unauthorized users cannot access sensitive information
+	- Examples:
+		- A data breach
+		- Use passwords, silly
+- Integrity
+	- Information is complete and uncorrupted
+	- Examples:
+		- A man in the middle attack (MITM) corrupts data as it is sent
+		- A security measure would be to use encryption
+- Availability
+	- Users can get the data and information they would expect to be able to access
+	- Examples
+		- DDoS
+		- Have backups, use load balancers, etc.
+
+## More definitions
+- Vulnerability
+	- A flaw, weakness, or hole in a system/component
+	- Examples
+		- Software: buffer overflow
+		- System: weak or nonexistent password
+		- Communication: weak or nonexistent encryption
+- Threat
+	- A thing (person, code, nature) which exploits a vulnerability to affect C, I, and/or A
+	- Examples
+		- People: hackers, state actors, terrorists
+		- Code: worm, virus, phishing
+		- Nature: flood, wind, solar storm
+- Risk
+	- Vulnerability and threat combine to create risk
+- Realized risk
+	- When a threat actually exploits a vulnerability, having a real affect

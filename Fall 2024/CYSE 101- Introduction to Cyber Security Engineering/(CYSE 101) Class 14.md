@@ -1,0 +1,77 @@
+### Presentation day
+- If I graded this it would get a C lmao.
+- Went about as expected, hopefully grades are in line with individual performance.
+
+### Compliance
+- There's essentially two perspectives:
+	- Legal (cyber law compliance)
+	- Companies (obligation to respond to someone)
+- PII (Personally Identifiable Information)
+	- Information that can be used to distinguish or trace an individual's identity, either alone or when combined with other personal or identifying information that is linked or linkable to a specific individual.
+	- PII is the cream of the crop for threat actors
+	- PII helps lead to other information or if critical enough, such as credit card numbers, SSN, etc. which sells for a ton.
+- PII Breach Laws
+	- Most famous is California SB 1386
+		- Must report unauthorized release of personal information of a California resident <u>if unencrypted</u>.
+	- All 50 states have similar laws.
+	- There are data disposal laws as well in at least 32 states (not VA):
+		- Data disposal laws define the ways of properly cleaning or destroying sensitive/confidential data.
+- Organizations that govern this:
+	- General Data Protection Regulation (GDPR) - EU:
+		- Adopted in 2016, enforceable 25 May 2018
+		- Personal data is any information relating to an individual, whether it relates to his or her private, professional, or public life (name, home address, photo, email address, bank details, social media posts, medical info, or a computer's IP address)
+		- Includes notification within 72 hours among other provisions.
+	- Network and Information Security (NIS) Directive - EU
+		- Passed in 2016
+		- Purpose is to boost the overall level of cybersecurity in the EU.
+		- Transpose into national laws and ID essential service operators 2018
+	- Federal Trade Commission (FTC)
+		- Has been around since the 1970s
+		- Focused on "consumer protection laws that prevent fraud, deception, and unfair business practices"
+		- Deals with data breaches, breaches of personal information, etc.
+	- National Institute of Standards and Technology (NIST)
+		- Guideline and set of rules/standards created by NIST to boost overall cybersecurity for organizations.
+		- Full framework containing almost anything you can think of with regards to cybersecurity and how to improve cybersecurity posture of an organization.
+		- Originally made for the industrial complex, shifted to computer-based technology.
+- General law stuff:
+	- Safe Harbor
+		- Legal term that says if you do certain stuff you are legally safe.
+		- In VA, "The unauthorized acquisition of encrypted or redacted data, without access to the encryption key, does not trigger the notice requirement under this statute." (Virginia safe harbor for data breaches if the data is encrypted)
+	- Other federal laws and regulations:
+		- US Constitution never mentions privacy specifically and only protects against state actors, not individuals. However, the First, Fourth, Ninth, and Fourteenth Amendments limit government intrusion on individual's right to privacy.
+		- The Privacy Act of 1974 governs the collection, maintenance, use, and dissemination of personally identifiable info about individuals stored by federal agencies. Again, this restricts how the government can access and use records and does not apply to individuals or businesses.
+		- HIPAA was enacted in 1996 to protect medical records.
+		- The Fair Credit Reporting Act (FCRA) allows individuals to opt out of unwanted credit offers and obtain one free credit report from each of the major credit reporting agencies every year.
+		- Electronic Communications Privacy Act (less important)
+		- 1998 Children's Online Privacy Protection Act (less important)
+- Cyber law stuff:
+	- As technology developed, there became a need for legal frameworks to ensure that the internet is a fair and safe place for all people.
+	- In the same way that we need law enforcement to protect us from criminals through the enforcement of laws and we need lawyers to defend us in court according to those laws, we need cyber laws, regulations, enforcers, and lawyers who are able to protect us in the cyber realm.
+	- This focuses on:
+		- Privacy and data protection
+		- ...
+	- Sample Breaches:
+		- Phiber Optik
+			- Mark Abene
+			- Associated with Legion of Doom (LOD) and Masters of Deception (MOD)
+				- Early hacking groups
+				- Mostly phone systems and dialup connections
+				- Phreakers!
+			- Early 1990s:
+				- Charged with "computer tampering" and "computer trespass"; plea agreement
+				- Later charged with using wiretap evidence (first time used for data); served 1 year; released 1994
+		- Vladimir Drinkman
+			- Hacking activity dates back to 2005
+				- SQL injection attacks against a ton of companies
+			- 2009 indictment
+			- Charged with "Computer Hacking Conspiracy"
+				- Title 18, USC Section 371
+				- Mostly credit card theft
+			- Drinkman and Smilianets arrested in Netherlands in 2012
+			- ...
+		- Edward Snowden
+			- 2013 disclosure of classified material to media; Global Surveillance
+				- 50,000 to 200,000 documents (possibly 1.7 million)
+			- Currently in Russia
+			- Charged with Espionage
+			- Silly funny guy

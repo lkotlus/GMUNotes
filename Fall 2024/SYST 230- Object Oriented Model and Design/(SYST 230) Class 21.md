@@ -1,0 +1,12 @@
+### More MagicDraw...
+- I don't like it, I don't wanna do it anymore. This is so despacito.
+- Between activities, if we assign some value we are required to pass that value as an input/output pin.
+- For default values, select opaque expression, and then select python as the language. From that, you can do a python list.
+	- Double click on a value
+	- Default value
+	- Triangle
+	- Opaque expression
+	- Ellipsis
+	- Select language
+	- Python
+- Gaming.

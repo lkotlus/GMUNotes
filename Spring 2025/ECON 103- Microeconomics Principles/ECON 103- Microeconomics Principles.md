@@ -1,0 +1,33 @@
+This guy has a demanding presence, I'm a fan so far.
+
+### Lecture Notes
+[[(ECON 103) Class 1]]
+[[(ECON 103) Class 2]]
+[[(ECON 103) Class 3]]
+[[(ECON 103) Class 4]]
+[[(ECON 103) Class 5]]
+[[(ECON 103) Class 6]]
+[[(ECON 103) Class 7]]
+[[(ECON 103) Class 8]]
+[[(ECON 103) Class 9]]
+[[(ECON 103) Class 10]]
+[[(ECON 103) Class 11]]
+[[(ECON 103) Class 12]]
+[[(ECON 103) Class 13]]
+[[(ECON 103) Class 14]]
+[[(ECON 103) Class 15]]
+[[(ECON 103) Class 16]]
+[[(ECON 103) Class 17]]
+[[(ECON 103) Class 18]]
+[[(ECON 103) Class 19]]
+[[(ECON 103) Class 20]]
+[[(ECON 103) Class 21]]
+[[(ECON 103) Class 22]]
+[[(ECON 103) Class 23]]
+[[(ECON 103) Class 24]]
+[[(ECON 103) Class 25]]
+
+### Exam Prep
+[[(ECON 103) Midterm 1 Prep]]
+[[(ECON 103) Midterm 2 Prep]]
+[[(ECON 103) Final Prep]]

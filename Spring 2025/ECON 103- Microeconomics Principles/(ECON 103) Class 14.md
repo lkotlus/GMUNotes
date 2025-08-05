@@ -1,0 +1,31 @@
+### Exam Grades Back
+- Shaking in my boots.
+- I probably did fine. Quick grader, so that's nice.
+- We need to wait until the END OF CLASS to get the results back. Such an ***injustice*** has never been seen before.
+- There's a one point curve on the exam. Add one to the score on my sheet and that's my midterm grade, unless I got a 30/30, in which case it remains as a 30.
+- I got the production possibilities curve problem wrong. I might have misread question 1, but I can't remember. 
+- I am going completely schizo trying to remember my exact answers.
+	- All I need is a 26/30. All I need is a 26/30. All I need is a 26/30. All I ...
+
+### Prices
+- The Law of "One" Price
+	- The prices of things from different distributors in any one market, the prices of a particular good tend to be approximately the same. I can say how much a gallon of gasoline should cost at any given gas station in Fairfax. Same for a carton of milk, eggs, etc.
+	- Some theories for why this happened: the government controls the price, merchants conspire with one another, and market forces
+	- Government theory:
+		- Absolutely not the case, it would never work.
+		- Furthermore, in the US the government doesn't do this for most goods and services. 
+	- Conspiracy theory:
+		- Has happened before, but isn't the norm.
+		- This is illegal in the US.
+	- Market forces:
+		- The invisible hand pushes us to the "one" price! We are pushed to equilibrium price so that consumers get the amount they want and producers maximize profit.
+		- There's more forces than this, though.
+		- This is the correct one, but there's more to it than this.
+	- Arbitrage: buying low and selling high.
+	- I want to buy a good at a low price, and sell that good at a higher price, rather obvious. If I see people selling apples for $8 somewhere, and then they're selling them for $1 somewhere else, I ought to buy them at $1 and try to sell them at $8.
+	- People arbitraging will raise the price at the place where they are cheap due to high demand, and they will decrease the price where it is high by increasing supply. That isn't the intention, but it is a consequence of the action.
+	- What if the people with low prices don't like the arbitragers driving the prices way up? What if the people with high prices don't like the arbitragers "exploiting" them for a profit? Well they won't say that if they know what's good for them!
+	- Let's change the example to time instead of location. At a certain time it's low, and so I stockpile it. All of the sudden, it's high! But I saved up, and now I can either make a profit or just save money by not needing to pay for more.
+		- The same thing has happened. I drove up prices when they were low and I brought prices down when they were high.
+		- This time, however, nobody is complaining.
+	- Arbitrage is pretty much always good for everyone.

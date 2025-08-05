@@ -1,0 +1,52 @@
+### Linearly independent sets and basis
+- **<u>Definition:</u>**
+	- Let $V$ be a vector space. 
+	- A set of vectors, $\left\{\overrightarrow{v}_1, \overrightarrow{v}_2,...,\overrightarrow{v}_k\right\}$, in $V$ is linearly independent if the equation: $$x_1\overrightarrow{v}_1+...+x_k\overrightarrow{v}_k=\overrightarrow{0}$$ Has only the trivial solution.
+- **<u>Example:</u>**
+	- $V=\mathbb{P}_3=\left\{a_0+a_1t+a_2t^2+a_3t^3\ |\ a_0,a_1,a_2,a_3\in\mathbb{R}\right\}$
+	- $p_1(t)=2$, $p_2(t)=1+t+2t^2$, $p_3(t)=t^2$, $p_4(t)=-1+t-t^2+2t^3$
+	- Is $\left\{p_1(t),p_2(t),p_3(t),p_4(t)\right\}$ LI?
+	- No! It is LD because $(-1)p_1(t)+p_2(t)+(-1)p_3(t)+(-1)p_4(t)=0$, and that is a nontrivial combination of vectors.
+- **<u>Definition:</u>**
+	- Let $H$ be a subspace of a vector space $V$.
+	- A set of vectors $B$ is called a **basis for $H$**, if:
+		1. $B$ is LI.
+		2. $H=\text{Span}\{B\}$
+	- Note:
+		- Since $V$ is a subspace of itself, the definition applies to $V$ as well.
+- **<u>Example:</u>**
+	- $V=\mathbb{R}^n$
+	- $\overrightarrow{e}_1=\begin{bmatrix}1\\0\\0\\...\\0\end{bmatrix}$, $\overrightarrow{e}_2=\begin{bmatrix}0\\1\\0\\...\\0\end{bmatrix}$, $\overrightarrow{e}_n=\begin{bmatrix}0\\0\\0\\...\\1\end{bmatrix}$
+	- $B=\left\{\overrightarrow{e}_1,...,\overrightarrow{e}_n\right\}$ is a basis of $\mathbb{R}^n$, called the <u>standard basis</u> of $\mathbb{R}^n$.
+- **<u>Example:</u>**
+	- Let $A=\left[\overrightarrow{a}_1,...,\overrightarrow{a}_n\right]$ be an $n\text{x}n$ invertible matrix.
+	- The invertible matrix theorem says (cherry picked parts of it):
+		- Columns are LI
+		- Columns span $\mathbb{R}^n$
+	- This means that $\left\{\overrightarrow{a}_1,...,\overrightarrow{a}_n\right\}$ are a basis of $\mathbb{R}^n$.
+- **<u>Example:</u>**
+	- $\left\{1,t,t^2,...,t^n\right\}$ is a basis of $\mathbb{P}_n$
+	- $\left\{1,t,t^2,...,t^n,t^{n+1},...\right\}$ is a basis of $\mathbb{P}$
+- **<u>Example</u>**:
+	- $H=\text{Span}\left\{\overrightarrow{v}_1,\overrightarrow{v}_2,\overrightarrow{v}_3\right\}$.
+	- $\overrightarrow{v}_1=\begin{bmatrix}1\\0\\1\end{bmatrix}$, $\overrightarrow{v}_2=\begin{bmatrix}1\\1\\0\end{bmatrix}$, $\overrightarrow{v}_3=\begin{bmatrix}2\\1\\1\end{bmatrix}$
+	- $H$ is a subspace of $\mathbb{R}^3$.
+	- Are these vectors a basis of $H$?
+	- No! They are linearly dependent.
+	- We can fix this, however, by deleting $\overrightarrow{v}_3$ from this set. The span is the same either way because $\overrightarrow{v}_3$ is a linear combination of the other vectors.
+- **<u>Spanning set theorem:</u>**
+	- Let $S=\left\{\overrightarrow{v}_1,...,\overrightarrow{v}_k\right\}$ be a set of vectors.
+	- Let $H=\text{Span}\{S\}$. It follows that:
+		1. If one of the vectors in $S$ is a linear combination of the others, then removing that vector still gives a set that spans $H$.
+		2. If $H\ne\overrightarrow{0}$, then some subset of $S$ is a basis of $H$.
+- I know what you're thinking! How do we find the basis for $\text{Nul }A$, $\text{Col }A$, and $\text{Row }A$?
+- **<u>Nullspace:</u>**
+	- $\text{Nul }A=\left\{\overrightarrow{v}\ |\ A\overrightarrow{v}=\overrightarrow{0}\right\}$.
+	- Solve the equation and write the general solution in vector form.
+	- This vector form will be LI and will literally be a span of $\text{Nul }A$, so that's a basis of the nullspace.
+- **<u>Column space:</u>**
+	- Get $A$ into RREF and take the pivot columns of the original matrix.
+- **<u>Lil' baby theorem</u>**:
+	- Pivot columns of $A$ form a basis for $\text{Col }A$.
+- **<u>Row space:</u>**
+	- Nonzero rows of the RREF of $A$.

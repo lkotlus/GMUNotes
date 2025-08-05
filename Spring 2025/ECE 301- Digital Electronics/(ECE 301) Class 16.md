@@ -1,0 +1,15 @@
+### Multiplexers
+- A multiplexer (MUX) circuit has:
+	- $n$ control inputs (determines output)
+	- $2^n$ data inputs (choices for output)
+	- One output
+- It passes the signal value on one of its data inputs to its output based on the value(s) of the select signal(s).
+- This is how networking devices MUX and DEMUX. Circuits!
+	- Because of this, MUX circuits are everywhere.
+- 2-to-1 MUX:
+	- $Z=\overline{A}\cdot I_0 + A\cdot I_1$
+	- I think it will always be $Z=\sum m_n \cdot I_n$
+- The preferred implementation of a MUX is with transmission gates rather than with AND gates. 
+- We can use MUXs to synthesize logic functions. I'm not sure *why* we'd do this, but it's neat.
+	- We use this concept by just creating lookup tables with MUX circuits. This is how we access memory.
+	- Doing something like just an XOR gate with a MUX is very inefficient, but doing it to solve actual problems is very useful.

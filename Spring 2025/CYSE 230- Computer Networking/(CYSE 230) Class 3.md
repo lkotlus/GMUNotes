@@ -1,0 +1,171 @@
+### Networking
+- So last week we were looking at HTTP and email protocols (POP3, SMTP, IMAP).
+- Recall that we figure out which hosts are which based on IP and port.
+- We use hostnames instead of IPs in practical application.
+	- We do this with DNS!
+
+### DNS
+- Domain Name System
+	- Absolutely not Domain Name System. You will always try to mess this up.
+- So we want to route a hostname (human readable thing) to an IP. This way we can change the actual IP and people won't need to know about it. They can also remember things easier. I can remember that "google.com" is 8.8.8.8, but it's tough to expect everyone to do that for every website ever.
+- We can get IP from hostnames with commands like `ping` and `nslookup`. 
+- So how do we map between IP address and name (and vice-versa). DNS!
+- Domain Name System:
+	- Distributed database implemented in hierarchy of many name servers.
+	- This is an application-layer protocol. Hosts and name servers communicate to resolve names.
+	- A core internet function is implemented as an application-layer protocol.
+- So this is just a service that "translates" IPs into hostnames.
+- We can host alias as well. This works for mail server aliasing as well.
+- This also works with load distribution. We can have multiple IPs for the same hostname.
+- Hierarchical and distributed:
+	- So this means that we have a root DNS server
+		- .com DNS servers (top level)
+			- yahoo.com DNS servers (authoritative level)
+			- amazon.com DNS servers (authoritative level)
+		- .org DNS servers (top level)
+			- pbs.org DNS servers (authoritative level)
+		- .edu DNS servers (top level)
+			- nyu.edu DNS servers (authoritative level)
+			- umass.edu DNS servers (authoritative level)
+- Root name servers:
+	- Incredibly important internet function
+		- The internet wouldn't really work without it for the average user.
+		- DNSSEC provides security. There have been no successful attacks (that we know of)
+	- ICANN (Internet Corporation for Assigned Names and Numbers) manages the root DNS domain.
+	- There are 13 root name servers worldwide, with each one replicated many times. There are about 200 servers around the world.
+- Top level domain (TLD) servers:
+	- Responsible for .com, .org, .net, .edu, .aero, .jobs, .museums, and all top-level country domains.
+	- Verisign maintains servers for .com TLD. Educause for .edu. .ca TLD is maintained by the Canadian Internet Registration Authority (CIRA).
+- Authoritative DNS servers:
+	- An organization's own DNS server(s).
+		- Providing authoritative hostname to IP mappings for organization's named hosts.
+	- Can be maintained by either the organization (self-hosted) or a service provider (such as Route53).
+- Local DNS name servers:
+	- Does not strictly belong to hierarchy
+	- Each ISP has one (default name server)
+	- When host makes DNS query, query is sent to its local DNS server
+		- Has a local cache of recent name-to-address translation pairs (but it may be out of date)
+		- Acts as a proxy, forwards query into hierarchy.
+- Query process:
+	- Client queries local server to see if it is in cache. If not, it finds the root server.
+	- Local server queries root server to find .edu DNS server (or get from root cache)
+	- Local server queries .edu DNS server to get gmu.edu DNS server (or get from .edu cache)
+	- Local server queries gmu.edu DNS server to get IP address for www.gmu.edu.
+- A recursive query method has the servers contact each server. The above method is iterative. Iterative is better because it's less load on top level servers.
+- Caching and updating records:
+	- Once any name server learns a mapping, it caches it
+		- Cache entries timeout after some time (TTL)
+- DNS records:
+	- Distributed database storing resource records (RR)
+	- RR:
+		- `name, value, type, ttl`
+	- A record:
+		- Address Record
+		- `name` is hostname
+		- `value` is IP address
+	- NS record:
+		- Name Server Record
+		- `name` is domain
+		- `value` is hostname of the authoritative server for the domain
+	- CNAME record:
+		- Canonical Name Record
+		- `name` is alias name for some "canonical" (real) name
+		- `value` is the canonical name
+	- MX record:
+		- Mail Exchange Record
+		- `name` is our alias
+		- `value` is the name of the mail server associated with the `name`
+- The `dig` command shows us the query process in action.
+- Inserting records into DNS:
+	- Register a name at a DNS registrar.
+		- Provides names and IP addresses of authoritative name servers (primary and secondary)
+		- Registrar inserts NS and A records into the TLD server
+- DNS security:
+	- DDoS
+		- Bombard root servers with traffic
+			- Not successful to date
+			- Traffic filtering
+			- Local DNS servers cache IPs of TLD servers, allowing root to bypass
+	- Redirect attacks:
+		- Man in the middle
+			- Intercept DNS queries
+		- DNS poisoning
+			- Send fake records to local server to cache
+	- Exploit DNS for DDoS
+		- Send queries with spoofed source address: target IP
+		- Requires amplification
+	- DNSSEC
+		- RFC 4033
+
+### P2P Applications
+- Peer to Peer!
+- File distribution:
+	- Client-server:
+		- Peer downloads from server
+	- Peer to peer:
+		- Peer downloads from a bunch of peers
+	- That's pretty much the whole thing.
+	- Our distribution time in P2P helps us to go faster should there be a lot of users. For low amounts of users, it takes longer.
+	- As users increase, we have logarithmic time for P2P and linear time for client-server.
+- Torrent!
+	- BitTorrent is super cool.
+	- Files are divided into 256 Kb chunks.
+	- Peers in the torrent send and receive chunks. Epic.
+	- Requesting file chunks:
+		- So at any time, different peers have different chunks.
+		- You periodically request chunks, and you ask for missing chunks by the rarest first.
+	- You need to send chunks in order to receive them.
+	- You reciprocate performance with your top four providers.
+	- This is "optimistically unchoking"
+
+### Video Streaming and Content Distribution Networks
+- People like watching videos with the internet.
+- Netflix, YouTube, and Amazon Prime were 80% of residential ISP traffic in 2020.
+- Challenges:
+	- Scale: How do we reach billions of users? A single server won't work.
+	- Heterogeneity: Different users have different capabilities. Wired, mobile, screen size, bandwidth, etc.
+- Solution: distributed application-level infrastructure.
+- Multimedia: video
+	- A video is a sequence of images displayed at a constant rate.
+	- Digital images are just arrays of pixels, with each pixel represented by some color data.
+	- Coding: use redundancy within and between images to decrease the number of bits used to encode an image:
+		- Spacial: within image (if you have a big block of constant color)
+		- Temporal: from one image to the next (if you have still frames)
+	- CBR (Constant Bit Rate):
+		- Video encoding with a fixed rate.
+	- VBR (Variable Bit Rate):
+		- Video encoding with a changing rate as spatial and temporal coding changes.
+	- So for a simple scenario, we just have a single client and server:
+		- The server is sending video to the client.
+		- If there's lack of bandwidth or issues with the internet, then we will have poor video quality.
+	- The server will be ahead of the client, such that there is a buffer of already received video. This helps to keep the video continuously playing. This is client-side buffering and playout delay.
+	- DASH
+		- Dynamic and Adaptive Streaming of HTTP, an adaptive bitrate video streaming technique.
+		- Server:
+			- Divides video file into multiple chunks
+			- Each chunk stored and encoded at different rates
+			- Manifest file: provides URLs for different chunks
+		- Client:
+			- Periodically measures server-to-client bandwidth
+			- Consulting manifest, it requests one chunk at a time
+		- "Intelligence" at client:
+			- The client determines a bunch of things.
+- Content Distribution Networks (CDNs):
+	- Challenge: how to stream content (selected from millions of videos) to hundreds of thousands of simultaneous users?
+	- Option 1:
+		- Large single "mega-server"
+		- This is a single point of failure
+		- Point of network congestion
+		- Long path to distant clients
+		- Multiple copies of video sent over outgoing link
+		- **This doesn't scale.**
+	- Option 2:
+		- Clusters! Kubernetes! 
+		- This is a content distribution network. We have a bunch of CDN nodes, and on each one there are certain movies.
+		- Clients then request one of the CDNs that have the movie they want to watch. They request the movie, get redirected to the node with the movie, and then get the movie from that node.
+
+### XSS
+- Cross Site Scripting! This is the most common attack on a web application.
+- We want to inject our JavaScript into the site, especially if we can do persistent XSS.
+- Number 3 on the OWASP top 10.
+- You know how XSS attacks work.

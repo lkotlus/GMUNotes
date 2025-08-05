@@ -1,0 +1,43 @@
+### Trade Deficits/Surpluses
+- We know what these are already
+- When politicians talk about "bilateral trade deficits/surpluses", then we should immediately know that they have zero clue what they're talking about.
+- A bilateral trade deficit is meaningless! You need to look at your trade deficit with the whole world, not just one other country!
+- Assuming three countries, China, US, and Brazil:
+	- US purchases 1 million in steel from China
+	- China purchases 1 million in coffee from Brazil
+	- Brazil purchases 1 million in lumber from US
+- ***Everybody*** has a bilateral trade deficit
+- ***Nobody*** has a trade deficit with the whole world
+- A bilateral trade deficit means nothing because we know for a fact that everything will balance out. 
+- There is no reason to assume that two countries will ever have balanced trade with one another.
+- I am in a trade deficit with my supermarket. I've never had a problem with that.
+- I have a trade deficit with everyone except my employer.
+- Goods are tangible things, services are everything else.
+- As you become richer, your demand for services goes up proportionally with your demand for services.
+- Importing and exporting goods isn't the only thing we do. We also import and export services! People say that the US imports more goods than we export, and that that's a bad thing. But we export more services! We're a service sector economy.
+	- Almost 80% of our economy comes from services.
+	- That's what we have a comparable advantage in!
+- There is a national security exception for trade.
+- Free trade promotes peace, it disincentivizes wars.
+	- The more you trade, the less you raid.
+	- The less you trade, the more you raid.
+- Doux Commerce Theorem:
+	- The theorem that states that free trade promotes peace
+	- There's several reasons for this
+	- Trade means we talk to people, we integrate with them, and then they're no longer strange. We become friends.
+	- If we're economically integrated, we're economically dependent. Don't shoot your customers, don't shoot your suppliers.
+- There aren't many examples of large countries practicing fully free trade.
+- John Bright and Richard Cobden started the anti corn-law league. 
+	- They didn't want tariffs on grains
+	- The two of them, inspired by Adam Smith and David Ricardo, saw that the price of food was higher than it should be, and they did something about it.
+- President Hoover (at the beginning of the great depression) put the Smoot-Hawley tariff. It made the great depression a lot worse.
+	- This worsened tensions among countries and definitely contributed to WW2. Didn't cause it, but didn't help.
+- Cordell Hull pushed for reduction of global tariffs. At the start of WW2 it was 50%, it's at 2.5% now. Cordell Hull got other countries to all come together to a bargaining table. 
+- 44 to 46 countries signed the GATT (General Agreement on Tariffs and Trade). They just mutually agreed to lower some stuff.
+- GATT changed its name in 1995 to the WTO (World Trade Organization). WTO is not the UN or WHO. 
+- Most countries in the world are part of a rules based global trading system. Policy is coordinated to push tariffs down. This has been done for nearly 80 years.
+
+### Exam
+- It's on Thursday!
+- Bring pencils and scantron sheets and whatnot.
+- We'll talk about the economics of public choice after the exam.

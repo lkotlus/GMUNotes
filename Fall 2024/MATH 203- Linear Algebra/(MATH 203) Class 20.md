@@ -1,0 +1,56 @@
+### Characteristic equation
+- **<u>Recall:</u>**
+	- Let $A$ be an $n\text{x}n$ matrix. A number $\lambda$ is called an <u>eigenvalue</u> of $A$ if there is a nonzero vector $\overrightarrow{x}$ such that $A\overrightarrow{x}=\lambda\overrightarrow{x}$. 
+	- The nonzero vector $\overrightarrow{x}$ is called the <u>eigenvector</u>.
+	- So to solve for stuff: $$A\overrightarrow{x}=\lambda\overrightarrow{x}$$ $$A\overrightarrow{x}=\lambda I\overrightarrow{x}$$ $$A\overrightarrow{x}-\lambda I\overrightarrow{x}=\overrightarrow{0}$$ $$(A-\lambda I)\overrightarrow{x}=\overrightarrow{0}$$
+	- So $\lambda$ is an eigenvalue of $A$ $\iff$ the equation $(A-\lambda I)\overrightarrow{x}=\overrightarrow{0}$ has a nontrivial solution.
+	- From there, we know that $A-\lambda I$ must not be invertible, as it has a nontrivial solution. This tells us, from the invertible matrix theorem, that $\text{det}(A-\lambda I)=0$.
+- **<u>Definition:</u>**
+	- The equation $\text{det}(A-\lambda I)=0$ is the <u>characteristic equation</u> of $A$.
+	- We use it to find eigenvalues!
+- **<u>Example:</u>**
+	- Find the eigenvalues of the given matrix: $$A=\begin{bmatrix}2 & 3\\3 & -6\end{bmatrix}$$
+	- So really, we want to solve the equation $\text{det}(A-\lambda I)=0$ for $\lambda$.
+	- This gives us: $$A-\lambda I=\begin{bmatrix}2 & 3\\3 & -6\end{bmatrix} - \begin{bmatrix}\lambda & 0\\0 & \lambda\end{bmatrix}$$ $$A-\lambda I=\begin{bmatrix}2-\lambda & 3\\3 & -6-\lambda\end{bmatrix}$$ $$\text{det}(A-\lambda I)=(2-\lambda)(-6-\lambda)-3\cdot 3$$ $$\text{det}(A-\lambda I)=(\lambda+7)(\lambda-3)$$ $$(\lambda+7)(\lambda-3)=0$$ $$\lambda=-7,3$$
+	- So our eigenvalues are -7 and 3. Lovely.
+- **<u>Important comment:</u>**
+	- You <u>can **NOT**</u> row reduce a matrix to find eigenvalues.
+	- This will give us things that are incorrect! No good, very not good!
+	- The matrix in the example above is row-equivalent to the identity matrix, but the identity matrix only has $\lambda = 1$. Do not be silly. Do not make this mistake.
+- **<u>Example:</u>**
+	- Let's go bigger: $$A=\begin{bmatrix}-3 & 2 & 4\\0 & 2 & 1\\0 & 0 & -1\end{bmatrix}$$
+	- So we have a characteristic equation: $$\text{det}\begin{bmatrix}-3-\lambda & 2 & 4\\0 & 2-\lambda & 1\\0 & 0 & -1-\lambda\end{bmatrix}$$
+	- Upper diagonal matrix! $\text{det}(A-\lambda I)=(-3-\lambda)(2-\lambda)(-1-\lambda)$
+	- Solving for 0, $\lambda = -3,-1,2$.
+- **<u>Theorem:</u>**
+	- The eigenvalues of an upper or lower triangular matrix are its diagonal entries.
+	- Useful.
+- **<u>Definition:</u>**
+	- The multiplicity of an eigenvalue is equal to it's degree in the final polynomial.
+	- $(3-\lambda)(2-\lambda)^2(-1-\lambda)=0$, $\lambda=2$ has a multiplicity of 2.
+- **<u>Example:</u>**
+	- Find the eigenvalues for: $$A=\begin{bmatrix}2 & 0 & 0\\-1 & 3 & 1\\2 & -2 & 0\end{bmatrix}$$
+	- Well, that gives us $$0=\text{det}(A-\lambda I)=\text{det}\begin{bmatrix}2-\lambda & 0 & 0\\-1 & 3-\lambda & 1\\2 & -2 & -\lambda\end{bmatrix}$$
+	- It's easiest to just do cofactor expansion along the first row, so we get: $$(2-\lambda)\text{det}\begin{bmatrix}3-\lambda & 1\\-2 & -\lambda\end{bmatrix}=0$$ $$(2-\lambda)(-\lambda(3-\lambda)-1(-2))=0$$ $$-(\lambda-1)(\lambda-2)^2$$
+	- So eigenvalues are 1 (multiplicity 1) and 2 (multiplicity 2).
+- **<u>Definition/theorem/thing:</u>**
+	- In general, if $A$ is an $n\text{x}n$ matrix, then the characteristic equation is $$\pm\lambda^n+a_{n-1}\lambda^{n-1}+a_{n-2}\lambda^{n-2}+...+a_1\lambda+a_0$$
+	- To solve, we end up factoring this into $$\pm(\lambda-s_1)(\lambda-s_2)...(\lambda-s_n)$$
+	- The multiplicity of an eigenvalue is how many times that value appears in the list $s_1,s_2,...,s_n$.
+- **<u>Example:</u>**
+	- Find the eigenvalues: $$A=\begin{bmatrix}0 & 1\\-1 & 0\end{bmatrix}$$
+	- Well, we can solve with our characteristic equation: $$0=\text{det}(A-\lambda I)=\text{det}\begin{bmatrix}-\lambda & 1\\-1 & -\lambda\end{bmatrix}$$
+	- This gives us $(-\lambda)(-\lambda)-1(-1)=\lambda^2+1=0$. Note that we have only the complex solution $\lambda=\pm i$.
+	- In the context of our course, there is no use for this. <u>Everything still works perfectly, though.</u>
+	- We won't have imaginary eigenvalues in the exam!
+- **<u>Definition:</u>**
+	- Let $A, B$ be $n\text{x}n$ matrices. We say that $A$ and $B$ are <u>similar</u> if there is an invertible matrix $P$, such that: $$P^{-1}AP=B$$
+- **<u>Characteristics of similar matrices:</u>**
+	- They have the same characteristic equations!
+	- They have the same eigenvalues!
+	- They have the same multiplicities!
+- **<u>WHY?!</u>**
+	- Well, the characteristic equation of $B$ is: $$0=\text{det}(B-\lambda I)$$ $$\text{det}(P^{-1}AP-\lambda I)=0$$ $$\text{det}(P^{-1}AP-\lambda P{-1}IP)=0$$ $$\text{det}(P^{-1}(A-\lambda I)P)=0$$ $$\text{det}(P^{-1})\text{det}(A-\lambda I)\text{det}(P)=0$$ $$\frac{1}{\text{det}(P)}\text{det}(A-\lambda I)\text{det}(P)=0$$ $$\text{det}(A-\lambda I)=0$$
+	- From all of this, we can see that the characteristic equation of $B$ is the characteristic equation of $A$.
+- **<u>WARNING:</u>**
+	- It is possible for two matrices to have the same eigenvalues and multiplicities but **<u>NOT</u>** be similar.

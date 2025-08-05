@@ -1,0 +1,125 @@
+### Midterm review!
+- Know about the Lodz Tram attack
+	- Kid was able to derail a train with a remote.
+	- Integrity and availability
+	- Lack of authentication
+	- Unknown threat actor, probably a script kiddie
+	- Authentication and physical security would be good additions to make it safe
+- Know about the Mirai botnet
+	- Threat actors created an IoT botnet and deliver a DDoS attack with infected devices.
+	- Availability (DDoS)
+	- Firewall/network filtering and lack of DDoS security were present
+	- Script kiddie created the threat, anyone could have performed it
+	- Firewall and network filtering would be good, also enabling IPS or IDS. 
+- Linux command line!
+	- Remember how `chmod` works, but you already know that because you're a gimungus nerd.
+- Virtual machines!
+	- Hypervisor and layering
+- Fundamentals
+	- CIA (confidentiality, integrity, availability)
+	- Vulnerability (flaw/weakness in system)
+	- Threat (Person or thing acting against a system)
+	- Risk (Existence of both a threat and vulnerability)
+	- Controls (Things done to combat vulnerabilities and deter threats to reduce our risk.)
+		- Risk = Vulnerability \* threat \* impact
+	- Countermeasures:
+		- Protect, detect, or react 
+		- Physical (hire guards), logical/technical (encryption), or administrative (mandatory phishing training)
+	- Common Cyber Threats
+		- APT's (advanced persistent threat), nation state (all nation states are APT's, not all APT's are nation states), social engineering, phishing, ransomware, DDoS
+- Identification and authentication:
+	- Distinguish between:
+		- Identification (associate an identity with a subject, make a claim)
+		- Verification (confirm who you are, have a token)
+		- Authentication (validating that you are who you say, process the token)
+		- Authorization (associating rights/capabilities with a subject, get privs)
+	- Factors: 
+		- Something you know (pin/password)
+		- Something you have (key/card)
+		- Something you are (fingerprint/face)
+		- MFA (two or more of these factors)
+	- Identification methods:
+		- 4-digit password: $4^{10}$ possible passwords, 10-digit password with lowercase and numbers: $10^{36}$ different possibilities. $n^m$ where $n$ is the digits and $m$ is the length of the character set.
+		- Dumpster diving/shoulder surfing as attacks
+		- Biometrics are something you are and are considered the strongest form of authentication
+	- Biometrics:
+		- FAR (false acceptance rate)
+		- FRR (false rejection rate)
+- Authorization and access control:
+	- Authorization (what you are allowed to do)
+	- Access control (what the system enforces you to do)
+	- Defense-in-depth
+		- Implementing security controls on all layers (policy, physical, network, computer, application, and device)
+	- Principal of least privilege (you can only do what you must)
+	- Subjects and objects
+		- Subject (the thing/people who receive access)
+		- Object (the thing subjects receive access to)
+	- **Security Models (IMPORTANT)**
+		- BLP (Bell-LaPadula):
+			- Used to maintain confidentiality
+			- Subjects and objects are organized in a non-discretionary fashion with respect to different players of secrecy.
+			- Simple confidentiality (NO READ-UP)
+			- Star confidentiality (NO WRITE-DOWN)
+			- Strong star confidentiality (NO READ WRITE UP DOWN)
+		- Biba:
+			- Used to maintain integrity
+			- Works opposite of BLP
+			- Simple integrity (NO READ-DOWN)
+			- Star integrity (NO WRITE-UP)
+			- Strong star integrity (NO READ WRITE UP DOWN)
+	- **Access control models (IMPORTANT)**
+		- DAC (discretionary access control): owner decides access
+		- MAC (mandatory access control): label based, most strict of all 5, common in government and military settings
+		- RBAC (role based access control): based off a user's role (department, location, seniority, work duties, etc.)
+		- Rule Based Access Control: based on rules (access between 9 AM and 5 PM only)
+		- ABAC (attribute based access control): based off certain attributes of users (roles, tasks), the resource (critical, public), or the environment (night, morning)
+	- Access control
+		- Access control matrix is a matrix containing permissions which are associated between subjects and objects. Understand and interpret this.
+		- Privilege separation: two groups or users don't overlap in permissions/cause a conflict of interest
+		- ACL: break down the matrix and represent a single object and what permissions the subjects have for the object. (`rw-r-x-w-`)
+		- ACL file permissions:
+			- Read: 4, write: 2, execute: 1, nothing: 0
+			- We go owner, group, everyone for our digits
+			- Just do binary conversions lmao
+- Auditing and accountability:
+	- Accountability: what you did and deterrent
+	- Auditing: reviewing what was actually done
+	- Who's accountable? Everyone, but each person has a specific role to play.
+- Vulnerability assessment vs pen test (pen test has real exploitation, vulnerability assessment is just scanning)
+- RACI
+	- Responsible: person assigned
+	- Accountable: person with authority to delegate work, people go to this one for answers
+	- Consulted: person must be consulted before work is started, must give their blessing
+	- Informed: The person just wants to be kept in the loop on what's happening
+- Cyber security audit 
+	- Analysis of all IT systems, processes, etc. and will usually include a vulnerability assessment and/or pen test.
+	- Scope will typically include: data security, operational security, network security, system security, and physical security.
+- Cryptography:
+	- Cryptology (study of codes)
+	- Cryptanalysis (study of breaking codes)
+	- Cryptography (study of making codes)
+	- Encryption (plaintext to ciphertext)
+	- Decryption (ciphertext to plaintext)
+- Symmetric vs. Asymmetric key cryptography
+	- Asymmetric (public key cryptography) is two keys. Public key encrypts, private key decrypts. (more secure, slower)
+	- Symmetric: 1 shared key exchanged through a secure channel or method such as the Diffie-Hellman key exchange. (less secure, faster)
+- Hashes and digital signatures
+	- One-way operation to a fixed-length result.
+	- Make sure we don't have collisions!
+	- Digital signature is making sure that the file hasn't been changed by checking if the stated hash of something that has been sent matches the true hash.
+		- I send you an encrypted hash
+		- You decrypt the hash
+		- You compare the hash of the message I sent with the decrypted hash.
+		- If they match, we're good. Otherwise, the data has been tampered with.
+- Ciphers:
+	- Substitution ($\text{ROT}n$ means rotate by $n$)
+	- Transposition (plaintext is repositioned but letters are unchanged )
+	- Other important ciphers are Vigenere, ADFGVX, base64.
+	- Don't need to know how to break/make, just know how they work.
+- SHA Suite:
+	- SHA1 (160-bit hash)
+	- SHA-256 (256-bit hash)
+	- SHA-512 (512-bit hash)
+- SSH and Side Channel Attacks
+	- Secure shell. Encrypted port 22 remote entry thing. Very epic, favorite protocol.
+	- Side channel attacks: use physical data of the computer such as CPU cycles to get an idea of how data is being encrypted or decrypted. For example, if a hacker sees users CPU decrypting messages consistently at 0.001s, they might figure out what algorithm is being used.

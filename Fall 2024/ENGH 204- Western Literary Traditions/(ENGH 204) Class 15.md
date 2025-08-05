@@ -1,0 +1,22 @@
+### More on Mrs. Dalloway
+- And whatnot.
+- Quiz today was really mean :(
+- Inference!
+	- We can interpret and misinterpret language in many ways.
+	- We are trained to be mind readers in English.
+	- We don't get our right answers and wrong answers.
+- Bathos: "a dying fall" (rather than building up in a book, you build down)
+- James Joyce wrote Ulysses, it's pretty much a spoof of The Odyssey.
+- Woolf liked the idea of a whole day and a whole city for a book was a great idea, but she hated Ulysses. 
+- Woolf wants to get Ulysses right.
+- How do we fit something so massive into something so small?
+	- We need a spread of exemplary people, show them all, and get into all of their heads.
+	- This is really hard.
+- We need their inside/outside actions, their classes, their race, etc.
+	- We don't have people of color in this book!
+	- But there are people of different classes.
+- Woolf takes a class approach rather than a race approach.
+	- Clarissa: upper class
+	- Peter: middle class
+	- Septimus: lower class
+- Woolf does sexuality as well!

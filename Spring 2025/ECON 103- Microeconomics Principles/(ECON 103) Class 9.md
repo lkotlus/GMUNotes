@@ -1,0 +1,28 @@
+### Supply
+- This is pivotal to economic theory.
+- Last week we learned about the law of diminishing marginal utility.
+	- The more we consume of something, the less utility (satisfaction) we get from it.
+	- Scarcity creates higher enjoyment of a single unit of something. 
+	- As access increases, the additional utility from an additional unit decreases.
+- We can take our marginal utility curve and get supply from it. Change the y-axis from "marginal utility" to "price".
+- The price we are talking about is per unit. X-axis is still just quantity.
+- We have a simplifying assumption to start. When you buy something, the price we pay in money is the major consideration. 
+- We want to draw a line that shows the relationship between the price of the good in question (apples) and the **<u>quantity demanded</u>** of that good or service.
+	- It's a straight line with a negative slope. This makes sense, nobody wants to buy something if it's crazy expensive.
+	- "Demand" is just the quantity that someone wants to buy.
+	- We call this line the demand curve, and I can just think of it as my demand for some good or service.
+- We aren't looking at price and demand, we're looking at price and quantity demanded. 
+- This is just the law of marginal utility, the buyer is willing to pay more due to scarcity.
+- **<u>We will be tested on demand vs. quantity demanded.</u>**
+	- Quantity demanded is a single point
+	- Demand is the entire curve
+	- A change in price of apples will change the quantity demanded for apples, but not the demand for apples.
+- A condition, or determinant of demand, is anything that moves demand other than price.
+	- Tastes/preferences
+	- Consumer income
+	- Information
+	- Price of related goods
+		- Substitutes: as price for one changes, demand for the other changes in the same direction as the price change. Coke and Pepsi.
+		- Complements: as price for one changes, the demand for the other changes in the opposite direction as the price change. Coffee and Styrofoam cups.
+	- Expectation of future availability
+- A movement of the curve out or in is a change in demand. Outward is increase of demand, inward is decrease in demand.

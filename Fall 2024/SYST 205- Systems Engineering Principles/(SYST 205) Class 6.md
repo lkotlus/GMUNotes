@@ -1,0 +1,169 @@
+### Administrative stuff
+- Expectation is to start working ahead on some stuff.
+- The final has two parts:
+	- Part 1 is timed and open everything but people (can't ask someone else). There is a week to do the final. Take it whenever you'd like.
+	- Part 2 is practical application. It will be very similar to assignments and projects.
+
+### System Engineering Life Cycles
+- The life cycle model is one of the key concepts of SE.
+- A life cycle for a system generally consists of a series of stages regulated by a set of decisions that show the system is mature enough to go to the next stage.
+- Types of life cycles (according to the university)!
+	- Waterfall
+	- Spiral
+	- V-Model
+	- Agile
+- According to professor:
+	- It's all just waterfall and 
+	- V and waterfall are exactly the same
+	- Agile and spiral are just waterfall at different tempos.
+- **<u>Waterfall</u>:**
+	- Originated in manufacturing and construction industries.
+	- These were highly structured physical environments in which after-the-fact changes are prohibitively costly, if not impossible.
+	- The remnants of this are mostly in aerospace.
+	- No formal software development methodologies existed at the time, so this hardware-oriented model was adapted for software.
+	- The formal description of the waterfall model is often cited as a 1970 article by Winston W. Royce, although "waterfall" is never mentioned in the article as a term. Royce presented this model as an example of a flawed, non-working model.
+	- Why is it a "waterfall," you ask? It looks like one! Take a look:
+		- Requirements analysis
+			- Design
+				- Implementation
+					- Testing
+						- Installation
+							- Maintenance
+	- This is a diode.
+	- Outputs of one phase are the inputs of the next phase. The success requirement to go to the next phase is just if the outputs of the current phase are the inputs for the next.
+	- When you're on one phase, the previous phases are **done**.
+	- We don't need to worry about as much stuff, you can focus very nicely on where you're at.
+	- We still need somebody to be careful about what changes as we go, which is what makes this bad!
+		- We need to base everything on the current-day. Technology can go in a completely different direction and come back to bite us.
+		- We aren't able to pivot very well.
+	- So it works well when we are technological risk-averse, or when regulations are such that we must tightly base our technology independent upon market-influence.
+	- All lifecycles have the stages in waterfall, so it is sort of like a representation of how everything else goes.
+	- **READ THE STAGES IN THE LECTURE SLIDES/NOTES**
+		- They will say that requirements analysis is the most important stage.
+		- This is true for waterfall.
+		- "Testing is an understated phase."
+			- "Do you want to be on the beta test of an airplane?"
+	- Advantages:
+		- Enforces discipline, every phase has a defined start and end point. 
+		- You are always either stuck in a phase or making progress.
+		- Emphasis on requirements and design before writing a single line of code. We don't waste time.
+		- Get requirements and design out of the way first also improves quality.
+	- Disadvantages:
+		- Fixed in time.
+		- If we aren't sure what we want or it might change over time, we will create a quality product that misses its window.
+		- We can't react to changes at all.
+		- If we anticipate change we're alright, but that's very hard to do.
+	- When to use waterfall:
+		- When the requirements are well known, clear, and fixed
+		- Production definition is stable.
+		- Technology is understood.
+		- There are no ambiguous requirements.
+		- Ample resources with required expertise are available freely.
+		- **We need a stable target.**
+- But what if we don't know all of that? What if we don't have a good and rigid set of requirements and definitions? What if we know what we need to do and that there's a great cost to doing it wrong and having to restart, but there's also a high chance that technology will change?
+- **<u>Spiral:</u>**
+	- Spiral essentially is just iterative waterfalls.
+	- We get outputs of waterfalls that input the next waterfall.
+	- We get a series of prototypes, with each one more effective than the last.
+	- We eventually reach an "operational prototype" and get a final waterfall at the end.
+	- We go through each waterfall rapidly and learn about the system as a result.
+	- Risk of failure decreases with each iteration, and new goals are created.
+	- Four quadrants of the spiral!
+		- Determine objectives
+		- Identify and resolve risks
+		- Development and testing
+		- Plan the next iteration
+	- Steps can be generalized as:
+		- System requirements are defined in as much detail as possible.
+		- A preliminary design is created for the new system.
+		- A first prototype of the new system is constructed from the preliminary design. This is usually a scaled-down system, and represents an approximation of the characteristics of the final product.
+		- **There's more in the slides, maybe add it here.**
+	- Advantages:
+		- Great for risk management! Best for risky physical and cyber-physical projects.
+		- One of the most flexible SDLC models in place.
+		- We can understand the cost of it because we know how many iterations we will have.
+	- Disadvantages:
+		- Expensive!
+		- You need to keep evolving a system. You recreate over and over again.
+		- Meeting budgetary and scheduling requirements is tough if this development process is followed.
+	- When to use:
+		- Costs and risk evaluation is important
+		- Medium to high-risk projects
+		- Users are unsure of their needs
+		- Requirements are complex
+		- New product line
+		- Significant changes are expected (research and exploration)
+- **<u>V:</u>**
+	- It's a V.
+	- "The only difference between V and waterfall is that each step shows that a corresponding thing on the other end is satisfied."
+	- It's useful because it reminds us what we're trying to achieve.
+	- Saying again that testing is very *very* **very** ***very*** ***<u>very</u>*** important.
+- **<u>Agile:</u>**
+	- People complain about waterfall being bureaucratic and slow, but really it's tolerant of a lot of stuff.
+	- Agile is fast and iterative if you are incredibly disciplined and focused.
+	- It is an iterative and incremental method of managing things.
+	- We create small chunks and set times. Split into teams and work on stuff, then combine and get feedback.
+	- You might build a single interface or a single function.
+	- Similar to spiral, but we aren't building complete systems/prototypes. We're building tiny parts.
+	- We create developments, get to a release, get feedback, and iterate until we can release.
+	- Build small things quickly!
+	- People use things like Scrum to make this go well.
+	- Advantages:
+		- Can go really fast and work really well.
+	- Disadvantages:
+		- Difficult to do correctly!
+		- Lack of emphasis on necessary designing and documentation.
+		- The project can easily get taken off track in the customer representative is not clear what final outcome that they want.
+		- Only senior programmers are capable of making the kind of decisions required during the development process. Hence it has no place for newbie programmers, unless combined with experienced resources.
+	- When to use:
+		- When you have a great relationship with your stakeholders
+		- To implement a new feature the developers need to lose only the work of a few days, or even only a few hours, to roll back and implement it
+		- When cost of change is low (software intensive systems!)
+- **<u>Obligatory cookie examples:</u>**
+	- Waterfall:
+		- I know exactly what I want and create the perfect cookie.
+	- Spiral:
+		- I don't really know what I want out of my cookies, let's go to the store and try it out. Try some different recipes, combine stuff from findings, eventually get the perfect cookie.
+	- Agile:
+		- Go into recipes and work on it.
+		- Go into baking and work on it.
+		- ...
+
+### Configuration management
+- Some things:
+	- CM is essential
+	- You appreciate it when it's done well, hate it when it's done wrong
+	- Very important, but annoying
+- So this is literally just managing configurations. 
+- When we get into even moderate complexity, it becomes rather challenging.
+- Basic example, operating system:
+	- There's a ton of software on my laptop independent of the OS.
+	- A lot of this software is dependent on the other bits of software. All of it needs to still work together regardless of some stray `yay -Syu` that manages to wreck dependencies in my AUR packages.
+- Tree thingy on the slides:
+	- Configuration
+		- Operational Control Centre
+		- Station
+		- Documentation
+- This involves a lot of record-keeping. This is basically the accounting of the system.
+- This is a specialized domain of knowledge.
+- Configuration goes beyond settings, it's the state of the entire system.
+- What we control with CM:
+	- Items which should not be changed without:
+		- Prior review and evaluation
+		- Analysis of the total impact
+		- Complete coordination
+		- Prior approval
+
+### Next couple of assignments
+- Let's do conversations well. If we're good at this, we can avoid presentations altogether!
+- International space station vs. stonehenge:
+	- ISS and Stonehenge are both things that were marvels of their time.
+	- They both build up a sort of sense of tribal belonging. Stonehenge is believed to have been a gathering place. ISS was a gathering place of international entities, it unifies us.
+	- ISS was difficult because of cooperation, stonehenge was difficult because of the technological restrictions of the time. That makes stonehenge a greater technological achievement. 
+	- A server running windows is a system and not just a product.
+	- We have a ton of subsystems. (windows network card was talked about in class)
+	- Put together frequently for abstraction.
+	- Crowdstrike showed how SoS leads to unknown issues that result from incredible complexity.
+	- Frequently, complexity is hidden behind the scenes to present something as a simple product. The windows server you're running is insanely complicated, but you just use a keyboard to add services that it runs.
+	- We don't need to do assignment 3!
+	- We do have to do assignment 4 with lifecycles!

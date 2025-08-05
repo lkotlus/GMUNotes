@@ -1,0 +1,49 @@
+### Use case diagrams!
+- We will see similar things within these to functional models. We're just less concerned with inputs turning into outputs.
+- For these, we're concerned more with the chronological order of our use cases.
+- A use case is seen from the perspective of the user. We are describing what the user expects to see from the system in terms of nominal behavior.
+- A use case can be executed as a test case in the system.
+- Unlike an activity diagram or a functional composition, use cases are also valid and viable when we're earlier on in the SDLC. These are useful for figuring out "what do I want this to do" type questions.
+- Include and extend are the trickiest relationships. Make sure you understand them.
+- Every use case has actors (stick figure), which is one of two things:
+	- Human interacting with the system. Class of human confined to a role.
+	- External system, which in some role interacts with the system.
+- Actors are not individual users, they are particular kinds of users. Examples:
+	- Bank customer
+	- System administrator
+	- Help desk tier 1
+- Individuals may be represented by more than one role, thus being represented by more than one actor.
+- Ovals are actions. Stick figures are actors. Lines show relationships. Arrows are special.
+- Use cases capture functional requirements. We can sometimes write use cases for non-functional requirements. They can be attached to a use case.
+- Other times, non-functional requirements apply to subsets or all of the use-cases. 
+- **<u>We are only focusing on functional requirements for this class.</u>**
+- Use case and scenario are synonyms.
+- A use case typically describes a core sequence of steps necessary to achieve its goal.
+- Never repeat data. If we said it once, that's enough. If I build a model, don't make a model for the same thing. For use cases, we can refer to other use cases as well as linking other models.
+	- Sort of like a code library.
+- The default flow of the system can be modified through repeated actions in alternative flows.
+- The `<<include>>` relationship means you're reusing the steps of a different use case within yours. Essentially, repeat that use case within this one.
+	- This simplifies use cases.
+	- Arrow points to the thing you include.
+	- We must identify common things that lend themselves to include or extend relationships.
+	- Think about 20-30 use cases.
+- If `<<include>>` is a function call, then `<<extend>>` is a relationship that allows us to modify the behavior of a use case.
+	- Rather than a function call, we're doing inheritance!
+	- We still never change the language or edit the steps within the base flow with include. 
+	- Extend changes the flow, it isn't just an alternate execution.
+- To summarize:
+	- `<<include>>` is copy paste
+	- `<<extend>>` changes the nature 
+- Requirements capture organized by use cases:
+	- Identify the actors
+	- For each actor find out
+		- What they need from the system
+		- Any other interactions they expect to have with the system
+		- Which use cases have what priority for them
+- Possible issues with use cases:
+	- Interactions spelled out may be too detailed, may needlessly constrain the design.
+	- May specify secondary actors that are not essential for fulfilling goal of primary actor.
+		- Does borrowing a book have to involve a librarian?
+	- Focus on operational nature of system may result in less attention to architecture
+	- May miss requirements not naturally associated with actors.
+- Now we have in-class discussion.

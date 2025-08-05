@@ -1,0 +1,69 @@
+### Coordinate systems
+- Recall vector spaces.
+- Recall that a bases, $B$, of some vector space is a collection of vectors that spans the vector space and is LI.
+- **<u>Unique Representation Theorem:</u>**
+	- Let $B=\left\{\overrightarrow{b}_1,\overrightarrow{b}_2,...\overrightarrow{b}_n\right\}$ be a basis of $V$. Let $\overrightarrow{x}$ be a vector in $V$. 
+	- There is a <u>unique</u> set of numbers, $c_1,c_2,...,c_n$, such that $\overrightarrow{x}=c_1\overrightarrow{b}_1+c_2\overrightarrow{b}_2+...+c_n\overrightarrow{b}_n$.
+- **<u>Definition:</u>**
+	- Let $B=\left\{\overrightarrow{b}_1,...,\overrightarrow{b}_n\right\}$ be a basis of $V$ and let $\overrightarrow{x}$ be a vector in $V$. The coordinates of $\overrightarrow{x}$ relative to $B$ (or the $B$-coordinates of $\overrightarrow{x}$) are unique numbers $c_1,c_2,...,c_n$ such that $\overrightarrow{x}=c_1\overrightarrow{b}_1+c_2\overrightarrow{b}_2+...+c_n\overrightarrow{b}_n$.
+- **<u>Notation:</u>**
+	- The $B$-coordinate vector of $\overrightarrow{x}$ is denoted: $$\left[\overrightarrow{x}\right]_B=\begin{bmatrix}c_1\\c_2\\...\\c_n\end{bmatrix}$$
+	- The mapping/function/transformation $\text{C}_B:V\rightarrow\mathbb{R}^n$, or $\text{C}_B\left(\overrightarrow{x}\right)=\left[\overrightarrow{x}\right]_B$ is called the $B$-coordinate mapping.
+- **<u>Example:</u>**
+	- Suppose $V=\mathbb{R}^2$, $B=\left\{\overrightarrow{e}_1,\overrightarrow{e}_2\right\}$, and $\overrightarrow{x}=\begin{bmatrix}3\\5\end{bmatrix}$.
+	- Find $\left[\overrightarrow{x}\right]_B$
+		- Well, what are the coordinates?
+		- We need it to work such that: $$\begin{bmatrix}3\\5\end{bmatrix}=c_1\begin{bmatrix}1\\0\end{bmatrix}+c_2\begin{bmatrix}0\\1\end{bmatrix}$$
+	- This is a very clear cut example, it's equal to itself: $$\left[\overrightarrow{x}\right]_B=\begin{bmatrix}3\\5\end{bmatrix}$$
+	- Note:
+		- If $B$ is the standard basis of $\mathbb{R}^n$, then $\left[\overrightarrow{x}\right]_B=\overrightarrow{x}$.
+- **<u>Example:</u>**
+	- $V=\mathbb{R}^2$, $B=\left\{\overrightarrow{b}_1,\overrightarrow{b}_2\right\}$, $\overrightarrow{b}_1=\begin{bmatrix}1\\2\end{bmatrix}$, and $\overrightarrow{b}_2=\begin{bmatrix}0\\1\end{bmatrix}$.
+	- Suppose $\left[\overrightarrow{x}\right]_B=\begin{bmatrix}2\\1\end{bmatrix}$. Find $\overrightarrow{x}$.
+	- Plug and chug!
+	- $\overrightarrow{x}=c_1\overrightarrow{b_1}+c_2\overrightarrow{b}_2=\begin{bmatrix}2(1)+1(0)\\2(2)+(1)1\end{bmatrix}=\begin{bmatrix}2\\5\end{bmatrix}$
+	- We can interpret $\left[\overrightarrow{x}\right]_B$ as giving a description of $\overrightarrow{x}$ in another coordinate system.
+		- Parallelograms and whatnot.
+- **<u>Example:</u>**
+	- $B=\left\{\begin{bmatrix}1\\2\end{bmatrix},\begin{bmatrix}-1\\1\end{bmatrix}\right\}$, and $\overrightarrow{x}=\begin{bmatrix}-1\\7\end{bmatrix}$.
+	- Find $\left[\overrightarrow{x}\right]_B$.
+	- Well, we can really just make this an augmented matrix kinda thing: $$\overrightarrow{x}=c_1\overrightarrow{b}_1+c_2\overrightarrow{b}_2$$
+	- Well we know that this really just looks like: $$\begin{bmatrix}-1\\7\end{bmatrix}=\begin{bmatrix}1 & -1\\2 & 1\end{bmatrix}\begin{bmatrix}c_1\\c_2\end{bmatrix}$$
+	- Augmented matrix! $$\begin{bmatrix}1&-1&-1\\2&1&7\end{bmatrix}$$
+	- This gives that $c_1,c_2=2,3$.
+- **<u>In general:</u>**
+	- Suppose $B=\left\{\overrightarrow{b}_1,...,\overrightarrow{b}_2\right\}$ is a basis of $\mathbb{R}^n$. 
+	- Let $P_B=\left[\overrightarrow{b}_1,...,\overrightarrow{b}_n\right]$.
+		- This matrix changes $B$-coordinates into standard coordinates.
+	- Pretty cool stuff! $$P_B\left[\overrightarrow{x}\right]_B=\left[\overrightarrow{b}_1,...,\overrightarrow{b}_n\right]\begin{bmatrix}c_1\\...\\c_n\end{bmatrix}=\overrightarrow{x}$$$$P_B\left[\overrightarrow{x}\right]_B=\overrightarrow{x}$$
+	- By the invertible matrix theorem, $P_B$ is invertible. That means that: $$\left[\overrightarrow{x}\right]_B=P_B^{-1}\,\overrightarrow{x}$$
+	- $P_B$ is called the change of coordinates matrix from $B$ to the standard basis of $\mathbb{R}^n$.
+- **<u>Theorem:</u>**
+	- Let $V$ be a vector space with a bases $B=\left\{\overrightarrow{b}_1,...,\overrightarrow{b}_2\right\}$.
+	- Recall $\text{C}_B\left(\overrightarrow{x}\right)=\left[\overrightarrow{x}\right]_B$
+	- $\text{C}_B$ is a one-to-one, onto linear transformation from $V$ to $\mathbb{R}^n$.
+		- The property of being one-to-one and onto is called an <u>isomorphism</u> from $V$ to $\mathbb{R}^n$.
+	- Pretty cool.
+- **<u>Example:</u>**
+	- $V=\mathbb{P}_3=\left\{a_0+a_1t+a_2t^2+a_3t^3\ |\ a_0,a_1,a_2,a_3\in\mathbb{R}\right\}$.
+	- Basis vector of this? Well we need four real polynomials that can scale to anything.
+	- $B=\left\{1,t,t^2,t^3\right\}$ is a basis of $\mathbb{P}_3$.
+	- Let's take $p(t)=-3t+7t^2-t^3$. From this, we know that: $$\left[p(t)\right]_B=\begin{bmatrix}-2\\3\\7\\-1\end{bmatrix}$$ $$\text{C}_B(-2+3t+7t^2-t^3)=\begin{bmatrix}-2\\3\\7\\-1\end{bmatrix}$$
+	- Pretty neat for real.
+- **<u>Example:</u>**
+	- $p_1(t)=1+t$, $p_2(t)=1+t+t^2$, and $q(t)=-1+t$.
+	- Determine if $q(t)$ is a linear combination of $p_1(t)$ and $p_2(t)$.
+	- Well, $\mathbb{P}_2$ gives that $B = \left\{1,t,t^2\right\}$ and $\text{C}_B:\mathbb{P}_2\rightarrow\mathbb{R}^3$.
+	- We can use $\text{C}_B$ to turn the problem into something within $\mathbb{R}^3$.
+	- Well, $$\text{C}_B(p_1(t))=\begin{bmatrix}1\\1\\0\end{bmatrix}$$$$\text{C}_B(p_2(t))=\begin{bmatrix}1\\1\\1\end{bmatrix}$$$$\text{C}_B(q(t))=\begin{bmatrix}-1\\1\\0\end{bmatrix}$$
+	- This gives an equivalent problem: is $\begin{bmatrix}-1\\1\\0\end{bmatrix}$ a linear combination of $\begin{bmatrix}1\\1\\0\end{bmatrix}$ and $\begin{bmatrix}1\\1\\1\end{bmatrix}$?
+	- It is not, therefore $q(t)$ is not a linear combination of $p_1(t)$ and $p_2(t)$.
+- **<u>Example</u>**
+	- Take $\overrightarrow{v}_1=\begin{bmatrix}3\\6\\2\end{bmatrix}$, $\overrightarrow{v}_2=\begin{bmatrix}-1\\0\\1\end{bmatrix}$, and $\overrightarrow{x}=\begin{bmatrix}3\\12\\7\end{bmatrix}$
+	- $H=\text{Span}\left\{\overrightarrow{v}_1,\overrightarrow{v}_2\right\}$, which is a subspace of $\mathbb{R}^3$. 
+	- $B$ is a basis of $H$ because it spans it and the vectors are LI.
+	- Determine if $\overrightarrow{x}$ is in $H$, and if so find its $B$-coordinates.
+	- Well we just need to solve $c_1\overrightarrow{v}_1+c_2\overrightarrow{v}_2=\overrightarrow{x}$.
+	- Get your augmented matrix, and the solution is your $B$-coordinates!
+
+# **<u>EXAM ON TUESDAY 10/29!!!</u>**

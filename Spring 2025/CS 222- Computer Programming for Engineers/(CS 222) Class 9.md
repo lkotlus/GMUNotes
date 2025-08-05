@@ -1,0 +1,13 @@
+### Pointers and Arrays
+- Somewhat continued.
+- A pointer is just `type *identifier;`
+- Pointers are just a data type that points to the address of another data type. You can get the address of a non-pointer variable with `&`, the "address-of" operator.
+- You can get the memory address of a pointer in `printf()` with `%p`.
+- You can get the value it points to by dereferencing with `*var_name`. 
+- The array variable is a pointer to the first item of the array. An array is a fixed number of variables of the same type.
+- Addresses in an array are sequential, so each element is just one after another in memory. If you increment the value of a pointer, it's just the next address in memory, so `&arr[n]` is equivalent to `(arr + n)`.
+	- It's worth noting that you aren't just adding the integer, it's the integer multiplied by the size of a pointer.
+- `sizeof()` on an array returns the size of the **entire** array rather than just the size of the first pointer (if you know the size of the data type, then `len(arr) == sizeof(arr)/TYPE_SIZE`). 
+- We can't return arrays, they must be output parameters. They are also exclusively pass by reference.
+- To show that an array is input rather than output, then put a `const` qualifier in the function definition.
+- If we pass a 2 (or more) dimensional array into a function, the length of the second and onward dimensions must be defined.

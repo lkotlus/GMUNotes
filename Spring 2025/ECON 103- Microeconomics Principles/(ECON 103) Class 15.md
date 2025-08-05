@@ -1,0 +1,24 @@
+### Price Ceilings
+- And their consequences
+- Price ceilings are a price that the government sets below equilibrium.
+- So some of the main effects:
+	- There is a shortage of the good
+	- (MISSING)
+	- There are lines to get the good
+	- There is corruption for sellers and government officials
+	- There is a decrease in quality
+	- The marginal value of each unit goes up, causing people to be willing to pay much more than what the good costs. They are willing to pay the amount specified by the demand curve, but are stuck at the price set by the government. 
+- Price ceilings put on energy:
+	- These were the first price ceilings in the US since WW2, so 1946 until 1970 when Nixon imposed them on oil, gas, etc.
+	- Supply was drastically decreased for oil as a result of the war in the Middle East. Because of this, price ceilings were created.
+	- There were lines to buy gas.
+- The government/authorities can cap the dollar amount, but people will pay in time, effort, favors, etc.
+- Rent control is another price ceiling:
+	- As a tenant, it seems like a good thing.
+	- Price control in this is different because houses aren't commodities
+	- Rent control is always established by a rent control board.
+	- If a landlord wants to raise rent, they need to go to the board.
+	- Rent control reduces the supply of housing to the very people it's meant to help.
+	- Disaster in NYC, landlords would hire arsonists to get insurance money instead of losing money by just owning a property.
+	- Demand for NJ and Long Island housing increases as a result of NYC. It's a substitute good!
+- We will look at price floors next week.

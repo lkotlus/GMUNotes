@@ -1,0 +1,122 @@
+### Network security
+- Networking is the way computers and machines communicate with each other.
+- How it works:
+	- Networks follow protocols, which define how communications are sent and received. 
+	- Example: IP, TCP, UDP, ...
+- Architecture:
+	- Machine -> router -> cell towers -> receiving router -> facilitated to the machine you are communicating to
+- OSI Model:
+	- Application
+	- Presentation
+	- Session
+	- Transport
+	- Network
+	- Data Link
+	- Physical
+- Internet Protocol (IP)
+	- Protocol used for defining addressing and routing of devices
+- Internet Control Message Protocol (ICMP)
+	- Protocol used to send network errors and other important messages
+- User Datagram Protocol (UDP)
+	- Connectionless protocol that establishes communication between devices
+- Transmission Control Protocol (TCP)
+	- Establishes communication between devices using the TCP Handshake
+		- SYN: client sends
+		- SYN_ACK: server acknowledges
+		- ACK: client acknowledges acknowledgement
+		- Data packet(s)
+- Secure Socket Layer (SSL) and Transport Layer Security (TLS)
+	- Provides privacy, authentication, and integrity (SSL) and enables encryption of network traffic (TLS) respectively
+- Ports!
+	- Different services go on different ports.
+	- Prof said to memorize.
+	- Common ports:
+		- 20/21: FTP
+		- 22: SSH
+		- 23: Telnet
+		- 25: Simple Mail Transfer Protocol (SMTP)
+		- 53: DNS
+		- 80: HTTP
+		- 110: Post Office Protocol (POP3)
+		- 143: Internet Message Access Protocol (IMAP)
+		- 161: Simple Network Management Protocol (SNMP)
+		- 443: HTTPS
+		- 3389: RDP
+- Network segmentation:
+	- We want to split up parts of our network so people don't have access to everything. Person gets into the HR segment, they can't see the finance part.
+- Firewall:
+	- What do we allow in and out? Rules!
+	- We do it based on inbound/outbound and on ports.
+	- Firewall types:
+		- Stateless: 
+			- Looks at header data based on static rules
+		- Stateful:
+			- Aware of the state of the network, filters based on header data, rules, and context (typically uses some machine learning or something similar).
+			- Example: if a packet hasn't been seen entering the network before, we will look at it a bit more deeply.
+		- Application Firewall:
+			- Deep packet inspection, looks at the header, payload, and context to make permit/deny decisions. May use AI or adaptive techniques.
+	- Firewalls do three actions:
+		- Accept (allow packet to enter)
+		- Drop (just act like nothing happened)
+		- Reject (drop + block)
+	- Firewalls can be configured to have rules from the following 2 approaches:
+		- Blacklist (default-allow/implicit-allow)
+			- All packets are allowed except those which are defined to be in the blacklist
+		- Whitelist (default-deny/implicit-deny)
+			- All packets are dropped or rejected by default unless implicitly defined in the whitelist
+- Proxy servers:
+	- Used for some baby protection
+- Intrusion Detection/Prevention Systems:
+	- Detection (ALERT)
+		- Read and analyze network apckets in comparison to a database of known threats or baseline activity.
+		- An IDS will detect and alert on potential threats
+		- NIDS: Network Intrusion Detection System
+		- HIDS: Host Intrusion Detection System
+	- Intrusion Prevention System (BLOCK)
+		- An IPS will block a potential threat
+		- NIPS: Network Intrusion Prevention System
+		- HIPS: Host Intrusion Prevention System
+	- Signature Based (Compares incoming packets to known signatures)
+	- Behavior Based (looks for unusual behavior of malware and threat activity (like disabling antivirus))
+	- False Positive (label safe activity malicious)
+	- False Negative (not finding malicious activity)
+- Defensive network security philosophy:
+	- Protect
+		- Firewalls, IPS, AV, email filters, etc.
+	- Detect
+		- IDS, file integrity checking, etc.
+	- React:
+		- Triage, reconfiguration, backups, snapshots, forensics, etc.
+- Tools:
+	- Data-Loss Prevention (DLP)
+		- USB blocking
+		- Cloud based
+		- Email
+	- Mail gateway
+		- Spam filter
+		- DLP
+		- Encryption
+	- Wireshark
+		- Get packets
+- Zones/Topologies:
+	- DMZ
+	- Extranet
+	- Intranet
+	- Wireless
+	- Guest
+	- NAT
+- Honeypots!
+- VPNs!
+- Common networking attacks:
+	- Man in the Middle (MITM)
+	- Password cracking
+	- Replay
+	- Evil twin
+	- Rogue AP
+	- Jamming
+- Web:
+	- Surface: google results
+	- Deep: can reach, not shown on google
+	- Dark: TOR required
+		- Three nodes you travel to before your destination
+		- Encrypt at each node

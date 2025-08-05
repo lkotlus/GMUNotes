@@ -1,0 +1,17 @@
+### Warm up
+- Take that differential equation from last time with the salt in the tank, and solve it.
+- So we have our equation: $$\frac{dS}{dt}=2-\frac{S}{t+15}$$
+- We can solve this fairly easily. Rearrange to the from $$\frac{dS}{dt}+r(t)\cdot S=g(t)$$ $$\frac{dS}{dt}+\frac{1}{t+15}S=2$$
+- Now that we're here, multiply in $u$ $$\frac{dS}{dt}u+\frac{u}{t+15}S=2u$$
+- Solving for $u$ is just a separable differential equation: $$\frac{du}{dt}=\frac{u}{t+15}$$ $$u=t+15$$
+- Now that we're done with that, plug everything back in to see  that we have product rule: $$\frac{d}{dt}\left[S(t+15)\right]=2t+30$$
+- Which gives: $$S(t+15)=t^2+30t+C$$ $$S=\frac{t^2+30t+C}{t+15}$$
+- Using our initial condition of $S(0)=6$ gives us a final function: $$S(t)=\frac{t^2+30t+90}{t+15}$$
+- We can solve for any value, say $S(15)$ now, which shows us that $S(15)=25.5$
+- So, based on our solution, what can we say about the amount of salt in the tank in the long run? What can we say about the concentration?
+	- Well, we can see that we will always increase. The numerator is never overtaken by the denominator, so the salt content will never go down.
+	- One would assume that concentration will increase with salt content, but if I am remembering correctly, we have 1 g/min of salt water leaving and 2 g/min entering. 
+		- If this is the case, then the amount of water in the tank increases by 1 g/min.
+	- This makes things difficult, but we will approach the entering concentration of 1 pound/gallon
+- How do we make sense of this with the differential equation itself?
+	- Work it out, plug in $S(t)$ for a sick limit

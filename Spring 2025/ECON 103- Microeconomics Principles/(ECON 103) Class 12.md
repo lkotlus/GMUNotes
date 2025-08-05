@@ -1,0 +1,38 @@
+### Continuing on Supply
+- Recall the supply curve. It is slanted upward to the right, mapping prices (vertical) to quantity supplied per unit time (horizontal).
+- We always think in the horizontal dimension when comparing our supply curves and our demand curves.
+- Supply focuses on producers. Consumers technically can supply others with their consumables, but most homeowners aren't selling their houses. I technically have a supply of shirts, but I'm not supplying people with them.
+- So what are the determinants of supply? What makes the curve change position? 
+	- It's just cost of production! That's the only thing that changes it.
+	- If 100 apples costs $2 per pound to produce, we have a supply curve for that. If the cost to produce 100 apples changes, then the supply changes.
+- So there's only one determinant of supply: cost of production. But what are the determinants of cost of production?
+	- Cost of inputs (how much do I pay for people, machines, electricity, etc., cost of inputs increase leads to cost of production increase)
+	- Production technology (knowledge of how to use inputs more efficiently, technological increase leads to cost of production decrease)
+	- Development of infrastructure (societal infrastructure that supports your production, better infrastructure leads to decrease in cost of production)
+- There's such a thing as elasticity of supply, but it isn't quite as important as elasticity of demand. It's the same equation, the more horizontal the graph is the more elastic it is.
+- That's supply curves for individual producers. Much more simple than demand curves.
+
+### Supply and Demand
+- WOAH! That's the entirety of economics!
+- We talked about theory of consumer behavior with demand, we talked about theory of producer behavior with supply, now we get to put them together.
+- You need voluntary buyers and voluntary sellers to have a market.
+- Prices are ultimately determined by consumers, not producers. The producer can legally set any price they want, but the price is ultimately determined on the price that voluntary buyers will go for. 
+- Putting our curves together...
+	- Inverse correlation! Wow!
+- There is a pretty unique price on this plot. It's the price where supply and demand intersect. We call it $P_e$, the equilibrium price. The quantity that it corresponds to is $Q_e$, the equilibrium quantity. We're focusing on price, quantity just isn't quite as relevant.
+- We call $P_e$ the equilibrium price. One reason is because supply and demand are *equal*. Here's another reason:
+	- At $7 per pound for apples, supply will by high. The producers want to sell a lot of apples at that high of a price.
+	- At that same price, though, consumers aren't very happy. There is a lower quantity demanded.
+	- In this scenario, we have apples left over to sell. Not great. We need to lower the price.
+	- Let's say we lower it to $1 per pound. Now we don't end up producing enough apples for the consumer demand.
+	- We want to price the apples exactly right, such that we match the consumer demand with producer supply.
+	- That's the equilibrium price!
+- Price above equilibrium is called surplus. Excess in quantity supplied over quantity demanded.
+	- Surplus self-corrects in the market. Sellers take the price down to sell things better.
+- Price below equilibrium is called shortage. Excess in quantity demanded over quantity supplied.
+	- This is also self-correcting for the exact same reason. Sellers increase price to sell things better.
+- Consumers always get the lower bound of quantity. If $Q_D>Q_S$, the the actual quantity is $Q_S$. If $Q_D<Q_S$, then $Q_D$ is the actual quantity. We only buy as much as we actually want, and we can only buy as much as is actually offered.
+	- The curve of quantity bought is the "amount consumers actually get" curve.
+	- It looks like $-|y|$ with the origin at $(P_e, Q_e)$. Just a triangular graph facing the vertical axis.
+- Above equilibrium, consumers get the amount they want. Below equilibrium, consumers get less than what they want.
+- If supply increases, $P_e$ decreases. If demand increases, $P_e$ increases.

@@ -1,0 +1,31 @@
+### Warm-up
+- The DE below predicts the owl population/year in a forest ($P$ is in hundreds of owls): $$\frac{dP}{dt}=\frac P2\left(1-\frac P5\right)\left(\frac P8-1\right)$$
+- Scientists estimate $P$ is about 5, so they make long-term predictions with initial conditions: $P=4.9,5,5.1$. Without a graphing calculator or software, determine long-term predictions for these ICs for the DE. Are they similar, or radically different? Can we carry out a similar analysis if the current number is around 8?
+	- We will start by saying that we are given $P(0)\approx 5$.
+	- This establishes that we begin at $t=0$.
+	- So we want to see the behavior of $P(0)=4.9$, $P(0)=5.0$, and $P(0)=5.1$.
+	- Observe equilibrium solutions at $P=0, 5, 8$. That tells us that we decrease at less than 5, if it's between 5 and 8 we will go to 8, and if we are above 8 we will decrease to 8.
+	- So we can see that for...
+		- $P(0)=4.9$, we will decrease to 0
+		- $P(0)=5$, we will stay at 5
+		- $P(0)=5.1$, we will increase to 8
+	- Perfect. Repeating the process around 8:
+		- $P(0)=7.9$, we will increase to 8
+		- $P(0)=8$, we will stay at 8
+		- $P(0)=8.1$, we will decrease to 8
+- We can see that for some equilibrium solutions, we always approach. For others, we are always going away from it. $P=0$ is approached from both sides, same for $P=8$, but $P=5$ isn't being approached from anywhere but itself.
+- So if we start around 5, we diverge from it. If we start around 8, we converge to it.
+
+### Stability of Autonomous Differential Equations
+- Autonomous DEs are ones that are only in terms of the solution function. $\frac{dy}{dt}=f(y)$ is autonomous.
+- For the owl example from above:
+	- Why does it make sense that the population will die out if it drops below 5?
+		- Population can't support itself.
+	- What's different about the equilibrium solutions at 8 and 5?
+		- 8 is stable, 5 is unstable.
+- We can make wild assertions about constant behavior because direction will only change when we hit 0 for our DE. This makes sense. We have intervals of change.
+- <u>**Phase Line**</u>:
+	- A 1-d diagram that depicts qualitative behavior of solutions to an autonomous DE.
+	- We put dotted circles around equilibrium solutions and arrows pointing in the direction of the DE around them.
+- Is there such a thing as half-stable?
+	- Yes, called "semi-stable"

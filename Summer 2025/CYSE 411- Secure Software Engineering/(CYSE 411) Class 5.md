@@ -1,0 +1,154 @@
+### Software Requirements
+- Objective
+	- By the end of class, I should understand the key concepts and techniques used to elicit and define secure software requirements
+- A requirement is a description of what the system should do, the service or services that it provides, and the constraints on its operation. 
+- Types of requirements
+	- Functional
+		- Identify a service or application's primary function and describe how a user can accomplish a particular task or satisfy a particular need.
+		- Feature requirements are typically the primary drivers for design decisions
+		- Product features and user requirements
+	- Non-functional
+		- Several categories of requirements focus on general attributes or behaviors of the system rather than specific behaviors
+		- These non-functional requirements are relevant to our focus, security and reliability
+		- Product properties and user expectations
+- Requirement Elicitation
+	- The practice of researching and discovering a system's requirements from users, customers, and other stakeholders
+	- Security requirements
+		- Define what a system must do to protect itself and its assets
+		- Non-functional
+			- Often describe system qualities rather than system functions
+			- "The system shall prevent unauthorized access" rather than "the system shall have a login button"
+		- Cross-cutting
+			- Impact multiple parts of the system and its architecture
+		- Derived from:
+			- Business needs and objectives
+			- Legal and regulatory compliance (GDPR, HIPAA, ...)
+			- Risk assessments and threat modeling 
+			- Organizational security policies
+		- CIA (extended)
+			- Confidentiality
+			- Integrity
+			- Availability
+			- Authorization (most important)
+			- Privacy
+	- Challenges for elicitation
+		- Lack of stakeholder awareness
+			- Business users may not clearly articulate their security needs
+		- Non-functional nature
+			- Harder to visualize and describe things that aren't features
+		- Evolving threat landscape
+			- Security requirement's are not and cannot be static
+		- Technical jargon
+			- Technical jargon creates a gap in communication
+		- Perceived as an "add-on"
+			- Often seen as an extra cost or effort that is optional
+		- Complexity
+			- Systems are interconnected, making security boundaries challenging
+		- Balancing security and usability
+			- Overly restrictive security can hinder user experience
+	- Elicitation techniques
+		- Threat Modeling (such as STRIDE)
+			- Systematic identification and analysis of potential threats
+			- Breaks down systems to find vulnerabilities
+		- Misuse cases / abuse cases or evil stories / security stories
+			- Describe how an attacker would try to misuse the system
+			- Focus on "negative" scenarios
+		- Security workshops
+			- Facilitated sessions with cross-functional teams to brainstorm risks and requirements
+		- Document analysis
+			- Review existing security policies, compliance standards, incident reports, and architecture diagrams.
+		- Risk assessments
+			- Identify, analyze, and evaluate risks to inform requirement prioritization
+		- Questionnaires / checklists
+			- Ensure comprehensive coverage of common security concerns
+- Going from threats to requirements
+	- Identify critical assets (what needs protecting?)
+	- Identify potential threats (what could compromise these assets?)
+	- Identify vulnerabilities (what weakness might allow threats to succeed?)
+	- Define countermeasures (how can we mitigate threats and vulnerabilities?)
+	- Translate into requirements (formalize the findings)
+- User stories
+	- A user story is a concise and informal description of a software feature or functionality written from the end user's perspective
+	- The primary purpose of a user story is to ensure that the development team understands the user's perspective and the value the feature will bring.
+	- Tips and techniques:
+		- Should be short, simple, and clear
+		- We should be able to write them on a simple little card
+	- Examples:
+		- As a manager, I want to make the application authenticate with the HTTP proxy server to avoid users being tricked by a fake website (phishing).
+		- As a sysadmin, I want to prevent the user from running multiple instances of the application simultaneously, to prevent the system from using unnecessary resources.
+		- As a business owner, I want the printer to output two copies of invoices to provide them to the customer and keep a copy for records.
+- Acceptance criteria
+	- A set of predefined requirements that must be met to mark a user story complete
+	- Conditions that a software product must satisfy to be accepted by a stakeholder
+	- Pre-established standards or requirements a product or project must meet
+	- Sometimes referred to as the "definition of done"
+	- Objective
+		- Clarify what the team should build
+		- Ensure everyone has a common understanding of the problem
+		- Help the team members know when the story is complete
+		- Help verify the story via automated tests
+	- Recommended inclusions
+		- Negative scenarios of the functionality
+		- Functional and non-functional use cases
+		- Performance concerns and guidelines
+		- What system/feature intends to do
+		- End-to-user flow
+		- The impact of a user story on other features
+		- User experience concerns
+- Evil user story
+	- Evil user stories are used to anticipate and mitigate potential security threats
+	- Similar to regular user stories, but focus on what malicious users do.
+	- Used to define security requirements
+		- Done by identifying potential malicious actions and creating specific security measures to counteract those threats
+		- This approach helps to ensure the system is designed with security in mind from the outset
+	- Comparison
+		- As (user role), I want (activity), in order to (business value)
+		- As (evil user), I want (exploit), in order to (business impact)
+- Security story
+	- Narratives used to describe potential security threats and the measures needed to mitigate them
+	- They are similar to user stories but focus specifically on security aspects
+	- These stories help teams understand and address security requirements early in development
+	- Example:
+		- As (squad role), I want to (activity) in order to (prevent exploit).
+- Use cases vs. misuse cases
+	- Use case
+		- A use case is a specification of a type of complete interaction between a system and one or more actors
+		- Use case models are documented using two notations: use case diagrams and use case descriptions
+		- In order:
+			- Actor
+			- Use case
+			- `<<extends>>`
+			- `<<includes>>`
+			- User goal
+			- System behavior
+	- Misuse case
+		- The inversion of a use case, a function that the system should not allow
+		- A misuse case is a completed sequence of actions that results in a loss for the organization or stakeholder
+		- In order:
+			- Misuser
+			- Misuse case
+			- `<<threatens>>`
+			- `<<mitigates>>`
+			- Causes a loss to the system
+			- Unwanted behavior
+	- Creating a misuse case
+		- Identify threats
+		- Describe scenarios
+		- Link to actors
+		- Countermeasures
+		- Iterative process
+	- Input to security design
+		- Countermeasures
+			- Discovering a misuse case often leads to creating a countermeasure use case, a favorable scenario that acts as a defense against the threat
+		- Iterative process
+			- Misuse cases and countermeasures may trigger a chain reaction, leading to the identification of additional requirements.
+	- Report
+		- Name
+		- Misuser
+		- Goal
+		- Related use cases
+		- Preconditions
+		- Basic flow
+		- Alternate flows
+		- Post-conditions
+		- Mitigations

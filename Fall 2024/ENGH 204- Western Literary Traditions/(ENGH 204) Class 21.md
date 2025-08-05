@@ -1,0 +1,27 @@
+### Things Fall Apart
+- This is a book in which things do, in fact, fall apart.
+- Achebe doesn't like Heart of Darkness, he wrote a famous essay about it. We can almost think of Things Fall Apart as his response to it.
+- If Achebe doesn't like the western depictions of African people, why would he choose Okonkwo as the focus of his book?
+- None of the trials are to find punishment. It's always about restoring natural order to things.
+- Okonkwo:
+	- Okonkwo is scared of being like his father.
+	- He sets up his first farm by borrowing 200 yams (of 400), planting them, and they all die. He's really a smart farmer, he survived off the remainder.
+	- Okonkwo is "elegant in the way of the ebo". He knows their parables for when they speak. There's a proverb for every situation. **<u>He is an examplar ebo person.</u>**
+- Title:
+	- The title of this book comes from a poem. The Second Coming, by William Butler Yeats.
+	- "The best lack conviction, while the worst are full of passionate intensity."
+- Tragedy:
+	- This is such a tragedy. It's about the fall of a man, and the fall of a people. The fall of everything. The falling apart. 
+	- It's rather traditional, funnily enough we haven't seen anything like this yet.
+	- The hero of the tragedy is not necessarily admirable, we don't need to like him. Protagonists needn't be relatable or likable.
+	- We always go straight for the character, but the actions and the plot are important.
+	- Aristotle definition:
+		- *Hamartia*, or a misfire. The hero falls because of a fatal flaw. There is an excess of hubris.
+	- Okonkwo is exemplary, but he has it in excess.
+	- Modern definition:
+		- A character breaks the natural law.
+	- We see this with Okonkwo's exile.
+	- Super modern definition:
+		- It just happens. We are caught in the crossfire.
+	- All of these fates are established in the book. Tragedy lasagna indeed.
+- Things be falling apart for real fr real for.

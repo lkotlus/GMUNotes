@@ -1,0 +1,133 @@
+### Link Layer?
+- Unsure of what she's yapping about here.
+- I think it's stuff to help with previous material? Really not sure.
+
+### Wireless and Mobile Networks
+- The components of a wireless network are identical to a wired network:
+	- Hosts
+		- Wireless host doesn't necessarily mean mobile! Smart fridges are stationary!
+	- Access networks (base stations)
+	- Network core (wireless links)
+- It's all just wireless. A smartphone is a wireless host, a WiFi network is a wireless access network, and a wireless router is wireless network core. For real.
+- Base stations are the physical connections of wireless networks. They are cell towers and wireless routers. They're the access network!
+- We now have more wireless phone subscribers than fixed phone subscribers.
+- 4G and 5G cellular networks are now highly popular.
+- Challenges:
+	- Two important (but different) challenges
+	- Firstly, everyone in range can see the propagated signal. It's easy to sniff and interfere with. I can yank your packets and even try to prevent your packets from getting anywhere.
+	- Secondly, our transmission rate is slower based on area. 4G is slower but covers a large area. 5G is faster but covers a small area.
+	- It's tough to have shared channels in wireless networks. Channel partitioning, frequency multiplexing, time division multiplexing, etc. are all very difficult.
+		- We will learn about Code Division Multiplexing (CDM) today.
+- 802.11 is the IEEE WiFi standard.
+- Different standards are just different transmission rates and different resulting ranges. 
+- Infrastructure model:
+	- Do we have base stations? (infrastructure)
+	- How many hops do we have? (WiFi is one hop, other standards are more)
+	- There's four combinations:
+		- Single hop infrastructure based (WiFi)
+		- Multi hop infrastructure based (no example given)
+		- Single hop infrastructureless (Bluetooth and Ad Hoc)
+		- Multi hop infrastructureless (MANET and VANET)
+	- Ad Hoc:
+		- No base stations
+		- Nodes can only transmit to other nodes within link coverage
+		- Nodes organize themselves into a network and route among themselves
+		- Peer to peer!
+		- This is single hop!
+- Important differences from wired links:
+	- Decreased signal strength as signals attenuate and propagate through matter (path loss)
+	- Interference with other sources from wireless network frequencies being shared by many devices
+	- Multipath propagation
+- Wireless characteristics
+	- Signal Noise Ratio (SNR):
+		- Divide the signal by the noise
+		- We want this to be a big number, that means there's less noise!
+		- Measured in decibels (weird) 
+	- Bit Error Rate (BER):
+		- Probability that we will get an incorrect bit
+		- We want this, rather obviously, to be small
+	- As SNR increases, BER decreases!
+	- Hidden terminal problem:
+		- A and B can hear each other
+		- B and C can hear each other
+		- A and C cannot hear each other, and this causes them to be unaware of the interference that they cause one another
+		- Collision detection doesn't work because of this!
+- Code Division Multiple Access (CDMA):
+	- Unique code assigned to each user (code set partitioning)
+		- All users share the same frequency, but each user has their own "chipping" sequence to encode data
+		- Allows multiple users to coexist and transmit simultaneously with minimal interference (if codes are "orthogonal")
+		- Essentially we encode data to prevent interference. Neat!
+	- Encoding:
+		- Inner product: $\text{original data}\cdot\text{chipping sequence}$
+	- Decoding:
+		- Multiply what you receive with its inner product and add it all together and divide by your slot size.
+	- With multiple senders, we find that the channel ends up summing together. From the resulting sum we can still get what the receiver was sending with the decoding process, despite have some 2's, -2's and 0's.
+	- This is ***very*** cool.
+- 802.11 Wireless LAN:
+	- All versions use CSMA/CA for multiple access and have base-station and ad-hoc network versions.
+	- LAN architecture:
+		- Wireless host communicates with base stations
+			- Base stations are Access Points (APs)
+		- Basic Service Set (BSS) in infrastructure mode contains:
+			- Wireless hosts
+			- AP base station
+		- Ad hoc mode also exists, and contains:
+			- Hosts only
+	- Channels and association:
+		- Spectrum divided into channels at different frequencies
+			- AP admin chooses frequency for AP
+			- Interference is possible, as the channel can be the same as that chosen by a neighboring AP!
+		- Arriving host must associate with an AP
+			- Scans channels and listens for ***beacon frames*** containing AP's name (SSID) and MAC address.
+	- Scanning:
+		- Passive:
+			1. Beacon frames sent from APs
+			2. Association Request frame sent: host to selected AP
+			3. Association Response frame sent from selected AP to host
+		- Active:
+			1. ADD FROM SLIDES
+	- MAC protocol (CSMA/CA)
+		- 802.11 sender:
+			1. If sense channel idle for DIFS, then transmit entire frame (no CD)
+			2. If sense channel busy, then start random backoff time, timer counts down while channel idle, transmit when timer expires, if no ACK, increase random backoff interval and repeat
+		- 802.11 receiver:
+			- If frame received OK, return ACK after SIFS (ACK needed due to hidden terminal problem)
+	- Avoiding collisions:
+		- Idea: sender reserves channel use for data frames using small reservation packets
+		- Sender first transmits small (request-to-send, RTS) packets to BS using CSMA
+			- RTSs may still collide with each other, but they're short.
+		- BS broadcasts clear-to-send CTS in response to RTS
+		- CTS heard by all other nodes
+		- Sender is able to send without collisions, after ACK other RTS can be sent.
+	- 802.11 Frame:
+		- Frame control, duration, address 1, address 2, address 3, sequence control, address 4, payload, and CRC.
+		- Address 1 is MAC of station to receive the frame
+		- Address 2 is MAC address of station that sent
+		- Address 3 is MAC address of intermediate router
+		- Address 4 is only used in ad hoc
+	- Mobility within the same subnet:
+		- WiFi has relatively low mobility.
+		- Switches need to learn which AP is associated with a host. It sees which AP packets originate from, and remembers that they came from there. 
+- 4G/5G:
+	- 4G LTE (Long Term Evolution) and 5G
+	- The solution for wide-area mobile internet
+	- Widespread deployment/use:
+		- More mobile-broadband-connected devices than fixed-broadband-devices (5-1 ration in 2019)!
+	- Components of 4G LTE:
+		- UE (mobile devices)
+		- eNode-B (base stations)
+		- EPC (network core)
+			- Mobility Management Entity (MME)
+				- ...
+			- Home Subscriber Service (HSS)
+				- Stores info about mobile devices for which the HSS's network is their "home network"
+				- Works with MME in device authentication.
+			- PDN Gateway (P-GW)
+			- Serving Gateway (S-GW)
+	- LTE mobiles sleep modes:
+		- Light sleep (after 100 ms of inactivity)
+			- Wake up periodically to check for downstream transmissions
+		- Deep sleep (5-10 seconds of inactivity)
+			- Might change cells while deep sleeping, needs to re-establish association
+	- SIM cards give global identifiers despite changing IP. 
+- Most important thing is the encoding and decoding process. Also make sure you know the components! Also SNR/BER relationship!

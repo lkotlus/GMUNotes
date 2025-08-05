@@ -1,0 +1,6 @@
+[[CS 222- Computer Programming for Engineers]]
+[[CYSE 230- Computer Networking]]
+[[ECE 301- Digital Electronics]]
+[[ECON 103- Microeconomics Principles]]
+[[ENGH 302- Advanced Composition]]
+[[MATH 214- Elementary Differential Equations]]

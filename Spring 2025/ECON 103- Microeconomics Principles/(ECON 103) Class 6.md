@@ -1,0 +1,34 @@
+### The Principle of Comparable Advantage
+- The only nontrivial concept in economics, apparently.
+- Recall from last class:
+	- Assumption 1: There is a world with only two people. They are stranded on a desert island. They are on opposite ends of the island and don't know that they exist.
+	- Assumption 2: There's only two things that they care to consume. Bananas and fish.
+	- Person 1 gets 200 fish/month if they spend all their time fishing. As a result, they get 0 bananas. If they go for all bananas, they get 100/month and 0 fish/month.
+	- Person 2 has a similar set of constraints, but they only get 50 fish/month and 50 bananas/month. 
+	- Person 1 can produce more fish and bananas per month. It doesn't matter why.
+	- The Linearity Assumption: Now let's assume that they each spend half their time fishing and half their time gathering bananas. This gives us 25 fish and 25 bananas for person 2, and 100 fish and 50 bananas for person 1.
+	- One day, the two people meet one another. Person 1 proposes a bargain: if person 2 provides 25 bananas, person 1 will give 37 fish. This is a really good deal! Person 2 gets more fish than they can make with the same amount of bananas remaining, and person 1 gets more bananas than they would have. 
+	- Everyone comes out on top!
+- We know that we live in a world of great specialization, we know that this expands our economic growth, and we have Adam Smith's explanation for why that happens. Now we have a complementary explanation from David Ricardo: the principle of comparable advantage.
+- So in our above example, person 2 needs to spend all their time getting bananas, producing 50 in the month. That is their maximum amount, so person 2 gathers 0 fish. Person 1 only needs to produce 25 bananas. That's a quarter of the maximum output for them, so three quarters of their time goes to fish. That means we have $200\cdot\frac{3}{4}=150$ fish for person 2. 
+- For our final values, person 1 has 113 fish and 50 bananas. Person 2 has 37 fish and 50 bananas. Both of us do better than we normally would!
+- It turns out that person 2 is actually better than person 1 at something! Person 1 loses 2 fish for every banana, but person 2 only loses 1 fish for every banana.
+- Person 2 has a comparative advantage over person 1 for bananas, and person 1 has a comparative advantage over person 2 for fish!
+- Trade isn't a zero sum game! Both people can come out on top!
+- Trade is a technique for tapping into the greater abilities of others. If I want a good front end, I go to dad. If dad wants something hacked, he goes to me.
+- To have a comparative advantage at producing something is necessarily to have a comparative disadvantage at producing one or more other things. It is impossible to have a comparative advantage in anything.
+	- This is because if you have a comparative advantage, that means the rate at which you produce something in comparison to another thing is high. This implies that you have a disadvantage at the other thing!
+- Let's say person 1 goes up to 400 fish per month. They're better off now, but also a worse banana gatherer. It costs 4 fish to get 1 banana. Because of that, the *price* of bananas should go up by 100%!
+- Goods and services:
+	- Capital goods: tools that only have value because they improve our ability to produce other goods and services.
+	- Consumption goods: the ultimate object of why we go about our economic activities. We go places, do things, eat stuff, and all that.
+- Let's introduce a capital good to our situation. We have a fishing net now.
+	- The fishing net takes an entire month to make.
+	- We can't do that, you won't make food and you'll starve to death.
+	- What if, instead, we just save some food? That would work.
+	- We could also have the person who makes less total food make the net, because that person has a comparable advantage at net-making. They will get fed by you in exchange for the net!
+- Let's choose the example where we have the person who makes less fish give us food savings for the month.
+	- They would want payment for the work of saving up the 113 fish and 50 bananas. In exchange, they want more than that from the next month.
+	- This is *interest*!
+- A society that leaves no consumption goods aside to help build capital goods, it will be a very poor society. We need to invest in the economy to create capital goods for it.
+- Next week we get to learn about the three functions of money.

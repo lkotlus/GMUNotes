@@ -1,0 +1,120 @@
+### Scrum
+- All the stuff from last week, we use Scrum with AGILE.
+- Most companies use 2 weeks for sprints.
+- We take items from the product backlog and decompose them into tasks. Those features (user stories), tasks, and constraints go into the sprint backlog. 
+- At the end of the sprint we have a "done software" (code, tests, and documentation all completed). This produces actual value for the business.
+- There's a daily scrum where we have a mini sprint planning meeting (separate from the initial sprint planning meeting)
+- Golden Rules
+	- No changes are made that would endanger the sprint goal
+	- Quality does not decrease
+	- The Product Backlog is refined as needed
+	- Scope may be clarified and renegotiated with the Product Owner as more is learned
+- Framework
+	- Scrum Roles
+		- Product Owner (PO)
+			- Define the features of the product
+			- Decide on the release date and content
+			- ***Be responsible for the profitability of the product (ROI)***
+			- ***Prioritize features according to market value***
+			- Adjust features and priority every iteration, as needed
+			- Accept or reject work results
+		- Scum Master
+			- Represents management to the project
+			- Responsible for enacting Scrum values and practices
+			- ***Removes impediments***
+			- Ensures the team is fully functional and productive
+			- Enable close cooperation
+			- Shield the team for external inferences 
+		- Scrum Team
+			- 5-9 people
+			- Cross-functional: programmers, testers, designers, etc.
+			- Full time employees
+			- There might be exceptions
+			- Self-organizing: no titles, sometimes a responsibility
+			- Membership changes between sprints
+	- Ceremonies
+		- Sprint Planning
+			- Set the goal by finding priorities
+			- Create the sprint backlog by designing and decomposing into tasks
+			- The team selects items from the backlog that they can commit to completing. We create the backlog (tasks identified and each is estimated as 1-16 hour activities). This is done collaboratively
+		- Daily Stand-up Meeting
+			- Parameters: daily, 15-minutes
+			- Not for problem solving
+				- Whole world is invited
+				- Only team members can talk
+			- Helps avoid other unnecessary meetings
+			- Answer 3 questions:
+				- What did you do yesterday?
+				- What will you do today?
+				- Is there anything in your way (impediments)?
+		- Sprint Review
+			- Team presents what it accomplished during the sprint
+			- Typically takes the form of a demo of new features or underlying architecture
+			- Informal: 2-hour prep time rule; ***<u>NO SLIDES</u>***
+			- Whole team participates
+			- Invite the world
+		- Sprint Retrospective
+			- Periodically look at what is and is not working
+			- 15-30 minutes
+			- Done after every sprint
+			- Whole team participates (PO, Scrum Master, Scrum Team)
+			- Answer:
+				- What do we start doing?
+				- What do we stop doing?
+				- What do we continue doing?
+	- Artifacts
+		- Product Backlog
+			- We already talked about this
+		- Sprint goal
+			- The goal for the sprint
+		- Sprint Backlog
+			- Decomposed items from the product backlog
+		- Burndown Charts
+
+### Secure Development Lifecycle
+- CIA triad
+	- Confidentiality (data is private)
+	- Integrity (data is not changed)
+	- Availability (data is available)
+- Some things we want:
+	- Privacy
+	- Authenticity
+	- Non-repudiation
+- System Assurance
+	- NISTIR 8074 Volume 2 (less modern definition)
+		- The justified confidence that the system functions as intended and is free of exploitable vulnerabilities, either intentionally or unintentionally designed or inserted as part of the system at any time during the life cycle
+	- Mead, N.R. and Woody, C. (more modern definition)
+		- Application of technologies and processes to achieve a required level of confidence that software systems and services function in the intended manner, are free from accidental or intentional vulnerabilities, provide security capabilities to the threat environment, and recover from intrusions and failures.
+	- Systems cannot be constructed to eliminate security risks, but must incorporate capabilities to recognize, resist, and recover from attacks.
+	- Principles:
+		- Risk shall be appropriately understood to drive appropriate assurance decisions. Implement practices, tools, and restrictions based on proper perception of the threat.
+		- Risk concerns shall be aligned across all stakeholders and all related technology elements.
+		- Attacks shall be expected.
+		- Dependencies shall only be trusted once proven trustworthy. We need to vet the packages and libraries we use!
+		- Assurance requires effective coordination among all technology participants. The organization must apply for protection broadly across its people, processes, and technology.
+		- The assurance shall be well-planned and dynamic. Assurance requires an adaptive response to constant changes, interconnections, operational usage, and threats.
+		- A means to measure and audit overall assurance shall be built in. Assurance only competes successfully with other competing needs if results are monitored and measured.
+- Secure Development Lifecycle (SDL)
+	- The SDL integrates security principles and practices into every phase of software development. 
+	- The goal is to minimize risks and ensure resilience against potential threats and vulnerabilities.
+	- 90% of application layer attacks are remotely exploitable and 60% are in web applications.
+	- SDL is important because it decreases risks and costs, while increasing technical competency, privacy, and security.
+	- SDLC with SDL
+		- Every single phase has a security component
+		- So:
+			- Planning and requirements -> Planning and security requirements (+gap analysis)
+			- Design -> secure design and prototyping (+threat modelling)
+			- ...
+	- SDL Phases
+		- Planning: define security requirements and goals; identify potential threats and risks; establish security policies and procedures; and allocate resources and budget for security activities.
+			- Requirements: incorporate security requirements into functional requirements; conduct initial threat modeling to identify high-level risks; and identify regulatory and compliance requirements for the system (GDPR, HIPAA, etc.)
+			- Design: incorporate security into the design phase, including architecture and system design. It includes threat modeling (deep analysis), risk evolution, and definition of security controls and mechanisms.
+		- Implementation (development): follow secure coding standards and best practices to reduce vulnerabilities. Utilize static analysis tools to identify and resolve code-level security issues.
+		- Verification (testing): conduct security testing in parallel with functional testing, including: Static Application Security Testing (SAST), Dynamic Application Security Testing (DAST), penetration testing, fuzz testing, and perform code reviews.
+		- Release (deployment): ensure secure deployment environment configuration. Conduct final security reviews and tests before releasing the software. Implement security monitoring and logging to detect and respond to security incidents.
+		- Response (maintenance): continuously monitor the software for security incidents and vulnerabilities; patch and update the software to address new security vulnerabilities; and maintain an incident response plan.
+		- Post-release: perform post-release reviews to uncover previously undetected security issues. Gather and analyze security metrics to improve the SDL process. Implement lessons learned to enhance future development cycles.
+
+### Course Stuff
+- Quizzes don't open until the content within it has all been covered.
+- After the quiz is opened, we usually have a week to complete it.

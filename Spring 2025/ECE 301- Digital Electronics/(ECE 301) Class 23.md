@@ -1,0 +1,37 @@
+### More Design Examples
+- 3-bit down counter with T flip flops
+	- Cool, so start with a state diagram
+	- Next get your tables
+	- Construct some K-maps
+- Mod 6 up counter:
+	- Make you state diagram:
+		- 000 -> 001 -> 010 -> 011 -> 100 -> 101 -> 000 -> ...
+	- Just count all possible values for a mod 6 operation
+	- Same process as the other ones. Just go through and practice these, it isn't terribly difficult.
+
+### Final Exam
+- This is the last class session!
+- The final is cumulative, there will be around 20 problems. All multiple choice.
+- We're still using lock down browser.
+- We get 2.5 hours to take it.
+	- That's 7.8 minutes per problem.
+- Make sure to know:
+	- Types of logic gates and how they work
+		- AND, OR, NOT, XOR, NAND, NOT
+	- Synthesizing expressions
+	- Truth tables, timing diagrams, K-maps
+	- Draw something if you're given an equation
+	- Boolean Algebra
+	- CMOS circuits
+	- Tri-state buffers, MUX, FFs, latches
+		- Know how to implement $D$ latches and FFs using NAND and NOR!
+	- Differences between types of flip flops
+		- $JK$, $D$, $T$, and all of their variants
+	- Designing with FFs
+		- Making registers and counters
+		- Going through the whole process, including the state diagram
+	- The example last week with the $JK$ flip flop timing diagram. ***Practice that problem.***
+	- 1's complement, 2's complement, signed numbers, etc.
+	- Shannon's expansion theorem for MUX
+	- 3-level circuits from either POS or SOP
+	- Arithmetic circuits, RCA and CLA

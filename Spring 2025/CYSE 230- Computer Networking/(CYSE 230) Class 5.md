@@ -1,0 +1,78 @@
+### Transport Layer Part 2
+- Reliable Data Transfer
+	- rdt 1.0:
+		- Reliable transfer over a reliable channel
+		- No loss of packets, no bit errors, and no out of order packets in the channel.
+		- The underlying channel is **perfectly reliable**.
+		- Separate FSMs (Finite State Machines) for sender and receiver:
+			- The sender sends data to the underlying channel, the receiver reads data from the underlying channel.
+			- Sender just has `rdt_send(data)`, receiver just has `rdt_rcv(packet)`. 
+			- Sender has one state:
+				- Wait for request
+			- Receiver has one state:
+				- Wait for response
+	- rdt 2.0:
+		- Channel with bit errors
+		- Underlying channel may flip bits in packet. We use our checksum to get around this, but the algorithm is pretty weak. 
+			- Add up 16 bit integers for each segment, use the wraparound, and invert.
+			- If the data is corrupted then we just send a NAK (negative acknowledgement) and the sender re-sends.
+		- We know that the data is sent successfully if we get an ACK. Love an ACK response.
+		- Sender has two states:
+			- Wait for request
+			- Wait for ACK
+		- Receiver has one state:
+			- Wait for response
+	- rdt 2.1:
+		- There's one fatal flaw here: ACK gets corrupted (terminology is "gobbled")! If this happens, then the sender doesn't know what to do. Sad and depressing.
+			- Fix is to just resend if it's ever gobbled.
+			- If this happens, then we need to be able to handle duplicates. To do this, just add a sequence number to each packet.
+		- Stop and wait:
+			- Sender sends one packet, then waits for the receiver to respond.
+		- So sender has four states:
+			- Wait for request (call 0)
+			- Wait for ACK or NAK (0)
+			- Wait for request (call 1)
+			- Wait for ACK or NAK (call 1)
+		- Since we are doing sequences, then we need to duplicate our states so we don't send the next sequence before potentially re-sending.
+		- Our sequence numbers is really just 1, 0, 1, 0, 1, 0, ..., because that's all the receiver needs to know in order to differentiate between a duplicate packet or the next packet in the sequence. Two 1's or 0's in a row? Duplicate. Alternating? That's the new packet. 
+		- Receiver has two states now:
+			- Wait for 0
+			- Wait for 1
+	- rdt 2.2:
+		- NAK free protocol!
+		- Same functionality as 2.1, but receiver sends ACK for last packet received OK.
+			- Receiver must explicitly include the sequence number of the packet being ACKed.
+			- Essentially, instead of NAK, the receiver re-sends the previous ACK.
+		- Duplicate ACK at sender results in the same action as NAK.
+		- TCP uses this approach to be NAK-free.
+		- So sender has four states:
+			- Wait for request (call 0)
+			- Wait for ACK (0)
+			- Wait for request (call 1)
+			- Wait for ACK (call 1)
+		- Receiver still has two states:
+			- Wait for 0
+			- Wait for 1
+		- This is more efficient, love to see it.
+	- rdt 3.0:
+		- Timeouts! What if a packet is completely lost?
+		- Sender has the same states, but we start a timer after sending. If the timer reached, then we re-send.
+		- The issue here is that if the timer is too short, then we send a ton of duplicates. But if the timer is too long, then we take forever to fix things.
+			- Short timer is called premature.
+		- This is safe, but because we still do stop-and-wait, we have pretty awful performance. We want to work asynchronously!!! This is pipelining. 
+		- Just send $N$ packets and wait for all ACKs. 
+		- Two schemes for pipelining:
+			- Go-Back-$N$
+				- Repeat all $N$ packages.
+				- Sender:
+					- Think of a sliding window of size $N$ going across the packets. As packets are ACKed, the window slides forward.
+					- If you get to the timeout for the highest packet, then resend all packets in the window.
+				- Receiver:
+					- Send ACK for correctly-received packets with highest in-order sequence number.
+					- Discard out of order packages, and re-ACK the packet with the highest in-order sequence number.
+					- Essentially, discard out-of-order packets and re-ACK highest in-order packet.
+				- Not efficient at all!
+			- Selective repeat
+				- Only repeat lost packets.
+				- Go over slides for this again!!!!
+				- There's a bit of a dilemma, though. The receiver can't see the sender, and so if the sender re-sends packet 0 when the receiver gets to the next packet 0, then we overwrite the new packet 0.

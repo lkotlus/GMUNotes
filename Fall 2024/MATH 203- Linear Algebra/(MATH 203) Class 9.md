@@ -1,0 +1,72 @@
+### Matrix Operations
+- So we have our whole thing that $A\overrightarrow{x}=\overrightarrow{b}$. This looks just like the normal equation $ax=b$, so why can't we do things with matrices that we can do with ordinary numbers? What are the operations?
+- **<u>Sums</u>**
+	- If $A$, $B$ are both $m\text{x}n$ matrices, then the sum $A+B$ is an $m\text{x}n$ matrix obtained by adding the corresponding entries.
+- **<u>Scalar multiplication</u>**
+	- If $c$ is a number and $A$ is an $m\text{x}n$ matrix, then $cA$ is an $m\text{x}n$ matrix obtained by multiplying each entry of $A$ by $c$.
+- **<u>Zero</u>**
+	- The $m\text{x}n$ matrix with entries all equal to $0$ is denoted $0$ or $0_{m\text{x}n}$.
+- **<u>Subtraction</u>**
+	- $A-B=A+(-1)B$.
+	- **Subtraction continues to not exist.**
+- **<u>Properties</u>**
+	- $A+B=B+A$
+	- $(A+B)+C=A+(B+C)$
+	- $A+0=A$
+	- $c(A+B)=cA+cB$
+	- $(c+d)A=cA+dA$
+	- $c(dA)=(cd)A$
+- **<u>Matrix multiplication</u>**
+	- We have some setup to get this done. $A$, $B$ are matrices. Remember that matrices correspond to linear transformations.
+	- Well, what does it mean to multiply two matrices together?
+	- Let's say you start with a vector $\overrightarrow{x}$, we could transform it with $B$, which is a linear transformation. We would end up with the vector $B\overrightarrow{x}$, which we know to be a new vector.
+	- What's stopping us from plugging our vector $B\overrightarrow{x}$ into the linear transformation from $A$? Well, nothing! $A(B\overrightarrow{x})$ gives us a final vector as an output.
+	- It's just some vector. This is just a composition of linear transformation. Take the transformations $\text{T}$ and $\text{S}$, and this is just $\text{T}\left(\text{S}\left(\overrightarrow{x}\right)\right)$.
+	- This transformation is also linear, we could check with algebra, but it isn't necessary.
+	- Well, if this whole process is just a linear transformation, then there's some matrix that represents $A(B\overrightarrow{x})$.
+	- Definition:
+		- The matrix of the linear transformation $A(B\overrightarrow{x})$ is denoted $AB$ and is called the product of the matrices $A$ and $B$.
+	- Rows of $B$ must match the columns of $A$. That means $A$ must be an $m\text{x}n$ matrix, and $B$ must be an $n\text{x}p$ matrix. The $n$'s must match, because $B\overrightarrow{x}\in\mathbb{R}^n$, and wee need $A$ to have $n$ columns in order for $A(B\overrightarrow{x})$ to make sense.
+	- Let's define some stuff: $$B=\left[\overrightarrow{b}_1 \ \ \overrightarrow{b}_2 \ \ ... \ \ \overrightarrow{b}_p\right]$$ $$\overrightarrow{x}=\begin{bmatrix}x_1\\x_2\\...\\x_p\end{bmatrix}$$
+	- From this, we know that: $$B\overrightarrow{x}=x_1\overrightarrow{b}_1+x_2\overrightarrow{b}_2 + ... x_p\overrightarrow{b}_p$$ $$A(B\overrightarrow{x})=A(x_1\overrightarrow{b}_1+x_2\overrightarrow{b}_2 + ... x_p\overrightarrow{b}_p)$$ $$x_1(A\overrightarrow{b}_1)+x_2(A\overrightarrow{b}_2) + ... x_p(A\overrightarrow{b}_p)$$ $$\left[A\overrightarrow{b}_1 \ \ A\overrightarrow{b}_2 \ \ ... \ \ A\overrightarrow{b}_p\right]\overrightarrow{x}$$
+	- So from all of that... $$AB=A\left[\overrightarrow{b}_1 \ \ \overrightarrow{b}_2 \ \ ... \ \ \overrightarrow{b}_p\right]=\left[A\overrightarrow{b}_1 \ \ A\overrightarrow{b}_2 \ \ ... \ \ A\overrightarrow{b}_p\right]$$
+	- Example!
+		- $A=\begin{bmatrix}1 & 1 \\ -2 & 0\end{bmatrix}$, $B=\begin{bmatrix}3 & -2 & 1 \\ 0 & 1 & -4\end{bmatrix}$
+		- $AB=\left[A\begin{bmatrix}3\\0\end{bmatrix} \ \ A\begin{bmatrix}-2\\1\end{bmatrix} \ \ A\begin{bmatrix}1\\-4\end{bmatrix}\right]$
+			- Remember that $A\overrightarrow{v}=v_1\overrightarrow{a}_1+v_2\overrightarrow{a}_2+...$
+		- $AB=\begin{bmatrix}3 & -1 & -3\\-6 & 4 & -2\end{bmatrix}$
+- **<u>Further Observations</u>**
+	- For $AB$ to be defined, we know that there must be as many columns in $A$ as there are rows in $B$. So $AB$ and $BA$ are only possible for square matrices. Also, if $A$ is $m\text{x}n$ and $B$ is $n\text{x}p$, then $AB$ will be $m\text{x}p$.
+	- Recall that $A\overrightarrow{v}$ can be calculated by taking the dot product ($a_1b_1+a_2b_2+...$ when $A$ is a row matrix and $B$ is a column matrix) of each row of $A$ by $\overrightarrow{v}$. So essentially, $A\overrightarrow{v}=\begin{bmatrix}a_1 \cdot \overrightarrow{v} \ \\a_2 \cdot \overrightarrow{v} \ \ \\...\\a_m\cdot\overrightarrow{v} \ \ \end{bmatrix}$ (where $a_n$ is the nth row of $A$).
+		- **<u>Important:</u>** from this, we can conclude that the $(i, j)$ entry of $AB$ is the dot product of $\text{row}_i(A)$ and $\text{col}_j(B)$.
+		- Dot products $\rightarrow$ infinite testosterone.
+- **<u>Properties of Products of Matrices</u>**
+	- Note that all dimensions are proper such that the products make sense and that we **always** keep the order!
+	- $A(BC)=(AB)C$
+	- $A(B+C)=AB+BC$
+	- $(B+C)A=BA+CA)$
+	- $c(AB)=(cA)B=A(cB)$
+	- $IA=AI=I$
+		- $I_n$ is the $n\text{x}n$ identity matrix.
+- **<u>NOT Properties of Products of Matrices</u>**
+	- Even if $AB$ and $BA$ are both defined, $AB$ is not necessarily equal to $BA$.
+	- Cannot "cancel" (in general). $AB=AC$ it does not follow that $B=C$!
+	- If $AB=0$, it does not follow that $A=0$ or $B=0$!
+	- "You should be very disturbed right now... are you disturbed?"
+- **<u>Powers</u>**
+	- If $A$ is an $n\text{x}n$ matrix and $k>0$, then $A^k=A\cdot A \cdot A \cdot ...$
+	- By convention, $A^0=I_n$.
+- **<u>Transpose</u>**
+	- If $A$ is $m\text{x}n$ then the transpose of $A$ is the $n\text{x}m$ matrix whose rows are the columns of $A$ turned sideways.
+	- Example:
+		- $A=\begin{bmatrix}1 & 2 & 3\\4 & 5 & 6\end{bmatrix}$, $A^T=\begin{bmatrix}1 & 4\\2 & 5\\3& 6\end{bmatrix}$
+	- This will become handy later.
+- **<u>Properties of Transpose</u>**
+	- $(A^T)^T=A$
+	- $(cA)^T=cA^T$
+	- $(A+B)^T=A^T+B^T$
+	- $(AB)^T=B^TA^T$ (notice that the order has **<u>switched</u>**)
+- Example (nice way to notate a dot product):
+	- If $\overrightarrow{x}=\begin{bmatrix}x_1\\x_2\\...\\x_n\end{bmatrix}$, $\overrightarrow{y}=\begin{bmatrix}y_1\\y_2\\...\\y_n\end{bmatrix}$, then $\overrightarrow{x}\cdot\overrightarrow{y}=\overrightarrow{x^T}\overrightarrow{y}$
+
+# IT DOES NOT FOLLOW

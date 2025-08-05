@@ -1,0 +1,50 @@
+### Orthogonal sets
+- We want to know what is orthogonal to what! Let's make sets of them!
+- **<u>Definition:</u>**
+	- A set of vectors $\left\{\overrightarrow{u}_1,...,\overrightarrow{u}_p\right\}\in\mathbb{R}^n$ is called an <u>orthogonal set</u> if $\overrightarrow{u}_i\cdot\overrightarrow{u}_j=0\ \forall\ i\ne j$.
+- **<u>Example:</u>**
+	- Take $\left\{\overrightarrow{e}_1,\overrightarrow{e}_2\right\}$. This set is orthogonal because all all elements are orthogonal to one another.
+	- $\overrightarrow{e}_1\cdot\overrightarrow{e}_2=0$
+- **<u>Example:</u>**
+	- Take $\left\{\overrightarrow{u}_1=\begin{bmatrix}3\\1\\1\end{bmatrix}, \overrightarrow{u}_2=\begin{bmatrix}-1\\2\\1\end{bmatrix}, \overrightarrow{u}_3=\begin{bmatrix}-1\\-4\\7\end{bmatrix}\right\}$
+	- Well, we need to just calculate all our combinations: $$\overrightarrow{u}_1\cdot\overrightarrow{u}_2=0$$ $$\overrightarrow{u}_1\cdot\overrightarrow{u}_3=0$$ $$\overrightarrow{u}_2\cdot\overrightarrow{u}_3=0$$
+	- Well, from this we know that it is an orthogonal set.
+- **<u>Theorem:</u>**
+	- Let $S=\left\{\overrightarrow{u}_1,...,\overrightarrow{u}_n\right\}$ be an orthogonal set of nonzero vectors. Then $S$ is LI.
+	- This makes sense, orthogonal vectors aren't scalar multiples of one another.
+- **<u>Definition:</u>**
+	- An orthogonal basis of a subspace $W\in\mathbb{R}^n$ is a basis of $W$ that is an orthogonal set.
+- **<u>Example:</u>**
+	- $\left\{\begin{bmatrix}0\\1\\0\end{bmatrix}, \begin{bmatrix}0\\0\\1\end{bmatrix}\right\}$ is an orthogonal basis for $W=\left\{\begin{bmatrix}0\\s\\t\end{bmatrix}\ |\ s,t\in\mathbb{R}^n\right\}$
+- **<u>Example:</u>**
+	- $\overrightarrow{u}_1=\begin{bmatrix}3\\1\\1\end{bmatrix}, \overrightarrow{u}_2=\begin{bmatrix}-1\\2\\1\end{bmatrix}$ are two vectors that span $W$. From this, they form an orthogonal basis for $W$.
+- **<u>Example:</u>**
+	- Suppose $\left\{\overrightarrow{u}_1,...,\overrightarrow{u}_p\right\}$ is an orthogonal basis for $W$.
+	- Let $\overrightarrow{w}$ be a vector in $W$.
+		- From this, $\overrightarrow{w}=c_1\overrightarrow{u}_1+...+c_p\overrightarrow{u}_p$.
+	- Well, from that we can just solve a system of equations.
+	- Normally, to find $c_1,...,c_p$ we need to take $A\overrightarrow{c}=\overrightarrow{w}$ where $A=\begin{bmatrix}\overrightarrow{u}_1 & ... & \overrightarrow{u}_p\end{bmatrix}$.
+	- Because our vectors are orthogonal, we can really just have a faster method: $$\overrightarrow{w}\cdot\overrightarrow{u}_1=(c_1\overrightarrow{u}_1+...+c_1\overrightarrow{u}_p)\cdot\overrightarrow{u}_1$$ $$\overrightarrow{w}\cdot\overrightarrow{u}_1=c_1\overrightarrow{u}_1\cdot\overrightarrow{u}_1+...+c_1\overrightarrow{u}_p\cdot\overrightarrow{u}_1$$ $$\overrightarrow{w}\cdot\overrightarrow{u}_1=c_1\overrightarrow{u}_1\cdot\overrightarrow{u}_1$$ $$\frac{\overrightarrow{w}\cdot\overrightarrow{u}_1}{\overrightarrow{u}_1\cdot\overrightarrow{u}_1}=c_1$$
+	- Well that is quite the fancy trick!
+- **<u>Theorem:</u>**
+	- As seen above, given an orthogonal basis $\left\{\overrightarrow{u}_1,...,\overrightarrow{u}_p\right\}$ of $W$ and a vector $\overrightarrow{w}=c_1\overrightarrow{u}_1+...+c_p\overrightarrow{u}_p$ in $W$. Then: $$c_i=\frac{\overrightarrow{w}\cdot\overrightarrow{u}_i}{\overrightarrow{u}_i\cdot\overrightarrow{u}_i}$$
+- **<u>Example:</u>**
+	- Suppose $\overrightarrow{u},\overrightarrow{y}\in\mathbb{R}^n\land\overrightarrow{u}\ne\overrightarrow{0}$.
+	- If we take the span of $\overrightarrow{u}$, we get a line. Let's call that $L$.
+	- We would like to express $\overrightarrow{y}$ as the sum of two vectors: $\overrightarrow{y}=\overrightarrow{y}_L+\overrightarrow{z}\ \ |\ \ \overrightarrow{y}_L\in L\land\overrightarrow{z}\perp L$.
+	- Let's say $\overrightarrow{y}_L=c\overrightarrow{u}$, so that tells us that $\overrightarrow{y}=c\overrightarrow{u}+\overrightarrow{z}$.
+	- We have orthogonal vectors here, so $c=\frac{\overrightarrow{y}\cdot\overrightarrow{u}}{\overrightarrow{u}\cdot\overrightarrow{u}}$.
+	- Solving for $\overrightarrow{z}$, we get: $$\overrightarrow{z} = \overrightarrow{y}-\frac{\overrightarrow{y}\cdot\overrightarrow{u}}{\overrightarrow{u}\cdot\overrightarrow{u}}\overrightarrow{u}$$
+	- Neat. Let's see the equation: $$\overrightarrow{y}_L=c\overrightarrow{u}$$ $$\overrightarrow{y}_L=\frac{\overrightarrow{y}\cdot\overrightarrow{u}}{\overrightarrow{u}\cdot\overrightarrow{u}}\overrightarrow{u}$$
+	- From this, we can simplify to say $\overrightarrow{z}=\overrightarrow{y}-\overrightarrow{y}_L$.
+- **<u>Definition:</u>**
+	- $\overrightarrow{y}_L=\text{proj}_L\left(\overrightarrow{y}\right)$ is called the <u>orthogonal projection</u> of $\overrightarrow{y}$ onto $L$. It shows us our line, a point, and the vector that is sort of like a shadow created by $\overrightarrow{y}$.
+- **<u>Theorem expansion:</u>**
+	- Previously we said that: $$\overrightarrow{w}=c_1\overrightarrow{u}_1+...+c_p\overrightarrow{u}_p$$
+	- Well, from the definition of $c_1,...,c_p$, we know that this really just says $$\overrightarrow{w}=\text{proj}_{L1}\left(\overrightarrow{w}\right)+...+\text{proj}_{Lp}\left(\overrightarrow{w}\right)$$
+- **<u>Definition:</u>**
+	- A set $\left\{\overrightarrow{u}_1,...,\overrightarrow{u}_p\right\}$ is called an <u>orthonormal set</u> if it is an orthogonal set and $\overrightarrow{u}_1,...,\overrightarrow{u}_p$ are all unit vectors (have length 1).
+	- A basis that is orthonormal is called an orthonormal basis.
+	- Any orthogonal set of nonzero vectors can be <u>normalized</u> to get an orthonormal set.
+**<u>Example:</u>**
+	- To normalize any set just divide all elements by their own magnitude. Easy money.

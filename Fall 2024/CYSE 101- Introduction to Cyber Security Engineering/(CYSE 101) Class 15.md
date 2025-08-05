@@ -1,0 +1,37 @@
+### Operations Security (OPSEC)
+- How we protect our valuable assets (commonly used in military settings)
+- What is it?
+	- Systematic and proven process by which we protect valuable assets.
+- Risk Management (OPSEC) Process:
+	- Identification of critical information
+	- Analysis of threats
+	- Analysis of vulnerabilities
+	- Assessment of risks
+	- Application of countermeasures
+	- Repeat
+- Risk Control Strategies
+	- Avoidance
+		- Prevent exploitation (patches)
+	- Mitigation
+		- Reduce impact (spares, restrict access)
+	- Transference
+		- Shift risk (insurance, outsourcing)
+	- Acceptance
+		- Do nothing (we don't care about a meteorite that will hit us no matter what we do)
+- Formula:
+	- $P(E|V,T)$
+	- Cool.
+- Example:
+	- $P(E|V,T)=0.7$ in the next 24 hours.
+	- Impact is $1,000,000
+	- $P(E|V,T)*I=\text{cost}=\text{\$}700,000$
+- Examples to support OPSEC process
+	- Overarching security policy
+	- Acceptable use policy (what employees can or can't do)
+	- Security awareness training policy (train employees)
+	- Clean desk policy (no sticky notes with passwords)
+	- Mobile device policy (special mobile device software or company phones)
+	- Business continuity plan (how the business continues after an incident)
+	- Disaster recovery policy (how the business recovers from a disaster)
+	- Incident response procedure (how the cyber people respond to an attack)
+- Cringe.

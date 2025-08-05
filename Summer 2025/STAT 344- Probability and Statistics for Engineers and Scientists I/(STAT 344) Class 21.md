@@ -1,0 +1,32 @@
+### Difference of Means, Variances Unknown
+- Case 1
+	- We have $\sigma_1^2=\sigma_2^2=\sigma^2$
+	- Variances are unknown, but equal.
+	- This gives us the property: $$V(\overline X_1-\overline X_2)=\sigma^2\left(\frac{1}{n_1}+\frac{1}{n_2}\right)$$
+	- We will need to rely on $s$ rather than $\sigma$, and therefore need to rely on the $t$-distribution.
+- Pooled Estimator of Variance:
+	- The pooled estimator of $\sigma^2$, denoted by $S_p^2$, is defined by: $$S_p^2=\frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2}$$
+	- Given the assumptions of this section, the quantity: $$T_0=\frac{\overline X_1-\overline X_2-\Delta_0}{S_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}$$ has a $t$ distribution with $n_1+n_2-2$ degrees of freedom.
+- Example:
+	- $\sigma_1^2=\sigma_2^2=\sigma^2$
+	- $H_0: \mu_1=\mu_2$
+	- $H_1: \mu_1\ne\mu_2$
+	- $n_1=n_2=8$
+	- $s_1=2.39$
+	- $s_2=2.98$
+	- $\overline x_1=92.255$
+	- $\overline x_2=92.733$
+	- $\alpha=0.05$
+	- Let's start by estimating our variance: $$S_p^2=\frac{(8-1)(2.39)^2+(8-1)(2.98)^2}{8+8-2}$$ $$S_p^2\approx7.30$$
+	- Our degrees of freedom are: $$8+8-2=14$$
+	- From this we can get our test statistic: $$t_0\approx\frac{92.255-92.733-0}{(2.70)\sqrt{\frac14}}$$ $$t_0\approx-\frac{0.956}{2.70}\approx-0.35$$ 
+	- From here, we can just see that $|t_0|=0.35$, and so we just want to see if $-t_{\alpha/2,14}<t_0<t_{\alpha/2,14}$. By using our $t$-table, we can see that that is the case.
+	- We fail to reject $H_0$.
+- Case 2:
+	- So we don't have our identical variances trick.
+	- In this case: $$T_0=\frac{\overline X_1 - \overline X_2 - \Delta_0}{\sqrt{\frac{S_1^2}{n_1} + \frac{S_2^2}{n_2}}}$$ is distributed approximately as $t$ with degrees of freedom given by: $$v=\frac{\left(\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}\right)^2}{\frac{(s_1^2/n_1)^2}{n_1-1}+\frac{(s_2^2/n_2)^2}{n_2-1}}$$ If $v$ is not an integer, round down to the nearest integer.
+- That's a complete monstrosity.
+- There was an example, it seems unnecessary.
+- Confidence intervals:
+	- Case 1: $$\overline x_1 - \overline x_2 - t_{\alpha/2,n_1+n_2-2}s_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}\le\Delta_0\le\overline x_1 - \overline x_2 + t_{\alpha/2,n_1+n_2-2}s_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}$$
+	- Case 2: $$\overline x_1 - \overline x_2 - t_{\alpha/2,v}\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}\le\Delta_0\le\overline x_1 - \overline x_2 + t_{\alpha/2,v}\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}$$

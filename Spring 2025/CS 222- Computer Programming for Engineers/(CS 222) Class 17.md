@@ -1,0 +1,27 @@
+### Dynamic Memory Allocation
+- `malloc()`, `realloc()`, `calloc()`, `free()`? Why don't you allocate some bitches?
+- We can create a pointer to a structure now! We do this with `malloc()`, which allocates memory of an input size and returns the address of that. You then need to type cast it's output to a pointer of your desired time. For example:
+	- `int* num = (int*)malloc(sizeof(int));`
+	- `ll_t* head = (ll_t*)malloc(sizeof(ll_t));`
+	- And so on.
+- We need to free our allocated memory when we're done using it! Do this with `free()`.
+	- `free(num);`
+	- `free(head);`
+	- And so on.
+- `malloc()` creates memory on the heap.
+- You will frequently set a variable to `NULL` after freeing it so that you don't point to unallocated memory. 
+- Stack vs. Heap:
+	- Stack
+		- Fixed size
+		- Faster
+		- Automatically deallocated when out of scope
+		- Good for if you know how much memory is needed or if you know the size will be small
+		- Each thread has its own stack
+	- Heap:
+		- OS can add more memory
+		- Slower
+		- Data needs to be deleted manually by the programmer (or garbage collector)
+		- Good for if you don't know how much memory is needed
+		- Different threads share the heap
+- If you need to change the size of your memory block, use `realloc()`. Pass in your pointer and the new size.
+- `calloc()` works like `malloc()`, but it initializes memory slots to 0. Furthermore, it's contiguous allocation. So it makes an array of elements of any built-in or user-defined type.

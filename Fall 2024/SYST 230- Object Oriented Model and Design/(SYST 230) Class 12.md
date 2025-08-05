@@ -1,0 +1,19 @@
+### Midterm review!
+- Immutable vs. Mutable
+	- Immutable can't be changed post-assignment.
+	- The mutable objects within an immutable object can be changed.
+	- `del` will delete the pointer, not the object.
+		- This is the case UNLESS we delete the only remaining pointer to it. If an object without references exists, it will be garbage collected.
+- Call by value, reference, or object reference
+- Many questions on private and protected methods and attributes.
+- Naming must begin with a-z, A-Z, or an underscore. We can't use special characters that aren't underscores. We can use numbers.
+- We must be able to describe abstraction, encapsulation, inheritance, and polymorphism.
+	- Abstraction: methods (users don't need to know how, just what)
+	- Encapsulation: attributes (all the data is in your object)
+	- Inheritance: derive from parent class
+	- Polymorphism: many forms of addition or `len()`.
+- Refresh on UML.
+- Refresh on property decorators and whatnot.
+- We will have multiple choice and code-answer (2-3).
+- We will have more time for the exam than for the quiz. 40-45 minutes.
+- 15 minutes will be set aside for the coding questions. We can also revisit multiple choice during that time.

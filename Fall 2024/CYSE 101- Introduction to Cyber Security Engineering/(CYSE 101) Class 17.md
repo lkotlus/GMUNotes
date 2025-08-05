@@ -1,0 +1,159 @@
+### Final review
+- Network security
+	- Networking is how devices communicate with each other.
+	- Network security is securing communications to protect CIA of messages.
+	- Network segmentation is just splitting the network up.
+	- Firewalls filter things:
+		- Accept, drop, reject
+		- Policies can be whitelists or blacklists
+		- Different firewall types:
+			- Stateless: inspect headers, blocks by IP
+			- Stateful: inspect session and headers, stateless+context.
+			- Application aware: filters by known good or bad applications.
+	- Proxy server: middleman between machine and web server that can filter things before giving access to machines.
+	- IDS vs. IPS:
+		- Intrusion Detection System: detects malicious traffic but does not take action, just notifies
+		- Intrusion Prevention System: detects malicious traffic and quarantines/blocks it.
+	- IP:
+		- Internet protocol!
+		- TCP (Transmission Control Protocol) and UDP (User Datagram Protocol).
+		- ICMP (Internet Control Message Protocol)
+	- Honeypots: look at this zero password controlled SSH port
+	- VPN:
+		- Virtual private network.
+		- Remote access: used mostly for remote workers who want to remotely access corporate resources without going through the open internet. 
+		- Site-to-site: a method of routing traffic through designated servers.
+	- Surface web, deep web, dark web:
+		- Surface: Google results
+		- Deep: available normally but doesn't show up in a search engine
+		- Dark: You need TOR.
+	- TOR:
+		- Complete anonymity through random network hops and additional layers of encryption.
+- OS Security:
+	- Operating system: software that runs on a machine holding lots of little processes
+	- Port scanning, important ports:
+		- 443: HTTPS
+		- 80: HTTP
+		- 22: SSH
+		- 21: telnet
+		- 53: DNS
+		- 3389: RDP
+	- Antivirus:
+		- Signature-based: has a database of known malicious programs and if a piece of software matches that, it is deemed malicious
+		- Behavior-based: more intelligent, recognizes typical malicious behavior
+		- Reputation-based: trusts software that is already on other machines in the network, if not, it is suspicious
+		- AV takes the following actions:
+			- Block/allow
+			- Clean/delete/quarantine
+			- Share or not
+		- Nmap: port scanner
+		- Nessus: vulnerability scanner
+- Application security:
+	- Buffer overflow:
+		- Idiot didn't know how arrays work in C.
+	- SQL Injection:
+		- Idiot didn't clean input
+	- XSS:
+		- Idiot didn't clean input
+	- XSRF:
+		- Threat actor can insert malicious code into a public website that can redirect end users to a malicious website of the hackers choosing. Attack on the end user.
+	- Fuzzing:
+		- Test if your website is vulnerable by feeding a bunch of random payloads.
+- Mobile/IoT security:
+	- Doesn't exist lmao.
+	- Mobile devices:
+		- Roaming devices with an OS
+	- IoT devices:
+		- Internet connected devices taht don't run a full OS
+	- Common issues with these types of devices:
+		- Mobile OS
+		- Jailbreaking
+		- Malicious apps
+		- Lack of updates
+		- Upgrading
+		- Additional security
+		- Lack of transparency and regulation
+	- Two important views of IoT security:
+		- Inward security: harm that can be done within a compromised IoT device
+		- Outward security: harm that can be done to other machines connected to the same network as an IoT device
+	- The bigger picture:
+		- The number one concern with these types of devices is protecting data
+		- The way to do it is through increased regulation enforcing best practices
+- Compliance:
+	- This topic is about claws and regulations as it relates to data privacy of users and protecting PII
+	- Personally Identifiable Information (PII): any information which on its own or with other information can be used to identify, contact, or locate a single person.
+	- PII breach laws:
+		- California S.B 1386: must report the unauthorized release of personal information of a California Resident
+		- All 50 states have similar laws
+	- General Data Protection and Regulation (GDPR): set of laws which governs the way that organizations must use, process, and store personal data. 
+	- Safe Harbor: 
+		- Specifies that certain conduct will be okay. For example, a company will not be required to notify users of a breach if the data is encrypted. 
+		- This serves as an enticement to do the right thing and encrypt all data.
+- Operations security:
+	- Focus on protecting the most important and valuable assets first.
+	- Process:
+		1. Identify critical information
+		2. Analyze threats
+		3. Analyze vulnerabilities
+		4. Asses risk
+		5. Apply countermeasures
+	- Risk control strategies:
+		- Avoidance
+			- Prevent exploitation
+			- Example: patch
+		- Mitigation:
+			- Reduce impact
+			- Example: restrict access
+		- Transference:
+			- Shift risk to someone else
+			- Example: cyber insurance
+		- Acceptance:
+			- Do nothing
+	- $\text{Risk}=P(E|V,T)\cdot\text{Impact}$
+- Physical security:
+	- Some of the physical security threats include, but are not limited to, fires, gasses, liquids, people, etc.
+	- Priorities in this exact order: people, data, systems
+	- Cold, warm, hot site
+		- Cold: empty space
+		- Warm: some hardware and partial/old data
+		- Hot: exact duplicate of the production site
+	- Redundant Array of Inexpensive Disks (RAID):
+		- 0: equally split across disks
+		- 1: all data copied across disks
+		- 10: mirroring and striping
+		- 5: parity, if one disk fails, can recover some from another disk
+		- 6: does the same as 5 but can recover from 2 disk failures
+	- Some physical security controls include, but are not limited to, fences, gates, lights, CCTV, etc.
+		- Prevent: keep the wrong people from coming in
+		- Detect: monitor the wrong people coming in
+		- Deter: keep the wrong people from wanting to come in
+	- Residual data: data that is left over after deleted or when a machine is "destroyed"
+- Human element security:
+	- Humans are the weakest link
+	- Social engineering:
+		- Phishing:
+			- Message (typically email)
+			- Spear (single target)
+			- Clone (copy of a legit message)
+			- Whaling (target an exec)
+		- Solution is training
+	- Insider threat:
+		- A current or former employee who has or had authorized access and intentionally or unintentionally negatively affects CIA
+		- Solution: principle of least privilege
+	- Who's responsible? Everyone, but ultimately CYSE majors.
+- Assessing security:
+	- Conducting security risk assessments can help in identifying if certain security controls are worth it and what actions can be taken to reduce overall risk.
+	- Actions taken to help identify this:
+		- Vulnerability analysis
+		- Penetration tests:
+			- Black hat (no good)
+			- White hat (good)
+			- Grey hat (in the middle)
+			- Black box pentest (no knowledge)
+			- White box (a lot of information)
+			- Grey box (a bit of information)
+	- Risk formulas:
+		- Total risk: $\text{Asset Value (AV)}\cdot\text{Threats}\cdot\text{Vulnerabilities}$
+		- Single loss expectancy (SLE): $\text{Asset Value}\cdot\text{Exposure Factor (EF)}$
+		- Annual loss expectancy (ALE): $\text{SLE}\cdot\text{Annualized Rate of Occurence (ARO)}$
+		- Return on investment (ROI): $\text{ALE (before safeguard)}-\text{ALE (after safeguard)}-\text{annual cost of safeguard}$

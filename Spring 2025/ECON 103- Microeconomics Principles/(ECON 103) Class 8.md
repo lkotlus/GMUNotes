@@ -1,0 +1,59 @@
+### Building from last class
+- As producers, we need tools to increase our productivity.
+- Making the tools requires savings, because time spent producing tools is not time spent on making consumer goods.
+- Banking helps us to accumulate savings! Loans are a giant part of this.
+	- A result of this is that banks specialize in figuring out which ideas are good, they only want to lend money to people who will get returns on investment.
+- A core part of economic theory is that of **prices**. We want to know where these come from.
+- Recall the people on the island with fish and bananas. The prices came about by the cost of production.
+- The line between fish output (x-axis) and banana output (y-axis) shows us every combination of banana-fish production values.
+- We call this a productions possibilities curve. It always has a tradeoff. 
+- Imagine Americans only want to produce guns or butter.
+	- We draw a curve from the butter axis to the guns axis.
+	- The guns and butter intersects go to the maximum amount we could produce if that was the only thing we focused on.
+	- What if we replace guns with "all other goods".
+	- Well how do we figure out how much butter to make in comparison to all other goods?
+	- How could we possibly figure this out?
+	- Any point from the origin to the curve is in the "can" region. It's possible for society to produce anywhere in that area. 
+	- It is undesirable to produce somewhere that isn't on the curve because you could be producing more.
+	- Outside of the curve is called the "can't" region. Impossible to do that.
+	- Any economic change that pushes our production possibilities curve out to the right promotes economic growth. Important forces that do this:
+		- Greater division of labor and specialization
+		- Tools! Capital goods such as factories, machines, power tools, etc.
+		- Resources, if we have more resources then we can produce more with them.
+		- Infrastructure. If we have better roads, bridges, electrical grids, legal systems, etc. then we can do things more efficiently and safely.
+	- An acronym for the tradeoff that we have is There Ain't No Such Thing As A Free Lunch. TANSTAAFL. 
+- If we learn nothing else from this course, we should learn that prices are not arbitrary. Price pays a disproportionately large role in economics. 
+- If you listen to a politician on any part of the isle, you will see that they think of prices as arbitrary. There is a deep logic within them, and they are a source of immense information that people act on.
+- A price, as an economist uses the term, is a term of exchange. 
+- There is no actual price until an exchange is made. I can list a magic card for a million dollars, that isn't the price until there is a buyer and a seller.
+- Let's look at each side of the market: the buyer side and the seller side.
+- Buyer:
+	- The Theory of Consumer Behavior.
+	- "What motivates buyers?"
+	- We are going to spend a fair amount of time on this.
+	- Consumption is the things we do to do what we want. It doesn't need to be some crazy extravagance. Reading books is consumption.
+	- When we make choices, we aim to maximize our utility. We think it's the best choice for ourselves. Utility is like our happiness/satisfaction/fulfillment. The word we use is utility, it's a bit more generalized.
+	- Whenever we act, we gain some sense of utility. Assuming you didn't make a mistake, you experience positive utility. Everyone who consciously acts is a utility maximizer. 
+	- **<u>The only true economic law</u>**:
+		- Something that holds true always and forever so long as human beings live and exist in a world of scarcity.
+		- ***The law of diminishing marginal utility.***
+		- A lot of economics is just repeating this.
+	- So let's start with marginal utility. This is the utility you get from that additional bit of action that you do. If you get an extra bit of root beer, or stay out an extra hour on a Friday night. 
+	- Definition: the greater is a consumers access to some good or service, the less is the utility that that person gets from any one unit of that good or service.
+	- The more abundant something is to me, the less satisfaction I get from any one unit of it. I don't really get satisfaction from breathable air, I have tons of it.
+	- Imagine you're super thirsty and have a line of like 10 two ounce water bottles:
+		- The first is incredible
+		- The second is good
+		- The third is alright
+		- The fourth is passable
+		- The fifth is meh
+		- The satisfaction keeps going down.
+	- Suppose you live somewhere with a massive closet:
+		- There is some piece of clothing that I really like, but it's kinda pricey.
+		- Now imagine you wake up one day and that piece of clothing is in your closet by surprise!
+		- You're very happy.
+		- Then it happens again.
+		- You're still happy.
+		- Now imagine it happens for 100 nights in a row.
+		- You're not super happy anymore. You have more than enough space for the clothes, but having 100 is silly. With each one you get, the utility you get decreases. 
+	- The law of supply and demand comes out of this! We will see this curve over and over again. The x-axis is quantity/time, the y-axis is marginal utility. 

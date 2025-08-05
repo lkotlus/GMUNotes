@@ -1,0 +1,11 @@
+### What's with this whole darkness thing?
+- Difference between plot and narrative!
+- Narrative frequently begins pre-plot (Oedipus).
+- *Frame* is this weird thing that I don't understand. Frame is unnamed crewmate narrating Marlow's narration.
+- We aren't supposed to notice the frame.
+- "Heart of darkness" could mean either "darkness' heart" or "heart's darkness". Which is it?
+- Marlow defines life as:
+	- Mysterious relentless logic and futile purpose.
+	- "The most you can hope for is knowledge of yourself, and it comes too late" (paraphrase)
+- If we only get self-knowledge at the end of our life, then we know that the horror is our regrets and the darkness inside of us.
+- Empire is ugly when you look at it long enough, but Conrad insists upon this idea of a redeeming thing about it. Is he being facetious?

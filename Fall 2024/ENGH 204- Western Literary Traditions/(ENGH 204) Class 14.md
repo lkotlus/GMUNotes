@@ -1,0 +1,15 @@
+### Mrs. Dalloway
+- Hard to read.
+- Lots of descriptions.
+- Stream of Consciousness (train/string of associations)
+- What you see --> what you think of --> what you think of from that --> ...
+- Clarissa loves her life and walking around London, she says this to Admiral Hugh.
+- This is every day life, it is incredibly banal.
+- Two things that make it boring:
+	- Is there anything to actually interpret?
+	- Nothing happens!
+- The night Clarissa turns down Peter's proposal, she kisses Sally.
+- Virginia Wolf was married to a man, but was very much a Lesbian. Had a long affair with a woman.
+- Been five years since Peter was in London, and he comes back to get a lawyer to handle the divorce of Daisy in India.
+- Clarissa sleeps on the top floor so her husband doesn't sleep with her. Her heart is very damaged from the Spanish flu, and so Richard Dalloway respects her wishes. Great guy.
+- Bourton is the country house she grew up at.

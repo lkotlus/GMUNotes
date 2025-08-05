@@ -1,0 +1,19 @@
+### I am so tired of this.
+- Doesn't matter, I'm never using any of this, I just want to curl up in a ball and do HTB all day.
+- I might completely stop using Obsidian. VSCode and plain files is better, I don't even use the graph view for anything but stuff that looks cool.
+- We're switching to activity/functional modelling. We want to look at how things work, how it flows.
+- Activity diagrams give convenient ways to describe complex algorithms, parallel operations, and business processes.
+- It represents the system business and operational work flows.
+- It describe control, input, and output flows among actions.
+- Activity constructs
+    - Initial node: begins execution
+    - Activity final node: terminates execution of the entire activity
+    - Flow final node: terminates a particular sequence of actions without terminating the entire activity
+    - Actions: describe how activities execute (accepts inputs and creates outputs)
+    - Partitions (swim lanes): shows that a set of activities are done by a particular thing.
+    - Decision node: make **binary** decisions.
+    - Forks and join: allows for **concurrent** actions. They can work in parallel or one after the other. Order does not matter.
+    - Merge: either flow will work (used because we cannot have multiple flows into an action)
+    - Accept event: triggers from outside diagram
+    - Send signal: sends signal to outside diagram
+	- 

@@ -1,0 +1,62 @@
+### Orthogonal complements!
+- Reminder:
+	- So take a plane, $W$, through the origin in $\mathbb{R}^3$. The orthogonal complement of $W$ is the unique line, $L$, through the origin and perpendicular to $W$.
+- **<u>Definition:</u>**
+	- $W$ is a subspace of $\mathbb{R}^n$. Then the <u>orthogonal complement</u> of $W$ is the subspace: $$W^\perp =\left\{\overrightarrow{v}\in\mathbb{R}^n\ |\ \overrightarrow{v}\cdot\overrightarrow{w}\ \ \forall\overrightarrow{w}\in W\right\}$$
+- **<u>Example:</u>**
+	- $W=\text{Span}\left\{\overrightarrow{a}_1,\overrightarrow{a}_2\right\}$, $n=4$. Then $W^\perp$ is the set of solutions to the system of equations:
+		- $\overrightarrow{a}_1\cdot\overrightarrow{x}=0$
+		- $\overrightarrow{a}_2\cdot\overrightarrow{x}=0$
+	- Well from the properties of dot products:
+		- $\overrightarrow{a}^T_1\cdot\overrightarrow{x}=0$
+		- $\overrightarrow{a}^T_2\cdot\overrightarrow{x}=0$
+	- This just gives us: $$A=\begin{bmatrix}\overrightarrow{a}_1^T\\\overrightarrow{a}_2^T\end{bmatrix}$$ $$A\overrightarrow{x}=\overrightarrow{0}$$
+	- Neat. So we have four columns and two rows, so we will have two free variables. In other words, the rank of $A$ is 2, therefore the dimension of the nullspace will be 2 (assuming the given vectors that span $W$ are LI).
+- **<u>Example:</u>**
+	- So let's say we have three vectors and $n=7$. We can assume the vectors are linearly independent.
+	- Well, we just set up the same equation but now with three rows and 7 columns. We will have a nullspace of dimension 4.
+	- The columns of our matrix are just each of our vectors transposed.
+	- Easy.
+	- (Just in case you didn't get the obvious fact, $\text{Null}(A)=W^\perp$)
+- **<u>Theorem:</u>**
+	- If $W$ is a subspace of $\mathbb{R}^n$, then: $$\text{dim}\left(W^\perp\right)=n-\text{dim}\left(W\right)$$
+- **<u>Theorem:</u>**
+	- Let $A$ be an $m\text{x}n$ matrix. Then: $$\left(\text{Row }A\right)^\perp = \text{Nul }A$$ $$\left(\text{Col }A\right)^\perp = \left(\text{Row }A^T\right)^\perp=\text{Nul }A^T$$
+
+### Orthogonal projection
+- **<u>Intro:</u>**
+	- Say $\overrightarrow{u}\ne\overrightarrow{0}$.
+	- $L=\text{Span}\left\{\overrightarrow{u}\right\}$
+	- If we have some other vector, $\overrightarrow{y}$, we can represent it as a combination of $\overrightarrow{y}_L=\text{proj}_L\left(\overrightarrow{y}\right)$ and $z=\overrightarrow{y}-\overrightarrow{y}_L$.
+	- We know all of this already.
+	- Well what if we want to do this for a subspace?!
+- **<u>Example:</u>**
+	- Now let $W$ be a subspace of $\mathbb{R}^n$ and $\overrightarrow{y}$ be any vector. 
+	- We want to express $\overrightarrow{y}$ as a sum of two vectors: $$\overrightarrow{y}=\overrightarrow{y}_W+\overrightarrow{z}$$
+	- In this scenario, $\overrightarrow{y}_W\in W\land\overrightarrow{z}\perp W$.
+		- Note: $\overrightarrow{z}\in W^\perp$
+	- Well the question is this: how do we go about projecting the line onto the plane? 
+	- So we want to be able to find $\text{proj}_W\left(\overrightarrow{y}\right)$.
+	- Well, we're going to "guess" what the formula is.
+		- Let's start by saying $\left\{\overrightarrow{u}_1,...,\overrightarrow{u}_p\right\}$ be an orthogonal basis for $W$.
+		- Let's guess that: $$\text{proj}_W\left(\overrightarrow{y}\right)=\frac{\overrightarrow{y}\cdot\overrightarrow{u_1}}{\overrightarrow{u}_1\cdot\overrightarrow{u}_1}\overrightarrow{u}_1+...+\frac{\overrightarrow{y}\cdot\overrightarrow{u_p}}{\overrightarrow{u}_p\cdot\overrightarrow{u}_p}\overrightarrow{u}_p$$
+		- We can note that this vector would be in $W$, as it is a linear combination of vectors in the orthogonal basis of $W$.
+	- Well this will be correct if we can show that the resulting $\overrightarrow{z}$ is perpendicular to $W$. Well, take any vector in $W$, and dot it with: $$\overrightarrow{y}-\left(\frac{\overrightarrow{y}\cdot\overrightarrow{u_1}}{\overrightarrow{u}_1\cdot\overrightarrow{u}_1}\overrightarrow{u}_1+...+\frac{\overrightarrow{y}\cdot\overrightarrow{u_p}}{\overrightarrow{u}_p\cdot\overrightarrow{u}_p}\overrightarrow{u}_p\right)$$
+	- So let's choose our vector to be $\overrightarrow{u}_1$ from our orthogonal basis. This is allowed since it's in $W$: $$\overrightarrow{y}\cdot\overrightarrow{u}_1-\left(\frac{\overrightarrow{y}\cdot\overrightarrow{u_1}}{\overrightarrow{u}_1\cdot\overrightarrow{u}_1}\overrightarrow{u}_1\cdot\overrightarrow{u}_1+...+\frac{\overrightarrow{y}\cdot\overrightarrow{u_p}}{\overrightarrow{u}_p\cdot\overrightarrow{u}_p}\overrightarrow{u}_p\cdot\overrightarrow{u}_1\right)$$
+	- From this, we can see that this heavily simplifies because most of these dot products go to zero: $$\overrightarrow{y}\cdot\overrightarrow{u}_1-\overrightarrow{y}\cdot\overrightarrow{u}_1=0$$
+	- From this, it's always zero. Lovely.
+	- So all we need is our orthogonal basis for the subspace, and we talked about how we do that above!
+- This is all very nice and convenient, but I don't appreciate all the dot products that I need to compute.
+- But how would you actually find an orthogonal basis of a subspace?
+- **<u>Example:</u>**
+	- $W=\text{Span}\left\{\overrightarrow{w}_1,\overrightarrow{w}_2\right\}$, $\overrightarrow{w}_1=\begin{bmatrix}3\\6\\0\end{bmatrix}$, $\overrightarrow{w}_2=\begin{bmatrix}1\\2\\2\end{bmatrix}$.
+	- Our basis is not orthogonal. Let's just fix it.
+	- Let $\overrightarrow{v}_1=\overrightarrow{w}_1$
+	- $\overrightarrow{v}_2$ needs to be tweaked such that it is orthogonal to $\overrightarrow{w}_1$.
+	- Well let's just project $\overrightarrow{w}_2$ onto $\overrightarrow{w}_1$ and take $\overrightarrow{z}$ as our orthogonal vector! That's so cool!
+	- $\overrightarrow{v}_2=\overrightarrow{w}_2-\text{proj}_{\text{Span}\left(\overrightarrow{w_1}\right)}\left(\overrightarrow{w}_1\right)$.
+	- EASY!!!!
+		- At least when it's just two vectors.
+	- This lecture is now ten tenths, but I still somehow think Sarah might be more interesting.
+		- "That's so true."
+	- 

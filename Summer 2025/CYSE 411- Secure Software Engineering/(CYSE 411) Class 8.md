@@ -1,0 +1,127 @@
+### Before Lecture
+- The DFD homework is alluded to as being important for the midterm.
+- Go through the solution that he posts when studying!
+
+### Threat Enumeration
+- STRIDE is an acronym that goes over all the different types of threats 
+	- Spoofing
+		- Pretending to be something or somebody other than who you are
+		- Impersonating an identity already known to a system
+		- Some good examples:
+			- Phishing
+			- Domain spoofing (make your website look like it's legit)
+			- MAC spoofing (give a wrong MAC address in ARP response)
+			- IP spoofing
+			- Caller ID spoofing
+		- Mitigations
+			- MFA
+			- Digital certificates (TLS/SSL)
+			- Client-side verification methods
+	- Tampering
+		- The unauthorized modification of data, code, configuration, or communication at rest, in memory, or in transit.
+		- Example:
+			- You can access a different student's grades by changing a `studentID` parameter in a URL. The tampering is changing that URL parameter.
+		- Mitigations
+			- Strong input validation and output encoding
+			- Message Authentication Codes (MACs) or digital signatures
+			- Access control and authorization checks
+			- Secure channels (HTTPS/TLS)
+			- Secure storage (encryption at rest)
+	- Repudiation
+		- When a user denies performing an action or falsely claims to have performed one.
+		- Conversely, it could involve claiming an action you did not actually take.
+		- Essentially, make it look like your behavior isn't what you actually did. 
+		- Examples:
+			- You purchase an eBook and falsely claim with customer support that you never bought it. 
+		- Mitigations:
+			- Immutable logs (if customer support tracked IPs for purchases they could easily throw away false claims)
+	- Information Disclosure
+		- You obtain information that you should not have access to
+		- Example
+			- You can access a different student's grades by changing a `studentID` parameter in a URL. The information disclosure is viewing the other student's data.
+			- Revealing hidden directories
+			- Access to source code files
+			- Database table or column names in error messages
+			- Exposing sensitive information
+		- Mitigations
+			- Access control on the server side
+			- Indirect references (hashed ID's) rather than sequential information
+			- Validate session identity and ownership before serving sensitive data
+			- Conduct security testing in the web server
+	- Denial of Service
+		- DoS prevents or inhibits legitimate users from using a system. This may include destroying data or consuming finite resources like network capacity, CPU cycles, memory, disk space, etc.
+		- The intent is to impact system availability or performance.
+		- Example
+			- A bot sends thousands of fake registration requests to an endpoint
+		- Types of DoS
+			- UDP flooding
+				- Floods the target server with UDP packets
+			- SYN flooding
+				- Floods the target server with SYN packets that you immediately drop
+				- The server is required to allocate memory for every possible session
+				- IP spoofing is frequently used to bypass a WAF
+			- DNS amplification
+				- Open a bunch of DNS resolvers with a spoofed IP
+				- Each resolver sends the requested size database, but to the spoofed IP
+				- This overloads the system you spoofed
+		- Mitigations
+			- Rate limiting and CAPTCHA
+			- WAF
+			- ASG
+			- DDoS protection services (Cloudflare, AWS Shield, etc.)
+	- Elevation of privilege
+		- When an attacker gains unauthorized access to higher levels of privilege or authority within a system or application.
+		- Essentially, it involves an adversary escalating their permissions beyond what they should have.
+		- Some types:
+			- Corrupting a process:
+				- The attacker sends inputs that the process handles improperly. This is a common and often high-impact threat.
+			- Reading or writing memory inappropriately
+				- The attacker can exploit vulnerabilities by gaining access to read or write memory
+		- Example
+			- Someone changes their `role` parameter in a POST request to `admin`, and gains access to an admin console on the site.
+		- Mitigations
+			- Server-side authorization checks (never trust client input)
+			- Role-based access control (RBAC) consistently enforced
+			- Audit logging to detect privilege misuse
+			- Least privilege design to minimize unnecessary permissions
+- Applying STRIDE
+	- Threat analysis
+		- DFD -> STRIDE -> Attack Library -> Attack Tree -> Remediation
+	- STRIDE Per-Element
+		- A threat modeling method that examines each element in a DFD to identify threats.
+		- Go through each item in the DFD and put a check mark on it for which threats apply.
+		- Process
+			- Retrieve elements from the DFD
+			- Find threats from the element-STRIDE table
+			- Check whether the records in the table are appropriate
+	- STRIDE Per-Interaction (won't be used in this course)
+		- Find data flow at the intersection of a trust boundary
+		- Find threats at "origin, destination, and interaction" in data flow
+		- Process
+			- Create a table of elements, interactions, and potential threats
+			- Create a DFD
+			- Extract the data flow at the intersection of the trust boundary
+			- Enumerate threats
+			- Create a table of the comparison results
+	- Case study
+		- State assumptions (before enumeration)
+			- Listing assumptions can help focus the team on the areas they care about most, thus obtaining more value sooner in the threat modeling process.
+		- Requirements
+			- What are the user stories?
+			- What are the evil stories?
+			- What are the security stories?
+		- Map the strengths and weaknesses
+		- Apply STRIDE to find threats
+			- Tips:
+				1. What are the main entry and exit points?
+					- Check entries and exists
+					- Check message flows
+					- Check external entities
+				2. What are the storage databases?
+				3. Are there any privileged processes or areas?
+		- Report threats
+			- {threat source} {prerequisites} can {threat action}, which leads to {threat impact} negatively impacting {impacted assets}
+			- DoS example:
+				- A malicious user with internet access can send a high volume of automated HTTP POST requests to the pizza ordering API, overwhelming server resources, which leads to service unavailability and negatively impacts the order processing system, customer experience, and the pizzeria's revenue.
+			- Tampering example:
+				- A malicious user intercepting or accessing insecure API endpoints can manipulate the JSON payload of legitimate orders to alter delivery addresses, resulting in incorrect deliveries or failed fulfillment, which negatively impacts customer trust, operational efficiency, and the pizzeria's revenue.

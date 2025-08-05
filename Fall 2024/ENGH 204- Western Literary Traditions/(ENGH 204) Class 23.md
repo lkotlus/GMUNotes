@@ -1,0 +1,14 @@
+### Visitation
+- This one was pretty good.
+- "It might be a little too German in its references."
+- How did we feel about it?
+	- I really liked it, but it was self-indulgent.
+	- Don't write as if it's going to be a literary exercise
+- What the hell is the deal with the gardener:
+	- The house falls apart when he's gone, so he must be important. 
+	- "Might be the most important guy in the story."
+	- He's the only one who is untouched by history.
+	- He is the personification of the land.
+- There were ethnic Germans all around Europe all the way up into Ukraine.
+	- They were slaughtered by the Russians.
+- Everyone needs to suffer at least once.

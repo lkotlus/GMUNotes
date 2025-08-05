@@ -1,0 +1,250 @@
+### All Confirmed Topics
+#### Introduction
+- Components of a network and their roles.
+- Forwarding and routing
+- Both types of switching + pros/cons
+- Processing/queuing/transmission/propagation delay
+- Layering benefits and all 5/7 layers
+#### Application Layer
+- Function of the application layer and how it works with the transport layer + how end-user and host use it
+- Two predominant architectural paradigms in modern network applications (?)
+- Source vs. destination port and IPs
+- BitTorrent
+- Client-server protocols vs. P2P protocols
+- HTTP:
+	- Acronym
+	- Cookies
+	- Persistent and non-persistent
+	- HTTP/1/1.1/2
+- Email:
+	- All protocols
+	- POP3 vs. IMAP
+	- Email servers
+	- Sending servers
+- DNS
+	- Distributed hierarchical database
+	- All record types
+	- Layers of servers
+	- Iterated and recursive queries
+	- Reverse lookup does not count
+- Video streaming transmission rates and CDNs
+#### Transport Layer
+- rdt
+	- All versions (1.0, 2.0, 2.1, 2.2, and 3)
+	- Go-back-N and selective repeat
+- UDP vs. TCP
+	- Similarities
+	- Multiplexing and demultiplexing differences
+	- Different services
+- UDP
+	- Characteristics
+	- Benefits/drawbacks
+- TCP
+	- Know everything about how it works
+		- Packet structure
+		- Sequence and ACK number
+		- Transmission error/packet loss handling
+		- Flow control
+	- Congestion control
+		- Harm of congestion and why we need congestion control. 
+		- How TCP handles congestion (different variations and working details)
+- Calculating internet checksums
+
+### Introduction
+- Components of a network and their roles
+	- The internet is a network of networks
+	- A network is comprised of nodes and edges
+	- Edges
+		- Hosts, both client and server
+	- Access networks and physical media
+		- Wired and wireless communication links
+	- Network core
+		- Routers! Routers have two functions, forward (local) and route (global)
+- Forwarding and routing
+	- Forwarding:
+		- Local action
+		- Move arriving packets from router's input link to the appropriate output link
+	- Routing
+		- Global action
+		- Determine the source destination path taken by a packet
+		- Uses routing algorithms
+- Both types of switching + pros/cons
+	- Packet
+		- Each host splits up the data they send into packets
+		- Packets are smaller ordered chunks of data
+		- Packets are sent using any available channel, hosts share all channels
+		- This is called store-and-forward. You store the packet and forward it to the next link. Links are typically routers and link-layer switches.
+		- Slower, but you can have many more hosts on the network
+	- Circuit
+		- Each host has a designated channel
+		- That channel can be used exclusively by its host in an unlimited fashion
+		- Frequency Division Multiplexing (FDM) and Time Division Multiplexing (TDM) are both used.
+		- Faster, but restricts the number of hosts in the network to the sum of required channels by said hosts
+- Processing/queuing/transmission/propagation delay
+	- Processing delay is caused by the time spent in a link processing a packet (very small)
+	- Queuing delay is caused by the time spent waiting for a channel to be available (depends on router congestion)
+	- Transmission delay is caused by the bits per second that a medium can transmit. Time between the first byte being sent and the last byte finishing
+	- Propagation delay is caused by the literal time taken for the medium. If you have fiber optic, how long does it take to travel the wire distance at light speed?
+	- Total delay: $d=d_{proc} + d_{queue} + d_{trans} + d_{prop}$
+- Layering benefits and all 5/7 layers
+	- Layering helps us because we can abstract the functionality of lower layers when working on a higher one. The layers are:
+		- Application
+		- Transport
+		- Network
+		- Data link
+		- Physical
+
+### Application Layer
+- Function of the application layer and how it works with the transport layer + how end-user and host use it
+	- The application layer is the highest layer of the OSI model
+	- It communicates via sockets with the transport layer for abstraction
+	- End-users and hosts use it with their input devices and whatnot
+	- Processes:
+		- Program running on a host
+		- Within the same host, two processes communicate using inter-process communication
+		- Processes in different hosts communicate by exchanging messages
+		- Client processes send messages and wait for responses
+		- Server processes wait for messages and send responses
+		- Processes send and receive messages through aforementioned sockets
+- Two predominant architectural paradigms in modern network applications (?)
+	- Client-server and P2P
+	- Client-server:
+		- Server is always on and has a static IP
+		- Clients are not always on and have dynamic IPs
+		- Good for some reliability, but doesn't scale great
+		- HTTP, IMAP, FTP, etc.
+	- P2P
+		- Scales insanely well (self scalability)
+		- Much faster for file sharing if you have a lot of peers
+		- BitTorrent
+- Source vs. destination port and IPs
+	- I send things from a particular port on my IP to a particular port on someone else's IP. If I'm sending, my IP is the source IP and my port is the source port. The receiving port and IP are the destination port and IP.
+- BitTorrent
+	- P2P file sharing.
+	- Everyone has 256 kb chunks of a particular file that we want to share.
+	- When you want a particular file, you go to people around you with bits of the file and request them in order of rarity.
+	- Every 30 seconds you re-evaluate who you get data from based on how good they are. You also seed in random people to give them a chance.
+- HTTP:
+	- Acronym
+		- Hypertext Transfer Protocol
+	- Cookies
+		- HTTP is stateless, so we need to use something to store state between sessions for users.
+		- Cookies do this. We store the client state on the server, and the user just stores a cookie that corresponds to this.
+	- Persistent and non-persistent
+		- Persistent HTTP will establish a connection and keep it for the user. The user can then request many objects on the same session.
+		- Non-persistent HTTP requires the user to start a new session for each object that is requested. This is much slower because you need to add the RTT to establish a connection for every object.
+	- HTTP/1/1.1/2
+		- HTTP/1
+			- One object request at a time
+		- HTTP/1.1
+			- HTTP Pipeline! Allows multiple requests to be sent simultaneously.
+			- Responses are sent FCFS.
+		- HTTP/2
+			- Divide objects into frames. Iterates through each object with remaining frames and sends one frame. Lower average delay.
+- Email:
+	- All protocols
+		- Delivery to server
+			- SMTP
+		- Retrieval from server
+			- POP3
+			- IMAP
+			- HTTP
+	- POP3 vs. IMAP
+		- POP3 downloads emails to the device and deletes them from the server
+		- IMAP keeps emails on the server, allowing for access from several devices
+- DNS
+	- Distributed hierarchical database
+		- Hierarchy of name servers all hold records
+	- All record types
+		- A
+			- Name: hostname
+			- Value: IP address
+		- CNAME
+			- Name: alias for canonical name
+			- Value: canonical name
+		- NS
+			- Name: domain
+			- Value: hostname
+		- MX
+			- Name: name
+			- Value: name of the mail server with the associated name
+	- Layers of servers
+		- Root servers (responsible for when a server can't resolve a name)
+		- Top level (.com/.org/...) (responsible )
+		- Authoritative (amazon/pbs/...)
+	- Iterated and recursive queries
+		- Iterated
+			- Request a name from a local server
+			- It doesn't know, so it refers you to a new server to ask
+			- Most commonly used
+		- Recursive
+			- Request a name from local server
+			- It doesn't know, so it contacts the next server, and that server contacts the next, and that server contacts the next, ...
+	- Reverse lookup does not count
+- Video streaming transmission rates and CDNs
+	- Having one server is slow. You can do better with a bunch working together (CDN)
+	- Video can be streamed better by having multiple copies on several geographically diverse servers.
+
+### Transport Layer
+- rdt
+	- All versions (1.0, 2.0, 2.1, 2.2, and 3.0)
+		- 1.0: Perfectly Reliable
+		- 2.0: Potential errors, require ACK/NAK
+		- 2.1: Handle garbled ACK/NAK by requiring 0 or 1 and checksum
+		- 2.2: Only use ACK (send wrong sequence number for NAK)
+		- 3.0: Add timeout
+	- Go-back-N and selective repeat
+		- GBN:
+			- Send any number of packets, but require a window size of N unacknowledged packets
+			- Re-send all packets including and after first NAK
+		- SR:
+			- Re-send only NAK packets
+- UDP vs. TCP
+	- Similarities:
+		- Neither offer delay or bandwidth guarantees
+	- Multiplexing and demultiplexing differences
+		- UDP requires port and IP, TCP only requires port
+	- Different services
+		- TCP: everything but streaming
+		- UDP: streaming
+- UDP
+	- Characteristics
+		- Connectionless, unreliable
+	- Benefits/drawbacks
+		- Very fast, but things get screwed up very easily
+- TCP
+	- Packet structure
+		- Header length tells us how long the header is in 32 bit words. This changes in length because of the options field.
+		- Options field is variable length and it's used when we negotiate the maximum segment size (MSS) or window scaling factor.
+		- CWR N/A
+		- ECE N/A
+		- URG indicates urgent data
+		- ACK tells us if the value in our ACK field is valid
+		- PSH indicates that we should pass data to upper layer immediately
+		- RST used for connection reset
+		- SYN tells us when we're doing connection startup
+		- FIN tells us when we're doing connection teardown
+		- ![[Pasted image 20250313165220.png]]
+	- Sequence and ACK number
+		- Piggyback!
+		- Sequence number is the byte-stream number of the first byte in the segment
+		- ACK number is the byte-stream number of the first byte in the next segment (next sequence number)
+	- Transmission error/packet loss handling
+		- Depends on implementation, based on rdt 3.0
+	- Flow control
+		- Clients can get overwhelmed
+		- To prevent this, the client advertises the amount of buffer space available
+		- Window size is synced with the client rwnd size.
+	- Congestion control
+		- Harm of congestion and why we need congestion control. 
+			- Congestion is caused by the server being overwhelmed. Throughput can't exceed capacity, and so delay increases as capacity is approached.
+		- How TCP handles congestion (different variations and working details)
+			- AIMD:
+				- Additive increase, multiplicative decrease.
+				- Increment window by 1 until loss, then cut window in half
+			- Slow start:
+				- Begin with exponential growth to speed up AIMD.
+				- Exponential growth is done at any point under ssthresh
+- Calculating internet checksums
+	- Sum the 16-bit chunks and then invert to get the checksum
+	- Carry over bit gets added to the LSB

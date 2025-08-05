@@ -1,0 +1,10 @@
+- So I really faked my way through that plot problem in the quiz...
+- That's fine, though. I'll take more notes on what he says about random stuff like that. 
+- Just so I don't forget again later, **plot teaches us cause and effect**.
+- I wasn't *necessarily* wrong, but I didn't give what he was looking for.
+- Genre comes from genus. It is the "type of thing". 
+	- Romance- didn't get to it
+	- Comedy- when we realize the laws were stupid, they didn't matter. Not a law of nature, a silly mistake. Reconciliation by marriage/hug.
+	- Tragedy- the innocent suffering (modern), the guilty suffering (classic), laws of nature have been broken (Shakespeare). Reconciliation by death or exile.
+- Who was the masked man? The spirit of life.
+- Note that slavery in Russia wasn't abolished until the 1870s, they were called serfs, they were white.

@@ -1,0 +1,21 @@
+### Probability Distributions and Probability Density Functions
+- A probability density function, $f(x)$, can be used to describe the probability distribution of a continuous random variable, $X$:
+	- $f(x)\ge 0$
+	- $\int_{-\infty}^\infty f(x)\ dx=1$
+	- $P(a\le X\le b)=\int_a^bf(x)\ dx$
+- If $X$ is a continuous random variable, for any $x_1$ and $x_2$: $$P(x_1\le X\le x_2)=P(x_1< X\le X_2)=P(x_1\le X<x_2)=P(x_1<X<x_2)$$
+- Example:
+	- Let the continuous random variable, $X$, denote the current measured in a thin copper wire in $\text{mA}$. Assume that the range of $X$ is $[4.9, 5.1]$ and the probability density function of $X$ is $f(x)=5$. 
+	- What is the probability that the current is less than $5\ \text{mA}$? $$P(4.9<X<5)=\int_{4.9}^55\ dx=5x\bigg|_{4.9}^5$$ $$5(5)-5(4.9)=0.5$$
+- Cumulative Distribution Function: $$F(x)=P(X\le x)=\int_{-\infty}^xf(u)\ du$$
+- Example:
+	- For the copper wire measurement in the first example, the cumulative distribution function of the random variable $X$ consists of three expressions. If $x<4.9$, $f(x)=0$. 
+	- We also know that: $$F(x)=\int_{4.9}^x f(u)\ du=\int_{4.9}^x5\ du=5x-24.5$$
+	- Therefore: $$F(x)=\begin{cases}0 & x<4.9\\5x-24.5 & 4.9\le x\le5.1\\1 & x>5.1\end{cases}$$
+- Probability Density Function from Cumulative Distribution: $$f(x)=\frac{dF(x)}{dx}$$
+- Example:
+	- The time until a chemical reaction is complete (in milliseconds) is approximated by this cumulative distribution function: $$F(x)=\begin{cases}0 & x<0\\1-e^{-0.01x} & 0\le x\end{cases}$$
+	- What is the probability density function? $$f(x)=\frac{dF(x)}{dx}=\begin{cases}\frac{d}{dx}\big(0\big) & x<0\\\frac{d}{dx}\big(1-e^{-0.01x}\big) & 0\le x\end{cases}=\begin{cases}0 & x<0\\e^{-0.01x} & 0\le x\end{cases}$$
+	- What is the probability that a reaction completes within $200\text{ ms}$? $$P(X<200)=F(200)=1-e^{-2}=0.8647$$
+- Mean and variance: $$\mu=E(X)=\int_{-\infty}^\infty xf(x)\ dx$$ $$\sigma^2=V(X)=\int_{-\infty}^\infty (x-\mu)^2f(x)\ dx$$
+- Expected value of a function of a continuous random variable: $$E\lfloor h(X)\rfloor=\int_{- \infty}^\infty h(x)f(x)\ dx$$

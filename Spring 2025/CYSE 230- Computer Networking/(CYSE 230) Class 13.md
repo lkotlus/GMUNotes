@@ -1,0 +1,92 @@
+### Final Exam Prep
+- Final is on the 13th.
+- It will be cumulative, she reuses questions though so go back and look at feedback.
+- There will still be more focus on later content!
+	- Go-Back-N and selective repeat especially!
+	- The rdt question as well!
+- Network Layer (data plane)
+	- Two key functions are forwarding (go from input link to output link) and routing (planning out the "whole trip")
+	- Longest prefix matching determines which link interface we use for an IP address.
+	- We have two algorithms for routing:
+		- Link State
+		- Distance Vector
+	- Classful addressing vs. classless
+		- Put classes in the cheat sheet!
+		- Put how CIDR works as well
+			- Potentially add some masks, but seems unnecessary.
+	- DHCP
+		- Client-server scenario slide
+		- Know how to replace things and whatnot
+	- NAT
+		- Network address translation slide
+	- **First and last IP is .1 and .254, not .0 and .255**
+- Network layer (control plane)
+	- Traditional and SDN
+		- Traditional is hardware working together to creating routing tables and whatnot
+		- SDN is a central controller doing stuff with software
+	- Link State
+		- Dijkstra's algorithm
+	- Distance Vector
+		- Update based on propagation of data
+		- Faster through PARALLEL PROCESSING, as each node can just share it's data
+		- Bellman-Ford Equation is GOATED!
+		- Comparisons between the two of these
+	- Intra and Inter AS Routing
+		- Know each protocol and generally what they do (public vs. proprietary as well). Also know which type of algorithm they use (link state vs. distance vector).
+		- Intra:
+			- RIP
+			- EIGRP
+			- OSPF
+			- etc.
+		- Inter:
+			- BGP
+				- eBGP
+				- iBGP
+	- SDNs
+		- Three components (slides 81-83)
+		- Centralized
+		- Benefits/drawbacks
+- Link Layer
+	- Network Layer vs. Link Layer
+		- Router Vs. Switch
+		- MAC vs. IP
+	- Error correction/detection
+		- Lil' parity table
+			- One dimension is weak, but 2 dimensions are great!
+	- Flow control (multiple access protocols)
+		- Know the ideal protocol stuff
+		- Know the different protocols and how close they get
+		- Four classes:
+			- Channel partitioning
+			- Frequency division multiplexing
+			- Time division multiplexing
+			- Code division multiplexing
+				- Know how to do two nodes transmitting at the same time for code division multiplexing with inner product and whatnot
+		- Random access protocols and whatnot
+			- She's yapping on this, make sure you understand it well.
+			- Go through the OG class notes on these, you took good ones.
+			- Token passing, ALOHA, slotted ALOHA, CSMA, and all that
+	- LANs
+		- Addressing with MAC
+		- ARP
+		- Send frames and datagrams from host to host with routers in between.
+			- Just like that homework problem
+		- Ethernet is connectionless and unreliable.
+	- Basic switch concepts
+		- What is a switch?
+		- Slide 73
+		- Differences with routers, slide 83
+- Wireless
+	- Hidden terminal problem (most important)
+	- CDMA, 2 sender especially (most important)
+	- Basic 802.11 LAN architecture
+	- 4G LTE architecture
+	- Other wireless stuff
+- Security
+	- CIA triad
+	- Encryption
+		- Public key
+		- Symmetric
+		- Which algorithms are which
+		- Digital signatures for non-repudiation
+	- Hashing
