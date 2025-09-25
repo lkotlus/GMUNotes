@@ -26,8 +26,10 @@
 	- Well, first let's find the eigenvalues:
 		- $\text{det}(A-\lambda I)=0$
 		- This gives us $-(\lambda -1)(\lambda + 2)^2$
-		```functionplot
-		y=-(x -1)(x + 2)^2
+		```desmos-graph
+		y=-(x-1)(x+2)^2
+		(-2,0)|black
+		(1,0)|black
 		```
 		- This gives $\lambda=1$ (multiplicity 1) or $\lambda=-2$ (multiplicity 2).
 	- So the next step is to find a basis for each eigenspace.
@@ -50,8 +52,9 @@
 		- $\text{det}(A-\lambda I)=0$
 		- $(2-\lambda)^2=0$
 		- $\lambda=2$ (just one with multiplicity 2)
-		```functionplot
+		```desmos-graph
 		y=(2-x)^2
+		(2,0)|black
 		```
 	- So now we solve $(A-2I)\overrightarrow{x}=\overrightarrow{0}$:
 		- General solution is: $\overrightarrow{x}=x_1\begin{bmatrix}1\\0\end{bmatrix}$.

@@ -46,7 +46,7 @@
 		- This simplifies to: $$\begin{bmatrix}1 & 0 & 1 & 0\\0&1&2&0\end{bmatrix}$$
 		- From this, we know: $$\overrightarrow{x}=\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}=\begin{bmatrix}-x_3\\-2x_3\\x_3\end{bmatrix}=x_3\begin{bmatrix}-1\\-2\\1\end{bmatrix}$$
 		- Which tells us that $\text{Nul }A=\text{Span}\left\{\begin{bmatrix}-1\\-2\\1\end{bmatrix}\right\}$.
-- **<u>Comparison of $\text{Nul }A$ and $\text{Col }A$:</u>**
+- Comparison of $\text{Nul }A$ and $\text{Col }A$:
 
 |$\text{Nul }A$|$\text{Col }A$|
 |----------------|----------------|
